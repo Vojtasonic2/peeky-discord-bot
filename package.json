@@ -1,0 +1,16 @@
+{
+  "name": "quote",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dblapi.js": "^1.1.0",
+    "dblposter": "^1.0.3",
+    "discord.js": "^11.3.0"
+  }
+}
