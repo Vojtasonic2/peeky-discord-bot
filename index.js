@@ -5,7 +5,7 @@ const dbl = new DBL(process.env.DBL_TOKEN);
 
 bot.on('ready', () => {
     setInterval(() => {
-        dbl.postStats(bot.guilds.size);
+        dbl.postStats(serverCount);
     }, 300000);
 });
 
