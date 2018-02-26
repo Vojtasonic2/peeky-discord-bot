@@ -30,7 +30,6 @@ var dadJokes = [
     "My dad is a doctor, one of his patients has lost his left hand, so he told the patient's parents that he's all-right."
   ]
 
-
 var fml = [
     'Today, I got robbed. They took my stereo and laptop, but they left my car and a note that reads "Wtf is this?" FML.',
     'Today, I started a new job at a glass shop and my boss asked me to vacuum. I ended up tipping over and shattering the most expensive bong in the shop, which retailed at $3,000. FML.',
