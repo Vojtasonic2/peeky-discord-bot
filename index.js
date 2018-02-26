@@ -122,6 +122,12 @@ bot.on('ready', () => { bot.user.setActivity('Ver 0.6 | /About')} )
 bot.on('ready', () => { bot.user.setStatus('idle')} )
 console.log('The bot is now running')
 
+bot.on('ready', () => {
+    setInterval(() => {
+        dbl.postStats(bot.guilds.size);
+    }, 300000);
+});
+
 bot.on('message', (message) => { //Commands
     if(message.content == '/Commands'){
        message.channel.send({ embed });
