@@ -1,7 +1,5 @@
 const Discord = require('discord.js');
 const bot = new Discord.Client();
-const dbl = require("dblposter");
-const DBLPoster = new dbl(process.env.DBL_TOKEN);
 
 var dadJokes = [
     "Whenever we drive past a graveyard my dad says, 'Do you know why I can’t be buried there?' And we all say, 'Why not?' And he says, 'Because I’m not dead yet!",
@@ -227,4 +225,3 @@ bot.on('message', (message) => { //Support
 })
 
 bot.login(process.env.BOT_TOKEN);
-DBLPoster.bind(bot);
