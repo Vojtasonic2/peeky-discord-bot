@@ -1,7 +1,7 @@
 const Discord = require('discord.js');
 const bot = new Discord.Client();
 const dbl = require("dblposter");
-const DBLPoster = (process.env.DBL_TOKEN);
+const DBLPoster = new dbl(process.env.DBL_TOKEN);
 
 DBLPoster.bind(bot);
 
