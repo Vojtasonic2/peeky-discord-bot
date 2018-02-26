@@ -3,7 +3,7 @@ const bot = new Discord.Client();
 const dbl = require("dblposter");
 const DBLPoster = (process.env.DBL_TOKEN);
 
-DBLPoster.bind(client);
+DBLPoster.bind(bot);
 
 var dadJokes = [
     "Whenever we drive past a graveyard my dad says, 'Do you know why I can’t be buried there?' And we all say, 'Why not?' And he says, 'Because I’m not dead yet!",
