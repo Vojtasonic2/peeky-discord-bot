@@ -1,13 +1,5 @@
 const Discord = require('discord.js');
 const bot = new Discord.Client();
-const DBL = require("dblapi.js");
-const dbl = new DBL(process.env.DBL_TOKEN);
-
-bot.on('ready', () => {
-    setInterval(() => {
-        dbl.postStats(serverCount);
-    }, 300000);
-});
 
 var dadJokes = [
     "Whenever we drive past a graveyard my dad says, 'Do you know why I can’t be buried there?' And we all say, 'Why not?' And he says, 'Because I’m not dead yet!",
