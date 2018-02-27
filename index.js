@@ -57,7 +57,7 @@ var reply = [
     "no.",
     "that I'm not sure",
     "that probably yes.",
-    "that probably not."
+    "that probably no."
   ]
 
 const embed = {
