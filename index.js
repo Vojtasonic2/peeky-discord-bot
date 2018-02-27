@@ -53,8 +53,11 @@ var dice = [
   ]
 
 var reply = [
-    "Ye",
-    "No"
+    "yes.",
+    "no.",
+    "that I'm not sure",
+    "that probably yes."
+    "that probably not."
   ]
 
 const embed = {
@@ -219,7 +222,7 @@ bot.on('message', (message) => { //Roll
 bot.on('message', (message) => { //Ask
   if(message.content.startsWith("/Ask ")){
         var randomReply = reply[Math.floor(Math.random() * reply.length)];
-        message.reply(randomReply);
+        message.reply("I'd say  " + randomReply);
         console.log('The Ask command has been executed. Author ID: ' + message.author.id)
   }
 });
