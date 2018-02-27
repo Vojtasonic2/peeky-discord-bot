@@ -23,7 +23,7 @@ var dadJokes = [
     "Don't trust atoms. They make up everything.",
     "Our wedding was beatiful, even the cake was in tiers.",
     "Guess how many tickles it takes to make a squid laugh. Tenticles.",
-    "My dad is a doctor, one of his patients has lost his left hand, so he told the patient's parents that he's all-right."
+    "My dad is a doctor and one of his patients has lost a left hand, so he told the patient's parents that he's all-right."
   ]
 
 var fml = [
