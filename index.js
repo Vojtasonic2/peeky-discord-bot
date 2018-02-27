@@ -209,7 +209,7 @@ bot.on('message', (message) => { //Roll
 
 bot.on('message', (message) => { //Highfive
   if(message.content.startsWith("/Highfive ")){
-        message.channel.sendMessage(message.author + ' *highfives* ' + message.mentions.members.first() + '(https://goo.gl/RaQdsQ)');
+        message.channel.sendMessage(message.author + '🙏' + message.mentions.members.first());
         console.log('The Highfive command has been executed. Author ID: ' + message.author.id)
   }
 });
