@@ -52,6 +52,10 @@ var dice = [
     " **6**!" 
   ]
 
+var highfiveImage = [
+    "https://goo.gl/RaQdsQ"
+  ]
+
 const embed = {
     "color": 16098851,
     "author": {
@@ -209,7 +213,8 @@ bot.on('message', (message) => { //Roll
 
 bot.on('message', (message) => { //Highfive
   if(message.content.startsWith("/Highfive ")){
-     message.channel.sendMessage(message.author + '🙏' + message.mentions.members.first());
+     var highfiveImage = hfive[Math.floor(Math.random() * hfive.length)];
+     message.channel.sendMessage(message.author + ' *highfives* ' + message.mentions.members.first() + highfiveImage);
      console.log('The Highfive command has been executed. Author ID: ' + message.author.id)
   }
 });
