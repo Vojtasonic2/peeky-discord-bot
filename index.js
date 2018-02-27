@@ -52,6 +52,11 @@ var dice = [
     " **6**!" 
   ]
 
+var reply = [
+    "Ye",
+    "No"
+  ]
+
 const embed = {
     "color": 16098851,
     "author": {
@@ -104,8 +109,12 @@ const embed = {
         "value": "Rolls a random number between 1 and 6."
       },
       {
+        "name": "**/Ask** *<Your Question>*",
+        "value": "Makes Peeky reply to your question."
+      },
+      {
         "name": "**/Highfive <@user>**",
-        "value": "Give someone a highfive!"
+        "value": "Gives someone a highfive."
       },
       {
         "name": "**/Support**",
@@ -206,6 +215,14 @@ bot.on('message', (message) => { //Roll
         console.log('The Roll command has been executed. Author ID: ' + message.author.id)
     }
 })
+
+bot.on('message', (message) => { //Ask
+  if(message.content.startsWith("/Ask ")){
+        var randomReply = reply[Math.floor(Math.random() * reply.length)];
+        message.reply('randomReply);
+        console.log('The Ask command has been executed. Author ID: ' + message.author.id)
+  }
+});
 
 bot.on('message', (message) => { //Highfive
   if(message.content.startsWith("/Highfive ")){
