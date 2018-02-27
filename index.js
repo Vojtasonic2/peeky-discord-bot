@@ -52,10 +52,6 @@ var dice = [
     " **6**!" 
   ]
 
-var highfiveImage = [
-    "https://goo.gl/RaQdsQ"
-  ]
-
 const embed = {
     "color": 16098851,
     "author": {
@@ -205,17 +201,16 @@ bot.on('message', (message) => { //FML
 
 bot.on('message', (message) => { //Roll
     if(message.content == '/Roll'){
-        console.log('The Roll command has been executed. Author ID: ' + message.author.id)
         var randomNumber = dice[Math.floor(Math.random() * dice.length)];
         message.reply('You have rolled the number' + randomNumber);
+        console.log('The Roll command has been executed. Author ID: ' + message.author.id)
     }
 })
 
 bot.on('message', (message) => { //Highfive
   if(message.content.startsWith("/Highfive ")){
-     var highfiveImage = hfive[Math.floor(Math.random() * hfive.length)];
-     message.channel.sendMessage(message.author + ' *highfives* ' + message.mentions.members.first() + highfiveImage);
-     console.log('The Highfive command has been executed. Author ID: ' + message.author.id)
+        message.channel.sendMessage(message.author + ' *highfives* ' + message.mentions.members.first() + '(https://goo.gl/RaQdsQ)');
+        console.log('The Highfive command has been executed. Author ID: ' + message.author.id)
   }
 });
 
