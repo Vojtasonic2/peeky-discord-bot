@@ -56,7 +56,7 @@ var reply = [
     "yes.",
     "no.",
     "that I'm not sure",
-    "that probably yes."
+    "that probably yes.",
     "that probably not."
   ]
 
