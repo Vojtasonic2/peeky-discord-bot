@@ -157,7 +157,7 @@ bot.on('message', (message) => { //SupportServer
 
 bot.on('message', (message) => { //ServerInfo
     if(message.content == '/ServerInfo')
-       message.reply('This server is called **' + message.guild. + '** and has ' + '**' + message.guild.memberCount + '** members.')
+       message.reply('This server is called **' + message.guild.name + '** and has ' + '**' + message.guild.memberCount + '** members.')
        console.log('The ServerInfo command has been executed. Author ID: ' + message.author.id)
     }
 })
