@@ -76,12 +76,12 @@ const embed = {
         "value": "Shows the command list upon execution."
       },
       {
-        "name": "**/Server**",
+        "name": "**/SupportServer**",
         "value": "Sends the Support Server invite into Executioner's DMs."
       },
       {
-        "name": "**/Members**",
-        "value": "Shows the amount of members on the server."
+        "name": "**/Server**",
+        "value": "Shows the informations about the server."
       },
       {
         "name": "**/P** *<Your Poll Description>*",
@@ -128,7 +128,7 @@ const embed = {
 
 var globalMessage = '*No Global message has been set yet!*'
 
-bot.on('ready', () => { bot.user.setActivity('Ver 0.6 | /About')} )
+bot.on('ready', () => { bot.user.setActivity('Ver 0.7 | /About')} )
 bot.on('ready', () => { bot.user.setStatus('idle')} )
 console.log('The bot is now running')
 
@@ -141,23 +141,23 @@ bot.on('message', (message) => { //Commands
 
 bot.on('message', (message) => { //About
     if(message.content == '/About'){
-       message.reply('Hello! I am Peeky and I can do all kinds of simple, but very good stuff. To see what I am capable of doing, just type **/Commands**. If you need any assistance with the bot or want to report a bug, be sure to contact **Vojtasonic#5792** or join the Support Server by typing **/Server.**')
+       message.reply('Hello! I am Peeky and I can do all kinds of simple, but very good stuff. To see what I am capable of doing, just type **/Commands**. If you need any assistance with the bot or want to report a bug, be sure to contact **Vojtasonic#5792** or join the Support Server by typing **/SupportServer.**')
        console.log('The About command has been executed. Author ID: ' + message.author.id)
     }
 })
 
-bot.on('message', (message) => { //Server
-    if(message.content == '/Server'){
+bot.on('message', (message) => { //SupportServer
+    if(message.content == '/SupportServer'){
        message.reply('The Support Server invite has been sent to your Private Messages.')
        message.author.sendMessage("https://discord.gg/j4kArRh")
-       console.log('The Server command has been executed. Author ID: ' + message.author.id)
+       console.log('The SupportServer command has been executed. Author ID: ' + message.author.id)
    }
 })
 
-bot.on('message', (message) => { //Members
-    if(message.content == '/Members'){
-       message.reply('The amount of members in this server is ' + '**' + message.guild.memberCount + '**.') 
-       console.log('The Members command has been executed. Author ID: ' + message.author.id)
+bot.on('message', (message) => { //Server
+    if(message.content == '/Server'){
+       message.reply('The amount of members in this server is ' + '**' + message.guild.memberCount + '** and the server name is' + ' **' + message.guild.name + '.**') 
+       console.log('The Server command has been executed. Author ID: ' + message.author.id)
     }
 })
 
