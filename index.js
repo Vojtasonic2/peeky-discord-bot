@@ -149,7 +149,7 @@ bot.on('message', (message) => { //About
 bot.on('message', (message) => { //SupportServer
     if(message.content == '/SupportServer'){
        message.reply('The Support Server invite has been sent to your Private Messages.')
-       message.author.sendMessage("Hello! Here is the link that will put you in our Discord server where we can help you with your problem!"
+       message.author.sendMessage("Hello! Here is the link that will put you in our Discord server where we can help you with your problem!")
        message.author.sendMessage("https://discord.gg/j4kArRh")
        console.log('The SupportServer command has been executed. Author ID: ' + message.author.id)
    }
