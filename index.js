@@ -80,7 +80,7 @@ const embed = {
         "value": "Sends the Support Server invite into Executioner's DMs."
       },
       {
-        "name": "**/Server**",
+        "name": "**/ServerInfo**",
         "value": "Shows the informations about the server."
       },
       {
@@ -155,10 +155,10 @@ bot.on('message', (message) => { //SupportServer
    }
 })
 
-bot.on('message', (message) => { //Server
-    if(message.content == '/Server'){
+bot.on('message', (message) => { //ServerInfo
+    if(message.content == '/ServerInfo'){
        message.reply('The amount of members in this server is ' + '**' + message.guild.memberCount + '** and the server name is' + ' **' + message.guild.name + '.**') 
-       console.log('The Server command has been executed. Author ID: ' + message.author.id)
+       console.log('The ServerInfo command has been executed. Author ID: ' + message.author.id)
     }
 })
 
