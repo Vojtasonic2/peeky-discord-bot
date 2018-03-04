@@ -156,7 +156,7 @@ bot.on('message', (message) => { //SupportServer
 })
 
 bot.on('message', (message) => { //ServerInfo
-    if(message.content == '/ServerInfo')
+    if(message.content == '/ServerInfo'){
        message.reply('The amount of members in this server is ' + '**' + message.guild.memberCount + '** and the server name is' + ' **' + message.guild.name + '.**')   
        console.log('The ServerInfo command has been executed. Author ID: ' + message.author.id)
     }
