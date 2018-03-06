@@ -128,7 +128,7 @@ const embed = {
 
 var globalMessage = '*No Global message has been set yet!*'
 
-bot.on('ready', () => { bot.user.setActivity('Ver 0.7 | /About')} )
+bot.on('ready', () => { bot.user.setActivity('Ver 0.8 | /About')} )
 bot.on('ready', () => { bot.user.setStatus('idle')} )
 console.log('The bot is now running')
 
