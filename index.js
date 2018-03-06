@@ -183,7 +183,7 @@ bot.on('message', (message) => { //Countdown
 
 bot.on('message', (message) => { //Global (Set)
   if(message.content.startsWith("/G ")){
-        globalMessage = message.author + ': ' + message.content
+        globalMessage = '**' + message.author.tag + ':** ' + message.content
         message.reply('You have changed the global message!')
         console.log('The GlobalSet command has been executed. Author ID: ' + message.author.id)
   }
