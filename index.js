@@ -184,7 +184,7 @@ bot.on('message', (message) => { //Countdown
 bot.on('message', (message) => { //Global (Set)
   if(message.content.startsWith("/GlobalSet ")){
         globalMessage = '**' + message.author.tag + ':** ' + message.content.replace('/GlobalSet ','')
-        message.reply('You have changed the global message!')
+        message.reply('You have set the global message!')
         console.log('The GlobalSet command has been executed. Executor: ' + message.author.tag)
   }
 });
