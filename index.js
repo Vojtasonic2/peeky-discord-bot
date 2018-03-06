@@ -85,7 +85,7 @@ const embed = {
       },
       {
         "name": "**/UserInfo**",
-        "value": "Shows the information about the command executor."
+        "value": "Shows the information about some command executor."
       },
       {
         "name": "**/P** *<Your Poll Description>*",
