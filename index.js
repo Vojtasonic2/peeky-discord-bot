@@ -135,14 +135,14 @@ console.log('The bot is now running')
 bot.on('message', (message) => { //Commands
     if(message.content == '/Commands'){
        message.channel.send({ embed });
-       console.log('The Commands command has been executed. Author ID: ' + message.author.id)
+       console.log('The Commands command has been executed. Executor: ' + message.author.tag)
    }
 })
 
 bot.on('message', (message) => { //About
     if(message.content == '/About'){
        message.reply('Hello! I am Peeky and I can do all kinds of simple, but very good stuff. To see what I am capable of doing, just type **/Commands**. If you need any assistance with the bot or want to report a bug, be sure to contact **Vojtasonic#5792** or join the Support Server by typing **/SupportServer.**')
-       console.log('The About command has been executed. Author ID: ' + message.author.id)
+       console.log('The About command has been executed. Executor: ' + message.author.tag)
     }
 })
 
@@ -151,14 +151,14 @@ bot.on('message', (message) => { //SupportServer
        message.reply('The Support Server invite has been sent to your Private Messages.')
        message.author.sendMessage("Hello! Here is the link that will put you in our Discord server where we can help you with your problem!")
        message.author.sendMessage("https://discord.gg/j4kArRh")
-       console.log('The SupportServer command has been executed. Author ID: ' + message.author.id)
+       console.log('The SupportServer command has been executed. Executor: ' + message.author.tag)
    }
 })
 
 bot.on('message', (message) => { //ServerInfo
     if(message.content == '/ServerInfo'){
        message.reply('This server is called **' + message.guild.name + '** and has ' + '**' + message.guild.memberCount + '** members.')   
-       console.log('The ServerInfo command has been executed. Author ID: ' + message.author.id)
+       console.log('The ServerInfo command has been executed. Executor: ' + message.author.tag)
     }
 })
 
@@ -167,14 +167,14 @@ bot.on('message', (message) => { //Poll
        message.reply('You have started a poll!')
        message.react('<:bot_approve:416366096053174273')
        message.react('<:bot_deny:416366135223517186')
-       console.log('The Poll command has been executed. Author ID: ' + message.author.id)
+       console.log('The Poll command has been executed. Executor: ' + message.author.tag)
     }
 });
 
 bot.on('message', (message) => { //Countdown
     if(message.content.startsWith("/StartCountdown ")){ //10 Minutes//
         message.reply('You have started a 10 minute countdown!')
-        console.log('The Countdown command has been executed. Author ID: ' + message.author.id)
+        console.log('The Countdown command has been executed. Executor: ' + message.author.tag)
         setTimeout(function (){
         message.reply('*Your Countdown has finished!* (**' + message.content.replace('/StartCountdown ','') + ')**') 
       }, 600000);
@@ -185,14 +185,14 @@ bot.on('message', (message) => { //Global (Set)
   if(message.content.startsWith("/GlobalSet ")){
         globalMessage = '**' + message.author.tag + ':** ' + message.content.replace('/GlobalSet ','')
         message.reply('You have changed the global message!')
-        console.log('The GlobalSet command has been executed. Author ID: ' + message.author.id)
+        console.log('The GlobalSet command has been executed. Executor: ' + message.author.tag)
   }
 });
 
 bot.on('message', (message) => { //Global (Show)
     if(message.content == '/GlobalShow'){
         message.channel.sendMessage(globalMessage)
-        console.log('The GlobalShow command has been executed. Author ID: ' + message.author.id)
+        console.log('The GlobalShow command has been executed. Executor: ' + message.author.tag)
   } 
 })
 
@@ -200,7 +200,7 @@ bot.on('message', (message) => { //DadJokes
     if(message.content == '/DadJoke'){
         var randomAnswer = dadJokes[Math.floor(Math.random() * dadJokes.length)];
         message.reply(randomAnswer);
-        console.log('The DadJoke command has been executed. Author ID: ' + message.author.id)
+        console.log('The DadJoke command has been executed. Executor: ' + message.author.tag)
     }
 })
 
@@ -208,7 +208,7 @@ bot.on('message', (message) => { //FML
     if(message.content == '/Fml'){
         var randomFml = fml[Math.floor(Math.random() * fml.length)];
         message.reply(randomFml);
-        console.log('The Fml command has been executed. Author ID: ' + message.author.id)
+        console.log('The Fml command has been executed. Executor: ' + message.author.tag)
     }
 })
 
@@ -216,7 +216,7 @@ bot.on('message', (message) => { //Roll
     if(message.content == '/Roll'){
         var randomNumber = dice[Math.floor(Math.random() * dice.length)];
         message.reply('You have rolled the number' + randomNumber);
-        console.log('The Roll command has been executed. Author ID: ' + message.author.id)
+        console.log('The Roll command has been executed. Executor: ' + message.author.tag)
     }
 })
 
@@ -224,14 +224,14 @@ bot.on('message', (message) => { //Ask
   if(message.content.startsWith("/Ask ")){
         var randomReply = reply[Math.floor(Math.random() * reply.length)];
         message.reply("I'd say " + randomReply);
-        console.log('The Ask command has been executed. Author ID: ' + message.author.id)
+        console.log('The Ask command has been executed. Executor: ' + message.author.tag)
   }
 });
 
 bot.on('message', (message) => { //Highfive
   if(message.content.startsWith("/Highfive ")){
         message.channel.sendMessage(message.author + '🙏' + message.mentions.members.first());
-        console.log('The Highfive command has been executed. Author ID: ' + message.author.id)
+        console.log('The Highfive command has been executed. Executor: ' + message.author.tag)
   }
 });
 
@@ -241,7 +241,7 @@ bot.on('message', (message) => { //Support
        message.author.sendMessage("**Thank you for choosing to support the bot!**")
        message.author.sendMessage("**VOTE:** `https://discordbots.org/bot/415259002310623232` (Free)")
        message.author.sendMessage("**PLEDGE:** `https://www.patreon.com/vojtasonic` (Paid)")
-       console.log('The Support command has been executed. Author ID: ' + message.author.id)
+       console.log('The Support command has been executed. Executor: ' + message.author.tag)
    }
 })
 
