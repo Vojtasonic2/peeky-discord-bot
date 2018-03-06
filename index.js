@@ -88,12 +88,12 @@ const embed = {
         "value": "Starts a Poll."
       },
       {
-        "name": "**/C** *<Your Countdown Description>*",
+        "name": "**/StartCountdown** *<Your Countdown Description>*",
         "value": "Starts a 10 minute Countdown."
       },
       {
-        "name": "**/G** *<Your Global Message>*",
-        "value": "Sets a global message which can be seen on all servers the bot is in."
+        "name": "**/GlobalSet** *<Your Global Message>*",
+        "value": "Sets a global message that can be seen on all servers the bot is in."
       },
       {
         "name": "**/GlobalShow**",
@@ -172,18 +172,18 @@ bot.on('message', (message) => { //Poll
 });
 
 bot.on('message', (message) => { //Countdown
-    if(message.content.startsWith("/C ")){ //10 Minutes//
+    if(message.content.startsWith("/StartCountdown ")){ //10 Minutes//
         message.reply('You have started a 10 minute countdown!')
         console.log('The Countdown command has been executed. Author ID: ' + message.author.id)
         setTimeout(function (){
-        message.reply('*Your Countdown has finished!* (**' + message.content.replace('/C ','') + ')**') 
+        message.reply('*Your Countdown has finished!* (**' + message.content.replace('/StartCountdown ','') + ')**') 
       }, 600000);
     }
 });
 
 bot.on('message', (message) => { //Global (Set)
-  if(message.content.startsWith("/G ")){
-        globalMessage = '**' + message.author.tag + ':** ' + message.content.replace('/G ','')
+  if(message.content.startsWith("/GlobalSet ")){
+        globalMessage = '**' + message.author.tag + ':** ' + message.content.replace('/GlobalSet ','')
         message.reply('You have changed the global message!')
         console.log('The GlobalSet command has been executed. Author ID: ' + message.author.id)
   }
