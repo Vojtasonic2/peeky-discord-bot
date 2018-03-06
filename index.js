@@ -81,11 +81,11 @@ const embed = {
       },
       {
         "name": "**/ServerInfo**",
-        "value": "Shows the informations about the server."
+        "value": "Shows the information about the server."
       },
       {
         "name": "**/UserInfo**",
-        "value": "Shows the informations about the executor."
+        "value": "Shows the information about the command executor."
       },
       {
         "name": "**/P** *<Your Poll Description>*",
