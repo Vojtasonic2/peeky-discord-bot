@@ -176,14 +176,14 @@ bot.on('message', (message) => { //Countdown
         message.reply('You have started a 10 minute countdown!')
         console.log('The Countdown command has been executed. Author ID: ' + message.author.id)
         setTimeout(function (){
-        message.reply('*Your Countdown has finished!* (**' + message.content + ')**') 
+        message.reply('*Your Countdown has finished!* (**' + message.content.replace('/C ','') + ')**') 
       }, 600000);
     }
 });
 
 bot.on('message', (message) => { //Global (Set)
   if(message.content.startsWith("/G ")){
-        globalMessage = '**' + message.author.tag + ':** ' + message.content
+        globalMessage = '**' + message.author.tag + ':** ' + message.content.replace('/G ','')
         message.reply('You have changed the global message!')
         console.log('The GlobalSet command has been executed. Author ID: ' + message.author.id)
   }
