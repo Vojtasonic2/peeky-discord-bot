@@ -84,6 +84,10 @@ const embed = {
         "value": "Shows the informations about the server."
       },
       {
+        "name": "**/UserInfo**",
+        "value": "Shows the informations about the executor."
+      },
+      {
         "name": "**/P** *<Your Poll Description>*",
         "value": "Starts a Poll."
       },
@@ -141,7 +145,7 @@ bot.on('message', (message) => { //Commands
 
 bot.on('message', (message) => { //About
     if(message.content == '/About'){
-       message.reply('Hello! I am Peeky and I can do all kinds of simple, but very good stuff. To see what I am capable of doing, just type **/Commands**. If you need any assistance with the bot or want to report a bug, be sure to contact **Vojtasonic#5792** or join the Support Server by typing **/SupportServer.**')
+       message.reply('Hello! I am Peeky and I can do all kinds of simple, but very good stuff. To see what I am capable of doing, just type **/Commands**. If you need any assistance with the bot or want to report a bug, be sure to contact **Vojtasonic#5792** or join the Support Server by typing **/SupportServer**.')
        console.log('The About command has been executed. Executor: ' + message.author.tag)
     }
 })
@@ -162,6 +166,13 @@ bot.on('message', (message) => { //ServerInfo
     }
 })
 
+bot.on('message', (message) => { //UserInfo
+    if(message.content == '/UserInfo'){
+       message.channel.sendMessage('Your username is **' + message.author.tag + '** and your ID is **' + message.author.id + '**.')
+       console.log('The UserInfo command has been executed. Executor: ' + message.author.tag)
+    }
+})
+
 bot.on('message', (message) => { //Poll
     if(message.content.startsWith("/P ")){
        message.reply('You have started a poll!')
@@ -176,7 +187,7 @@ bot.on('message', (message) => { //Countdown
         message.reply('You have started a 10 minute countdown!')
         console.log('The Countdown command has been executed. Executor: ' + message.author.tag)
         setTimeout(function (){
-        message.reply('*Your Countdown has finished!* (**' + message.content.replace('/StartCountdown ','') + ')**') 
+        message.reply('*Your StartCountdown has finished!* (**' + message.content.replace('/StartCountdown ','') + ')**') 
       }, 600000);
     }
 });
