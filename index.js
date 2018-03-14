@@ -187,7 +187,7 @@ bot.on('message', (message) => { //Countdown
         message.reply('You have started a 10 minute countdown!')
         console.log('The Countdown command has been executed. Executor: ' + message.author.tag)
         setTimeout(function (){
-        message.reply('*Your StartCountdown has finished!* (**' + message.content.replace('/StartCountdown ','') + ')**') 
+        message.reply('*Your StartCountdown has finished!* **(' + message.content.replace('/StartCountdown ','') + ')**') 
       }, 600000);
     }
 });
