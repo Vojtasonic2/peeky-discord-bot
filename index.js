@@ -80,7 +80,20 @@ var cmcs_1 = [
 ]
 
 var cmcs_2 = [
-    globalMessage
+    'I agree!',
+    'Meh',
+    "*deds*",
+    'I wanna play Impact.',
+    'Wait this supposed to be a punch line?',
+    '<:ok_hand_down:426840561450745868>',
+    'I have new watches everyone!',
+    'lol',
+    'Doing every single way 👏',
+    'Review! 👏',
+    "Just don't eat me.",
+    "That's deep.",
+    'Woah',
+    'Rawr!
 ]
 
 const embed = {
