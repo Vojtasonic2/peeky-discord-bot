@@ -286,7 +286,7 @@ bot.on('message', (message) => { //Roll
 bot.on('message', (message) => { //Ask
   if(message.content.startsWith("/Ask ")){
         var randomReply = reply[Math.floor(Math.random() * reply.length)];
-        message.reply("I'd say " + randomReply);
+        message.reply("I'd say " + randomReply + '<:peeky:398855238725009418>');
         console.log('The Ask command has been executed. Executor: ' + message.author.tag)
   }
 });
