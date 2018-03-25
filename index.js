@@ -72,7 +72,7 @@ var cmcs_1 = [
     'How are you?',
     "I'm a robot and i will kill you!",
     'MEE6 is better.',
-    "I'm hungry.",
+    "I'm hungry."
 ]
 
 var cmcs_2 = [
@@ -82,7 +82,7 @@ var cmcs_2 = [
     'I wanna play Impact.',
     'Wait this supposed to be a punch line?',
     '<:ok_hand_down:426840561450745868>',
-    'I have new watches',
+    'I have new watches @everyone !',
     'lol'
 ]
 
