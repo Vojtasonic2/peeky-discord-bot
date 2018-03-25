@@ -102,6 +102,7 @@ var cmcs_2 = [
     " Idon't care.",
     'Whatever.',
     '...',
+    'Not interested.'
 ]
 
 const embed = {
