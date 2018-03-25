@@ -75,7 +75,8 @@ var cmcs_1 = [
     'MEE6 is better.',
     "I'm hungry.",
     'Life is pain.',
-    'Single every single day 👏'
+    'Single every single day 👏',
+    'Meme 👏'
 ]
 
 var cmcs_2 = [
@@ -87,7 +88,10 @@ var cmcs_2 = [
     '<:ok_hand_down:426840561450745868>',
     'I have new watches everyone!',
     'lol',
-    'Doing every single day 👏'
+    'Doing every single way 👏',
+    'Review! 👏',
+    "Just don't eat me."
+
 ]
 
 const embed = {
