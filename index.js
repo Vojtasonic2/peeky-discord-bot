@@ -112,7 +112,7 @@ var cmcs_2 = [
     'Whatever.',
     '...',
     '*kicks* ' + cmcs_face + '.',
-    'eats ' + cmcs_food + '.'
+    'eats ' + randorandomFood + '.'
 ]
 
 const embed = {
