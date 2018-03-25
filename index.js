@@ -79,15 +79,20 @@ var cmcs_1 = [
     'I have new watches everyone!',
     'Hey',
     'Hello',
-    'Roblox is better than Minecraft!',
+    'Roblox is better than Minecraft.',
     'I prefer dogs over cats.',
-    'I prefer cats over dogs.'
+    'I prefer cats over dogs.',
+    'XXL Plyšáci were great.',
+    'Mind using a different command?'
 ]
 
 var cmcs_2 = [
     'I agree!',
     'Meh.',
     'Same.',
+    'Shame.',
+    'Yeah.',
+    'Nope.',
     'Cool.',
     "*deds*",
     'Wait this supposed to be a punch line?',
@@ -102,7 +107,9 @@ var cmcs_2 = [
     " Idon't care.",
     'Whatever.',
     '...',
-    'Not interested.'
+    'Not interested.',
+    'Delet this',
+    '*smiles*'
 ]
 
 const embed = {
