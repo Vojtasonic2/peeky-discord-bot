@@ -83,19 +83,18 @@ var cmcs_1 = [
 
 var cmcs_2 = [
     'I agree!',
-    'Meh',
-    'Same',
-    'Cool',
+    'Meh.',
+    'Same.',
+    'Cool.',
     "*deds*",
     'Wait this supposed to be a punch line?',
     '<:ok_hand_down:426840561450745868>',
     'lol',
     "Just don't eat me.",
     "That's deep.",
-    'Woah',
-    'Rawr!'
-    'Hi',
-    'Hello'
+    'Woah.',
+    'Hi.',
+    'Hello.'
 ]
 
 const embed = {
