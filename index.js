@@ -161,6 +161,10 @@ const embed = {
         "value": "Makes Peeky reply to your question."
       },
       {
+        "name": "**/GetEmoji** *<Your Custom Emojis>*",
+        "value": "Peeky will show the IDs of your emojis."
+      },
+      {
         "name": "**/Highfive <@user>**",
         "value": "Gives someone a highfive."
       },
@@ -296,6 +300,13 @@ bot.on('message', (message) => { //Highfive
         message.channel.sendMessage(message.author + '🙏' + message.mentions.members.first());
         console.log('The Highfive command has been executed. Executor: ' + message.author.tag)
   }
+});
+
+bot.on('message', (message) => { //GetEmoji
+    if(message.content.startsWith("/GetEmoji ")){
+       message.reply('`' + message.content.replace('/GetEmoji ','') + '`')
+       console.log('The GetEmoji command has been executed. Executor: ' + message.author.tag)
+    }
 });
 
 bot.on('message', (message) => { //Support
