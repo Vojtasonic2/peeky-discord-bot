@@ -72,7 +72,7 @@ var cmcs_1 = [
     'How are you?',
     "I'm a robot and i will kill you!",
     'MEE6 is better.',
-    "I'm hungry."
+    "I'm hungry.",
 ]
 
 var cmcs_2 = [
@@ -81,7 +81,9 @@ var cmcs_2 = [
     "*deds*",
     'I wanna play Impact.',
     'Wait this supposed to be a punch line?',
-    '<:ok_hand_down:426840561450745868>'
+    '<:ok_hand_down:426840561450745868>',
+    'I have new watches',
+    'lol'
 ]
 
 const embed = {
@@ -160,7 +162,7 @@ const embed = {
 
 var globalMessage = '*No Global message has been set yet!*'
 
-bot.on('ready', () => { bot.user.setActivity('Ver 0.8 | /About')} )
+bot.on('ready', () => { bot.user.setActivity('Ver 0.9 | /About')} )
 bot.on('ready', () => { bot.user.setStatus('idle')} )
 console.log('The bot is now running')
 
