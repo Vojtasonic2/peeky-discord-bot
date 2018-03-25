@@ -64,7 +64,8 @@ var cmcs_face = [
     '<:vojtasonic_rblx:427444622235795467>',
     '<:oerwout10_rblx:427097440412237824>',
     '<:peeky:398855238725009418>',
-    '<:over_flexing:426442155062722560>'
+    '<:over_flexing:426442155062722560>',
+    '<:turtle_cute:427096783659728897>'
 ]
 
 var cmcs_1 = [
@@ -72,7 +73,8 @@ var cmcs_1 = [
     'How are you?',
     "I'm a robot and i will kill you!",
     'MEE6 is better.',
-    "I'm hungry."
+    "I'm hungry.",
+    'Life is pain.'
 ]
 
 var cmcs_2 = [
