@@ -74,7 +74,8 @@ var cmcs_1 = [
     "I'm a robot and i will kill you!",
     'MEE6 is better.',
     "I'm hungry.",
-    'Life is pain.'
+    'Life is pain.',
+    'Single every single day 👏'
 ]
 
 var cmcs_2 = [
@@ -85,7 +86,8 @@ var cmcs_2 = [
     'Wait this supposed to be a punch line?',
     '<:ok_hand_down:426840561450745868>',
     'I have new watches everyone!',
-    'lol'
+    'lol',
+    'Doing every single day 👏'
 ]
 
 const embed = {
