@@ -68,15 +68,6 @@ var cmcs_face = [
     '<:turtle_cute:427096783659728897>'
 ]
 
-var cmcs_food = [
-    'steamed hams',
-    'steak',
-    'bread',
-    'donuts',
-    'raw fish',
-    'cooked fish'
-]
-
 var cmcs_1 = [
     'I like turtles.',
     'How are you?',
@@ -111,8 +102,6 @@ var cmcs_2 = [
     " Idon't care.",
     'Whatever.',
     '...',
-    '*kicks* ' + cmcs_face + '.',
-    'eats ' + randorandomFood + '.'
 ]
 
 const embed = {
@@ -272,12 +261,11 @@ bot.on('message', (message) => { //Global (Show)
 
 bot.on('message', (message) => { //Comics
     if(message.content == '/Comics'){
-        var randorandomFace = cmcs_face[Math.floor(Math.random() * cmcs_face.length)];
-        var randorandomFace2 = cmcs_face[Math.floor(Math.random() * cmcs_face.length)];
-        var randorandomFood = cmcs_food[Math.floor(Math.random() * cmcs_food.length)];
+        var randomFace = cmcs_face[Math.floor(Math.random() * cmcs_face.length)];
+        var randomFace2 = cmcs_face[Math.floor(Math.random() * cmcs_face.length)];
         var randomQuote = cmcs_1[Math.floor(Math.random() * cmcs_1.length)];
         var randomAnswer = cmcs_2[Math.floor(Math.random() * cmcs_2.length)];
-        message.channel.send(randorandomFace + ": " + randomQuote + "\n" + randorandomFace2 + ": " + randomAnswer)
+        message.channel.send(randomFace + ": " + randomQuote + "\n" + randomFace + ": " + randomAnswer)
         console.log('The Comics command has been executed. Executor: ' + message.author.tag)
    }
 })
