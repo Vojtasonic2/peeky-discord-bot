@@ -68,6 +68,15 @@ var cmcs_face = [
     '<:turtle_cute:427096783659728897>'
 ]
 
+var cmcs_food = [
+    'steamed hams',
+    'steak',
+    'bread',
+    'donuts,
+    'raw fish',
+    'cooked fish
+]
+
 var cmcs_1 = [
     'I like turtles.',
     'How are you?',
@@ -78,7 +87,10 @@ var cmcs_1 = [
     'I wanna play Impact.',
     'I have new watches everyone!',
     'Hey',
-    'Hello'
+    'Hello',
+    'Roblox is better than Minecraft!',
+    'I prefer dogs over cats.',
+    'I prefer cats over dogs.'
 ]
 
 var cmcs_2 = [
@@ -94,7 +106,13 @@ var cmcs_2 = [
     "That's deep.",
     'Woah.',
     'Hi.',
-    'Hello.'
+    'Hello.',
+    'No u',
+    " Idon't care.",
+    'Whatever.',
+    '...',
+    '*kicks* ' + cmcs_face + '.',
+    'eats ' + cmcs_food + '.'
 ]
 
 const embed = {
@@ -256,6 +274,7 @@ bot.on('message', (message) => { //Comics
     if(message.content == '/Comics'){
         var randorandomFace = cmcs_face[Math.floor(Math.random() * cmcs_face.length)];
         var randorandomFace2 = cmcs_face[Math.floor(Math.random() * cmcs_face.length)];
+        var randorandomFood = cmcs_food[Math.floor(Math.random() * cmcs_food.length)];
         var randomQuote = cmcs_1[Math.floor(Math.random() * cmcs_1.length)];
         var randomAnswer = cmcs_2[Math.floor(Math.random() * cmcs_2.length)];
         message.channel.send(randorandomFace + ": " + randomQuote + "\n" + randorandomFace2 + ": " + randomAnswer)
