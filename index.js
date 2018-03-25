@@ -265,7 +265,7 @@ bot.on('message', (message) => { //Comics
         var randomFace2 = cmcs_face[Math.floor(Math.random() * cmcs_face.length)];
         var randomQuote = cmcs_1[Math.floor(Math.random() * cmcs_1.length)];
         var randomAnswer = cmcs_2[Math.floor(Math.random() * cmcs_2.length)];
-        message.channel.send(randomFace + ": " + randomQuote + "\n" + randomFace + ": " + randomAnswer)
+        message.channel.send(randomFace + ": " + randomQuote + "\n" + randomFace2 + ": " + randomAnswer)
         console.log('The Comics command has been executed. Executor: ' + message.author.tag)
    }
 })
