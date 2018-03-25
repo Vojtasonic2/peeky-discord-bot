@@ -193,7 +193,7 @@ bot.on('message', (message) => { //About
 
 bot.on('message', (message) => { //SupportServer
     if(message.content == '/SupportServer'){
-       message.reply('The Support Server invite has been sent to your Private Messages.')
+       message.reply('The Support Server invite has been sent to your Private Messages. <:peeky:398855238725009418>')
        message.author.sendMessage("Hello! Here is the link that will put you in our Discord server where we can help you with your problem!")
        message.author.sendMessage("https://discord.gg/j4kArRh")
        console.log('The SupportServer command has been executed. Executor: ' + message.author.tag)
@@ -216,7 +216,7 @@ bot.on('message', (message) => { //UserInfo
 
 bot.on('message', (message) => { //Poll
     if(message.content.startsWith("/StartPoll ")){
-       message.reply('You have started a poll!')
+       message.reply('You have started a poll! <:peeky:398855238725009418>')
        message.react('<:bot_approve:416366096053174273')
        message.react('<:bot_deny:416366135223517186')
        console.log('The Poll command has been executed. Executor: ' + message.author.tag)
@@ -228,7 +228,7 @@ bot.on('message', (message) => { //Countdown
         message.reply('You have started a 10 minute countdown!')
         console.log('The Countdown command has been executed. Executor: ' + message.author.tag)
         setTimeout(function (){
-        message.reply('*Your StartCountdown has finished!* **(' + message.content.replace('/StartCountdown ','') + ')**') 
+        message.reply('*Your StartCountdown has finished!* <:peeky:398855238725009418> **(' + message.content.replace('/StartCountdown ','') + ')**') 
       }, 600000);
     }
 });
@@ -236,7 +236,7 @@ bot.on('message', (message) => { //Countdown
 bot.on('message', (message) => { //Global (Set)
   if(message.content.startsWith("/GlobalSet ")){
         globalMessage = '**' + message.author.tag + ':** ' + message.content.replace('/GlobalSet ','')
-        message.reply('You have set the global message!')
+        message.reply('You have set the global message! <:peeky:398855238725009418>')
         console.log('The GlobalSet command has been executed. Executor: ' + message.author.tag)
   }
 });
@@ -286,7 +286,7 @@ bot.on('message', (message) => { //Roll
 bot.on('message', (message) => { //Ask
   if(message.content.startsWith("/Ask ")){
         var randomReply = reply[Math.floor(Math.random() * reply.length)];
-        message.reply("I'd say " + randomReply + '<:peeky:398855238725009418>');
+        message.reply("I'd say " + randomReply + ' <:peeky:398855238725009418>');
         console.log('The Ask command has been executed. Executor: ' + message.author.tag)
   }
 });
