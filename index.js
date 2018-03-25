@@ -75,21 +75,19 @@ var cmcs_1 = [
     'MEE6 is better.',
     "I'm hungry.",
     'Life is pain.',
-    'Single every single day 👏',
-    'Meme 👏'
+    'I wanna play Impact.',
+    'I have new watches everyone!'
 ]
 
 var cmcs_2 = [
     'I agree!',
     'Meh',
+    'Same',
+    'Cool',
     "*deds*",
-    'I wanna play Impact.',
     'Wait this supposed to be a punch line?',
     '<:ok_hand_down:426840561450745868>',
-    'I have new watches everyone!',
     'lol',
-    'Doing every single way 👏',
-    'Review! 👏',
     "Just don't eat me.",
     "That's deep.",
     'Woah',
