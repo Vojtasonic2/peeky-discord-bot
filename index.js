@@ -124,7 +124,7 @@ const embed = {
         "value": "Shows some information about the command executor."
       },
       {
-        "name": "**/P** *<Your Poll Description>*",
+        "name": "**/StartPoll** *<Your Poll Description>*",
         "value": "Starts a Poll."
       },
       {
@@ -185,7 +185,7 @@ bot.on('message', (message) => { //Commands
 
 bot.on('message', (message) => { //About
     if(message.content == '/About'){
-       message.reply('Hello! I am Peeky and I can do all kinds of simple, but very good stuff. To see what I am capable of doing, just type **/Commands**. If you need any assistance with the bot or want to report a bug, be sure to contact **Vojtasonic#5792** or join the Support Server by typing **/SupportServer**.')
+       message.reply('Hello! I am Peeky and I can do all kinds of simple, but very good stuff. To see what I am capable of doing, just type **/Commands**.\nIf you need any assistance with the bot or want to report a bug, be sure to contact **Vojtasonic#5792** or join the Support Server by typing **/SupportServer**.')
        console.log('The About command has been executed. Executor: ' + message.author.tag)
     }
 })
@@ -214,7 +214,7 @@ bot.on('message', (message) => { //UserInfo
 })
 
 bot.on('message', (message) => { //Poll
-    if(message.content.startsWith("/P ")){
+    if(message.content.startsWith("/StartPoll ")){
        message.reply('You have started a poll!')
        message.react('<:bot_approve:416366096053174273')
        message.react('<:bot_deny:416366135223517186')
