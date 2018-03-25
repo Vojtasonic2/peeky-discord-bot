@@ -60,6 +60,30 @@ var reply = [
     "that probably no."
   ]
 
+var cmcs_face = [
+    '<:vojtasonic_rblx:427444622235795467>',
+    '<:oerwout10_rblx:427097440412237824>',
+    '<:peeky:398855238725009418>',
+    '<:over_flexing:426442155062722560>'
+]
+
+var cmcs_1 = [
+    'I like turtles.',
+    'How are you?',
+    "I'm a robot and i will kill you!",
+    'MEE6 is better.',
+    "I'm hungry."
+]
+
+var cmcs_2 = [
+    'I agree!',
+    'Meh',
+    "*deds*",
+    'I wanna play Impact.',
+    'Wait this supposed to be a punch line?',
+    '<:ok_hand_down:426840561450745868>'
+]
+
 const embed = {
     "color": 16098851,
     "author": {
@@ -102,6 +126,10 @@ const embed = {
       {
         "name": "**/GlobalShow**",
         "value": "Shows the global message."
+      },
+      {
+        "name": "**/Comics**",
+        "value": "Creates a small comics."
       },
       {
         "name": "**/DadJoke**",
@@ -205,6 +233,17 @@ bot.on('message', (message) => { //Global (Show)
         message.channel.sendMessage(globalMessage)
         console.log('The GlobalShow command has been executed. Executor: ' + message.author.tag)
   } 
+})
+
+bot.on('message', (message) => { //Comics
+    if(message.content == '/Comics'){
+        var randorandomFace = cmcs_face[Math.floor(Math.random() * cmcs_face.length)];
+        var randorandomFace2 = cmcs_face[Math.floor(Math.random() * cmcs_face.length)];
+        var randomQuote = cmcs_1[Math.floor(Math.random() * cmcs_1.length)];
+        var randomAnswer = cmcs_2[Math.floor(Math.random() * cmcs_2.length)];
+        message.channel.send(randorandomFace + ": " + randomQuote + "\n" + randorandomFace2 + ": " + randomAnswer)
+        console.log('The Comics command has been executed. Executor: ' + message.author.tag)
+   }
 })
 
 bot.on('message', (message) => { //DadJokes
