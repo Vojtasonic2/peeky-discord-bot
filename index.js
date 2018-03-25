@@ -82,7 +82,7 @@ var cmcs_2 = [
     'I wanna play Impact.',
     'Wait this supposed to be a punch line?',
     '<:ok_hand_down:426840561450745868>',
-    'I have new watches @everyone !',
+    'I have new watches everyone!',
     'lol'
 ]
 
