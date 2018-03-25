@@ -73,7 +73,7 @@ var cmcs_food = [
     'steak',
     'bread',
     'donuts',
-    'raw fish'',
+    'raw fish',
     'cooked fish'
 ]
 
