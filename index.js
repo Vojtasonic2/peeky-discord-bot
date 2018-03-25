@@ -76,7 +76,9 @@ var cmcs_1 = [
     "I'm hungry.",
     'Life is pain.',
     'I wanna play Impact.',
-    'I have new watches everyone!'
+    'I have new watches everyone!',
+    'Hey',
+    'Hello'
 ]
 
 var cmcs_2 = [
@@ -92,6 +94,8 @@ var cmcs_2 = [
     "That's deep.",
     'Woah',
     'Rawr!'
+    'Hi',
+    'Hello'
 ]
 
 const embed = {
