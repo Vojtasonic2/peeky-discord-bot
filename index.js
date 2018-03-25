@@ -93,7 +93,7 @@ var cmcs_2 = [
     "Just don't eat me.",
     "That's deep.",
     'Woah',
-    'Rawr!
+    'Rawr!'
 ]
 
 const embed = {
