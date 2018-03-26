@@ -127,7 +127,7 @@ console.log('The bot is now running')
 bot.on('message', (message) => { //Commands
     if(message.content == '/Commands'){
        message.author.sendMessage("Alright, here are my commands, keep in my that my prefixis **/**.\n\n**About**\nTells some stuff about myself!\n**Commands**\nShows my commands again!\n**SupportServer**\nInvites you to my support server!\n**Wikipedia**\nSearches the Wikipedia for you!\n**ServerInfo**\nDisplays some useful stuff about your server!\n**UserInfo**\nTells you something about yourself.\n**StartPoll**\nStarts a poll for you.\n**StartCountdown**\nStarts a 10 minute countdown.\n**GlobalSet**\nSets a global message that can be seen on all the servers with me in it!\n**GlobalShow**\nShows the global message.\n**Comics**\nCreates a comics that's perfect for sitcom laugh track!\n**GoFishing**\nCatches a random fish and tells redirects you to it's Wikipedia page.\n**DadJoke**\nTells *hilarious* dad joke.\n**Fml**\nWanna hear an FML story?\n**Roll**\nRolls a number between 1 and 6.\n**Ask**\nAsk me anything! Don't be shy!\n**GetEmoji**\nShows you the id for your custom emojis!\n**Highfive**\nGives someone a highfive!\n**Support**\nSupports the bot!");
-       message.reply('The Command list has been sent to your Private Messages.')
+       message.reply('The Command list has been sent to your Direct Messages.')
        console.log('The Commands command has been executed. Executor: ' + message.author.tag)
    }
 })
@@ -141,9 +141,8 @@ bot.on('message', (message) => { //About
 
 bot.on('message', (message) => { //SupportServer
     if(message.content == '/SupportServer'){
-       message.reply('The Support Server invite has been sent to your Private Messages.')
-       message.author.sendMessage("Hello! Here is the link that will put you in our Discord server where we can help you with your problem!")
-       message.author.sendMessage("https://discord.gg/j4kArRh")
+       message.reply('The Support Server invite has been sent to your Direct Messages.')
+       message.author.sendMessage("Hello! Here is the link that will put you in our Discord server where we can help you with your problem!\nhttps://discord.gg/j4kArRh")
        console.log('The SupportServer command has been executed. Executor: ' + message.author.tag)
    }
 })
@@ -270,10 +269,8 @@ bot.on('message', (message) => { //GetEmoji
 
 bot.on('message', (message) => { //Support
     if(message.content == '/Support'){
-       message.reply('The Support links have been sent to your Private Messages.')
-       message.author.sendMessage("**Thank you for choosing to support the bot!**")
-       message.author.sendMessage("**VOTE:** `https://discordbots.org/bot/415259002310623232` (Free)")
-       message.author.sendMessage("**PLEDGE:** `https://www.patreon.com/vojtasonic` (Paid)")
+       message.reply('The Support links have been sent to your Direct Messages.')
+       message.author.sendMessage("Thank you for choosing to support the bot!\n\n**VOTE:** *https://discordbots.org/bot/415259002310623232* (Free)\n**PLEDGE:** *https://www.patreon.com/vojtasonic* (Paid)")
        console.log('The Support command has been executed. Executor: ' + message.author.tag)
    }
 })
