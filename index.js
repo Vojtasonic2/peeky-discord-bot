@@ -120,7 +120,7 @@ console.log('The bot is now running')
 
 bot.on('message', (message) => { //Commands
     if(message.content == '/Commands'){
-       message.channel.send("Alright, here are my commands!\n\n**About**\nwill make me introduce myself!\n**Commands**\nwill show my comm again!\n**SupportServer**\nwill make me invite you to my support server!\n**Wikipedia**\nwill search the Wikipedia for you!\n**ServerInfo**\nwill make me display some useful stuff about your server!\n**UserInfo**\nwill make me tell you something about yourself.\n**StartPolls**\nwill make me create a poll for you.\n**StartCountdown**\nwill make me remind you of something in 10 minutes.\n**GlobalSet**\nwill set a global message that can be seen on all the servers with me in it!\n**GlobalShow**\nwill show the global message.\n**Comics**\ncreates a comics that's perfect for sitcom laugh track!\n**DadJoke**\nwill force me to say a *hilarious* dad joke.\n**Fml**\nwanna hear an FML story?\n**Roll**\nI will roll a 6 sided dice.\n**Ask**\nask me anything! Don't be shy!\n**GetEmoji**\nI will show you the id for your custom emojis!\n**Highfive**\ngives someone a highfive!\n**Support**\nwill support the bot!");
+       message.channel.send("Alright, here are my commands, keep in my that my prefixis **/**!\n\n**About**\nitells some stuff about myself!\n**Commands**\nshows my commands again!\n**SupportServer**\ninvites you to my support server!\n**Wikipedia**\nwill search the Wikipedia for you!\n**ServerInfo**\ndisplays some useful stuff about your server!\n**UserInfo**\ntells you something about yourself.\n**StartPolls**\nstarts a poll for you.\n**StartCountdown**\nstarts a 10 minute countdown.\n**GlobalSet**\nsets a global message that can be seen on all the servers with me in it!\n**GlobalShow**\nshows the global message.\n**Comics**\ncreates a comics that's perfect for sitcom laugh track!\n**DadJoke**\ntells *hilarious* dad joke.\n**Fml**\nwanna hear an FML story?\n**Roll**\nrolls a number between 1 and 6.\n**Ask**\nask me anything! Don't be shy!\n**GetEmoji**\nshows you the id for your custom emojis!\n**Highfive**\ngives someone a highfive!\n**Support**\nwill supports the bot!");
        console.log('The Commands command has been executed. Executor: ' + message.author.tag)
    }
 })
@@ -142,8 +142,8 @@ bot.on('message', (message) => { //SupportServer
 })
 
 bot.on('message', (message) => { //Wikipedia
-    if(message.content == '/Wikipedia'){
-       message.reply('Here is a random page of Wikipedia, just for you!\n*https://en.wikipedia.org/wiki/Special:Random*')   
+    if(message.content.startsWith('/Wikipedia ')){
+       message.reply("Here's the Wikipedia page!" + 'https://en.wikipedia.org/wiki' + message.content.replace('/Wikipedia ','/'))   
        console.log('The Wikipedia command has been executed. Executor: ' + message.author.tag)
     }
 })
