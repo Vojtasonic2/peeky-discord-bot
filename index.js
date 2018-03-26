@@ -112,6 +112,11 @@ var cmcs_2 = [
     '*smiles*'
 ]
 
+var fishing_fish = [
+    'You caught a **Sinarapan (1/2)**!\n\nThis fish grows up to 2.5 centimeters long. It is transparent with a few dark spots and black eyes.\n\n**Wikipedia:** https://en.wikipedia.org/wiki/Sinarapan',
+    'You caught a **Archerfish (2/2)**!\n\nThis fish can shoot insects above water in a small distance.\n\n**Wikipedia:** https://en.wikipedia.org/wiki/Archerfish'
+]
+
 var globalMessage = '*No Global message has been set yet!*'
 
 bot.on('ready', () => { bot.user.setActivity('Ver 1.0 | /About')} )
@@ -120,7 +125,7 @@ console.log('The bot is now running')
 
 bot.on('message', (message) => { //Commands
     if(message.content == '/Commands'){
-       message.channel.send("Alright, here are my commands, keep in my that my prefixis **/**!\n\n**About**\nitells some stuff about myself!\n**Commands**\nshows my commands again!\n**SupportServer**\ninvites you to my support server!\n**Wikipedia**\nwill search the Wikipedia for you!\n**ServerInfo**\ndisplays some useful stuff about your server!\n**UserInfo**\ntells you something about yourself.\n**StartPolls**\nstarts a poll for you.\n**StartCountdown**\nstarts a 10 minute countdown.\n**GlobalSet**\nsets a global message that can be seen on all the servers with me in it!\n**GlobalShow**\nshows the global message.\n**Comics**\ncreates a comics that's perfect for sitcom laugh track!\n**DadJoke**\ntells *hilarious* dad joke.\n**Fml**\nwanna hear an FML story?\n**Roll**\nrolls a number between 1 and 6.\n**Ask**\nask me anything! Don't be shy!\n**GetEmoji**\nshows you the id for your custom emojis!\n**Highfive**\ngives someone a highfive!\n**Support**\nwill supports the bot!");
+       message.channel.send("Alright, here are my commands, keep in my that my prefixis **/**!\n\n**About**\nTells some stuff about myself!\n**Commands**\nShows my commands again!\n**SupportServer**\nInvites you to my support server!\n**Wikipedia**\nSearches the Wikipedia for you!\n**ServerInfo**\nDisplays some useful stuff about your server!\n**UserInfo**\nTells you something about yourself.\n**StartPolls**\nStarts a poll for you.\n**StartCountdown**\nStarts a 10 minute countdown.\n**GlobalSet**\nSets a global message that can be seen on all the servers with me in it!\n**GlobalShow**\nShows the global message.\n**Comics**\nCreates a comics that's perfect for sitcom laugh track!\n**Gofishing**\nCatches a random fish and tells redirects you to it's Wikipedia page.\n**DadJoke**\nTells *hilarious* dad joke.\n**Fml**\nWanna hear an FML story?\n**Roll**\nRolls a number between 1 and 6.\n**Ask**\nAsk me anything! Don't be shy!\n**GetEmoji**\nShows you the id for your custom emojis!\n**Highfive**\nGives someone a highfive!\n**Support**\nWill supports the bot!");
        console.log('The Commands command has been executed. Executor: ' + message.author.tag)
    }
 })
@@ -213,6 +218,14 @@ bot.on('message', (message) => { //DadJokes
         message.reply(randomAnswer);
         console.log('The DadJoke command has been executed. Executor: ' + message.author.tag)
     }
+})
+
+bot.on('message', (message) => { //GoFishing
+    if(message.content == '/GoFishing'){
+        var fishing_caught = fishing_fish[Math.floor(Math.random() * fishing_fish.length)];
+        message.channel.send('Woah! ' + fishing_caught)
+        console.log('The GoFishing command has been executed. Executor: ' + message.author.tag)
+   }
 })
 
 bot.on('message', (message) => { //FML
