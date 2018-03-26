@@ -158,7 +158,7 @@ bot.on('message', (message) => { //SupportServer
 
 bot.on('message', (message) => { //Wikipedia
     if(message.content.startsWith('/Wikipedia ')){
-       message.reply("Here's the Wikipedia page! " + 'https://en.wikipedia.org/wiki' + message.content.replace('/Wikipedia ','/') + '\n(Be sure to use **_** instead of spaces.)')   
+       message.reply("Here's the Wikipedia page! " + 'https://en.wikipedia.org/wiki' + message.content.replace('/Wikipedia ','/') + '\n(Be sure to use the **_** instead of spaces when using multiple words.)')   
        console.log('The Wikipedia command has been executed. Executor: ' + message.author.tag)
     }
 })
