@@ -112,84 +112,6 @@ var cmcs_2 = [
     '*smiles*'
 ]
 
-const embed = {
-    "color": 16098851,
-    "author": {
-      "name": "Peeky's Commands",
-      "icon_url": "https://cdn.discordapp.com/attachments/252372183756570625/416470262335406100/icon.png"
-    },
-    "fields": [
-      {
-        "name": "**/About**",
-        "value": "Makes Peeky introduce himself."
-      },
-      {
-        "name": "**/Commands**",
-        "value": "Shows the command list upon execution."
-      },
-      {
-        "name": "**/SupportServer**",
-        "value": "Sends the Support Server invite into Executioner's DMs."
-      },
-      {
-        "name": "**/ServerInfo**",
-        "value": "Shows the information about the server."
-      },
-      {
-        "name": "**/UserInfo**",
-        "value": "Shows some information about the command executor."
-      },
-      {
-        "name": "**/StartPoll** *<Your Poll Description>*",
-        "value": "Starts a Poll."
-      },
-      {
-        "name": "**/StartCountdown** *<Your Countdown Description>*",
-        "value": "Starts a 10 minute Countdown."
-      },
-      {
-        "name": "**/GlobalSet** *<Your Global Message>*",
-        "value": "Sets a global message that can be seen on all servers the bot is in."
-      },
-      {
-        "name": "**/GlobalShow**",
-        "value": "Shows the global message."
-      },
-      {
-        "name": "**/Comics**",
-        "value": "Creates a small comics."
-      },
-      {
-        "name": "**/DadJoke**",
-        "value": "Makes Peeky say a random and hilarious dad joke."
-      },
-      {
-        "name": "**/Fml**",
-        "value": "Makes Peeky say an Fml story."
-      },
-      {
-        "name": "**/Roll**",
-        "value": "Rolls a random number between 1 and 6."
-      },
-      {
-        "name": "**/Ask** *<Your Question>*",
-        "value": "Makes Peeky reply to your question."
-      },
-      {
-        "name": "**/GetEmoji** *<Your Custom Emojis>*",
-        "value": "Peeky will show the IDs of your emojis."
-      },
-      {
-        "name": "**/Highfive <@user>**",
-        "value": "Gives someone a highfive."
-      },
-      {
-        "name": "**/Support**",
-        "value": "Sends the Support links into Executioner's DMs."
-      }
-    ]
-  };
-
 var globalMessage = '*No Global message has been set yet!*'
 
 bot.on('ready', () => { bot.user.setActivity('Ver 0.9 | /About')} )
@@ -198,7 +120,7 @@ console.log('The bot is now running')
 
 bot.on('message', (message) => { //Commands
     if(message.content == '/Commands'){
-       message.channel.send({ embed });
+       message.channel.send("Alright, here are my commands!\n\n**About** will make me introduce myself!\n**Commands** will show my comm again!\n**SupportServer** will make me invite you to my support server!\n**ServerInfo** will make me display some useful stuff about your server!\n**UserInfo** will make me tell you something about yourselg.\n**StartPolls** will make me create a poll for you.\n**StartCountdown** will make me remind you of something in 10 minutes.\n**GlobalSet** will set a global message that can be seen on all the servers with me in it!\n**GlobalShow** will show the global message.\n**DadJoke** will force me to say a *hilarious* dad joke.\n**Fml** wanna hear an FML story?\n**Roll** I will roll a 6 sided dice.\n**Ask** ask me something! Don't be shy!\n**GetEmoji** I will show you the id for your custom emojis!\n**Highfive** gives someone a highfive!\n**Support*,* will support the bot!");ands
        console.log('The Commands command has been executed. Executor: ' + message.author.tag)
    }
 })
