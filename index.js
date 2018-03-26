@@ -267,6 +267,13 @@ bot.on('message', (message) => { //Highfive
   }
 });
 
+bot.on('message', (message) => { //Kiss
+  if(message.content.startsWith("/Kiss ")){
+        message.channel.sendMessage(message.author + ' 💋 ' + message.mentions.members.first());
+        console.log('The Kiss command has been executed. Executor: ' + message.author.tag)
+  }
+});
+
 bot.on('message', (message) => { //GetEmoji
     if(message.content.startsWith("/GetEmoji ")){
        message.reply('`' + message.content.replace('/GetEmoji ','') + '`')
