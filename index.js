@@ -65,7 +65,12 @@ var cmcs_face = [
     '<:oerwout10_rblx:427097440412237824>',
     '<:peeky:398855238725009418>',
     '<:over_flexing:426442155062722560>',
-    '<:turtle_cute:427096783659728897>'
+    '<:turtle_cute:427096783659728897>',
+    '🐸',
+    '😎',
+    '<:threathing:402597935184871426>',
+    '<:brainless:426443591502528527>',
+    '<:the_owner:376842538071359488>'
 ]
 
 var cmcs_1 = [
@@ -83,7 +88,9 @@ var cmcs_1 = [
     'I prefer dogs over cats.',
     'I prefer cats over dogs.',
     'XXL Plyšáci were great.',
-    'Mind using a different command?'
+    'Mind using a different command?',
+    'Get out of my swamp!',
+    'I have feelings for you...'
 ]
 
 var cmcs_2 = [
