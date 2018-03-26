@@ -120,7 +120,7 @@ console.log('The bot is now running')
 
 bot.on('message', (message) => { //Commands
     if(message.content == '/Commands'){
-       message.channel.send("Alright, here are my commands!\n\n**About** will make me introduce myself!\n**Commands** will show my comm again!\n**SupportServer** will make me invite you to my support server!\n**Wikipedia** will give you a random page of Wikipedia!\n**ServerInfo** will make me display some useful stuff about your server!\n**UserInfo** will make me tell you something about yourselg.\n**StartPolls** will make me create a poll for you.\n**StartCountdown** will make me remind you of something in 10 minutes.\n**GlobalSet** will set a global message that can be seen on all the servers with me in it!\n**GlobalShow** will show the global message.\n**DadJoke** will force me to say a *hilarious* dad joke.\n**Fml** wanna hear an FML story?\n**Roll** I will roll a 6 sided dice.\n**Ask** ask me something! Don't be shy!\n**GetEmoji** I will show you the id for your custom emojis!\n**Highfive** gives someone a highfive!\n**Support** will support the bot!");
+       message.channel.send("Alright, here are my commands!\n\n**About** will make me introduce myself!\n**Commands** will show my comm again!\n**SupportServer** will make me invite you to my support server!\n**Wikipedia** will give you a random page of Wikipedia!\n**ServerInfo** will make me display some useful stuff about your server!\n**UserInfo** will make me tell you something about yourselg.\n**StartPolls** will make me create a poll for you.\n**StartCountdown** will make me remind you of something in 10 minutes.\n**GlobalSet** will set a global message that can be seen on all the servers with me in it!\n**GlobalShow** will show the global message.\n**Comics** creates a comics that's perfect for sitcom laugh track!\n**DadJoke** will force me to say a *hilarious* dad joke.\n**Fml** wanna hear an FML story?\n**Roll** I will roll a 6 sided dice.\n**Ask** ask me something! Don't be shy!\n**GetEmoji** I will show you the id for your custom emojis!\n**Highfive** gives someone a highfive!\n**Support** will support the bot!");
        console.log('The Commands command has been executed. Executor: ' + message.author.tag)
    }
 })
@@ -143,7 +143,7 @@ bot.on('message', (message) => { //SupportServer
 
 bot.on('message', (message) => { //Wikipedia
     if(message.content == '/Wikipedia'){
-       message.reply('Here is a random page of Wikipedia, just for you!\nhttps://en.wikipedia.org/wiki/Special:Random')   
+       message.reply('Here is a random page of Wikipedia, just for you!\n*https://en.wikipedia.org/wiki/Special:Random*')   
        console.log('The Wikipedia command has been executed. Executor: ' + message.author.tag)
     }
 })
