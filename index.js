@@ -141,17 +141,17 @@ bot.on('message', (message) => { //SupportServer
    }
 })
 
+bot.on('message', (message) => { //Wikipedia
+    if(message.content == '/Wikipedia'){
+       message.reply('Here is a random page of Wikipedia, just for you!\nhttps://en.wikipedia.org/wiki/Special:Random')   
+       console.log('The Wikipedia command has been executed. Executor: ' + message.author.tag)
+    }
+})
+
 bot.on('message', (message) => { //ServerInfo
     if(message.content == '/ServerInfo'){
        message.reply('This server is called **' + message.guild.name + '** and has ' + '**' + message.guild.memberCount + '** members.')   
        console.log('The ServerInfo command has been executed. Executor: ' + message.author.tag)
-    }
-})
-
-bot.on('message', (message) => { //Wikipedia
-    if(message.content == '/Wikipedia'){
-       message.reply('https://en.wikipedia.org/wiki/Special:Random')   
-       console.log('The Wikipedia command has been executed. Executor: ' + message.author.tag)
     }
 })
 
