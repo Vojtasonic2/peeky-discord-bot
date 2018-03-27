@@ -320,7 +320,7 @@ bot.on('message', (message) => { //GetEmoji
 bot.on('message', (message) => { //Support
     if(message.content == '/Support'){
        message.reply('The Support links have been sent to your Direct Messages.')
-       message.author.sendMessage("Thank you for choosing to support the bot!\n\n**VOTE:** *https://discordbots.org/bot/415259002310623232* (Free)\n**PLEDGE:** *https://www.patreon.com/vojtasonic* (Paid)")
+       message.author.sendMessage("Thank you for choosing to support the bot!\n\n**Vote:** *https://discordbots.org/bot/415259002310623232* (Free)\n**Pledge:** *https://www.patreon.com/vojtasonic* (Paid)")
        console.log('The Support command has been executed. Executor: ' + message.author.tag)
    }
 })
