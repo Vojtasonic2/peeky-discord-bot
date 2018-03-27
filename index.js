@@ -131,7 +131,10 @@ var fishing_fish = [
     'You caught a **Four-eyed fish** (Ranked #9)!\n\n*No description given yet.*\n\n**Wikipedia:** https://en.wikipedia.org/wiki/Four-eyed_fish',
     'You caught a **Piranha** (Ranked #10)!\n\nDepending on the exact species, most piranhas grow to between 12 and 35 cm (5–14 in) long.\n\n**Wikipedia:** https://en.wikipedia.org/wiki/Piranha',
     'You caught a **Parrotfish** (Ranked #11)!\n\n*No description given yet.*\n\n**Wikipedia:** https://en.wikipedia.org/wiki/Parrotfish',
-    'You caught a **Box Jellyfish** (Ranked #12)!\n\n*No description given yet.*\n\n**Wikipedia:** https://en.wikipedia.org/wiki/Box_Jellyfish'
+    'You caught a **Box Jellyfish** (Ranked #12)!\n\n*No description given yet.*\n\n**Wikipedia:** https://en.wikipedia.org/wiki/Box_Jellyfish',
+    'You caught a **Cod** (Ranked #13)!\n\n*No description given yet.*\n\n**Wikipedia:** https://en.wikipedia.org/wiki/Cod',
+    'You caught a **Swordfish** (Ranked #14)!\n\n*No description given yet.*\n\n**Wikipedia:** https://en.wikipedia.org/wiki/Swordfish',
+    'You caught a **Pacu** (Ranked #15)!\n\n*No description given yet.*\n\n**Wikipedia:** https://en.wikipedia.org/wiki/Pacu'
 ]
 
 var RPS_all = [
@@ -247,7 +250,7 @@ bot.on('message', (message) => { //DadJokes
 bot.on('message', (message) => { //GoFishing
     if(message.content == '/GoFishing'){
         var fishing_caught = fishing_fish[Math.floor(Math.random() * fishing_fish.length)];
-        message.channel.send('Woah! ' + fishing_caught + '\n(Type **/CaughtFishes** to see how many fishes have been caught.')
+        message.channel.send('Woah! ' + fishing_caught + '\n(Type **/CaughtFishes** to see how many fishes have been caught.)')
         fishing_amount = fishing_amount + 1
         console.log('The GoFishing command has been executed. Executor: ' + message.author.tag)
    }
