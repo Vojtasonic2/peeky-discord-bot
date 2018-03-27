@@ -192,7 +192,7 @@ bot.on('message', (message) => { //Wikipedia
 
 bot.on('message', (message) => { //RandomWikipedia
     if(message.content == '/RandomWikipedia'){
-       message.reply("Here's a random Wikipedia page!\nhttps://en.wikipedia.org/wiki/Special:Random")   
+       message.reply("Here's a random Wikipedia page!\n*https://en.wikipedia.org/wiki/Special:Random*")   
        console.log('The RandomWikipedia command has been executed. Executor: ' + message.author.tag)
     }
 })
