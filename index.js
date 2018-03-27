@@ -246,7 +246,7 @@ bot.on('message', (message) => { //GoFishing
     if(message.content == '/GoFishing'){
         var fishing_caught = fishing_fish[Math.floor(Math.random() * fishing_fish.length)];
         message.channel.send('Woah! ' + fishing_caught)
-        fishing_caught =+ 1
+        fishing_caught += 1
         console.log('The GoFishing command has been executed. Executor: ' + message.author.tag)
    }
 })
