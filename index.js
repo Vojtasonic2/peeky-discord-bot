@@ -162,7 +162,7 @@ console.log('The bot is now running')
 
 bot.on('message', (message) => { //Commands
     if(message.content == '/Commands'){
-       message.author.sendMessage("Alright, here are my commands, keep in my that my prefix is **/**.\n\n**About**\nTells some stuff about myself!\n**Commands**\nShows my commands again!\n**SupportServer**\nInvites you to my support server!\n**Wikipedia**\nSearches the Wikipedia for you!\n**ServerInfo**\nDisplays some useful stuff about your server!\n**UserInfo**\nTells you something about yourself.\n**StartPoll**\nStarts a poll for you.\n**StartCountdown**\nStarts a 10 minute countdown.\n**GlobalSet**\nSets a global message that can be seen on all the servers with me in it!\n**GlobalShow**\nShows the global message.\n**Comics**\nCreates a comics that's perfect for sitcom laugh track!\n**GoFishing**\nCatches a random fish and redirects you to it's Wikipedia page.\n**FishesCaught**\nShows how many fishes have been caught in total.\n**DadJoke**\nTells *hilarious* dad joke.\n**Fml**\nWanna hear an FML story?\n**Roll**\nRolls a number between 1 and 6.\n**Ask**\nAsk me anything! Don't be shy!\n**GetEmoji**\nShows you the id for your custom emojis!\n**Highfive**\nGives someone a highfive!\n**RockPaperScissors**\nStarts a quick game of Rock, paper and scissors!\n**Support**\nSupports the bot!");
+       message.author.sendMessage("Alright, here are my commands, keep in my that my prefix is **/**.\n\n**About**\nTells some stuff about myself!\n**Commands**\nShows my commands again!\n**SupportServer**\nInvites you to my support server!\n**Wikipedia**\nSearches the Wikipedia for you!\n**RandomWikipedia**\nSends a random Wikipedia page!\n**ServerInfo**\nDisplays some useful stuff about your server!\n**UserInfo**\nTells you something about yourself.\n**StartPoll**\nStarts a poll for you.\n**StartCountdown**\nStarts a 10 minute countdown.\n**GlobalSet**\nSets a global message that can be seen on all the servers with me in it!\n**GlobalShow**\nShows the global message.\n**Comics**\nCreates a comics that's perfect for sitcom laugh track!\n**GoFishing**\nCatches a random fish and redirects you to it's Wikipedia page.\n**FishesCaught**\nShows how many fishes have been caught in total.\n**DadJoke**\nTells *hilarious* dad joke.\n**Fml**\nWanna hear an FML story?\n**Roll**\nRolls a number between 1 and 6.\n**Ask**\nAsk me anything! Don't be shy!\n**GetEmoji**\nShows you the id for your custom emojis!\n**Highfive**\nGives someone a highfive!\n**RockPaperScissors**\nStarts a quick game of Rock, paper and scissors!\n**SupportBot**\nSupports the bot!");
        message.reply('The Command list has been sent to your Direct Messages.')
        console.log('The Commands command has been executed. Executor: ' + message.author.tag)
    }
@@ -187,6 +187,13 @@ bot.on('message', (message) => { //Wikipedia
     if(message.content.startsWith('/Wikipedia ')){
        message.reply("Here's the Wikipedia page! " + 'https://en.wikipedia.org/wiki' + message.content.replace('/Wikipedia ','/') + '\n(Be sure to use the **_** instead of spaces when using multiple words.)')   
        console.log('The Wikipedia command has been executed. Executor: ' + message.author.tag)
+    }
+})
+
+bot.on('message', (message) => { //RandomWikipedia
+    if(message.content.startsWith('/RandomWikipedia ')){
+       message.reply("Here's a random Wikipedia page!\nhttps://en.wikipedia.org/wiki/Special:Random')   
+       console.log('The RandomWikipedia command has been executed. Executor: ' + message.author.tag)
     }
 })
 
@@ -321,11 +328,11 @@ bot.on('message', (message) => { //GetEmoji
     }
 });
 
-bot.on('message', (message) => { //Support
-    if(message.content == '/Support'){
+bot.on('message', (message) => { //SupportBot
+    if(message.content == '/SupportBotSupportBot'){
        message.reply('The Support links have been sent to your Direct Messages.')
        message.author.sendMessage("Thank you for choosing to support the bot!\n\n**Vote:** *https://discordbots.org/bot/415259002310623232* (Free)\n**Pledge:** *https://www.patreon.com/vojtasonic* (Paid)")
-       console.log('The Support command has been executed. Executor: ' + message.author.tag)
+       console.log('The SupportBot command has been executed. Executor: ' + message.author.tag)
    }
 })
 
