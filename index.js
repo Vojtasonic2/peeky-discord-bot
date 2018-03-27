@@ -90,7 +90,8 @@ var cmcs_1 = [
     'XXL Plyšáci were great.',
     'Mind using a different command?',
     'Get out of my swamp!',
-    'I have feelings for you...'
+    'I have feelings for you...',
+    'Peeky is just a spam bot!'
 ]
 
 var cmcs_2 = [
@@ -169,7 +170,7 @@ bot.on('message', (message) => { //Commands
 
 bot.on('message', (message) => { //About
     if(message.content == '/About'){
-       message.reply('Hello! I am Peeky and I can do all kinds of simple, but very good stuff. To see what I am capable of doing, just type **/Commands**.\nIf you need any assistance with the bot or want to report a bug, be sure to contact **Vojtasonic#5792** or join the Support Server by typing **/SupportServer**.')
+       message.reply('Hello! I am Peeky and I can do all kinds of great stuff! To see what I am capable of doing, just type **/Commands**.\nIf you need any assistance with the bot or want to report a bug, be sure to contact **Vojtasonic#5792** or join the Support Server by typing **/SupportServer**.')
        console.log('The About command has been executed. Executor: ' + message.author.tag)
     }
 })
