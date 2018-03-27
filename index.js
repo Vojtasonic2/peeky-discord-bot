@@ -244,7 +244,7 @@ bot.on('message', (message) => { //DadJokes
 bot.on('message', (message) => { //GoFishing
     if(message.content == '/GoFishing'){
         var fishing_caught = fishing_fish[Math.floor(Math.random() * fishing_fish.length)];
-        message.channel.send('Woah! ' + fishing_caught)
+        message.channel.send('Woah! ' + fishing_caught + '\n(Type **/CaughtFishes** to see how many fishes have been caught.')
         fishing_amount = fishing_amount + 1
         console.log('The GoFishing command has been executed. Executor: ' + message.author.tag)
    }
