@@ -199,14 +199,14 @@ bot.on('message', (message) => { //RandomWikipedia
 
 bot.on('message', (message) => { //ServerInfo
     if(message.content == '/ServerInfo'){
-       message.reply('This server is called **' + message.guild.name + '** and has ' + '**' + message.guild.memberCount + '** members.')   
+       message.reply('**Server Name:**' + message.guild.name + '\n**ID:**' + message.guild.id + '\n**Members:**' + message.guild.memberCount)   
        console.log('The ServerInfo command has been executed. Executor: ' + message.author.tag)
     }
 })
 
 bot.on('message', (message) => { //UserInfo
     if(message.content == '/UserInfo'){
-       message.channel.sendMessage('Your username is **' + message.author.tag + '** and your ID is **' + message.author.id + '**.')
+       message.channel.sendMessage('**Username:**' + message.author.tag + '\n**ID:**' + message.author.id)
        console.log('The UserInfo command has been executed. Executor: ' + message.author.tag)
     }
 })
