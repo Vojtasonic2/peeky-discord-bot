@@ -131,6 +131,8 @@ var fishing_fish = [
     'You caught a **Four-eyed fish** (Ranked #9)!\n\n*No description given yet.*\n\n**Wikipedia:** https://en.wikipedia.org/wiki/Four-eyed_fish'
 ]
 
+var fishing_caught = 0
+
 var RPS_all = [
     '✋',
     '✌',
@@ -145,7 +147,7 @@ console.log('The bot is now running')
 
 bot.on('message', (message) => { //Commands
     if(message.content == '/Commands'){
-       message.author.sendMessage("Alright, here are my commands, keep in my that my prefix is **/**.\n\n**About**\nTells some stuff about myself!\n**Commands**\nShows my commands again!\n**SupportServer**\nInvites you to my support server!\n**Wikipedia**\nSearches the Wikipedia for you!\n**ServerInfo**\nDisplays some useful stuff about your server!\n**UserInfo**\nTells you something about yourself.\n**StartPoll**\nStarts a poll for you.\n**StartCountdown**\nStarts a 10 minute countdown.\n**GlobalSet**\nSets a global message that can be seen on all the servers with me in it!\n**GlobalShow**\nShows the global message.\n**Comics**\nCreates a comics that's perfect for sitcom laugh track!\n**GoFishing**\nCatches a random fish and tells redirects you to it's Wikipedia page.\n**DadJoke**\nTells *hilarious* dad joke.\n**Fml**\nWanna hear an FML story?\n**Roll**\nRolls a number between 1 and 6.\n**Ask**\nAsk me anything! Don't be shy!\n**GetEmoji**\nShows you the id for your custom emojis!\n**Highfive**\nGives someone a highfive!\n\n**RockPaperScissors**\nStarts a quick game on Rock, paper and scissors!\n**Support**\nSupports the bot!");
+       message.author.sendMessage("Alright, here are my commands, keep in my that my prefix is **/**.\n\n**About**\nTells some stuff about myself!\n**Commands**\nShows my commands again!\n**SupportServer**\nInvites you to my support server!\n**Wikipedia**\nSearches the Wikipedia for you!\n**ServerInfo**\nDisplays some useful stuff about your server!\n**UserInfo**\nTells you something about yourself.\n**StartPoll**\nStarts a poll for you.\n**StartCountdown**\nStarts a 10 minute countdown.\n**GlobalSet**\nSets a global message that can be seen on all the servers with me in it!\n**GlobalShow**\nShows the global message.\n**Comics**\nCreates a comics that's perfect for sitcom laugh track!\n**GoFishing**\nCatches a random fish and tells redirects you to it's Wikipedia page.\n**Fishes**\nShows how many fishes have been caught in total.\n**DadJoke**\nTells *hilarious* dad joke.\n**Fml**\nWanna hear an FML story?\n**Roll**\nRolls a number between 1 and 6.\n**Ask**\nAsk me anything! Don't be shy!\n**GetEmoji**\nShows you the id for your custom emojis!\n**Highfive**\nGives someone a highfive!\n**RockPaperScissors**\nStarts a quick game on Rock, paper and scissors!\n**Support**\nSupports the bot!");
        message.reply('The Command list has been sent to your Direct Messages.')
        console.log('The Commands command has been executed. Executor: ' + message.author.tag)
    }
@@ -244,7 +246,16 @@ bot.on('message', (message) => { //GoFishing
     if(message.content == '/GoFishing'){
         var fishing_caught = fishing_fish[Math.floor(Math.random() * fishing_fish.length)];
         message.channel.send('Woah! ' + fishing_caught)
+        fishing_caught + 1
         console.log('The GoFishing command has been executed. Executor: ' + message.author.tag)
+   }
+})
+
+
+bot.on('message', (message) => { //Fishes
+    if(message.content == '/Fishes'){
+        message.channel.send('So far **' + fishing_caught + '** fishes have been caught in total!')
+        console.log('The Fishes command has been executed. Executor: ' + message.author.tag)
    }
 })
 
