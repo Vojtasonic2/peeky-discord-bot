@@ -199,14 +199,14 @@ bot.on('message', (message) => { //CheckGoogle
 
 bot.on('message', (message) => { //ServerInfo
     if(message.content == '/ServerInfo'){
-       message.channel.sendMessage('**Server Name:** ' + message.guild.name + '\n**Owner:** ' + message.guild.owner.displayName + '\n**Members:** ' + message.guild.memberCount + '\n**Role Amount:** ' + message.guild.roles.size)   
+       message.channel.sendMessage('**Server Name:** ' + message.guild.name + '\n**Owner:** ' + message.guild.owner.displayName + '\n**Members:** ' + message.guild.memberCount + '\n**Role Amount:** ' + message.guild.roles.size + '\n**Custom Emojis:** ' + message.guild.emojis.size)   
        console.log('The ServerInfo command has been executed. Executor: ' + message.author.tag)
     }
 })
 
 bot.on('message', (message) => { //UserInfo
     if(message.content == '/UserInfo'){
-       message.channel.sendMessage('**Username:** ' + message.author.tag + '\n**Playing:** ' + message.author.presence.game.name)
+       message.channel.sendMessage('**Username:** ' + message.author.tag + '\n**Playing:** ' + message.author.presence.game.name + '\n**Mode:** ' + message.author.presence.status)
        console.log('The UserInfo command has been executed. Executor: ' + message.author.tag)
     }
 })
