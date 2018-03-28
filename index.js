@@ -211,12 +211,12 @@ bot.on('message', (message) => { //UserInfo
     }
 })
 
-bot.on('message', (message) => { //Poll
+bot.on('message', (message) => { //StartPoll
     if(message.content.startsWith("/StartPoll ")){
        message.reply('You have started a poll!')
        message.react('<:bot_approve:416366096053174273')
        message.react('<:bot_deny:416366135223517186')
-       console.log('The Poll command has been executed. Executor: ' + message.author.tag)
+       console.log('The StartPoll command has been executed. Executor: ' + message.author.tag)
     }
 });
 
