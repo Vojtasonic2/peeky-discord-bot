@@ -156,13 +156,13 @@ var RPS_all = [
 var globalMessage = '*No Global message has been set yet!*'
 var fishing_amount = 0
 
-bot.on('ready', () => { bot.user.setActivity('Ver 1.2 | /About')} )
+bot.on('ready', () => { bot.user.setActivity('Ver 1.3 | /About')} )
 bot.on('ready', () => { bot.user.setStatus('idle')} )
 console.log('The bot is now running')
 
 bot.on('message', (message) => { //Commands
     if(message.content == '/Commands'){
-       message.author.sendMessage("Alright, here are my commands, keep in my that my prefix is **/**.\n\n**About**\nTells some stuff about myself!\n**Commands**\nShows my commands again!\n**SupportServer**\nInvites you to my support server!\n**Wikipedia**\nSearches the Wikipedia for you!\n**RandomWikipedia**\nSends a random Wikipedia page!\n**ServerInfo**\nDisplays some useful stuff about your server!\n**UserInfo**\nTells you something about yourself.\n**StartPoll**\nStarts a poll for you.\n**StartCountdown**\nStarts a 10 minute countdown.\n**GlobalSet**\nSets a global message that can be seen on all the servers with me in it!\n**GlobalShow**\nShows the global message.\n**Comics**\nCreates a comics that's perfect for sitcom laugh track!\n**GoFishing**\nCatches a random fish and redirects you to it's Wikipedia page.\n**FishesCaught**\nShows how many fishes have been caught in total.\n**DadJoke**\nTells *hilarious* dad joke.\n**Fml**\nWanna hear an FML story?\n**Roll**\nRolls a number between 1 and 6.\n**Ask**\nAsk me anything! Don't be shy!\n**GetEmoji**\nShows you the id for your custom emojis!\n**Highfive**\nGives someone a highfive!\n**RockPaperScissors**\nStarts a quick game of Rock, paper and scissors!\n**SupportBot**\nSupports the bot!");
+       message.author.sendMessage("Alright, here are my commands, keep in my that my prefix is **/**.\n\n**About**\nTells some stuff about myself!\n**Commands**\nShows my commands again!\n**SupportServer**\nInvites you to my support server!\n**Wikipedia**\nSearches the Wikipedia for you!\n**CheckGoogle**\nChecks what Google is currently celebrating!\n**ServerInfo**\nDisplays some useful stuff about your server!\n**UserInfo**\nTells you something about yourself.\n**StartPoll**\nStarts a poll for you.\n**StartCountdown**\nStarts a 10 minute countdown.\n**GlobalSet**\nSets a global message that can be seen on all the servers with me in it!\n**GlobalShow**\nShows the global message.\n**Comics**\nCreates a comics that's perfect for sitcom laugh track!\n**GoFishing**\nCatches a random fish and redirects you to it's Wikipedia page.\n**FishesCaught**\nShows how many fishes have been caught in total.\n**DadJoke**\nTells *hilarious* dad joke.\n**Fml**\nWanna hear an FML story?\n**Roll**\nRolls a number between 1 and 6.\n**Ask**\nAsk me anything! Don't be shy!\n**GetEmoji**\nShows you the id for your custom emojis!\n**Highfive**\nGives someone a highfive!\n**RockPaperScissors**\nStarts a quick game of Rock, paper and scissors!\n**SupportBot**\nSupports the bot!");
        message.reply('The Command list has been sent to your Direct Messages.')
        console.log('The Commands command has been executed. Executor: ' + message.author.tag)
    }
@@ -190,23 +190,23 @@ bot.on('message', (message) => { //Wikipedia
     }
 })
 
-bot.on('message', (message) => { //RandomWikipedia
-    if(message.content == '/RandomWikipedia'){
-       message.reply("Here's a random Wikipedia page!\n*https://en.wikipedia.org/wiki/Special:Random*")   
-       console.log('The RandomWikipedia command has been executed. Executor: ' + message.author.tag)
+bot.on('message', (message) => { //CheckGoogle
+    if(message.content == '/CheckGoogle'){
+       message.reply("This is what Google is currently celebrating!\nhttps://www.google.com")   
+       console.log('The CheckGoogle command has been executed. Executor: ' + message.author.tag)
     }
 })
 
 bot.on('message', (message) => { //ServerInfo
     if(message.content == '/ServerInfo'){
-       message.channel.sendMessage('**Server Name:** ' + message.guild.name + '\n**Members:** ' + message.guild.memberCount + '\n**ID:** ' + message.guild.id)   
+       message.channel.sendMessage('**Server Name:** ' + message.guild.name + '\n**Members:** ' + message.guild.memberCount)   
        console.log('The ServerInfo command has been executed. Executor: ' + message.author.tag)
     }
 })
 
 bot.on('message', (message) => { //UserInfo
     if(message.content == '/UserInfo'){
-       message.channel.sendMessage('**Username:** ' + message.author.tag + '\n**ID:** ' + message.author.id)
+       message.channel.sendMessage('**Username:** ' + message.author.tag)
        console.log('The UserInfo command has been executed. Executor: ' + message.author.tag)
     }
 })
