@@ -206,7 +206,7 @@ bot.on('message', (message) => { //ServerInfo
 
 bot.on('message', (message) => { //UserInfo
     if(message.content == '/UserInfo'){
-       message.channel.sendMessage('**Username:** ' + message.author.tag + '\n**Playing:** ' + message.author.presence.game.name + '\n**Mode:** ' + message.author.presence.status)
+       message.channel.sendMessage('**Username:** ' + message.author.tag + '\n**Status:** ' + message.author.presence.status)
        console.log('The UserInfo command has been executed. Executor: ' + message.author.tag)
     }
 })
