@@ -199,7 +199,7 @@ bot.on('message', (message) => { //CheckGoogle
 
 bot.on('message', (message) => { //ServerInfo
     if(message.content == '/ServerInfo'){
-       message.channel.sendMessage('**Server Name:** ' + message.guild.name + '\n**Owner:** ' + message.guild.owner.displayName +  + '\n**Verification Level:** ' + message.guild.verificationLevel + '\n**Members:** ' + message.guild.memberCount + '\n**Role Amount:** ' + message.guild.roles.size + '\n**Custom Emojis:** ' + message.guild.emojis.size + '/100')   
+       message.channel.sendMessage('**Server Name:** ' + message.guild.name + '\n**Owner:** ' + message.guild.owner.displayName + '\n**Verification Level:** ' + message.guild.verificationLevel + '\n**Members:** ' + message.guild.memberCount + '\n**Role Amount:** ' + message.guild.roles.size + '\n**Custom Emojis:** ' + message.guild.emojis.size + '/100')   
        console.log('The ServerInfo command has been executed. Executor: ' + message.author.tag)
     }
 })
