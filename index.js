@@ -149,30 +149,30 @@ var cmcs_2 = [
 ]
 
 var fishing_fish = [
-    'You caught a **Sinarapan** (Ranked #1)!\n\nThis fish grows up to 2.5 centimeters long. It is transparent with a few dark spots and black eyes.\n\n**Wikipedia:** https://en.wikipedia.org/wiki/Sinarapan',
-    'You caught a **Archerfish** (Ranked #2)!\n\nThis fish can shoot insects above water in a small distance.\n\n**Wikipedia:** https://en.wikipedia.org/wiki/Archerfish',
-    'You caught a **Rose Fish** (Ranked #3)!\n\n*No description given yet.*\n\n**Wikipedia:** https://en.wikipedia.org/wiki/Rose_fish',
-    'You caught a **Clownfish**  (Ranked #4)!\n\n*No description given yet.*\n\n**Wikipedia:** https://en.wikipedia.org/wiki/Amphiprioninae',
-    'You caught a **Jellyfish** (Ranked #5)!\n\n*The popular English name **Jellyfish** has been in use since 1796.*\n\n**Wikipedia:** https://en.wikipedia.org/wiki/jellyfish',
-    'You caught a **Grouper** (Ranked #6)!\n\nFemale groupers change their sex to male if no male is available.\n\n**Wikipedia:** https://en.wikipedia.org/wiki/Grouper',
-    'You caught a **Dwarf seahorse** (Ranked #7)!\n\nThe slowest-moving fishes are the sea horses, the Dwarf seahorse attains speed of 5 feet per hour.\n\n**Wikipedia:** https://en.wikipedia.org/wiki/Dwarf_seahorse',
-    'You caught a **Puffer Fish** (Ranked #8)!\n\nThe puffer fish is the most poisonous fish in the world.\n\n**Wikipedia:** https://en.wikipedia.org/wiki/Puffer_fish',
-    'You caught a **Four-eyed fish** (Ranked #9)!\n\n*No description given yet.*\n\n**Wikipedia:** https://en.wikipedia.org/wiki/Four-eyed_fish',
-    'You caught a **Piranha** (Ranked #10)!\n\nDepending on the exact species, most piranhas grow to between 12 and 35 cm long.\n\n**Wikipedia:** https://en.wikipedia.org/wiki/Piranha',
-    'You caught a **Parrotfish** (Ranked #11)!\n\n*No description given yet.*\n\n**Wikipedia:** https://en.wikipedia.org/wiki/Parrotfish',
-    'You caught a **Box Jellyfish** (Ranked #12)!\n\n*No description given yet.*\n\n**Wikipedia:** https://en.wikipedia.org/wiki/Box_Jellyfish',
-    'You caught a **Cod** (Ranked #13)!\n\n*No description given yet.*\n\n**Wikipedia:** https://en.wikipedia.org/wiki/Cod',
-    'You caught a **Swordfish** (Ranked #14)!\n\n*No description given yet.*\n\n**Wikipedia:** https://en.wikipedia.org/wiki/Swordfish',
-    'You caught a **Pacu** (Ranked #15)!\n\n*No description given yet.*\n\n**Wikipedia:** https://en.wikipedia.org/wiki/Pacu',
-    'You caught a **Barracuda** (Ranked #16)!\n\n*No description given yet.*\n\n**Wikipedia:** https://en.wikipedia.org/wiki/Barracuda',
-    'You caught a **Blobfish** (Ranked #17)!\n\n*No description given yet.*\n\n**Wikipedia:** https://en.wikipedia.org/wiki/Blobfish',
-    'You caught a **Tarpon** (Ranked #18)!\n\n*No description given yet.*\n\n**Wikipedia:** https://en.wikipedia.org/wiki/Tarpon',
-    'You caught a **Trout** (Ranked #19)!\n\n*No description given yet.*\n\n**Wikipedia:** https://en.wikipedia.org/wiki/Trout',
-    'You caught a group of **Sardines** (Ranked #20)!\n\nSardines move in enourmous groups.\n\n**Wikipedia:** https://en.wikipedia.org/wiki/sardines',
-    'You caught a **Golden Dorado** (Ranked #21)!\n\n*No description given yet.*\n\n**Wikipedia:** https://en.wikipedia.org/wiki/Salminus_brasiliensis',
-    'You caught a **Southern platyfish** (Ranked #22)!\n\nThe southern platyfish grows to a maximum overall length of 6.0 centimetres.\n\n**Wikipedia:** https://en.wikipedia.org/wiki/Southern_platyfish',
-    'You caught a **Common carp** (Ranked #23)!\n\n*No description given yet.*\n\n**Wikipedia:** https://en.wikipedia.org/wiki/Common_carp',
-    'You caught a **Neon tetra** (Ranked #24)!\n\nThe neon tetra is found in the western and northern Amazon basin in southeastern Colombia, eastern Peru, and western Brazil.\n\n**Wikipedia:** https://en.wikipedia.org/wiki/Neon_tetra'
+    ' caught a **Sinarapan** (Ranked #1)!\n\nThis fish grows up to 2.5 centimeters long. It is transparent with a few dark spots and black eyes.\n\n**Wikipedia:** https://en.wikipedia.org/wiki/Sinarapan',
+    ' caught a **Archerfish** (Ranked #2)!\n\nThis fish can shoot insects above water in a small distance.\n\n**Wikipedia:** https://en.wikipedia.org/wiki/Archerfish',
+    ' caught a **Rose Fish** (Ranked #3)!\n\n*No description given yet.*\n\n**Wikipedia:** https://en.wikipedia.org/wiki/Rose_fish',
+    ' caught a **Clownfish**  (Ranked #4)!\n\n*No description given yet.*\n\n**Wikipedia:** https://en.wikipedia.org/wiki/Amphiprioninae',
+    ' caught a **Jellyfish** (Ranked #5)!\n\n*The popular English name **Jellyfish** has been in use since 1796.*\n\n**Wikipedia:** https://en.wikipedia.org/wiki/jellyfish',
+    ' caught a **Grouper** (Ranked #6)!\n\nFemale groupers change their sex to male if no male is available.\n\n**Wikipedia:** https://en.wikipedia.org/wiki/Grouper',
+    ' caught a **Dwarf seahorse** (Ranked #7)!\n\nThe slowest-moving fishes are the sea horses, the Dwarf seahorse attains speed of 5 feet per hour.\n\n**Wikipedia:** https://en.wikipedia.org/wiki/Dwarf_seahorse',
+    ' caught a **Puffer Fish** (Ranked #8)!\n\nThe puffer fish is the most poisonous fish in the world.\n\n**Wikipedia:** https://en.wikipedia.org/wiki/Puffer_fish',
+    ' caught a **Four-eyed fish** (Ranked #9)!\n\n*No description given yet.*\n\n**Wikipedia:** https://en.wikipedia.org/wiki/Four-eyed_fish',
+    ' caught a **Piranha** (Ranked #10)!\n\nDepending on the exact species, most piranhas grow to between 12 and 35 cm long.\n\n**Wikipedia:** https://en.wikipedia.org/wiki/Piranha',
+    ' caught a **Parrotfish** (Ranked #11)!\n\n*No description given yet.*\n\n**Wikipedia:** https://en.wikipedia.org/wiki/Parrotfish',
+    ' caught a **Box Jellyfish** (Ranked #12)!\n\n*No description given yet.*\n\n**Wikipedia:** https://en.wikipedia.org/wiki/Box_Jellyfish',
+    ' caught a **Cod** (Ranked #13)!\n\n*No description given yet.*\n\n**Wikipedia:** https://en.wikipedia.org/wiki/Cod',
+    ' caught a **Swordfish** (Ranked #14)!\n\n*No description given yet.*\n\n**Wikipedia:** https://en.wikipedia.org/wiki/Swordfish',
+    ' caught a **Pacu** (Ranked #15)!\n\n*No description given yet.*\n\n**Wikipedia:** https://en.wikipedia.org/wiki/Pacu',
+    ' caught a **Barracuda** (Ranked #16)!\n\n*No description given yet.*\n\n**Wikipedia:** https://en.wikipedia.org/wiki/Barracuda',
+    ' caught a **Blobfish** (Ranked #17)!\n\n*No description given yet.*\n\n**Wikipedia:** https://en.wikipedia.org/wiki/Blobfish',
+    ' caught a **Tarpon** (Ranked #18)!\n\n*No description given yet.*\n\n**Wikipedia:** https://en.wikipedia.org/wiki/Tarpon',
+    ' caught a **Trout** (Ranked #19)!\n\n*No description given yet.*\n\n**Wikipedia:** https://en.wikipedia.org/wiki/Trout',
+    ' caught a group of **Sardines** (Ranked #20)!\n\nSardines move in enourmous groups.\n\n**Wikipedia:** https://en.wikipedia.org/wiki/sardines',
+    ' caught a **Golden Dorado** (Ranked #21)!\n\n*No description given yet.*\n\n**Wikipedia:** https://en.wikipedia.org/wiki/Salminus_brasiliensis',
+    ' caught a **Southern platyfish** (Ranked #22)!\n\nThe southern platyfish grows to a maximum overall length of 6.0 centimetres.\n\n**Wikipedia:** https://en.wikipedia.org/wiki/Southern_platyfish',
+    ' caught a **Common carp** (Ranked #23)!\n\n*No description given yet.*\n\n**Wikipedia:** https://en.wikipedia.org/wiki/Common_carp',
+    ' caught a **Neon tetra** (Ranked #24)!\n\nThe neon tetra is found in the western and northern Amazon basin in southeastern Colombia, eastern Peru, and western Brazil.\n\n**Wikipedia:** https://en.wikipedia.org/wiki/Neon_tetra'
 ]
     
 var RPS_all = [
@@ -190,7 +190,7 @@ console.log('The bot is now running')
 
 bot.on('message', (message) => { //Commands
     if(message.content == '/Commands'){
-       message.author.sendMessage("Alright, here are my commands, keep in my that my prefix is **/**.\n\n**About**\nTells some stuff about myself!\n**Commands**\nShows my commands again!\n**Wikipedia**\nSearches the Wikipedia for you!\n**ServerInfo**\nDisplays some useful stuff about your server!\n**UserInfo**\nTells you something about yourself.\n**StartPoll** <Poll Question>\nStarts a poll for you.\n**StartCountdown** <Countdown Name>\nStarts a 10 minute countdown.\n**GlobalSet** <Message Text>\nSets a global message that can be seen on all the servers with me in it!\n**GlobalShow**\nShows the global message.\n**Comics**\nCreates a comics that's perfect for sitcom laugh track!\n**GoFishing**\nCatches a random fish and redirects you to it's Wikipedia page.\n**FishesCaught**\nShows how many fishes have been caught in total.\n**DadJoke**\nTells *hilarious* dad joke.\n**Fml**\nWanna hear an FML story?\n**Roll**\nRolls a number between 1 and 6.\n**Ask** <Question>\nAsk me anything! Don't be shy!\n**GetEmoji** <Emojis>\nShows you the id for your custom emojis!\n**Highfive** <Mention User>\nGives someone a highfive!\n**RockPaperScissors** <Mention User>\nStarts a quick game of Rock, paper and scissors with someone!\n**Help**\nSends you the support server invite!");
+       message.author.sendMessage("Alright, here are my commands, keep in my that my prefix is **/**.\n\n__**About**__\nTells some stuff about myself!\n__**Commands**__\nShows my commands again!\n__**Wikipedia** <Text>__\nSearches the Wikipedia for you!\n__**ServerInfo**__\nDisplays some useful stuff about your server!\n__**UserInfo**__\nTells you something about yourself.\n__**StartPoll** <Poll Question>__\nStarts a poll for you.\n__**StartCountdown** <Countdown Name>__\nStarts a 10 minute countdown.\n__**GlobalSet** <Message>__\nSets a global message that can be seen on all the servers with me in it!\n__**GlobalShow**__\nShows the global message.\n__**Comics**__\nCreates a comics that's perfect for sitcom laugh track!\n__**GoFishing**__\nCatches a random fish and redirects you to it's Wikipedia page.\n__**FishesCaught**__\nShows how many fishes have been caught in total.\n__**DadJoke**__\nTells *hilarious* dad joke.\n__**Fml**__\nWanna hear an FML story?\n__**Roll**__\nRolls a number between 1 and 6.\n__**Ask** <Question>__\nAsk me anything! Don't be shy!\n__**GetEmoji** <Emojis>__\nShows you the id for your custom emojis!\n__**Highfive** <Mention a User>__\nGives someone a highfive!\n__**RockPaperScissors** <Mention a User>__\nStarts a quick game of Rock, paper and scissors with someone!\n__**Help**__\nSends you the support server invite!");
        message.reply('The Command list has been sent to your Direct Messages.')
        console.log('The Commands command has been executed. Executor: ' + message.author.tag)
    }
@@ -282,7 +282,7 @@ bot.on('message', (message) => { //DadJokes
 bot.on('message', (message) => { //GoFishing
     if(message.content == '/GoFishing'){
         var fishing_caught = fishing_fish[Math.floor(Math.random() * fishing_fish.length)];
-        message.channel.sendMessage('Nice! ' + fishing_caught + '\n\n(Type **/FishesCaught** to see how many fishes have been caught.)')
+        message.channel.sendMessage('**' + message.author.tag + '** caught' + fishing_caught + '\n\n(Type **/FishesCaught** to see how many fishes have been caught.)')
         var fishing_inv2 = fishing_fish[Math.floor]
         message.author.sendMessage(fishing_inv2)
         fishing_amount = fishing_amount + 1
