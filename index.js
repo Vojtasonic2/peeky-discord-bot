@@ -190,7 +190,7 @@ console.log('The bot is now running')
 
 bot.on('message', (message) => { //Commands
     if(message.content == '/Commands'){
-       message.author.sendMessage("Alright, here are my commands, keep in my that my prefix is **/**.\n\n**About**\nTells some stuff about myself!\n**Commands**\nShows my commands again!\n**Wikipedia**\nSearches the Wikipedia for you!\n**CheckGoogle**\nChecks what Google is currently celebrating!\n**ServerInfo**\nDisplays some useful stuff about your server!\n**UserInfo**\nTells you something about yourself.\n**StartPoll**\nStarts a poll for you.\n**StartCountdown**\nStarts a 10 minute countdown.\n**GlobalSet**\nSets a global message that can be seen on all the servers with me in it!\n**GlobalShow**\nShows the global message.\n**Comics**\nCreates a comics that's perfect for sitcom laugh track!\n**GoFishing**\nCatches a random fish and redirects you to it's Wikipedia page.\n**FishesCaught**\nShows how many fishes have been caught in total.\n**DadJoke**\nTells *hilarious* dad joke.\n**Fml**\nWanna hear an FML story?\n**Roll**\nRolls a number between 1 and 6.\n**Ask**\nAsk me anything! Don't be shy!\n**GetEmoji**\nShows you the id for your custom emojis!\n**Highfive**\nGives someone a highfive!\n**RockPaperScissors**\nStarts a quick game of Rock, paper and scissors!\n**Help**\nSends you the support server invite!");
+       message.author.sendMessage("Alright, here are my commands, keep in my that my prefix is **/**.\n\n**About**\nTells some stuff about myself!\n**Commands**\nShows my commands again!\n**Wikipedia**\nSearches the Wikipedia for you!\n**ServerInfo**\nDisplays some useful stuff about your server!\n**UserInfo**\nTells you something about yourself.\n**StartPoll** <Poll Question>\nStarts a poll for you.\n**StartCountdown** <Countdown Name>\nStarts a 10 minute countdown.\n**GlobalSet** <Message Text>\nSets a global message that can be seen on all the servers with me in it!\n**GlobalShow**\nShows the global message.\n**Comics**\nCreates a comics that's perfect for sitcom laugh track!\n**GoFishing**\nCatches a random fish and redirects you to it's Wikipedia page.\n**FishesCaught**\nShows how many fishes have been caught in total.\n**DadJoke**\nTells *hilarious* dad joke.\n**Fml**\nWanna hear an FML story?\n**Roll**\nRolls a number between 1 and 6.\n**Ask** <Question>\nAsk me anything! Don't be shy!\n**GetEmoji** <Emojis>\nShows you the id for your custom emojis!\n**Highfive** <Mention User>\nGives someone a highfive!\n**RockPaperScissors** <Mention User>\nStarts a quick game of Rock, paper and scissors with someone!\n**Help**\nSends you the support server invite!");
        message.reply('The Command list has been sent to your Direct Messages.')
        console.log('The Commands command has been executed. Executor: ' + message.author.tag)
    }
@@ -210,13 +210,6 @@ bot.on('message', (message) => { //Wikipedia
     }
 })
 
-bot.on('message', (message) => { //CheckGoogle
-    if(message.content == '/CheckGoogle'){
-       message.reply("This is what Google is currently celebrating!\nhttps://www.google.com")   
-       console.log('The CheckGoogle command has been executed. Executor: ' + message.author.tag)
-    }
-})
-
 bot.on('message', (message) => { //ServerInfo
     if(message.content == '/ServerInfo'){
        message.channel.sendMessage('**Server Name:** ' + message.guild.name + '\n**Verification Level:** ' + message.guild.verificationLevel + '\n**Owner:** ' + message.guild.owner.displayName + '\n**Members:** ' + message.guild.memberCount + '\n**Role Amount:** ' + message.guild.roles.size + '\n**Custom Emojis:** ' + message.guild.emojis.size + '/100')   
@@ -233,7 +226,7 @@ bot.on('message', (message) => { //UserInfo
 
 bot.on('message', (message) => { //StartPoll
     if(message.content.startsWith("/StartPoll ")){
-       message.reply('You have started a poll!')
+       message.channel.sendMessage('**' + message.author.tag + '** has started a poll!')
        message.react('<:bot_approve:416366096053174273')
        message.react('<:bot_deny:416366135223517186')
        console.log('The StartPoll command has been executed. Executor: ' + message.author.tag)
@@ -241,19 +234,19 @@ bot.on('message', (message) => { //StartPoll
 });
 
 bot.on('message', (message) => { //Countdown
-    if(message.content.startsWith("/StartCountdown ")){ //10 Minutes//
-        message.reply('You have started a 10 minute countdown!')
+    if(message.content.startsWith("/StartCountdown ")){ //10 Minutes
+        message.channel.sendMessage('**' + message.author.tag + '** has started a 10 minute countdown.')
         console.log('The Countdown command has been executed. Executor: ' + message.author.tag)
         setTimeout(function (){
-        message.reply('*Your StartCountdown has finished!* **(' + message.content.replace('/StartCountdown ','') + ')**') 
-      }, 600000);
+        message.channel.sendMessage('**' +  message.author.tag + "**'s countdown called **" + message.content.replace('/StartCountdown ','') + '** has finished.')
+      }, 5000);
     }
 });
 
 bot.on('message', (message) => { //Global (Set)
   if(message.content.startsWith("/GlobalSet ")){
         globalMessage = '**' + message.author.tag + ':** ' + message.content.replace('/GlobalSet ','')
-        message.reply('You have set the global message!')
+        message.channel.sendMessage('**' +  message.author.tag + '** has set the global message!')
         console.log('The GlobalSet command has been executed. Executor: ' + message.author.tag)
   }
 });
@@ -273,7 +266,7 @@ bot.on('message', (message) => { //Comics
         var randomName2 = cmcs_name2[Math.floor(Math.random() * cmcs_name2.length)];
         var randomQuote = cmcs_1[Math.floor(Math.random() * cmcs_1.length)];
         var randomAnswer = cmcs_2[Math.floor(Math.random() * cmcs_2.length)];
-        message.channel.send('**__' + randomName1 + ' ' + randomName2 + '__**\n\n' +  randomFace + ": " + randomQuote + "\n" + randomFace2 + ": " + randomAnswer)
+        message.channel.sendMessage('**__' + randomName1 + ' ' + randomName2 + '__**\n\n' +  randomFace + ": " + randomQuote + "\n" + randomFace2 + ": " + randomAnswer)
         console.log('The Comics command has been executed. Executor: ' + message.author.tag)
    }
 })
@@ -281,7 +274,7 @@ bot.on('message', (message) => { //Comics
 bot.on('message', (message) => { //DadJokes
     if(message.content == '/DadJoke'){
         var randomAnswer = dadJokes[Math.floor(Math.random() * dadJokes.length)];
-        message.reply(randomAnswer);
+        message.channel.sendMessage(randomAnswer);
         console.log('The DadJoke command has been executed. Executor: ' + message.author.tag)
     }
 })
@@ -289,7 +282,7 @@ bot.on('message', (message) => { //DadJokes
 bot.on('message', (message) => { //GoFishing
     if(message.content == '/GoFishing'){
         var fishing_caught = fishing_fish[Math.floor(Math.random() * fishing_fish.length)];
-        message.channel.send('Nice! ' + fishing_caught + '\n\n(Type **/FishesCaught** to see how many fishes have been caught.)')
+        message.channel.sendMessage('Nice! ' + fishing_caught + '\n\n(Type **/FishesCaught** to see how many fishes have been caught.)')
         var fishing_inv2 = fishing_fish[Math.floor]
         message.author.sendMessage(fishing_inv2)
         fishing_amount = fishing_amount + 1
@@ -307,7 +300,7 @@ bot.on('message', (message) => { //FishesCaught
 bot.on('message', (message) => { //FML
     if(message.content == '/Fml'){
         var randomFml = fml[Math.floor(Math.random() * fml.length)];
-        message.reply(randomFml);
+        message.channel.sendMessage(randomFml);
         console.log('The Fml command has been executed. Executor: ' + message.author.tag)
     }
 })
@@ -347,7 +340,7 @@ bot.on('message', (message) => { //RockPaperScissors
 
 bot.on('message', (message) => { //GetEmoji
     if(message.content.startsWith("/GetEmoji ")){
-       message.reply('Here are your Emoji IDs!\n`' + message.content.replace('/GetEmoji ','') + '`')
+       message.channel.sendMessage('Here are your Emoji IDs!\n`' + message.content.replace('/GetEmoji ','') + '`')
        console.log('The GetEmoji command has been executed. Executor: ' + message.author.tag)
     }
 });
