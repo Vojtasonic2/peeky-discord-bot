@@ -323,7 +323,7 @@ bot.on('message', (message) => { //Roll
 bot.on('message', (message) => { //Ask
     if(message.content.startsWith("/Ask ")){
           var randomReply = reply[Math.floor(Math.random() * reply.length)];
-          message.channel.sendMessage('**' + message.author.tag + "**: " + message.content.replace(('/Ask '),('')) + "\n**Peeky#7330:** I'd that " + randomReply);
+          message.channel.sendMessage('**' + message.author.tag + "**: " + message.content.replace(('/Ask '),('')) + "\n**Peeky#7330:** I'd say that " + randomReply);
           message.delete()
           console.log('The Ask command has been executed. Executor: ' + message.author.tag)
     }
