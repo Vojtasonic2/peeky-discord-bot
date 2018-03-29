@@ -205,7 +205,7 @@ bot.on('message', (message) => { //About
 
 bot.on('message', (message) => { //Wikipedia
     if(message.content.startsWith('/Wikipedia ')){
-       message.reply("Here's the Wikipedia page! " + 'https://en.wikipedia.org/wiki' + message.content.replace('/Wikipedia ','/') + '\n(Be sure to use the **_** instead of spaces when using multiple words.)')   
+       message.channel.sendMessage("Here is the Wikipedia page that **" + message.author.tag + '** asked for.\nhttps://en.wikipedia.org/wiki' + message.content.replace('/Wikipedia ','/') + '\n\n(Be sure to use the **_** instead of spaces when using multiple words.)')   
        console.log('The Wikipedia command has been executed. Executor: ' + message.author.tag)
     }
 })
@@ -282,7 +282,7 @@ bot.on('message', (message) => { //DadJokes
 bot.on('message', (message) => { //GoFishing
     if(message.content == '/GoFishing'){
         var fishing_caught = fishing_fish[Math.floor(Math.random() * fishing_fish.length)];
-        message.channel.sendMessage('**' + message.author.tag + '** caught' + fishing_caught + '\n\n(Type **/FishesCaught** to see how many fishes have been caught.)')
+        message.channel.sendMessage('**' + message.author.tag + '**' + fishing_caught + '\n\n(Type **/FishesCaught** to see how many fishes have been caught.)')
         var fishing_inv2 = fishing_fish[Math.floor]
         message.author.sendMessage(fishing_inv2)
         fishing_amount = fishing_amount + 1
