@@ -269,7 +269,7 @@ bot.on('message', (message) => { //GoFishing
 
 bot.on('message', (message) => { //FishesCaught
     if(message.content == '/FishesCaught'){
-        message.channel.send('So far, **' + fishing_amount + ' fishes** have been caught in total!')
+        message.channel.send('So far, **' + fishing_amount + ' fishes** have been caught!')
         console.log('The FishesCaught command has been executed. Executor: ' + message.author.tag)
    }
 })
