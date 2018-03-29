@@ -146,33 +146,6 @@ var fishing_fish = [
     'You caught a **Common carp** (Ranked #23)!\n\n*No description given yet.*\n\n**Wikipedia:** https://en.wikipedia.org/wiki/Common_carp',
     'You caught a **Neon tetra** (Ranked #24)!\n\nThe neon tetra is found in the western and northern Amazon basin in southeastern Colombia, eastern Peru, and western Brazil.\n\n**Wikipedia:** https://en.wikipedia.org/wiki/Neon_tetra'
 ]
-
-var fishing_inv = [
-    "Siranapan",
-    "Archerfish",
-    "Rose Fish",
-    "Clownfish",
-    "Grouper",
-    "Dwarf seahorse",
-    "Puffer Fish",
-    "Four-eyed fish",
-    "Piranha",
-    "Box Jellyfish",
-    "Cod",
-    "Swordfish",
-    "Pacu",
-    "Barracuda",
-    "Blobfish",
-    "Tarpon",
-    "Trout",
-    "Sardines",
-    "Golden Dorado",
-    "Southern platyfish",
-    "Common carp",
-    "Neon tetra",
-    
-]
-
     
 var RPS_all = [
     '✋',
@@ -286,7 +259,7 @@ bot.on('message', (message) => { //DadJokes
 bot.on('message', (message) => { //GoFishing
     if(message.content == '/GoFishing'){
         var fishing_caught = fishing_fish[Math.floor(Math.random() * fishing_fish.length)];
-        message.channel.send('🎣 ' + fishing_caught + '\n(Type **/FishesCaught** to see how many fishes have been caught.)')
+        message.channel.send('Nice! ' + fishing_caught + '\n(Type **/FishesCaught** to see how many fishes have been caught.)')
         var fishing_inv2 = fishing_fish[Math.floor]
         message.author.sendMessage(fishing_inv2)
         fishing_amount = fishing_amount + 1
