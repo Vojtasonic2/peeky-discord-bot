@@ -156,13 +156,13 @@ var RPS_all = [
 var globalMessage = '*No Global message has been set yet!*'
 var fishing_amount = 0
 
-bot.on('ready', () => { bot.user.setActivity('Ver 1.3 | /About')} )
+bot.on('ready', () => { bot.user.setActivity('Ver 1.4 | /About')} )
 bot.on('ready', () => { bot.user.setStatus('idle')} )
 console.log('The bot is now running')
 
 bot.on('message', (message) => { //Commands
     if(message.content == '/Commands'){
-       message.author.sendMessage("Alright, here are my commands, keep in my that my prefix is **/**.\n\n**About**\nTells some stuff about myself!\n**Commands**\nShows my commands again!\n**SupportServer**\nInvites you to my support server!\n**Wikipedia**\nSearches the Wikipedia for you!\n**CheckGoogle**\nChecks what Google is currently celebrating!\n**ServerInfo**\nDisplays some useful stuff about your server!\n**UserInfo**\nTells you something about yourself.\n**StartPoll**\nStarts a poll for you.\n**StartCountdown**\nStarts a 10 minute countdown.\n**GlobalSet**\nSets a global message that can be seen on all the servers with me in it!\n**GlobalShow**\nShows the global message.\n**Comics**\nCreates a comics that's perfect for sitcom laugh track!\n**GoFishing**\nCatches a random fish and redirects you to it's Wikipedia page.\n**FishesCaught**\nShows how many fishes have been caught in total.\n**DadJoke**\nTells *hilarious* dad joke.\n**Fml**\nWanna hear an FML story?\n**Roll**\nRolls a number between 1 and 6.\n**Ask**\nAsk me anything! Don't be shy!\n**GetEmoji**\nShows you the id for your custom emojis!\n**Highfive**\nGives someone a highfive!\n**RockPaperScissors**\nStarts a quick game of Rock, paper and scissors!\n**SupportBot**\nSupports the bot!");
+       message.author.sendMessage("Alright, here are my commands, keep in my that my prefix is **/**.\nAlso, the commands marked with **(!)** are moderator commands.\n\n**About**\nTells some stuff about myself!\n**Commands**\nShows my commands again!\n**SupportServer**\nInvites you to my support server!\n**Wikipedia**\nSearches the Wikipedia for you!\n**CheckGoogle**\nChecks what Google is currently celebrating!\n**ServerInfo**\nDisplays some useful stuff about your server!\n**UserInfo**\nTells you something about yourself.\n**StartPoll**\nStarts a poll for you.\n**StartCountdown**\nStarts a 10 minute countdown.\n**GlobalSet**\nSets a global message that can be seen on all the servers with me in it!\n**GlobalShow**\nShows the global message.\n**Comics**\nCreates a comics that's perfect for sitcom laugh track!\n**GoFishing**\nCatches a random fish and redirects you to it's Wikipedia page.\n**FishesCaught**\nShows how many fishes have been caught in total.\n**DadJoke**\nTells *hilarious* dad joke.\n**Fml**\nWanna hear an FML story?\n**Roll**\nRolls a number between 1 and 6.\n**Ask**\nAsk me anything! Don't be shy!\n**GetEmoji**\nShows you the id for your custom emojis!\n**Highfive**\nGives someone a highfive!\n**RockPaperScissors**\nStarts a quick game of Rock, paper and scissors!\n**SupportBot**\nSupports the bot!\n**Ban (!)**\nBans the mention user!");
        message.reply('The Command list has been sent to your Direct Messages.')
        console.log('The Commands command has been executed. Executor: ' + message.author.tag)
    }
@@ -334,6 +334,16 @@ bot.on('message', (message) => { //SupportBot
        message.author.sendMessage("Thank you for choosing to support the bot!\n\n**Vote:** *https://discordbots.org/bot/415259002310623232* (Free)\n**Pledge:** *https://www.patreon.com/vojtasonic* (Paid)")
        console.log('The SupportBot command has been executed. Executor: ' + message.author.tag)
    }
+})
+
+bot.on('message', (message) => { //Ban
+    if(message.content.startsWith('/Ban ')){
+       if(message.member.hasPermission("BAN_MEMBERS"))
+       message.channel.sendMessage(message.mentions.members.first() + ' has been **banned** by ' + message.author + '!')
+       var UserToBan = message.mentions.members.first()
+       message.guild.ban(UserToBan)
+       console.log('The Ban command has been executed. Executor: ' + message.author.tag)       
+    }
 })
 
 bot.login(process.env.BOT_TOKEN);
