@@ -262,7 +262,7 @@ bot.on('message', (message) => { //Comics
         var randomFace = cmcs_face[Math.floor(Math.random() * cmcs_face.length)];
         var randomFace2 = cmcs_face[Math.floor(Math.random() * cmcs_face.length)];
         var randomName1 = cmcs_name1[Math.floor(Math.random() * cmcs_name1.length)];
-        var randomName1 = cmcs_name2[Math.floor(Math.random() * cmcs_name2.length)];
+        var randomName2 = cmcs_name2[Math.floor(Math.random() * cmcs_name2.length)];
         var randomQuote = cmcs_1[Math.floor(Math.random() * cmcs_1.length)];
         var randomAnswer = cmcs_2[Math.floor(Math.random() * cmcs_2.length)];
         message.channel.send('__' + randomName1 + ' ' + randomName2 + '__\n' +  randomFace + ": " + randomQuote + "\n" + randomFace2 + ": " + randomAnswer)
