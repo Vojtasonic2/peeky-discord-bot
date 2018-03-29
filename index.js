@@ -44,12 +44,12 @@ var fml = [
 ]
 
 var dice = [
-    " **1**!",
-    " **2**!",
-    " **3**!",
-    " **4**!",
-    " **5**!", 
-    " **6**!" 
+    "🎲 (1)",
+    "🎲🎲 (2)",
+    "🎲🎲🎲 (3)",
+    "🎲🎲🎲🎲 (4)",
+    "🎲🎲🎲🎲🎲 (5)", 
+    "🎲🎲🎲🎲🎲🎲 (6)" 
   ]
 
 var reply = [
@@ -299,7 +299,7 @@ bot.on('message', (message) => { //GoFishing
 
 bot.on('message', (message) => { //FishesCaught
     if(message.content == '/FishesCaught'){
-        message.channel.send('So far, **' + fishing_amount + ' fishes** have been caught!')
+        message.channel.sendMessage('So far, **' + fishing_amount + ' fishes** have been caught!')
         console.log('The FishesCaught command has been executed. Executor: ' + message.author.tag)
    }
 })
@@ -315,7 +315,7 @@ bot.on('message', (message) => { //FML
 bot.on('message', (message) => { //Roll
     if(message.content == '/Roll'){
         var randomNumber = dice[Math.floor(Math.random() * dice.length)];
-        message.reply('You have rolled the number' + randomNumber);
+        message.channel.sendMessage('**' + message.author.tag + '** has rolled:\n' + randomNumber + '!');
         console.log('The Roll command has been executed. Executor: ' + message.author.tag)
     }
 })
@@ -347,7 +347,7 @@ bot.on('message', (message) => { //RockPaperScissors
 
 bot.on('message', (message) => { //GetEmoji
     if(message.content.startsWith("/GetEmoji ")){
-       message.reply('`' + message.content.replace('/GetEmoji ','') + '`')
+       message.reply('Here are your Emoji IDs!\n`' + message.content.replace('/GetEmoji ','') + '`')
        console.log('The GetEmoji command has been executed. Executor: ' + message.author.tag)
     }
 });
