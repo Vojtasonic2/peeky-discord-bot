@@ -191,14 +191,14 @@ console.log('The bot is now running')
 bot.on('message', (message) => { //Commands
     if(message.content == '/Commands'){
        message.author.sendMessage("Alright, here are my commands, keep in my that my prefix is **/**.\n\n__**About**__\nTells some stuff about myself!\n__**Commands**__\nShows my commands again!\n__**Wikipedia** <Text>__\nSearches the Wikipedia for you!\n__**ServerInfo**__\nDisplays some useful stuff about your server!\n__**UserInfo**__\nTells you something about yourself.\n__**StartPoll** <Poll Question>__\nStarts a poll for you.\n__**StartCountdown** <Countdown Name>__\nStarts a 10 minute countdown.\n__**GlobalSet** <Message>__\nSets a global message that can be seen on all the servers with me in it!\n__**GlobalShow**__\nShows the global message.\n__**Comics**__\nCreates a comics that's perfect for sitcom laugh track!\n__**GoFishing**__\nCatches a random fish and redirects you to it's Wikipedia page.\n__**FishesCaught**__\nShows how many fishes have been caught in total.\n__**DadJoke**__\nTells *hilarious* dad joke.\n__**Fml**__\nWanna hear an FML story?\n__**Roll**__\nRolls a number between 1 and 6.\n__**Ask** <Question>__\nAsk me anything! Don't be shy!\n__**GetEmoji** <Emojis>__\nShows you the id for your custom emojis!\n__**Highfive** <Mention a User>__\nGives someone a highfive!\n__**RockPaperScissors** <Mention a User>__\nStarts a quick game of Rock, paper and scissors with someone!\n__**Help**__\nSends you the support server invite!");
-       message.reply('The Command list has been sent to your Direct Messages.')
+       message.channel.sendMessage('**' + message.author.tag + '** has received a DM with the **Command List**.')
        console.log('The Commands command has been executed. Executor: ' + message.author.tag)
    }
 })
 
 bot.on('message', (message) => { //About
     if(message.content == '/About'){
-       message.channel.sendMessage('Hello ' + message.author + '! I am Peeky and I can do all kinds of amazing stuff, just type **/Commands** to see what I mean!\nIf you need any help with the bot, be sure to join the Support Server by typing **/Help**.')
+       message.channel.sendMessage('Hello **' + message.author + '**! I am Peeky and I can do all kinds of amazing stuff, just type **/Commands** to see what I mean!\nIf you need any help with the bot, be sure to join the Support Server by typing **/Help**.')
        console.log('The About command has been executed. Executor: ' + message.author.tag)
     }
 })
@@ -347,7 +347,7 @@ bot.on('message', (message) => { //GetEmoji
 
 bot.on('message', (message) => { //Help
     if(message.content == '/Help'){
-       message.reply('The Support Server Invite has been sent to your Direct Messages.')
+       message.channel.sendMessage('**' + message.author.tag + '** has received a DM with the **Support Server Invite**.')
        message.author.sendMessage("<:bot_discord:428912687506915328> **Discord Support Server:** https://discord.gg/j4kArRh")
        console.log('The Help command has been executed. Executor: ' + message.author.tag)
    }
