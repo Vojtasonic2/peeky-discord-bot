@@ -319,11 +319,11 @@ bot.on('message', (message) => { //GetEmoji
     }
 });
 
-bot.on('message', (message) => { //Support
-    if(message.content == '/Support'){
-       message.reply('The Support Discord Invite has been sent to your Direct Messages.')
-       message.author.sendMessage("<:bot_discord:428912687506915328> **Discord Support Server:** `https://discord.gg/j4kArRh``")
-       console.log('The Support command has been executed. Executor: ' + message.author.tag)
+bot.on('message', (message) => { //Help
+    if(message.content == '/Help'){
+       message.reply('The Support Server Invite has been sent to your Direct Messages.')
+       message.author.sendMessage("<:bot_discord:428912687506915328> **Discord Support Server:** `https://discord.gg/j4kArRh`")
+       console.log('The Help command has been executed. Executor: ' + message.author.tag)
    }
 })
 
