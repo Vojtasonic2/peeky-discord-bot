@@ -259,7 +259,7 @@ bot.on('message', (message) => { //DadJokes
 bot.on('message', (message) => { //GoFishing
     if(message.content == '/GoFishing'){
         var fishing_caught = fishing_fish[Math.floor(Math.random() * fishing_fish.length)];
-        message.channel.send('Nice! ' + fishing_caught + '\n(Type **/FishesCaught** to see how many fishes have been caught.)')
+        message.channel.send('Nice! ' + fishing_caught + '\n\n(Type **/FishesCaught** to see how many fishes have been caught.)')
         var fishing_inv2 = fishing_fish[Math.floor]
         message.author.sendMessage(fishing_inv2)
         fishing_amount = fishing_amount + 1
