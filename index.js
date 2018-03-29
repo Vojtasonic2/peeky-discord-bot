@@ -273,7 +273,6 @@ bot.on('message', (message) => { //GoFishing
    }
 })
 
-
 bot.on('message', (message) => { //FishesCaught
     if(message.content == '/FishesCaught'){
         message.channel.send('So far, **' + fishing_amount + ' fishes** have been caught in total!')
