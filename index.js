@@ -93,7 +93,7 @@ var cmcs_name2 = [
     'Disstracks'
 ]
 
-var cmcs_name1 = [
+var cmcs_1 = [
     'I like turtles.',
     'How are you?',
     "I'm a robot and i will kill you!",
@@ -114,7 +114,7 @@ var cmcs_name1 = [
     'Peeky is just a spam bot!'
 ]
 
-var cmcs_name2 = [
+var cmcs_2 = [
     'I agree!',
     'Meh.',
     'Same.',
