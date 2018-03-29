@@ -80,7 +80,10 @@ var cmcs_name1 = [
     'Very cool',
     '3D',
     'The Amazing',
-    'The Red'
+    'The Red',
+    'A very cool',
+    'Youtube',
+    'Shrek: The'
 ]
 
 var cmcs_name2 = [
@@ -90,7 +93,8 @@ var cmcs_name2 = [
     'Minecrafter',
     'Robloxian',
     'Boxing',
-    'Disstracks'
+    'Disstracks',
+    'Yass!',
 ]
 
 var cmcs_1 = [
@@ -265,7 +269,7 @@ bot.on('message', (message) => { //Comics
         var randomName2 = cmcs_name2[Math.floor(Math.random() * cmcs_name2.length)];
         var randomQuote = cmcs_1[Math.floor(Math.random() * cmcs_1.length)];
         var randomAnswer = cmcs_2[Math.floor(Math.random() * cmcs_2.length)];
-        message.channel.send('__' + randomName1 + ' ' + randomName2 + '__\n' +  randomFace + ": " + randomQuote + "\n" + randomFace2 + ": " + randomAnswer)
+        message.channel.send('**__' + randomName1 + ' ' + randomName2 + '__**\n\n' +  randomFace + ": " + randomQuote + "\n" + randomFace2 + ": " + randomAnswer)
         console.log('The Comics command has been executed. Executor: ' + message.author.tag)
    }
 })
