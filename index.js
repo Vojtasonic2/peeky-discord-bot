@@ -79,7 +79,7 @@ var fight_weapon = [
     '🔨',
     '🔧',
     '💣',
-    '🛡','
+    '🛡',
     '📏',
     '📐', 
     '🗑'
@@ -120,7 +120,7 @@ var cmcs_name2 = [
     'Boxing',
     'Disstracks',
     'Yass!',
-    'Orges',
+    'Ogres',
     'Shreks',
     'Minecraft Studios',
     "Let's play (CZ)"
