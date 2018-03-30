@@ -55,9 +55,10 @@ var dice = [
 var reply = [
     "yes.",
     "no.",
-    "that I'm not sure",
-    "that probably yes.",
-    "that probably no."
+    "I'm not sure",
+    "probably yes.",
+    "probably no.",
+    "maybe."
   ]
 
 var cmcs_face = [
