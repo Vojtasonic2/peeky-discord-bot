@@ -67,7 +67,7 @@ var fight_damage = [
     12,
     15,
     17,
-    20 '(CRITICAL HIT!)'
+    20
 ]
 
 var fight_weapon = [
