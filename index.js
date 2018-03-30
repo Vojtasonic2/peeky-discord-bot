@@ -61,6 +61,30 @@ var reply = [
     "maybe"
   ]
 
+var fight_damage = [
+    6,
+    8,
+    12,
+    15,
+    17,
+    20 '(CRITICAL HIT!)'
+]
+
+var fight_weapon = [
+    '🔪',
+    '🗡',
+    '🔫',
+    '🔌',
+    '⛏',
+    '🔨',
+    '🔧',
+    '💣',
+    '🛡','
+    '📏',
+    '📐', 
+    '🗑'
+]
+
 var cmcs_face = [
     '<:vojtasonic_rblx:427444622235795467>',
     '<:oerwout10_rblx:427097440412237824>',
@@ -337,6 +361,21 @@ bot.on('message', (message) => { //RockPaperScissors
           console.log('The RockPaperScissors command has been executed. Executor: ' + message.author.tag)
     }
 });
+
+bot.on('message', (message) => { //Fight
+    if(message.content.startsWith("/Fight ")){
+        var weapon_used = fight_weapon[Math.floor(Math.random() * fight_weapon.length)];
+        var damage_dealt_1 = fight_damage[Math.floor(Math.random() * fight_damage.length)];
+        var weapon_used_2 = fight_weapon[Math.floor(Math.random() * fight_weapon.length)];
+        var damage_dealt_2 = fight_damage[Math.floor(Math.random() * fight_damage.length)];
+        var health_1 = 20
+        var health_2 = 20
+        health_1 = health_1 - damage_dealt_2
+        health_2 = health_2 - damage_dealt_1
+        message.channel.sendMessage('**' + message.author.tag + '** has attacked **' + message.mentions.members.first().displayName + '** with a ' + weapon_used + ' and dealt **' + damage_dealt_1 + ' damage**!\n**' + message.author.tag + '** has attacked **' + message.mentions.members.first().displayName + '** back with a ' + weapon_used_2 + ' and dealt **' + damage_dealt_2 + ' damage**!\n\n**' + message.author.tag + '** has **' + health_1 + ' Health** left. \n**' + message.mentions.members.first().displayName+ '** has **' + health_2 + ' Health** left.')
+        console.log('The Fight command has been executed. Executor: ' + message.author.tag)
+   }
+})
 
 bot.on('message', (message) => { //Say
     if(message.content.startsWith("/Say ")){
