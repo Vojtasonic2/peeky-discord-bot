@@ -239,7 +239,7 @@ bot.on('message', (message) => { //Countdown
         console.log('The Countdown command has been executed. Executor: ' + message.author.tag)
         setTimeout(function (){
         message.channel.sendMessage('**' +  message.author.tag + "**'s countdown called **" + message.content.replace('/StartCountdown ','') + '** has finished.')
-      }, 5000);
+      }, 600000);
     }
 });
 
