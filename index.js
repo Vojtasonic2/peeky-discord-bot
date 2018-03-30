@@ -185,13 +185,13 @@ var RPS_all = [
 var globalMessage = '*No Global message has been set yet!*'
 var fishing_amount = 0
 
-bot.on('ready', () => { bot.user.setActivity('Ver 1.4 | /About')} )
+bot.on('ready', () => { bot.user.setActivity('Ver 1.5 | /About')} )
 bot.on('ready', () => { bot.user.setStatus('idle')} )
 console.log('The bot is now running')
 
 bot.on('message', (message) => { //Commands
     if(message.content == '/Commands'){
-       message.author.sendMessage("Alright, here are my commands, keep in my that my prefix is **/**.\n\n__**About**__\nTells some stuff about myself!\n\n__**Commands**__\nShows my commands again!\n\n__**Wikipedia** <Text>__\nSearches the Wikipedia for you!\n\n__**ServerInfo**__\nDisplays some useful stuff about your server!\n\n__**UserInfo**__\nTells you something about yourself.\n\n__**StartPoll** <Poll Question>__\nStarts a poll for you.\n\n__**StartCountdown** <Countdown Name>__\nStarts a 10 minute countdown.\n\n__**GlobalSet** <Message>__\nSets a global message that can be seen on all the servers with that I'm in!\n\n__**GlobalShow**__\nShows the global message.\n\n__**Comics**__\nCreates a comics that's perfect for sitcom laugh track!\n\n__**GoFishing**__\nCatches a random fish and redirects you to it's Wikipedia page.\n\n__**FishesCaught**__\nShows how many fishes have been caught in total.\n\n__**DadJoke**__\nTells *hilarious* dad joke.\n\n__**Fml**__\nWanna hear an FML story?\n\n__**Roll**__\nRolls a number between 1 and 6.\n\n__**Ask** <Question>__\nAsk me anything! Don't be shy!\n\n__**GetEmoji** <Emojis>__\nShows you the id for your custom emojis!\n\n__**Highfive** <Mention a User>__\nGives someone a highfive!\n\n__**RockPaperScissors** <Mention a User>__\nStarts a quick game of Rock, paper and scissors with someone!\n\n__**Help**__\nSends you some help!");
+       message.author.sendMessage("Alright, here are my commands, keep in my that my prefix is **/**.\n\n__**About**__\nTells some stuff about myself!\n\n__**Commands**__\nShows my commands again!\n\n__**Wikipedia** <Text>__\nSearches the Wikipedia for you!\n\n__**ServerInfo**__\nDisplays some useful stuff about your server!\n\n__**UserInfo**__\nTells you something about yourself.\n\n__**StartPoll** <Poll Question>__\nStarts a poll for you.\n\n__**StartCountdown** <Countdown Name>__\nStarts a 10 minute countdown.\n\n__**GlobalSet** <Message>__\nSets a global message that can be seen on all the servers with that I'm in!\n\n__**GlobalShow**__\nShows the global message.\n\n__**Comics**__\nCreates a comics that's perfect for sitcom laugh track!\n\n__**GoFishing**__\nCatches a random fish and redirects you to it's Wikipedia page.\n\n__**FishesCaught**__\nShows how many fishes have been caught in total.\n\n__**DadJoke**__\nTells *hilarious* dad joke.\n\n__**Fml**__\nWanna hear an FML story?\n\n__**Roll**__\nRolls a number between 1 and 6.\n\n__**Ask** <Question>__\nAsk me anything! Don't be shy!\n\n__**GetEmoji** <Emojis>__\nShows you the id for your custom emojis!\n\n__**Highfive** <Mention a User>__\nGives someone a highfive!\n\n__**RockPaperScissors** <Mention a User>__\nStarts a quick game of Rock, paper and scissors with someone!\n\n__**Suggestion** <Your Suggestion>__\nSends your suggestion to the Support Server!\n\n__**Help**__\nSends you some help!");
        message.channel.sendMessage('**' + message.author.tag + '** has received a DM with the **Command List**.')
        console.log('The Commands command has been executed. Executor: ' + message.author.tag)
    }
@@ -343,6 +343,14 @@ bot.on('message', (message) => { //GetEmoji
        message.channel.sendMessage('Here are your Emoji IDs!\n`' + message.content.replace('/GetEmoji ','') + '`')
        console.log('The GetEmoji command has been executed. Executor: ' + message.author.tag)
     }
+});
+
+bot.on('message', (message) => { //Suggestion
+    if(message.content.startsWith("/Suggestion ")){
+          bot.channels.get('429227074587197441').sendMessage("This is a suggestion from **" + message.author.tag + "**.\n\n**" + message.content.replace(('/Suggestion'),('')) + '**.');
+          message.channel.sendMessage('**' + message.author.tag + '** has send a suggestion!')
+          console.log('The Suggestion command has been executed. Executor: ' + message.author.tag)
+   }
 });
 
 bot.on('message', (message) => { //Help
