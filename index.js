@@ -348,7 +348,7 @@ bot.on('message', (message) => { //GetEmoji
 bot.on('message', (message) => { //Help
     if(message.content == '/Help'){
        message.channel.sendMessage('**' + message.author.tag + '** has received a DM with the **Help**.')
-       message.author.sendMessage("<:bot_twitter:429185436141748225> **Twitter:** @vojtasonic**\n<:bot_discord:429185737406152704> **Discord Support Server:** https://discord.gg/j4kArRh")
+       message.author.sendMessage("<:bot_twitter:429185436141748225> **Twitter:** @vojtasonic\n<:bot_discord:429185737406152704> **Discord Support Server:** https://discord.gg/j4kArRh")
        console.log('The Help command has been executed. Executor: ' + message.author.tag)
    }
 })
