@@ -373,7 +373,7 @@ bot.on('message', (message) => { //Fight
         var health_2 = 20
         health_1 = health_1 - damage_dealt_2
         health_2 = health_2 - damage_dealt_1
-        message.channel.sendMessage('**__' + message.author.tag + ' vs ' + message.mentions.members.first().displayName + '__**!\n\n**' + message.author.tag + '** has attacked **' + message.mentions.members.first().displayName + '** with a ' + weapon_used + ' and dealt **' + damage_dealt_1 + ' damage**!\n**' + message.mentions.members.first().displayName + '** has attacked **' + message.author.tag + '** back with a ' + weapon_used_2 + ' and dealt **' + damage_dealt_2 + ' damage**!\n\n**' + message.author.tag + '** has **' + health_1 + ' Health** left. \n**' + message.mentions.members.first().displayName+ '** has **' + health_2 + ' Health** left.')
+        message.channel.sendMessage('**__' + message.author.tag + ' vs ' + message.mentions.members.first().displayName + '!__**\n\n**' + message.author.tag + '** has attacked **' + message.mentions.members.first().displayName + '** with a ' + weapon_used + ' and dealt **' + damage_dealt_1 + ' damage**!\n**' + message.mentions.members.first().displayName + '** has attacked **' + message.author.tag + '** back with a ' + weapon_used_2 + ' and dealt **' + damage_dealt_2 + ' damage**!\n\n**' + message.author.tag + '** has **' + health_1 + ' Health** left. \n**' + message.mentions.members.first().displayName+ '** has **' + health_2 + ' Health** left.')
         console.log('The Fight command has been executed. Executor: ' + message.author.tag)
    }
 })
