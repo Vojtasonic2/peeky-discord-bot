@@ -61,31 +61,6 @@ var reply = [
     "maybe"
   ]
 
-var fight_damage = [
-    6,
-    8,
-    12,
-    15,
-    17,
-    20
-]
-
-var fight_weapon = [
-    '🔪',
-    '🗡',
-    '🔫',
-    '🔌',
-    '⛏',
-    '🔨',
-    '🔧',
-    '💣',
-    '🛡',
-    '📏',
-    '📐', 
-    '🗑',
-    '🤜'
-]
-
 var cmcs_face = [
     '<:vojtasonic_rblx:427444622235795467>',
     '<:oerwout10_rblx:427097440412237824>',
@@ -216,7 +191,7 @@ console.log('The bot is now running')
 
 bot.on('message', (message) => { //Commands
     if(message.content == '/Commands'){
-       message.author.sendMessage("Alright, here are my commands, keep in my that my prefix is **/**.\n\n__**About**__\nTells some stuff about myself!\n\n__**Commands**__\nShows my commands again!\n\n__**Wikipedia** <Text>__\nSearches the Wikipedia for you!\n\n__**ServerInfo**__\nDisplays some useful stuff about your server!\n\n__**UserInfo**__\nTells you something about yourself.\n\n__**StartPoll** <Poll Question>__\nStarts a poll for you.\n\n__**StartCountdown** <Countdown Name>__\nStarts a 10 minute countdown.\n\n__**GlobalSet** <Message>__\nSets a global message that can be seen on all the servers with that I'm in!\n\n__**GlobalShow**__\nShows the global message.\n\n__**Comics**__\nCreates a comics that's perfect for sitcom laugh track!\n\n__**GoFishing**__\nCatches a random fish and redirects you to it's Wikipedia page.\n\n__**FishesCaught**__\nShows how many fishes have been caught in total.\n\n__**DadJoke**__\nTells *hilarious* dad joke.\n\n__**Fml**__\nWanna hear an FML story?\n\n__**Roll**__\nRolls a number between 1 and 6.\n\n__**Ask** <Question>__\nAsk me anything! Don't be shy!\n\n__**Say** <Your Text>__\nPeeky will repeat what you said!\n\n__**GetEmoji** <Emojis>__\nShows you the id for your custom emojis!\n\n__**Highfive** <Mention a User>__\nGives someone a highfive!\n\n__**RockPaperScissors** <Mention a User>__\nStarts a quick game of Rock, paper and scissors with someone!\n\n__**Fight** <Mention a User>__\nEngane other users in a deadly fight!\n\n__**Suggestion** <Your Suggestion>__\nSends your suggestion to the Support Server!\n\n__**Help**__\nSends you some help!");
+       message.author.sendMessage("Alright, here are my commands, keep in my that my prefix is **/**.\n\n__**About**__\nTells some stuff about myself!\n\n__**Commands**__\nShows my commands again!\n\n__**Wikipedia** <Text>__\nSearches the Wikipedia for you!\n\n__**ServerInfo**__\nDisplays some useful stuff about your server!\n\n__**UserInfo**__\nTells you something about yourself.\n\n__**StartPoll** <Poll Question>__\nStarts a poll for you.\n\n__**StartCountdown** <Countdown Name>__\nStarts a 10 minute countdown.\n\n__**GlobalSet** <Message>__\nSets a global message that can be seen on all the servers with that I'm in!\n\n__**GlobalShow**__\nShows the global message.\n\n__**Comics**__\nCreates a comics that's perfect for sitcom laugh track!\n\n__**GoFishing**__\nCatches a random fish and redirects you to it's Wikipedia page.\n\n__**FishesCaught**__\nShows how many fishes have been caught in total.\n\n__**DadJoke**__\nTells *hilarious* dad joke.\n\n__**Fml**__\nWanna hear an FML story?\n\n__**Roll**__\nRolls a number between 1 and 6.\n\n__**Ask** <Question>__\nAsk me anything! Don't be shy!\n\n__**Say** <Your Text>__\nPeeky will repeat what you said!\n\n__**GetEmoji** <Emojis>__\nShows you the id for your custom emojis!\n\n__**Highfive** <Mention a User>__\nGives someone a highfive!\n\n__**RockPaperScissors** <Mention a User>__\nStarts a quick game of Rock, paper and scissors with someone!\n\n__**Suggestion** <Your Suggestion>__\nSends your suggestion to the Support Server!\n\n__**Help**__\nSends you some help!");
        message.channel.sendMessage('**' + message.author.tag + '** has received a DM with the **Command List**.')
        console.log('The Commands command has been executed. Executor: ' + message.author.tag)
    }
@@ -360,23 +335,6 @@ bot.on('message', (message) => { //RockPaperScissors
           var RPS_Selected2 = RPS_all[Math.floor(Math.random() * RPS_all.length)];
           message.channel.sendMessage(message.author + RPS_Selected + ' vs ' + RPS_Selected2 + message.mentions.members.first());
           console.log('The RockPaperScissors command has been executed. Executor: ' + message.author.tag)
-    }
-});
-
-bot.on('message', (message) => { //Fight
-    if(message.content.startsWith("/Fight ")){
-        var weapon_used = fight_weapon[Math.floor(Math.random() * fight_weapon.length)];
-        var damage_dealt_1 = fight_damage[Math.floor(Math.random() * fight_damage.length)];
-        var weapon_used_2 = fight_weapon[Math.floor(Math.random() * fight_weapon.length)];
-        var damage_dealt_2 = fight_damage[Math.floor(Math.random() * fight_damage.length)];
-        var health_1 = 20
-        var health_2 = 20
-        var target_user = message.mentions.members.first()
-        var attacker_user = message.author
-        health_1 = health_1 - damage_dealt_2
-        health_2 = health_2 - damage_dealt_1
-        message.channel.sendMessage('`' + message.author + ' **vs** ' + target_user + '\n\n**' + attacker_user + '** has attacked ' + target_user + ' with a ' + weapon_used + ' and dealt **' + damage_dealt_1 + ' damage**!\n' + target_user + ' has attacked ' + attacker_user + ' back with a ' + weapon_used_2 + ' and dealt **' + damage_dealt_2 + ' damage**!\n\n' + attacker_user + ' has **' + health_1 + ' Health** left. \n' + target_user + ' has **' + health_2 + ' Health** left.')
-        console.log('The Fight command has been executed. Executor: ' + message.author.tag)
     }
 });
 
