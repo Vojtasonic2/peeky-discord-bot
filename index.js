@@ -372,7 +372,7 @@ bot.on('message', (message) => { //Help
 bot.on('message', (message) => { //Bonuses
     if(message.content == '/Bonuses'){
        message.channel.sendMessage('**' + message.author.tag + '** has received a DM with the **Bonuses**.')
-       message.author.sendMessage("__**Automatic Reactions**__\nMessages in a channel called **#gallery** get automatic ❤ reactions!")
+       message.author.sendMessage("Alright, here are my bonuses!\n\n__**Automatic Reactions**__\nMessages in a channel called **#gallery** get automatic ❤ reactions!")
        console.log('The Help command has been executed. Executor: ' + message.author.tag)
    }
 })
