@@ -199,7 +199,7 @@ bot.on('message', (message) => { //Commands
 
 bot.on('message', (message) => { //About
     if(message.content == '/About'){
-       message.channel.sendMessage('Hello **' + message.author.tag + '**! I am Peeky and I can do all kinds of amazing stuff, just type **/Commands** to see what I mean!\nIf you need any help with the bot, be sure to join the Support Server by typing **/Help**.\n\nIf you would like to support the bot, you can go on my Patreon page.\n*https://www.patreon.com/vojtasonic*')
+       message.channel.sendMessage('Hello **' + message.author.tag + '**! I am Peeky and I can do all kinds of amazing stuff, just type **/Commands** to see what I mean!\nIf you need any help with the bot, be sure to  type **/Help**.\n\nIf you would like to support the bot, you can go on my Patreon page.\n*https://www.patreon.com/vojtasonic*')
        console.log('The About command has been executed. Executor: ' + message.author.tag)
     }
 })
