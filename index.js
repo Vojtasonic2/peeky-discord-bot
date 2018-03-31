@@ -191,7 +191,7 @@ console.log('The bot is now running')
 
 bot.on('message', (message) => { //Commands
     if(message.content == '/Commands'){
-       message.author.sendMessage("Alright, here are my commands, keep in my that my prefix is **/**.\n\n__**About**__\nTells some stuff about myself!\n\n__**Commands**__\nShows my commands again!\n\n__**Wikipedia** <Text>__\nSearches the Wikipedia for you!\n\n__**ServerInfo**__\nDisplays some useful stuff about your server!\n\n__**UserInfo**__\nTells you something about yourself.\n\n__**StartPoll** <Poll Question>__\nStarts a poll for you.\n\n__**StartCountdown** <Countdown Name>__\nStarts a 10 minute countdown.\n\n__**GlobalSet** <Message>__\nSets a global message that can be seen on all the servers with that I'm in!\n\n__**GlobalShow**__\nShows the global message.\n\n__**Comics**__\nCreates a comics that's perfect for sitcom laugh track!\n\n__**GoFishing**__\nCatches a random fish and redirects you to it's Wikipedia page.\n\n__**FishesCaught**__\nShows how many fishes have been caught in total.\n\n__**DadJoke**__\nTells *hilarious* dad joke.\n\n__**Fml**__\nWanna hear an FML story?\n\n__**Roll**__\nRolls a number between 1 and 6.\n\n__**Ask** <Question>__\nAsk me anything! Don't be shy!\n\n__**Say** <Your Text>__\nPeeky will repeat what you said!\n\n__**GetEmoji** <Emojis>__\nShows you the id for your custom emojis!\n\n__**Highfive** <Mention a User>__\nGives someone a highfive!\n\n__**RockPaperScissors** <Mention a User>__\nStarts a quick game of Rock, paper and scissors with someone!\n\n__**Suggestion** <Your Suggestion>__\nSends your suggestion to the Support Server!\n\n__**Help**__\nSends you some help!");
+       message.author.sendMessage("Alright, here are my commands, keep in my that my prefix is **/**.\n\n__**About**__\nTells some stuff about myself!\n\n__**Commands**__\nShows my commands again!\n\n__**Wikipedia** <Text>__\nSearches the Wikipedia for you!\n\n__**ServerInfo**__\nDisplays some useful stuff about your server!\n\n__**UserInfo**__\nTells you something about yourself.\n\n__**StartPoll** <Poll Question>__\nStarts a poll for you.\n\n__**StartCountdown** <Countdown Name>__\nStarts a 10 minute countdown.\n\n__**GlobalSet** <Message>__\nSets a global message that can be seen on all the servers with that I'm in!\n\n__**GlobalShow**__\nShows the global message.\n\n__**Comics**__\nCreates a comics that's perfect for sitcom laugh track!\n\n__**GoFishing**__\nCatches a random fish and redirects you to it's Wikipedia page.\n\n__**FishesCaught**__\nShows how many fishes have been caught in total.\n\n__**DadJoke**__\nTells *hilarious* dad joke.\n\n__**Fml**__\nWanna hear an FML story?\n\n__**Roll**__\nRolls a number between 1 and 6.\n\n__**Ask** <Question>__\nAsk me anything! Don't be shy!\n\n__**Say** <Your Text>__\nPeeky will repeat what you said!\n\n__**GetEmoji** <Emojis>__\nShows you the id for your custom emojis!\n\n__**Highfive** <Mention a User>__\nGives someone a highfive!\n\n__**RockPaperScissors** <Mention a User>__\nStarts a quick game of Rock, paper and scissors with someone!\n\n__**Suggestion** <Your Suggestion>__\nSends your suggestion to the Support Server!\n\n__**Help**__\nSends you some help!__**Other**__\nSends you some other stuff that Peeky can do!");
        message.channel.sendMessage('**' + message.author.tag + '** has received a DM with the **Command List**.')
        console.log('The Commands command has been executed. Executor: ' + message.author.tag)
    }
@@ -199,7 +199,7 @@ bot.on('message', (message) => { //Commands
 
 bot.on('message', (message) => { //About
     if(message.content == '/About'){
-       message.channel.sendMessage('Hello **' + message.author.tag + '**! I am Peeky and I can do all kinds of amazing stuff, just type **/Commands** to see what I mean!\nIf you need any help or want to support the bot, be sure to type **/Help**.')
+       message.channel.sendMessage('Hello **' + message.author.tag + "**! I am Peeky and I can do all kinds of amazing stuff, just type **/Commands** to see what I mean!\nAnd that's not all I can do! Type **/Other** for even more stuff!\n\nIf you need any help or want to support the bot, be sure to type **/Help**.")
        console.log('The About command has been executed. Executor: ' + message.author.tag)
     }
 })
@@ -368,5 +368,21 @@ bot.on('message', (message) => { //Help
        console.log('The Help command has been executed. Executor: ' + message.author.tag)
    }
 })
+
+bot.on('message', (message) => { //Other
+    if(message.content == '/Other'){
+       message.channel.sendMessage('**' + message.author.tag + '** has received a DM with the **Other**.')
+       message.author.sendMessage("__**Automatic Reactions**__\nMessages in a channel called **#gallery** get automatic ❤ reactions!")
+       console.log('The Help command has been executed. Executor: ' + message.author.tag)
+   }
+})
+
+//OTHER
+
+bot.on('message', (message) => { //OTHER: Reaction #gallery
+    if(message.channel.name == 'gallery'){
+        message.react('❤')
+       console.log('Peeky added a reaction on a message! Executor: ' + message.author.tag)};
+});
 
 bot.login(process.env.BOT_TOKEN);
