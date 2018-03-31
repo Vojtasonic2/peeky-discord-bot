@@ -246,7 +246,7 @@ bot.on('message', (message) => { //Countdown
 
 bot.on('message', (message) => { //Global (Set)
   if(message.content.startsWith("/GlobalSet ")){
-        globalMessage = '**' + message.author.tag + ':** ' + message.content.replace('/GlobalSet ','')
+        globalMessage = 'This Global Message has been set by**' + message.author.tag + '**\n\n**' + message.content.replace('/GlobalSet ','' + '.**'))
         message.channel.sendMessage('**' +  message.author.tag + '** has set the global message!')
         console.log('The GlobalSet command has been executed. Executor: ' + message.author.tag)
   }
@@ -317,7 +317,7 @@ bot.on('message', (message) => { //Roll
 bot.on('message', (message) => { //Ask
     if(message.content.startsWith("/Ask ")){
           var randomReply = reply[Math.floor(Math.random() * reply.length)];
-          message.channel.sendMessage('**' + message.author.tag + "** asked me **" + message.content.replace(('/Ask '),('')) + "**\nTo which I'd say that **" + randomReply + '**.');
+          message.channel.sendMessage('**' + message.author.tag + "** asked me **" + message.content.replace('/Ask ','') + "**\nTo which I'd say that **" + randomReply + '**.');
           console.log('The Ask command has been executed. Executor: ' + message.author.tag)
     }
   });
@@ -340,7 +340,7 @@ bot.on('message', (message) => { //RockPaperScissors
 
 bot.on('message', (message) => { //Say
     if(message.content.startsWith("/Say ")){
-           message.channel.sendMessage(message.content.replace(('/Say '),('')))
+           message.channel.sendMessage(message.content.replace('/Say ',''))
            message.delete()
            console.log('The Say command has been executed. Executor: ' + message.author.tag)
     }
