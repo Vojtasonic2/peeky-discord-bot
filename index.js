@@ -375,7 +375,7 @@ bot.on('message', (message) => { //Fight
         var attacker_user = message.author
         health_1 = health_1 - damage_dealt_2
         health_2 = health_2 - damage_dealt_1
-        message.channel.sendMessage('**__' + message.author + ' vs ' + target_user + '!__**\n\n**' + attacker_user + '** has attacked **' + target_user + '** with a ' + weapon_used + ' and dealt **' + damage_dealt_1 + ' damage**!\n**' + target_user + '** has attacked **' + attacker_user + '** back with a ' + weapon_used_2 + ' and dealt **' + damage_dealt_2 + ' damage**!\n\n**' + attacker_user + '** has **' + health_1 + ' Health** left. \n**' + target_user + '** has **' + health_2 + ' Health** left.')
+        message.channel.sendMessage('`' + message.author + '` **vs** `' + target_user + '`\n\n**' + attacker_user + '** has attacked `' + target_user + '` with a ' + weapon_used + ' and dealt **' + damage_dealt_1 + ' damage**!\n`' + target_user + '` has attacked `' + attacker_user + '` back with a ' + weapon_used_2 + ' and dealt **' + damage_dealt_2 + ' damage**!\n\n`' + attacker_user + '` has **' + health_1 + ' Health** left. \n`' + target_user + '` has **' + health_2 + ' Health** left.')
         console.log('The Fight command has been executed. Executor: ' + message.author.tag)
     }
 });
