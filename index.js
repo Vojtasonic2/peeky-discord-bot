@@ -372,9 +372,10 @@ bot.on('message', (message) => { //Fight
         var health_1 = 20
         var health_2 = 20
         var target_user = message.mentions.members.first()
+        var attacker_user = message.author
         health_1 = health_1 - damage_dealt_2
         health_2 = health_2 - damage_dealt_1
-        message.channel.sendMessage('**__' + message.author.tag + ' vs ' + message.mentions.members.first().displayName + '!__**\n\n**' + message.author.tag + '** has attacked **' + target_user.tag + '** with a ' + weapon_used + ' and dealt **' + damage_dealt_1 + ' damage**!\n**' + target_user.tag + '** has attacked **' + message.author.tag + '** back with a ' + weapon_used_2 + ' and dealt **' + damage_dealt_2 + ' damage**!\n\n**' + message.author.tag + '** has **' + health_1 + ' Health** left. \n**' + target_user.tag + '** has **' + health_2 + ' Health** left.')
+        message.channel.sendMessage('**__' + message.author + ' vs ' + target_user + '!__**\n\n**' + attacker_user + '** has attacked **' + target_user + '** with a ' + weapon_used + ' and dealt **' + damage_dealt_1 + ' damage**!\n**' + target_user + '** has attacked **' + attacker_user + '** back with a ' + weapon_used_2 + ' and dealt **' + damage_dealt_2 + ' damage**!\n\n**' + attacker_user + '** has **' + health_1 + ' Health** left. \n**' + target_user + '** has **' + health_2 + ' Health** left.')
         console.log('The Fight command has been executed. Executor: ' + message.author.tag)
     }
 });
