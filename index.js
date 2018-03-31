@@ -86,6 +86,20 @@ var fight_weapon = [
     '🤜'
 ]
 
+var fight_location = [
+    'head',
+    'eye'
+    'eyes',
+    'hand',
+    'nose',
+    'chest',
+    'legs',
+    'hair',
+    'leg',
+    'croch',
+    'feelings'
+]
+
 var cmcs_face = [
     '<:vojtasonic_rblx:427444622235795467>',
     '<:oerwout10_rblx:427097440412237824>',
@@ -369,11 +383,13 @@ bot.on('message', (message) => { //Fight
         var damage_dealt_1 = fight_damage[Math.floor(Math.random() * fight_damage.length)];
         var weapon_used_2 = fight_weapon[Math.floor(Math.random() * fight_weapon.length)];
         var damage_dealt_2 = fight_damage[Math.floor(Math.random() * fight_damage.length)];
+        var location_hit_1 = fight_location[Math.floor(Math.random() * fight_location.length)];
+        var location_hit_2 = fight_location[Math.floor(Math.random() * fight_location.length)];
         var health_1 = 20
         var health_2 = 20
         health_1 = health_1 - damage_dealt_2
         health_2 = health_2 - damage_dealt_1
-        message.channel.sendMessage('**__' + message.author.tag + ' vs ' + message.mentions.members.first().displayName + '!__**\n\n**' + message.author.tag + '** has attacked **' + message.mentions.members.first().displayName + '** with a ' + weapon_used + ' and dealt **' + damage_dealt_1 + ' damage**!\n**' + message.mentions.members.first().displayName + '** has attacked **' + message.author.tag + '** back with a ' + weapon_used_2 + ' and dealt **' + damage_dealt_2 + ' damage**!\n\n**' + message.author.tag + '** has **' + health_1 + ' Health** left. \n**' + message.mentions.members.first().displayName+ '** has **' + health_2 + ' Health** left.')
+        message.channel.sendMessage('**__' + message.author.tag + ' vs ' + message.mentions.members.first().displayName + '!__**\n\n**' + message.author.tag + '** has attacked **' + message.mentions.members.first().displayName + '** in the **' + location_hit_1 + '** with a ' + weapon_used + ' and dealt **' + damage_dealt_1 + ' damage**!\n**' + message.mentions.members.first().displayName + '** has attacked **' + message.author.tag + '** back with a ' + weapon_used_2 + ' in the **' + location_hit_1 +  '** and dealt **' + damage_dealt_2 + ' damage**!\n\n**' + message.author.tag + '** has **' + health_1 + ' Health** left. \n**' + message.mentions.members.first().displayName+ '** has **' + health_2 + ' Health** left.')
     }
 });
 
