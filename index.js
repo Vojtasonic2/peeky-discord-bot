@@ -285,7 +285,7 @@ bot.on('message', (message) => { //GoFishing
     if(message.content == '/GoFishing'){
     if(message.channel.name == 'fishing'){
         var fishing_caught = fishing_fish[Math.floor(Math.random() * fishing_fish.length)];
-        message.channel.sendMessage('**' + message.author.tag + '**' + fishing_caught + '\n\n**Command Tags:** 🐟 (type **/Tags** for more info.)')
+        message.channel.sendMessage('**' + message.author.tag + '**' + fishing_caught + '\n\n**Command Tags:** 🐟')
         fishing_amount = fishing_amount + 1
         console.log('The GoFishing command has been executed. Executor: ' + message.author.tag)
    }}
@@ -294,7 +294,7 @@ bot.on('message', (message) => { //GoFishing
 bot.on('message', (message) => { //FishesCaught
     if(message.content == '/FishesCaught'){
     if(message.channel.name == 'fishing'){
-        message.channel.sendMessage('So far, **' + fishing_amount + ' fishes** have been caught!\n\n**Command Tags:** 🐟 (type **/Tags** for more info.)')
+        message.channel.sendMessage('So far, **' + fishing_amount + ' fishes** have been caught!\n\n**Command Tags:** 🐟')
         console.log('The FishesCaught command has been executed. Executor: ' + message.author.tag)
    }}
 })
@@ -366,7 +366,7 @@ bot.on('message', (message) => { //Refresh
     if(message.content == '/Refresh'){
     if(message.author.id == '108899856889737216'){
         bot.user.setActivity(VersionNumber + ' | ' + bot.guilds.size + ' Servers')  
-        message.channel.sendMessage("**" + message.author.tag + "** has refreshed Peeky's status.\n\n**Command Tags:** 👑 (type **/Tags** for more info.)")
+        message.channel.sendMessage("**" + message.author.tag + "** has refreshed Peeky's status.\n\n**Command Tags:** 👑")
        console.log('The Refresh command has been executed. Executor: ' + message.author.tag)
     }}
 })
