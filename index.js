@@ -200,7 +200,7 @@ bot.on('message', (message) => { //Commands
 
 bot.on('message', (message) => { //About
     if(message.content == '/About'){
-       message.channel.sendMessage('Hello **' + message.author.tag + "**!\n\nType **/Commands** for the list of commands.\nType **/Tags** for some ifo about tags.\nType **/Bonuses** for the list of bonuses.\nType **/Help** t support the bot, or to get some help.\n")
+       message.channel.sendMessage('Hello **' + message.author.tag + "**!\n\nHere are some commands to get you started with bot!\n**/Commands** for the list of commands.\n**/Tags** for some ifo about tags.\Type **/Bonuses** for the list of bonuses.\n**/Help** to get some help or support the bot.\n")
        console.log('The About command has been executed. Executor: ' + message.author.tag)
     }
 })
