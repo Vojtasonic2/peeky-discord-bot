@@ -285,7 +285,7 @@ bot.on('message', (message) => { //GoFishing
     if(message.content == '/GoFishing'){
     if(message.channel.name == 'fishing'){
         var fishing_caught = fishing_fish[Math.floor(Math.random() * fishing_fish.length)];
-        message.channel.sendMessage('**' + message.author.tag + '**' + fishing_caught + '\n\n(Type **/FishesCaught** to see how many fishes have been caught.)\n\n**Command Tags:** 🐟 (type **/Tags** for more info.)')
+        message.channel.sendMessage('**' + message.author.tag + '**' + fishing_caught + '\n\n**Command Tags:** 🐟 (type **/Tags** for more info.)')
         fishing_amount = fishing_amount + 1
         console.log('The GoFishing command has been executed. Executor: ' + message.author.tag)
    }}
