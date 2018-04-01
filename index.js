@@ -200,7 +200,7 @@ bot.on('message', (message) => { //Commands
 
 bot.on('message', (message) => { //About
     if(message.content == '/About'){
-       message.channel.sendMessage('Hello **' + message.author.tag + "**!\n\nHere are some commands to get you started with bot!\n**/Commands** for the list of commands.\n**/Tags** for some ifo about tags.\Type **/Bonuses** for the list of bonuses.\n**/Help** to get some help or support the bot.\n")
+       message.channel.sendMessage('Hello **' + message.author.tag + "**!\n\nHere are some commands to get you started with bot!\n**/Commands** will DM you the command list.\n**/Tags** Will DM you some info about the tags.\n**/Bonuses** will DM you the list of bonuses.\n**/Help** Will DM you some links to contact Peeky's creator or to support the bot\n\nHope you will enjoy my stay!")
        console.log('The About command has been executed. Executor: ' + message.author.tag)
     }
 })
@@ -374,7 +374,7 @@ bot.on('message', (message) => { //Refresh
 bot.on('message', (message) => { //Help
     if(message.content == '/Help'){
        message.channel.sendMessage('**' + message.author.tag + '** has received a DM with the **Help**.')
-       message.author.sendMessage("<:bot_patreon:429246678542057473> **Patreon Page:** *https://www.patreon.com/vojtasonic*\n<:bot_twitter:429185436141748225> **Twitter:** *https://twitter.com/vojtasonic*\n<:bot_discord:429185737406152704> **Discord Support Server:** https://discord.gg/j4kArRh")
+       message.author.sendMessage("<:bot_patreon:429246678542057473> **Patreon Page:** *https://www.patreon.com/vojtasonic*\n<:peeky:398855238725009418> **Bot's Page:** *https://discordbots.org/bot/415259002310623232*\n<:bot_twitter:429185436141748225> **Twitter:** *https://twitter.com/vojtasonic*\n<:bot_discord:429185737406152704> **Discord Support Server:** https://discord.gg/j4kArRh")
        console.log('The Help command has been executed. Executor: ' + message.author.tag)
    }
 })
