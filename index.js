@@ -382,7 +382,7 @@ bot.on('message', (message) => { //Help
 bot.on('message', (message) => { //Bonuses
     if(message.content == '/Bonuses'){
        message.channel.sendMessage('**' + message.author.tag + '** has received a DM with the **Bonuses**.')
-       message.author.sendMessage("Alright, here are my bonuses!\n\n__**Automatic Reactions**__\nMessages in a channel called **#gallery** get automatic ❤ reactions!")
+       message.author.sendMessage("Alright, here are my bonuses!\n\n__**Automatic Reactions**__\nMessages in a channel called **#gallery** get automatic ❤ reactions!\nMessages in a channel called **#events** get automatic 🎟 reactions!")
        console.log('The Bonuses command has been executed. Executor: ' + message.author.tag)
    }
 })
@@ -400,7 +400,13 @@ bot.on('message', (message) => { //Tags
 bot.on('message', (message) => { //BONUS: Reaction #gallery
     if(message.channel.name == 'gallery'){
         message.react('❤')
-       console.log('The Automatic Reactions bonus has been executed. Executor: ' + message.author.tag)};
+       console.log('The Automatic Reactions (#gallery) bonus has been executed. Executor: ' + message.author.tag)};
+});
+
+bot.on('message', (message) => { //BONUS: Reaction #events
+    if(message.channel.name == 'events'){
+        message.react('🎟')
+       console.log('The Automatic Reactions (#events) bonus has been executed. Executor: ' + message.author.tag)};
 });
 
 bot.login(process.env.BOT_TOKEN);
