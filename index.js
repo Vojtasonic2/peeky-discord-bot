@@ -285,7 +285,7 @@ bot.on('message', (message) => { //GoFishing
     if(message.content == '/GoFishing'){
     if(message.channel.name == 'fishing'){
         var fishing_caught = fishing_fish[Math.floor(Math.random() * fishing_fish.length)];
-        message.channel.sendMessage('**' + message.author.tag + '**' + fishing_caught + '\n\n(Type **/FishesCaught** to see how many fishes have been caught.)\n(This command is tagged with a 🐟 type **/Tags** for more info.)')
+        message.channel.sendMessage('**' + message.author.tag + '**' + fishing_caught + '\n\n(Type **/FishesCaught** to see how many fishes have been caught.)\n(This command is tagged with a 🐟, type **/Tags** for more info.)')
         fishing_amount = fishing_amount + 1
         console.log('The GoFishing command has been executed. Executor: ' + message.author.tag)
    }}
@@ -294,7 +294,7 @@ bot.on('message', (message) => { //GoFishing
 bot.on('message', (message) => { //FishesCaught
     if(message.content == '/FishesCaught'){
     if(message.channel.name == 'fishing'){
-        message.channel.sendMessage('So far, **' + fishing_amount + ' fishes** have been caught!\n\n(This command is tagged with a 🐟 type **/Tags** for more info.)')
+        message.channel.sendMessage('So far, **' + fishing_amount + ' fishes** have been caught!\n\n(This command is tagged with a 🐟, type **/Tags** for more info.)')
         console.log('The FishesCaught command has been executed. Executor: ' + message.author.tag)
    }}
 })
@@ -390,7 +390,7 @@ bot.on('message', (message) => { //Bonuses
 bot.on('message', (message) => { //Tags
     if(message.content == '/Tags'){
        message.channel.sendMessage('**' + message.author.tag + '** has received a DM with the **Tags**.')
-       message.author.sendMessage("Alright, here's what the tags stad for!\n\n🔧 - Commands with this tag can be used only by the creator of Peeky.\n\n🐟 - Commands with this tag can be used only in a channel called **#fishing**.")
+       message.author.sendMessage("Alright, here's what the tags stand for!\n\n🔧 - Commands with this tag can be used only by the creator of Peeky.\n\n🐟 - Commands with this tag can be used only in a channel called **#fishing**.")
        console.log('The Tags command has been executed. Executor: ' + message.author.tag)
    }
 })
