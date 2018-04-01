@@ -288,7 +288,9 @@ bot.on('message', (message) => { //GoFishing
         message.channel.sendMessage('**' + message.author.tag + '**' + fishing_caught + '\n\n(Type **/FishesCaught** to see how many fishes have been caught.)\n(This command is tagged with a 🐟 type **/Tags** for more info.)')
         fishing_amount = fishing_amount + 1
         console.log('The GoFishing command has been executed. Executor: ' + message.author.tag)
-   }}
+    if(message.channel.name !== 'fishing'){
+        message.channel.sendMessage('(This command is tagged with a 🐟 type **/Tags** for more info.)')
+   }}}
 })
 
 bot.on('message', (message) => { //FishesCaught
