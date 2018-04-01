@@ -185,7 +185,7 @@ var RPS_all = [
 var globalMessage = '*No Global message has been set yet!*'
 var fishing_amount = 0
 
-bot.on('ready', () => { bot.user.setActivity('On ' + bot.guilds.size + ' Servers! | 1.6') })
+bot.on('ready', () => { bot.user.setActivity('/About | 1.6 | Servers:' + bot.guilds.size) })
 bot.on('ready', () => { bot.user.setStatus('idle')} )
 console.log('The bot is now running')
 
