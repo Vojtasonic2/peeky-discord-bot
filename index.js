@@ -382,7 +382,7 @@ bot.on('message', (message) => { //Help
 bot.on('message', (message) => { //Bonuses
     if(message.content == '/Bonuses'){
        message.channel.sendMessage('**' + message.author.tag + '** has received a DM with the **Bonuses**.')
-       message.author.sendMessage("Alright, here are my bonuses!\n\n__**Automatic Reactions**__\nMessages in a channel called **#gallery** get automatic ❤ reactions!\n\n__**Moderator Commands** (W.I.P)__\nUsers with a role called **Moderator** can use the commands tagged with 🔨!")
+       message.author.sendMessage("Alright, here are my bonuses!\n\n__**Automatic Reactions**__\nMessages in a channel called **#gallery** get automatic ❤ reactions!\n\n__**Moderator Commands**__ (W.I.P)\nUsers with a role called **Moderator** can use the commands tagged with 🔨!")
        console.log('The Bonuses command has been executed. Executor: ' + message.author.tag)
    }
 })
