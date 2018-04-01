@@ -186,7 +186,7 @@ var globalMessage = '*No Global message has been set yet!*'
 var fishing_amount = 0
 var VersionNumber = '1.7'
 
-bot.on('ready', () => { bot.user.setActivity(VersionNumber + ' |' + bot.guilds.size + ' Servers') })
+bot.on('ready', () => { bot.user.setActivity(VersionNumber + ' | ' + bot.guilds.size + ' Servers') })
 bot.on('ready', () => { bot.user.setStatus('idle')} )
 console.log('The bot is now running')
 
@@ -364,7 +364,8 @@ bot.on('message', (message) => { //Suggestion
 
 bot.on('message', (message) => { //Refresh
     if(message.content == '/Refresh'){
-        bot.user.setActivity(VersionNumber + ' | ' + bot.guilds.size + ' Servers')   
+        bot.user.setActivity(VersionNumber + ' | ' + bot.guilds.size + ' Servers')  
+        message.channel.sendMessage('The Status has been refreshed.')
        console.log('The Refresh command has been executed. Executor: ' + message.author.tag)
     }
 })
