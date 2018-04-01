@@ -366,7 +366,7 @@ bot.on('message', (message) => { //Refresh
     if(message.content == '/Refresh'){
     if(message.author.id == '108899856889737216'){
         bot.user.setActivity(VersionNumber + ' | ' + bot.guilds.size + ' Servers')  
-        message.channel.sendMessage("The Status has been refreshed.\n(If it didn't, you may want to wait a bit before executing this command again.)")
+        message.channel.sendMessage("The Status has been refreshed.\n\n(This is a 🔧 command, type **/Commands** for more info.)")
        console.log('The Refresh command has been executed. Executor: ' + message.author.tag)
     }}
 })
