@@ -390,7 +390,7 @@ bot.on('message', (message) => { //Bonuses
 bot.on('message', (message) => { //Tags
     if(message.content == '/Tags'){
        message.channel.sendMessage('**' + message.author.tag + '** has received a DM with the **Tags**.')
-       message.author.sendMessage("Alright, here's what do the tags mean!\n\n🔧 - Commands tagged with the '🔧' can only be used by the creator of Peeky.")
+       message.author.sendMessage("Alright, here's what do the tags mean!\n\n🔧 - Commands with this tag can be used only by the creator of Peeky.")
        console.log('The Tags command has been executed. Executor: ' + message.author.tag)
    }
 })
