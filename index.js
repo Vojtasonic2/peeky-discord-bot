@@ -239,11 +239,11 @@ bot.on('message', (message) => { //StartCountdown
     if(message.content.startsWith("/StartCountdown ")){
         var cntd_time = message.content.slice('16','20') + '000'
         var cntd_note = message.content.slice('21','70')
-        message.channel.sendMessage('**' + message.author.tag + "** has started a **" + cntd_time.slice('0','4') + " seconds** long Countdown called **" + cntd_note + "**!")
+        message.channel.sendMessage('**' + message.author.tag + "** has started a **" + cntd_time.slice('0','4') + " seconds** long countdown called **" + cntd_note + "**!")
         console.log('The StartCountdown command has been executed. Executor: ' + message.author.tag)
         setTimeout(function (){
-        message.channel.sendMessage('**' + message.author.tag + "**'s Countdown called **" + cntd_note + "** has finished!")
-        message.author.sendMessage('Hello **' + message.author.tag + '**, one of your countdowns has finished, check the server **' + message.guild.name + '** for more info!')
+        message.channel.sendMessage('**' + message.author.tag + "**'s countdown called **" + cntd_note + "** has finished!")
+        message.author.sendMessage('Hello **' + message.author.tag + '**, one of your countdowns at the server **' + message.guild.name + '** has finished!')
       }, cntd_time);
     }
 });
