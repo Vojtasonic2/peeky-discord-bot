@@ -186,7 +186,7 @@ var globalMessage = '*No Global message has been set yet!*'
 var fishing_amount = 0
 var VersionNumber = '1.8'
 
-bot.on('ready', () => { bot.user.setActivity(VersionNumber + ' | ' + bot.guilds.size + ' Servers') })
+bot.on('ready', () => { bot.user.setActivity(VersionNumber + ' | ' + bot.guilds.size + ' Servers | /About') })
 bot.on('ready', () => { bot.user.setStatus('idle')} )
 console.log('The bot is now running')
 
@@ -368,7 +368,7 @@ bot.on('message', (message) => { //Suggestion
 bot.on('message', (message) => { //Refresh
     if(message.content == '/Refresh'){
     if(message.author.id == '108899856889737216'){
-        bot.user.setActivity(VersionNumber + ' | ' + bot.guilds.size + ' Servers')  
+        bot.user.setActivity(VersionNumber + ' | ' + bot.guilds.size + ' Servers | /About')  
         message.channel.sendMessage("**" + message.author.tag + "** has refreshed Peeky's status.\n\n**Command Tags:** 👑")
        console.log('The Refresh command has been executed. Executor: ' + message.author.tag)
     }}
