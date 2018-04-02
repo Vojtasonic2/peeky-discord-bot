@@ -236,12 +236,13 @@ bot.on('message', (message) => { //StartPoll
 });
 
 bot.on('message', (message) => { //StartCountdown
-    if(message.content.startsWith("/StartCountdown ")){ //10 Minutes
+    if(message.content.startsWith("/StartCountdown ")){
         var cntd_time = message.content.slice('16','19') + '000'
-        message.channel.sendMessage('**' + message.author.tag + '** has started a countdown with a lenght of **' + cntd_time + ' ms**!')
+        var cntd_note = message.content.slice('20','150')
+        message.channel.sendMessage('A Countdown has started!\n**Executor:** ' + message.author.tag + '\n**Lenght:** ' + cntd_time + ' (ms)\n**Note:** ' + cntd_note)
         console.log('The StartCountdown command has been executed. Executor: ' + message.author.tag)
         setTimeout(function (){
-        message.channel.sendMessage('**' +  message.author.tag + "**'s **" + cntd_time + " ms** long countdown has finished!")
+        message.channel.sendMessage('A Countdown has finished!\n**Executor:** ' + message.author.tag + '\n**Lenght:** ' + cntd_time + ' (ms)\n**Note:** ' + cntd_note)
       }, cntd_time);
     }
 });
