@@ -242,7 +242,7 @@ bot.on('message', (message) => { //StartCountdown
         message.channel.sendMessage('**Countdown:** Started\n**Executor:** ' + message.author.tag + '\n**Lenght:** ' + cntd_time.slice('0','4') + ' seconds\n**Note:** ' + cntd_note)
         console.log('The StartCountdown command has been executed. Executor: ' + message.author.tag)
         setTimeout(function (){
-        message.channel.sendMessage('**Countdown:** Finished\n\n**Executor:** ' + message.author.tag + '\n**Lenght:** ' + cntd_time.slice('0','4') + ' seconds\n**Note:** ' + cntd_note)
+        message.channel.sendMessage('**Countdown:** Finished\n**Executor:** ' + message.author.tag + '\n**Lenght:** ' + cntd_time.slice('0','4') + ' seconds\n**Note:** ' + cntd_note)
         message.author.sendMessage('Hello **' + message.author.tag + '**, one of your countdowns has finished, check the server **' + message.guild.name + '** for more info!')
       }, cntd_time);
     }
