@@ -219,17 +219,25 @@ bot.on('ready', () => { bot.user.setActivity(VersionNumber + ' | ' + bot.guilds.
 bot.on('ready', () => { bot.user.setStatus('idle')} )
 console.log('The bot is now running')
 
-bot.on('message', (message) => { //Commands
-    if(message.content == '/Commands'){
-       message.author.sendMessage("**__Command List__**\nAlright, here are my commands, keep in my that my prefix is **/**.\n\n ● __**About**__\n  • Tells some stuff about myself!\n\n ● __**Commands**__\n  • Shows my commands again!\n\n ● __**Bonuses**__\n  • Sends you some bonus stuff that Peeky can do!\n\n ● __**Tags**__\n  • Explains what do the tags mean!\n\n ● __**Wikipedia** <Search Interest>__\n  • Searches the Wikipedia for you!\n\n ● __**ServerInfo**__\n  • Displays some useful stuff about your server!\n\n ● __**UserInfo**__\n  • Tells you something about yourself.\n\n ● __**StartPoll** <Poll Topic>__\n  • Starts a poll for you.\n\n ● __**StartCountdown** <0000 - 9999> <Countdown Name>__\n  • Starts a countdown in seconds.\n\n ● __**GlobalSet** <Message>__\n  • Sets a global message that can be seen on all the servers with that I'm in!\n\n ● __**GlobalShow**__\n  • Shows the global message.\n\n ● __**Comics**__\n  • Creates a comics that's perfect for sitcom laugh track!\n\n ● __**GoFishing**__\n  • Catches a random fish and redirects you to it's Wikipedia page.\n  • **Command Tags:** 🐟\n\n ● __**FishesCaught**__\n  • Shows how many fishes have been caught in total.\n  • **Command Tags:** 🐟\n\n ● __**Fight** <Enemy Name>__\n  • Starts a fight with someone!\n  • **Command Tags:** ⚔\n\n ● __**DadJoke**__\n  • Tells *hilarious* dad joke.\n\n ● __**Fml**__\n  • Wanna hear an FML story?\n\n ● __**Roll**__\n  • Rolls a number between 1 and 6.\n\n ● __**Ask** <Question>__\n  • Ask me anything! Don't be shy!\n\n ● __**Say** <Your Text>__\n  • Peeky will repeat what you said!\n\n ● __**GetEmoji** <Emojis>__\n  • Shows you the id for your custom emojis!\n\n ● __**Suggestion** <Suggestion>__\n  • Sends your suggestion to the Support Server!\n\n ● __**Refresh**__\n  • Refreshes Peeky's status!\n  • **Command Tags:** 👑\n\n ● __**Help**__\n  • Send you some links to help you or the bot out!");
+bot.on('message', (message) => { //Commands 1
+    if(message.content == '/Commands 1'){
+       message.author.sendMessage("**__Command List__**\nAlright, here's one of my lists of commands, keep in my that my prefix is **/**.\n\n ● **About**\n  • Tells some stuff about myself!\n\n ● **Commands <1 - 2>**\n  • Shows the lists of commands!\n\n ● **Bonuses**\n  • Sends you some bonus stuff that Peeky can do!\n\n ● **Tags**\n  • Explains what do the tags mean!\n\n ● **Wikipedia** <Search Interest>\n  • Searches the Wikipedia for you!\n\n ● **ServerInfo**\n  • Displays some useful stuff about your server!\n\n ● **UserInfo**\n  • Tells you something about yourself.\n\n ● **StartPoll** <Poll Topic>\n  • Starts a poll for you.\n\n ● **StartCountdown** <0000 - 9999> <Countdown Name>\n  • Starts a countdown in seconds.\n\n ● **GlobalSet** <Message>\n  • Sets a global message that can be seen on all the servers with me in!\n\n ● **GlobalShow**\n  • Shows the global message.\n\n ● **Comics**\n  • Creates a comics that's perfect for sitcom laugh track!\n\n ● **GoFishing**\n  • Catches a random fish and redirects you to it's Wikipedia page.\n  • **Command Tags:** 🐟\n\n ● **FishesCaught**\n  • Shows how many fishes have been caught in total.\n  • **Command Tags:** 🐟\n\n ● **Fight** <Enemy Name>\n  • Starts a fight with someone!\n  • **Command Tags:** ⚔\n\n ● **DadJoke**\n  • Tells *hilarious* dad joke.\n\n ● **Fml**\n  • Wanna hear an FML story?\n\n ● **Roll**\n  • Rolls a number between 1 and 6.\n\n ● **Ask** <Question>\n  • Ask me anything! Don't be shy!\n\n ● **Say** <Your Text>\n  • Peeky will repeat what you said!\n\n ● **GetEmoji** <Emojis>\n  • Shows you the id for your custom emojis!\n\n ● **Suggestion** <Suggestion>\n  • Sends your suggestion to the Support Server!\n\n ● **Refresh**\n  • Refreshes Peeky's status!\n  • **Command Tags:** 👑\n\n ● **Help**\n  • Send you some links to help you or the bot out!");
        message.channel.sendMessage('**' + message.author.tag + '** has received a DM with the **Command List**.')
-       console.log('The Commands command has been executed. Executor: ' + message.author.tag)
+       console.log('The Commands 1 command has been executed. Executor: ' + message.author.tag)
+   }
+})
+
+bot.on('message', (message) => { //Commands 2
+    if(message.content == '/Commands 2'){
+       message.author.sendMessage("**__Command List__**\nAlright, here's one of my lists of commands, keep in my that my prefix is **/**.\n\n*empty.*");
+       message.channel.sendMessage('**' + message.author.tag + '** has received a DM with the **Command List**.')
+       console.log('The Commands 2 command has been executed. Executor: ' + message.author.tag)
    }
 })
 
 bot.on('message', (message) => { //About
     if(message.content == '/About'){
-       message.channel.sendMessage('Hello **' + message.author.tag + "**!\n\nHere are some commands to get you started with bot!\n\n**/Commands** Shows Peeky's commands.\n**/Tags** Explains what do the tags mean!\n**/Bonuses** Sends you some bonus stuff that Peeky can do!\n**/Help** Send you some links to help you or the bot out!\n\nI hope you will enjoy my stay!")
+       message.channel.sendMessage('Hello **' + message.author.tag + "**!\n\nHere are some commands to get you started with bot!\n\n**/Commands 1** Shows Peeky's commands.\n\n**/Commands 2** Shows Peeky's commands.\n**/Tags** Explains what do the tags mean!\n**/Bonuses** Sends you some bonus stuff that Peeky can do!\n**/Help** Send you some links to help you or the bot out!\n\nI hope you will enjoy my stay!")
        console.log('The About command has been executed. Executor: ' + message.author.tag)
     }
 })
@@ -416,7 +424,7 @@ bot.on('message', (message) => { //Help
 bot.on('message', (message) => { //Bonuses
     if(message.content == '/Bonuses'){
        message.channel.sendMessage('**' + message.author.tag + '** has received a DM with the **Bonuses**.')
-       message.author.sendMessage("**__List of Bonuses__**\nAlright, here are my bonuses!\n\n ● __**Automatic Reactions**__\n  • Messages in a channel called **#gallery** get automatic ❤ reactions!\n  • Messages in a channel called **#events** get automatic 🎟 reactions!")
+       message.author.sendMessage("**__List of Bonuses__**\nAlright, here are my bonuses!\n\n ● **Automatic Reactions**\n  • Messages in a channel called **#gallery** get automatic ❤ reactions!\n  • Messages in a channel called **#events** get automatic 🎟 reactions!")
        console.log('The Bonuses command has been executed. Executor: ' + message.author.tag)
    }
 })
