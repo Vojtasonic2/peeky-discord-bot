@@ -221,7 +221,7 @@ console.log('The bot is now running')
 
 bot.on('message', (message) => { //Commands
     if(message.content == '/Commands'){
-       message.author.sendMessage("**__Command List__**\nAlright, here are my commands, keep in my that my prefix is **/**.\n\n ● __**About**__\n  • Tells some stuff about myself!\n\n ● __**Commands**__\n  • Shows my commands again!\n\n ● __**Bonuses**__\n  • Sends you some bonus stuff that Peeky can do!\n\n ● __**Tags**__\n  • Explains what do the tags mean!\n\n ● __**Wikipedia** <Search Interest>__\n  • Searches the Wikipedia for you!\n\n ● __**ServerInfo**__\n  • Displays some useful stuff about your server!\n\n ● __**UserInfo**__\n  • Tells you something about yourself.\n\n ● __**StartPoll** <Poll Topic>__\n  • Starts a poll for you.\n\n ● __**StartCountdown** <0000 - 9999> <Countdown Name>__\n  • Starts a countdown in seconds.\n\n ● __**GlobalSet** <Message>__\n  • Sets a global message that can be seen on all the servers with that I'm in!\n\n ● __**GlobalShow**__\n  • Shows the global message.\n\n ● __**Comics**__\n  • Creates a comics that's perfect for sitcom laugh track!\n\n ● __**GoFishing**__\n  • Catches a random fish and redirects you to it's Wikipedia page.\n  • **Command Tags:** 🐟\n\n ● __**FishesCaught**__\n  • Shows how many fishes have been caught in total.\n  • **Command Tags:** 🐟\n\n ● __**Fight** <Enemy Name - Max 20 Chars>__\n  • Starts a fight with someone!\n  • **Command Tags:** ⚔\n\n ● __**DadJoke**__\n  • Tells *hilarious* dad joke.\n\n ● __**Fml**__\n  • Wanna hear an FML story?\n\n ● __**Roll**__\n  • Rolls a number between 1 and 6.\n\n ● __**Ask** <Question>__\n  • Ask me anything! Don't be shy!\n\n ● __**Say** <Your Text>__\n  • Peeky will repeat what you said!\n\n ● __**GetEmoji** <Emojis>__\n  • Shows you the id for your custom emojis!\n\n ● __**Highfive** <Mention a User>__\n  • Gives someone a highfive!\n\n ● __**RockPaperScissors** <Mention a User>__\n  • Starts a quick game of Rock, paper and scissors with someone!\n\n ● __**Suggestion** <Suggestion>__\n  • Sends your suggestion to the Support Server!\n\n ● __**Refresh**__\n  • Refreshes Peeky's status!\n  • **Command Tags:** 👑\n\n ● __**Help**__\n  • Send you some links to help you or the bot out!");
+       message.author.sendMessage("**__Command List__**\nAlright, here are my commands, keep in my that my prefix is **/**.\n\n ● __**About**__\n  • Tells some stuff about myself!\n\n ● __**Commands**__\n  • Shows my commands again!\n\n ● __**Bonuses**__\n  • Sends you some bonus stuff that Peeky can do!\n\n ● __**Tags**__\n  • Explains what do the tags mean!\n\n ● __**Wikipedia** <Search Interest>__\n  • Searches the Wikipedia for you!\n\n ● __**ServerInfo**__\n  • Displays some useful stuff about your server!\n\n ● __**UserInfo**__\n  • Tells you something about yourself.\n\n ● __**StartPoll** <Poll Topic>__\n  • Starts a poll for you.\n\n ● __**StartCountdown** <0000 - 9999> <Countdown Name>__\n  • Starts a countdown in seconds.\n\n ● __**GlobalSet** <Message>__\n  • Sets a global message that can be seen on all the servers with that I'm in!\n\n ● __**GlobalShow**__\n  • Shows the global message.\n\n ● __**Comics**__\n  • Creates a comics that's perfect for sitcom laugh track!\n\n ● __**GoFishing**__\n  • Catches a random fish and redirects you to it's Wikipedia page.\n  • **Command Tags:** 🐟\n\n ● __**FishesCaught**__\n  • Shows how many fishes have been caught in total.\n  • **Command Tags:** 🐟\n\n ● __**Fight** <Enemy Name - Max 20 Chars>__\n  • Starts a fight with someone!\n  • **Command Tags:** ⚔\n\n ● __**DadJoke**__\n  • Tells *hilarious* dad joke.\n\n ● __**Fml**__\n  • Wanna hear an FML story?\n\n ● __**Roll**__\n  • Rolls a number between 1 and 6.\n\n ● __**Ask** <Question>__\n  • Ask me anything! Don't be shy!\n\n ● __**Say** <Your Text>__\n  • Peeky will repeat what you said!\n\n ● __**GetEmoji** <Emojis>__\n  • Shows you the id for your custom emojis!\n\n ● __**Suggestion** <Suggestion>__\n  • Sends your suggestion to the Support Server!\n\n ● __**Refresh**__\n  • Refreshes Peeky's status!\n  • **Command Tags:** 👑\n\n ● __**Help**__\n  • Send you some links to help you or the bot out!");
        message.channel.sendMessage('**' + message.author.tag + '** has received a DM with the **Command List**.')
        console.log('The Commands command has been executed. Executor: ' + message.author.tag)
    }
@@ -369,22 +369,6 @@ bot.on('message', (message) => { //Ask
           var randomReply = reply[Math.floor(Math.random() * reply.length)];
           message.channel.sendMessage('**' + message.author.tag + "** asked me **" + message.content.replace('/Ask ','') + "**\nTo which I'd say that **" + randomReply + '**.');
           console.log('The Ask command has been executed. Executor: ' + message.author.tag)
-    }
-  });
-
-bot.on('message', (message) => { //Highfive
-  if(message.content.startsWith("/Highfive ")){
-        message.channel.sendMessage(message.author + '🙏' + message.mentions.members.first());
-        console.log('The Highfive command has been executed. Executor: ' + message.author.tag)
-  }
-});
-
-bot.on('message', (message) => { //RockPaperScissors
-    if(message.content.startsWith("/RockPaperScissors ")){
-          var RPS_Selected = RPS_all[Math.floor(Math.random() * RPS_all.length)];
-          var RPS_Selected2 = RPS_all[Math.floor(Math.random() * RPS_all.length)];
-          message.channel.sendMessage(message.author + RPS_Selected + ' vs ' + RPS_Selected2 + message.mentions.members.first());
-          console.log('The RockPaperScissors command has been executed. Executor: ' + message.author.tag)
     }
 });
 
