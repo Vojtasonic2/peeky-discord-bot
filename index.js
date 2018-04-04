@@ -202,7 +202,13 @@ var fishing_fish = [
     ' caught a **Golden Dorado** (Ranked #21)!\n\n*No description given yet.*\n\n**Wikipedia:** https://en.wikipedia.org/wiki/Salminus_brasiliensis',
     ' caught a **Southern platyfish** (Ranked #22)!\n\nThe southern platyfish grows to a maximum overall length of 6.0 centimetres.\n\n**Wikipedia:** https://en.wikipedia.org/wiki/Southern_platyfish',
     ' caught a **Common carp** (Ranked #23)!\n\n*No description given yet.*\n\n**Wikipedia:** https://en.wikipedia.org/wiki/Common_carp',
-    ' caught a **Neon tetra** (Ranked #24)!\n\nThe neon tetra is found in the western and northern Amazon basin in southeastern Colombia, eastern Peru, and western Brazil.\n\n**Wikipedia:** https://en.wikipedia.org/wiki/Neon_tetra'
+    ' caught a **Neon tetra** (Ranked #24)!\n\nThe neon tetra is found in the western and northern Amazon basin in southeastern Colombia, eastern Peru, and western Brazil.\n\n**Wikipedia:** https://en.wikipedia.org/wiki/Neon_tetra',
+    ' caught a **Giant trevally** (Ranked #25)!\n\n*No description given yet.*\n\n**Wikipedia:** https://en.wikipedia.org/wiki/Giant_trevally',
+    ' caught a **Eel** (Ranked #26)!\n\n*No description given yet.*\n\n**Wikipedia:** https://en.wikipedia.org/wiki/Eel',
+    ' caught a **Brachyplatystoma** (Ranked #27)!\n\n*No description given yet.*\n\n**Wikipedia:** https://en.wikipedia.org/wiki/Brachyplatystoma',
+    ' caught a **Halibut** (Ranked #28)!\n\n*No description given yet.*\n\n**Wikipedia:** https://en.wikipedia.org/wiki/Halibut',
+    ' caught a **Sturgeon** (Ranked #29)!\n\nThe evolution of this fish dates back to the Triassic some 245 to 208 million years ago\n\n**Wikipedia:** https://en.wikipedia.org/wiki/Sturgeon',
+    ' caught a **Perch** (Ranked #30)!\n\n*No description given yet.*\n\n**Wikipedia:** https://en.wikipedia.org/wiki/Perch'
 ]
     
 var RPS_all = [
