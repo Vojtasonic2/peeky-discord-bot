@@ -440,7 +440,7 @@ bot.on('message', (message) => { //Bonuses
 bot.on('message', (message) => { //Tags
     if(message.content == '/Tags'){
        message.channel.sendMessage('**' + message.author.tag + '** has received a DM with the **Tags**.')
-       message.author.sendMessage("**__Tags__**\n\n👑 - Commands with this tag can be used only by the creator of Peeky **Vojtasonic#5792**.\n\n🐟 - Commands with this tag can be used only in a channel called **#fishing**.\n\n⚔ - Commands with this tag can be used only in a channel called **#arena**.")
+       message.author.sendMessage("**__Tags__**\n\n👑 - Commands with this tag can be used only by the creator of Peeky, **Vojtasonic#5792**.\n\n🐟 - Commands with this tag can be used only in a channel called **#fishing**.\n\n⚔ - Commands with this tag can be used only in a channel called **#arena**.")
        console.log('The Tags command has been executed. Executor: ' + message.author.tag)
    }
 })
