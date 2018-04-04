@@ -219,7 +219,7 @@ var RPS_all = [
 
 var globalMessage = 'No Global message has been set yet!\nType **/Commands** to see how to set one!'
 var fishing_amount = 0
-var VersionNumber = '1.9'
+var VersionNumber = '2.0'
 
 bot.on('ready', () => { bot.user.setActivity(VersionNumber + ' | ' + bot.guilds.size + ' Servers') })
 bot.on('ready', () => { bot.user.setStatus('idle')} )
