@@ -227,7 +227,7 @@ console.log('The bot is now running')
 
 bot.on('message', (message) => { //Commands
     if(message.content == '/Commands'){
-       message.author.sendMessage("**__Commands__**\n**Prefix:** /\n\n ● **About**\n  • Introduces you to the bot and gives you few helpful commands!\n\n ● **Commands**\n  • Shows the commands!\n\n ● **Bonuses**\n  • Sends you the bonuses that Peeky can do!\n\n ● **Tags**\n  • Explains the tags!\n\n ● **Help**\n  • Send you some links to help out you or the bot!\n\n ● **Wikipedia** <Search_request>\n  • Searches the Wikipedia for you!\n\n ● **ServerInfo**\n  • Displays some useful stuff about your server!\n\n ● **UserInfo**\n  • Tells you something about yourself.\n\n ● **StartPoll** <Poll Topic>\n  • Starts a poll for you.\n\n ● **StartCountdown** <0000 - 9999> <Countdown Name>\n  • Starts a countdown in seconds.\n\n ● **GlobalSet** <Message>\n  • Sets a global message that can be seen on all the servers with me in!\n\n ● **GlobalShow**\n  • Shows the global message.\n\n ● **Comics**\n  • Creates a comics that's perfect for sitcom laugh track!\n\n ● **GoFishing**\n  • Catches a random fish and redirects you to it's Wikipedia page.\n  • **Command Tags:** 🐟\n\n ● **FishesCaught**\n  • Shows how many fishes have been caught in total.\n  • **Command Tags:** 🐟\n\n ● **Fight** <Enemy Name>\n  • Starts a fight with someone!\n  • **Command Tags:** ⚔\n\n ● **DadJoke**\n  • Tells *hilarious* dad joke.\n\n ● **Fml**\n  • Wanna hear an FML story?\n\n ● **Roll**\n  • Rolls a number between 1 and 6.\n\n ● **Ask** <Question>\n  • Ask me anything! Don't be shy!\n\n ● **Say** <Your Text>\n  • Peeky will repeat what you said!\n\n ● **GetEmoji** <Emojis>\n  • Shows you the id for your custom emojis!\n\n ● **Suggestion** <Suggestion>\n  • Sends your suggestion to the Support Server!\n\n ● **Refresh**\n  • Refreshes Peeky's status!\n  • **Command Tags:** 👑");
+       message.author.sendMessage("**__Commands__**\nBot's prefix: **/**\n\n ● **About**\n  • Introduces you to the bot and gives you few helpful commands!\n\n ● **Commands**\n  • Shows the commands!\n\n ● **Bonuses**\n  • Sends you the bonuses that Peeky can do!\n\n ● **Tags**\n  • Explains the tags!\n\n ● **Help**\n  • Send you some links to help out you or the bot!\n\n ● **Wikipedia** <Search_request>\n  • Searches the Wikipedia for you!\n\n ● **ServerInfo**\n  • Displays some useful stuff about your server!\n\n ● **UserInfo**\n  • Tells you something about yourself.\n\n ● **StartPoll** <Poll Topic>\n  • Starts a poll for you.\n\n ● **StartCountdown** <0000 - 9999> <Countdown Name>\n  • Starts a countdown in seconds.\n\n ● **GlobalSet** <Message>\n  • Sets a global message that can be seen on all the servers with me in!\n\n ● **GlobalShow**\n  • Shows the global message.\n\n ● **Comics**\n  • Creates a comics that's perfect for sitcom laugh track!\n\n ● **GoFishing**\n  • Catches a random fish and redirects you to it's Wikipedia page.\n  • **Command Tags:** 🐟\n\n ● **FishesCaught**\n  • Shows how many fishes have been caught in total.\n  • **Command Tags:** 🐟\n\n ● **Fight** <Enemy Name>\n  • Starts a fight with someone!\n  • **Command Tags:** ⚔\n\n ● **DadJoke**\n  • Tells *hilarious* dad joke.\n\n ● **Fml**\n  • Wanna hear an FML story?\n\n ● **Roll**\n  • Rolls a number between 1 and 6.\n\n ● **Ask** <Question>\n  • Ask me anything! Don't be shy!\n\n ● **Say** <Your Text>\n  • Peeky will repeat what you said!\n\n ● **GetEmoji** <Emojis>\n  • Shows you the id for your custom emojis!\n\n ● **Suggestion** <Suggestion>\n  • Sends your suggestion to the Support Server!\n\n ● **Refresh**\n  • Refreshes Peeky's status!\n  • **Command Tags:** 👑");
        message.channel.sendMessage('**' + message.author.tag + '** has received a DM with the **Commands**.')
        console.log('The Commands command has been executed. Executor: ' + message.author.tag)
    }
@@ -323,7 +323,7 @@ bot.on('message', (message) => { //GoFishing
     if(message.content == '/GoFishing'){
     if(message.channel.name == 'fishing'){
         var fishing_caught = fishing_fish[Math.floor(Math.random() * fishing_fish.length)];
-        message.channel.sendMessage('**' + message.author.tag + '**' + fishing_caught + '\n\n**Command Tags:** 🐟')
+        message.channel.sendMessage('**' + message.author.tag + '**' + fishing_caught + '**')
         fishing_amount = fishing_amount + 1
         console.log('The GoFishing command has been executed. Executor: ' + message.author.tag)
    }}
@@ -332,14 +332,13 @@ bot.on('message', (message) => { //GoFishing
 bot.on('message', (message) => { //FishesCaught
     if(message.content == '/FishesCaught'){
     if(message.channel.name == 'fishing'){
-        message.channel.sendMessage('So far, **' + fishing_amount + ' fishes** have been caught!\n\n**Command Tags:** 🐟')
+        message.channel.sendMessage('So far, **' + fishing_amount + ' fishes** have been caught!')
         console.log('The FishesCaught command has been executed. Executor: ' + message.author.tag)
    }}
 })
 
 bot.on('message', (message) => { //Fight
     if(message.content.startsWith("/Fight ")){
-        if(message.channel.name == 'arena'){
         var weapon_used = fight_weapon[Math.floor(Math.random() * fight_weapon.length)];
         var damage_dealt_1 = fight_damage[Math.floor(Math.random() * fight_damage.length)];
         var weapon_used_2 = fight_weapon[Math.floor(Math.random() * fight_weapon.length)];
@@ -350,9 +349,19 @@ bot.on('message', (message) => { //Fight
         var attacker_user = message.author.tag
         health_1 = health_1 - damage_dealt_2
         health_2 = health_2 - damage_dealt_1
-        message.channel.sendMessage('**' + attacker_user + '** vs **' + target_user + '**\n\n**' + attacker_user + '** has attacked **' + target_user + '** with a **' + weapon_used + '** and dealt **' + damage_dealt_1 + ' damage**!\n**' + target_user + '** has attacked **' + attacker_user + '** back with a **' + weapon_used_2 + '** and dealt **' + damage_dealt_2 + ' damage**!\n\n**' + attacker_user + '** has **' + health_1 + ' Health** left. \n**' + target_user + '** has **' + health_2 + ' Health** left.\n\n**Command Tags:** ⚔')
+            if(weapon_used == '🛡'){
+                health_1 = health_1 + damage_dealt_2
+                damage_dealt_2 = 0}
+            if(weapon_used_2 == '🛡'){
+                health_2 = health_2 + damage_dealt_1
+                damage_dealt_1 = 0}
+        message.channel.sendMessage('**' + attacker_user + '** vs **' + target_user + '**\n\n**' + attacker_user + '** has attacked **' + target_user + '** with a **' + weapon_used + '** and dealt **' + damage_dealt_1 + ' damage**!\n**' + target_user + '** has attacked **' + attacker_user + '** back with a **' + weapon_used_2 + '** and dealt **' + damage_dealt_2 + ' damage**!\n\n**' + attacker_user + '** has **' + health_1 + ' Health** left. \n**' + target_user + '** has **' + health_2 + ' Health** left.')
         console.log('The Fight command has been executed. Executor: ' + message.author.tag)
-    }}
+            if(weapon_used == '🛡'){
+            message.channel.sendMessage("**" + attacker_user + "** has blocked **all** the damage with a 🛡!")
+            if(weapon_used_2 == '🛡'){
+            message.channel.sendMessage("**" + target_user + "** has blocked **all** the damage with a 🛡!")
+            }}}
 });
 
 bot.on('message', (message) => { //FML
@@ -406,7 +415,7 @@ bot.on('message', (message) => { //Refresh
     if(message.content == '/Refresh'){
     if(message.author.id == '108899856889737216'){
         bot.user.setActivity(VersionNumber + ' | ' + bot.guilds.size + ' Servers')  
-        message.channel.sendMessage("**" + message.author.tag + "** has refreshed Peeky's status.\n\n**Command Tags:** 👑")
+        message.channel.sendMessage("**" + message.author.tag + "** has refreshed Peeky's status.")
        console.log('The Refresh command has been executed. Executor: ' + message.author.tag)
     }}
 })
