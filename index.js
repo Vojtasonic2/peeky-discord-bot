@@ -339,6 +339,7 @@ bot.on('message', (message) => { //FishesCaught
 
 bot.on('message', (message) => { //Fight
     if(message.content.startsWith("/Fight ")){
+        if(message.channel.name == 'arena'){
         var weapon_used = fight_weapon[Math.floor(Math.random() * fight_weapon.length)];
         var damage_dealt_1 = fight_damage[Math.floor(Math.random() * fight_damage.length)];
         var weapon_used_2 = fight_weapon[Math.floor(Math.random() * fight_weapon.length)];
@@ -361,7 +362,7 @@ bot.on('message', (message) => { //Fight
             message.channel.sendMessage("**" + attacker_user + "** has blocked **all** the damage with a 🛡!")
             if(weapon_used_2 == '🛡'){
             message.channel.sendMessage("**" + target_user + "** has blocked **all** the damage with a 🛡!")
-            }}}
+            }}}}
 });
 
 bot.on('message', (message) => { //FML
