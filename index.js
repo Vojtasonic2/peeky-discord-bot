@@ -263,9 +263,7 @@ bot.on('message', (message) => { //UserInfo
 
 bot.on('message', (message) => { //StartPoll
     if(message.content.startsWith("/StartPoll ")){
-       message.channel.sendMessage('**' + message.author.tag + '** has started a poll!')
-       message.react('<:bot_approve:416366096053174273')
-       message.react('<:bot_deny:416366135223517186')
+       message.channel.sendMessage('This is a poll that **' + message.author.tag + '** has started!\n\n**' + message.content.replace("/StartPoll ","") + '**').then(sentMessage => sentMessage.react("<:bot_approve:416366096053174273") + (sentMessage.react("<:bot_deny:416366135223517186")));
        console.log('The StartPoll command has been executed. Executor: ' + message.author.tag)
     }
 });
