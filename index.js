@@ -356,11 +356,7 @@ bot.on('message', (message) => { //Fight
                 damage_dealt_1 = 0}
         message.channel.sendMessage('**' + attacker_user + '** vs **' + target_user + '**\n\n**' + attacker_user + '** has attacked **' + target_user + '** with a **' + weapon_used + '** and dealt **' + damage_dealt_1 + ' damage**!\n**' + target_user + '** has attacked **' + attacker_user + '** back with a **' + weapon_used_2 + '** and dealt **' + damage_dealt_2 + ' damage**!\n\n**' + attacker_user + '** has **' + health_1 + ' Health** left. \n**' + target_user + '** has **' + health_2 + ' Health** left.')
         console.log('The Fight command has been executed. Executor: ' + message.author.tag)
-            if(weapon_used == '🛡'){
-            message.channel.sendMessage("**" + attacker_user + "** has blocked **all** the damage with a 🛡!")
-            if(weapon_used_2 == '🛡'){
-            message.channel.sendMessage("**" + target_user + "** has blocked **all** the damage with a 🛡!")
-            }}}}
+            }}
 });
 
 bot.on('message', (message) => { //FML
@@ -404,7 +400,8 @@ bot.on('message', (message) => { //GetEmoji
 
 bot.on('message', (message) => { //Suggestion
     if(message.content.startsWith("/Suggestion ")){
-          bot.channels.get('429227074587197441').sendMessage("This is a suggestion from **" + message.author.tag + "**.\n\n**" + message.content.replace(('/Suggestion'),('')) + '**.');
+          bot.channels.get('429227074587197441').sendMessage("This is a suggestion from **" + message.author.tag + "**.\n\n**" + message.content.replace(('/Suggestion'),('')) + '**.')
+          .then(sentMessage => sentMessage.react("❔"));
           message.channel.sendMessage('**' + message.author.tag + '** has send a suggestion!')
           console.log('The Suggestion command has been executed. Executor: ' + message.author.tag)
    }
