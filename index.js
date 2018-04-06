@@ -210,12 +210,6 @@ var fishing_fish = [
     ' caught a **Sturgeon** (Ranked #29)!\n\nThe evolution of this fish dates back to the Triassic some 245 to 208 million years ago\n\n**Wikipedia:** https://en.wikipedia.org/wiki/Sturgeon',
     ' caught a **Perch** (Ranked #30)!\n\n*No description given yet.*\n\n**Wikipedia:** https://en.wikipedia.org/wiki/Perch'
 ]
-    
-var RPS_all = [
-    '✋',
-    '✌',
-    '✊'
-]
 
 var globalMessage = 'No Global message has been set yet!\nType **/Commands** to see how to set one!'
 var fishing_amount = 0
@@ -378,7 +372,7 @@ bot.on('message', (message) => { //Ask
 
 bot.on('message', (message) => { //Say
     if(message.content.startsWith("/Say ")){
-           message.channel.sendMessage(message.content.replace('/Say ',''))
+           message.channel.sendMessage(message.content.replace('/Say ','') + '\n\nBy: **' + message.author.tag +'**.')
            message.delete()
            console.log('The Say command has been executed. Executor: ' + message.author.tag)
     }
