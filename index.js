@@ -252,7 +252,7 @@ bot.on('message', (message) => { //ServerName
     if(message.content.startsWith('/ServerName ')){
     if(message.member.hasPermission("ADMINISTRATOR")){
         message.guild.setName(message.content.replace('/ServerName ',''))
-        message.channel.sendMessage('The server name has been changed!)
+        message.channel.sendMessage('The server name has been changed!')
         console.log('The ServerName command has been executed. Executor: ' + message.author.tag)
   }}
 })
