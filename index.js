@@ -480,6 +480,13 @@ bot.on('message', (message) => { //Refresh
        console.log('The Refresh command has been executed. Executor: ' + message.author.tag)
     }}
 })
+bot.on('message', (message) => { //Refresh - failed
+    if(message.content == '/Refresh'){
+    if(message.author.id !== '108899856889737216'){
+        message.channel.sendMessage('That command cannot by you, type **/Tags** for more info.')
+        console.log('The Refresh command has failed. Executor: ' + message.author.tag)
+   }}
+})
 
 bot.on('message', (message) => { //Help
     if(message.content == '/Help'){
