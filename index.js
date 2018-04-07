@@ -213,7 +213,7 @@ var fishing_fish = [
 
 var globalMessage = 'No Global message has been set yet!\nType **/Commands** to see how to set one!'
 var fishing_amount = 0
-var VersionNumber = '2.0'
+var VersionNumber = '2.1'
 
 bot.on('ready', () => { bot.user.setActivity(VersionNumber + ' | ' + bot.guilds.size + ' Servers') })
 bot.on('ready', () => { bot.user.setStatus('idle')} )
@@ -269,12 +269,12 @@ bot.on('message', (message) => { //StartCountdown
 });
 
 bot.on('message', (message) => { //Global (Set)
-  if(message.content.startsWith("/GlobalSet ")){
-        globalMessage = 'This Global Message has been set by **' + message.author.tag + '**.\n\n**' + message.content.replace('/GlobalSet ','') + '**'
-        message.channel.sendMessage('**' +  message.author.tag + '** has set the global message!')
-        console.log('The GlobalSet command has been executed. Executor: ' + message.author.tag)
-  }
-});
+    if(message.content.startsWith("/GlobalSet ")){
+          globalMessage = 'This Global Message has been set by **' + message.author.tag + '**.\n\n**' + message.content.replace('/GlobalSet ','') + '** in a server called **' + message.guild.name + '**.'
+          message.channel.sendMessage('**' +  message.author.tag + '** has set the global message!')
+          console.log('The GlobalSet command has been executed. Executor: ' + message.author.tag)
+    }
+ });
 
 bot.on('message', (message) => { //Global (Show)
     if(message.content == '/GlobalShow'){
