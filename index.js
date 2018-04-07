@@ -221,7 +221,7 @@ console.log('The bot is now running')
 
 bot.on('message', (message) => { //Commands
     if(message.content == '/Commands'){
-       message.channel.sendMessage('**' + message.author.tag + '**, type **/Commands 1** for the commands!')
+       message.channel.sendMessage('Available Command pages:\n\n**Commands 1**, **Commands 2**')
        console.log('The Commands command has been executed. Executor: ' + message.author.tag)
    }
 })
@@ -244,7 +244,7 @@ bot.on('message', (message) => { //Commands 2
 
 bot.on('message', (message) => { //About
     if(message.content == '/About'){
-       message.channel.sendMessage('Hello, **' + message.author.tag + "**!\n\nTo get started with the bot, type **/Commands 1**!\n\n**Highlighted Features**\n ● Moderation Commands\n ● Fun Commands\n ● Developer Commands\n ● Automatic Reactions in specific channels\n ● Minigames\n\nCurrent Version: **" + VersionNumber + '**')
+       message.channel.sendMessage('Hello, **' + message.author.tag + "**!\n\nTo get started with the bot, type **/Commands**!\n\n**Highlighted Features**\n ● Moderation Commands\n ● Fun Commands\n ● Developer Commands\n ● Automatic Reactions in specific channels\n ● Minigames\n\nCurrent Version: **" + VersionNumber + '**')
        console.log('The About command has been executed. Executor: ' + message.author.tag)
     }
 })
