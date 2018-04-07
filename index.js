@@ -370,12 +370,26 @@ bot.on('message', (message) => { //GoFishing
         console.log('The GoFishing command has been executed. Executor: ' + message.author.tag)
    }}
 })
+bot.on('message', (message) => { //GoFishing - failed
+    if(message.content == '/GoFishing'){
+    if(message.channel.name !== 'fishing'){
+        message.channel.sendMessage('That command cannot be used here, type **/Tags** for more info.')
+        console.log('The GoFishing command has failed. Executor: ' + message.author.tag)
+   }}
+})
 
 bot.on('message', (message) => { //FishesCaught
     if(message.content == '/FishesCaught'){
     if(message.channel.name == 'fishing'){
         message.channel.sendMessage('So far, **' + fishing_amount + ' fishes** have been caught!')
         console.log('The FishesCaught command has been executed. Executor: ' + message.author.tag)
+   }}
+})
+bot.on('message', (message) => { //FishesCaught - failed
+    if(message.content == '/FishesCaught'){
+    if(message.channel.name !== 'fishing'){
+        message.channel.sendMessage('That command cannot be used here, type **/Tags** for more info.')
+        console.log('The FishesCaught command has failed. Executor: ' + message.author.tag)
    }}
 })
 
@@ -400,8 +414,15 @@ bot.on('message', (message) => { //Fight
                 damage_dealt_1 = 0}
         message.channel.sendMessage('**' + attacker_user + '** vs **' + target_user + '**\n\n**' + attacker_user + '** has attacked **' + target_user + '** with a **' + weapon_used + '** and dealt **' + damage_dealt_1 + ' damage**!\n**' + target_user + '** has attacked **' + attacker_user + '** back with a **' + weapon_used_2 + '** and dealt **' + damage_dealt_2 + ' damage**!\n\n**' + attacker_user + '** has **' + health_1 + ' Health** left. \n**' + target_user + '** has **' + health_2 + ' Health** left.')
         console.log('The Fight command has been executed. Executor: ' + message.author.tag)
-            }}
+   }}
 });
+bot.on('message', (message) => { //Fight - failed
+if(message.content.startsWith("/Fight ")){
+    if(message.channel.name !== 'arena'){
+        message.channel.sendMessage('That command cannot be used here, type **/Tags** for more info.')
+        console.log('The Fight command has failed. Executor: ' + message.author.tag)
+   }}
+})
 
 bot.on('message', (message) => { //FML
     if(message.content == '/Fml'){
