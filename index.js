@@ -483,7 +483,7 @@ bot.on('message', (message) => { //Refresh
 bot.on('message', (message) => { //Refresh - failed
     if(message.content == '/Refresh'){
     if(message.author.id !== '108899856889737216'){
-        message.channel.sendMessage('That command cannot by you, type **/Tags** for more info.')
+        message.channel.sendMessage('That command cannot be used by you, type **/Tags** for more info.')
         console.log('The Refresh command has failed. Executor: ' + message.author.tag)
    }}
 })
