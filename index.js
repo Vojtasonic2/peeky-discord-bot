@@ -221,7 +221,7 @@ console.log('The bot is now running')
 
 bot.on('message', (message) => { //Commands
     if(message.content == '/Commands'){
-       message.author.sendMessage("**__Commands__**\nBot's prefix: **/**\n\n ● **About**\n  • Introduces you to the bot and gives you few helpful commands!\n\n ● **Commands**\n  • Shows the commands!\n\n ● **Bonuses**\n  • Sends you the bonuses that Peeky can do!\n\n ● **Tags**\n  • Explains the tags!\n\n ● **Help**\n  • Send you some links to help out you or the bot!\n\n ● **Wikipedia** <Search_request>\n  • Searches the Wikipedia for you!\n\n ● **ServerInfo**\n  • Displays some useful stuff about the server you're in!\n\n ● **ServerName**\n  • Sets the name of your server!\n  • **Command Tags:** 🔨\n\n ● **StartPoll** <Poll Topic>\n  • Starts a poll for you.\n\n ● **StartCountdown** <0000 - 9999> <Countdown Name>\n  • Starts a countdown in seconds.\n\n ● **GlobalSet** <Message>\n  • Sets a global message that can be seen on all the servers with me in!\n\n ● **GlobalShow**\n  • Shows the global message.\n\n ● **Comics**\n  • Creates a comics that's perfect for sitcom laugh track!\n\n ● **GoFishing**\n  • Catches a random fish and redirects you to it's Wikipedia page.\n  • **Command Tags:** 🐟\n\n ● **FishesCaught**\n  • Shows how many fishes have been caught in total.\n  • **Command Tags:** 🐟\n\n ● **Fight** <Enemy Name>\n  • Starts a fight with someone!\n  • **Command Tags:** ⚔\n\n ● **DadJoke**\n  • Tells *hilarious* dad joke.\n\n ● **Fml**\n  • Wanna hear an FML story?\n\n ● **Roll**\n  • Rolls a number between 1 and 6.\n\n ● **Ask** <Question>\n  • Ask me anything! Don't be shy!\n\n ● **Say** <Your Text>\n  • Peeky will repeat what you said!\n\n ● **GetEmoji** <Emojis>\n  • Shows you the id for your custom emojis!\n\n ● **Suggestion** <Suggestion>\n  • Sends your suggestion to the Support Server!\n\n ● **Refresh**\n  • Refreshes Peeky's status!\n  • **Command Tags:** 👑");
+       message.author.sendMessage("**__Commands__**\nBot's prefix: **/**\n\n ● **About**\n  • Introduces you to the bot and gives you few helpful commands!\n\n ● **Commands**\n  • Shows the commands!\n\n ● **Bonuses**\n  • Sends you the bonuses that Peeky can do!\n\n ● **Tags**\n  • Explains the tags!\n\n ● **Help**\n  • Send you some links to help out you or the bot!\n\n ● **Wikipedia** <Search_request>\n  • Searches the Wikipedia for you!\n\n ● **ServerInfo**\n  • Displays some useful stuff about the server you're in!\n\n ● **ServerName** <Server Name>\n  • Sets the name of your server!\n  • **Command Tags:** 🔨\n\n ● **Ban** <Mention a User>\n  • Bans the first mentioned user!\n  • **Command Tags:** 🔨\n\n ● **StartPoll** <Poll Topic>\n  • Starts a poll for you.\n\n ● **StartCountdown** <0000 - 9999> <Countdown Name>\n  • Starts a countdown in seconds.\n\n ● **GlobalSet** <Message>\n  • Sets a global message that can be seen on all the servers with me in!\n\n ● **GlobalShow**\n  • Shows the global message.\n\n ● **Comics**\n  • Creates a comics that's perfect for sitcom laugh track!\n\n ● **GoFishing**\n  • Catches a random fish and redirects you to it's Wikipedia page.\n  • **Command Tags:** 🐟\n\n ● **FishesCaught**\n  • Shows how many fishes have been caught in total.\n  • **Command Tags:** 🐟\n\n ● **Fight** <Enemy Name>\n  • Starts a fight with someone!\n  • **Command Tags:** ⚔\n\n ● **DadJoke**\n  • Tells *hilarious* dad joke.\n\n ● **Fml**\n  • Wanna hear an FML story?\n\n ● **Roll**\n  • Rolls a number between 1 and 6.\n\n ● **Ask** <Question>\n  • Ask me anything! Don't be shy!\n\n ● **Say** <Your Text>\n  • Peeky will repeat what you said!\n\n ● **GetEmoji** <Emojis>\n  • Shows you the id for your custom emojis!\n\n ● **Suggestion** <Suggestion>\n  • Sends your suggestion to the Support Server!\n\n ● **Refresh**\n  • Refreshes Peeky's status!\n  • **Command Tags:** 👑");
        message.channel.sendMessage('**' + message.author.tag + '** has received a DM with the **Commands**.')
        console.log('The Commands command has been executed. Executor: ' + message.author.tag)
    }
@@ -252,8 +252,19 @@ bot.on('message', (message) => { //ServerName
     if(message.content.startsWith('/ServerName ')){
     if(message.member.hasPermission("ADMINISTRATOR")){
         message.guild.setName(message.content.replace('/ServerName ',''))
-        message.channel.sendMessage('The server name has been changed to **' + message.guild.name + '**!')
+        message.channel.sendMessage('The server name has been changed!)
         console.log('The ServerName command has been executed. Executor: ' + message.author.tag)
+  }}
+})
+
+bot.on('message', (message) => { //Ban
+    if(message.content.startsWith('/Ban ')){
+    if(message.member.hasPermission("ADMINISTRATOR")){
+        var userToBan = message.mentions.users.first()
+        message.mentions.users.first().sendMessage('You have been banned from **' + message.guild.name + '** by **' + message.author.tag + '**.')
+        message.guild.ban(userToBan)
+        message.channel.sendMessage('The user **' + userToBan + '** has been banned.')
+        console.log('The Ban command has been executed. Executor: ' + message.author.tag)
   }}
 })
 
