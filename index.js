@@ -288,8 +288,8 @@ bot.on('message', (message) => { //Censor
     if(message.member.hasPermission("MANAGE_NICKNAMES")){
         var userToCensor = message.mentions.users.first()
         message.mentions.users.first().sendMessage('Your nickname in **' + message.guild.name + '** has been censored by **' + message.author.tag + '**.')
-        message.guild.member(userToCensor).setNickname('Censored')
         message.channel.sendMessage('The user **' + userToCensor + '** has been censored.')
+        message.guild.member(userToCensor).setNickname('Censored')
         console.log('The Censor command has been executed. Executor: ' + message.author.tag)
   }}
 })
@@ -299,8 +299,8 @@ bot.on('message', (message) => { //Uncensor
     if(message.member.hasPermission("MANAGE_NICKNAMES")){
         var userToCensor = message.mentions.users.first()
         message.mentions.users.first().sendMessage('Your nickname in **' + message.guild.name + '** has been uncensored by **' + message.author.tag + '**.')
-        message.guild.member(userToCensor).setNickname('')
         message.channel.sendMessage('The user **' + userToCensor + '** has been uncensored.')
+        message.guild.member(userToCensor).setNickname('')
         console.log('The Uncensor command has been executed. Executor: ' + message.author.tag)
   }}
 })
