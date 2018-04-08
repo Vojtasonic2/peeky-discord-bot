@@ -219,6 +219,13 @@ bot.on('ready', () => { bot.user.setActivity(VersionNumber + ' | /About') })
 bot.on('ready', () => { bot.user.setStatus('idle')} )
 console.log('The bot is now running')
 
+cmds_start = "**__Commands - Start__**\nBot's prefix: **/**\n\n ● **About**\n  • Introduces you to the bot and gives you few helpful commands!\n\n ● **Commands**\n  • Shows the available command categories!\n\n ● **Bonuses**\n  • Sends you the bonuses that Peeky can do!\n\n ● **Tags**\n  • Explains the tags!\n\n ● **Help**\n  • Send you some links to help out you or the bot!"
+cmds_mod = "**__Commands - Moderation__**\nBot's prefix: **/**\n\n ● **ServerName** <Server Name>\n  • Sets the name of your server!\n  • **Command Tags:** 🔧\n\n ● **Censor** <Mention a User>\n  • Censors the name of the mentioned user!\n  • **Command Tags:** 📝\n\n ● **Uncensor** <Mention a User>\n  • Uncensors the name of the mentioned user!\n  • **Command Tags:** 📝\n\n ● **Ban** <Mention a User>\n  • Bans the first mentioned user!\n  • **Command Tags:** 🔨"
+cmds_dev = "**__Commands - Dev__**\nBot's prefix: **/**\n\n ● **GetEmoji** <Emojis>\n  • Shows you the id for your custom emojis!"
+cmds_fun = "**__Commands - Fun__**\nBot's prefix: **/**\n\n ● **DadJoke**\n  • Tells *hilarious* dad joke.\n\n ● **Fml**\n  • Wanna hear an FML story?\n\n ● **Roll**\n  • Rolls a number between 1 and 6.\n\n ● **Ask** <Question>\n  • Ask me anything! Don't be shy!\n\n ● **Say** <Your Text>\n  • Peeky will repeat what you said!\n\n ● **GlobalSet** <Message>\n  • Sets a global message that can be seen on all the servers with me in!\n\n ● **GlobalShow**\n  • Shows the global message.\n\n ● **Comics**\n  • Creates a comics that's perfect for sitcom laugh track!"
+cmds_mg = "**__Commands - Minigames__**\nBot's prefix: **/**\n\n ● **GoFishing**\n  • Catches a random fish and redirects you to it's Wikipedia page.\n  • **Command Tags:** 🐟\n\n ● **FishesCaught**\n  • Shows how many fishes have been caught in total.\n  • **Command Tags:** 🐟\n\n ● **Fight** <Enemy Name>\n  • Starts a fight with someone!\n  • **Command Tags:** ⚔"
+cmds_other = "**__Commands - Other__**\nBot's prefix: **/**\n\n ● **ServerInfo**\n  • Displays some info about the server!\n\n ● **BotInfo**\n  • Displays some info about the bot!\n\n ● **Wikipedia** <Search_request>\n  • Searches the Wikipedia for you!\n\n ● **Suggestion** <Suggestion>\n  • Sends your suggestion to the Support Server!\n\n ● **StartPoll** <Poll Topic>\n  • Starts a poll for you.\n\n ● **StartCountdown** <0001 - 9999> <Countdown Name>\n  • Starts a countdown in seconds."
+
 bot.on('message', (message) => { //Commands
     if(message.content == '/Commands'){
        message.channel.sendMessage('Available Command pages:\n\n**/Commands Start**, **/Commands Moderation**, **/Commands Developer**, **/Commands Fun**, **/Commands Minigames**')
@@ -226,17 +233,30 @@ bot.on('message', (message) => { //Commands
    }
 })
 
+bot.on('message', (message) => { //Commands All
+    if(message.content == '/Commands Start'){
+       message.author.sendMessage(cmds_start);
+       message.author.sendMessage(cmds_mod);
+       message.author.sendMessage(cmds_dev);
+       message.author.sendMessage(cmds_fun);
+       message.author.sendMessage(cmds_mg);
+       message.author.sendMessage(cmds_other);
+       message.channel.sendMessage('**' + message.author.tag + '** has received a DM with the **Commands - All**.')
+       console.log('The Commands Start command has been executed. Executor: ' + message.author.tag)
+   }
+})
+
 bot.on('message', (message) => { //Commands Start
     if(message.content == '/Commands Start'){
-       message.author.sendMessage("**__Commands - Start__**\nBot's prefix: **/**\n\n ● **About**\n  • Introduces you to the bot and gives you few helpful commands!\n\n ● **Commands**\n  • Shows the available command categories!\n\n ● **Bonuses**\n  • Sends you the bonuses that Peeky can do!\n\n ● **Tags**\n  • Explains the tags!\n\n ● **Help**\n  • Send you some links to help out you or the bot!");
-       message.channel.sendMessage('**' + message.author.tag + '** has received a DM with the **Commands Info**.')
+       message.author.sendMessage(cmds_start);
+       message.channel.sendMessage('**' + message.author.tag + '** has received a DM with the **Commands - Info**.')
        console.log('The Commands Start command has been executed. Executor: ' + message.author.tag)
    }
 })
 
 bot.on('message', (message) => { //Commands Moderation
     if(message.content == '/Commands Moderation'){
-       message.author.sendMessage("**__Commands - Moderation__**\nBot's prefix: **/**\n\n ● **ServerName** <Server Name>\n  • Sets the name of your server!\n  • **Command Tags:** 🔧\n\n ● **Censor** <Mention a User>\n  • Censors the name of the mentioned user!\n  • **Command Tags:** 📝\n\n ● **Uncensor** <Mention a User>\n  • Uncensors the name of the mentioned user!\n  • **Command Tags:** 📝\n\n ● **Ban** <Mention a User>\n  • Bans the first mentioned user!\n  • **Command Tags:** 🔨");
+       message.author.sendMessage(cmds_mod);
        message.channel.sendMessage('**' + message.author.tag + '** has received a DM with the **Commands - Moderation**.')
        console.log('The Commands Moderation command has been executed. Executor: ' + message.author.tag)
    }
@@ -244,7 +264,7 @@ bot.on('message', (message) => { //Commands Moderation
 
 bot.on('message', (message) => { //Commands Dev
     if(message.content == '/Commands Dev'){
-       message.author.sendMessage("**__Commands - Dev__**\nBot's prefix: **/**\n\n ● **GetEmoji** <Emojis>\n  • Shows you the id for your custom emojis!");
+       message.author.sendMessage(cmds_dev);
        message.channel.sendMessage('**' + message.author.tag + '** has received a DM with the **Commands - Dev**.')
        console.log('The Commands Dev command has been executed. Executor: ' + message.author.tag)
    }
@@ -252,7 +272,7 @@ bot.on('message', (message) => { //Commands Dev
 
 bot.on('message', (message) => { //Commands Fun
     if(message.content == '/Commands Fun'){
-       message.author.sendMessage("**__Commands - Fun__**\nBot's prefix: **/**\n\n ● **DadJoke**\n  • Tells *hilarious* dad joke.\n\n ● **Fml**\n  • Wanna hear an FML story?\n\n ● **Roll**\n  • Rolls a number between 1 and 6.\n\n ● **Ask** <Question>\n  • Ask me anything! Don't be shy!\n\n ● **Say** <Your Text>\n  • Peeky will repeat what you said!\n\n ● **GlobalSet** <Message>\n  • Sets a global message that can be seen on all the servers with me in!\n\n ● **GlobalShow**\n  • Shows the global message.\n\n ● **Comics**\n  • Creates a comics that's perfect for sitcom laugh track!");
+       message.author.sendMessage(cmds_fun);
        message.channel.sendMessage('**' + message.author.tag + '** has received a DM with the **Commands - Fun**.')
        console.log('The Commands Fun command has been executed. Executor: ' + message.author.tag)
    }
@@ -260,7 +280,7 @@ bot.on('message', (message) => { //Commands Fun
 
 bot.on('message', (message) => { //Commands Minigames
     if(message.content == '/Commands Minigames'){
-       message.author.sendMessage("**__Commands - Minigames__**\nBot's prefix: **/**\n\n ● **GoFishing**\n  • Catches a random fish and redirects you to it's Wikipedia page.\n  • **Command Tags:** 🐟\n\n ● **FishesCaught**\n  • Shows how many fishes have been caught in total.\n  • **Command Tags:** 🐟\n\n ● **Fight** <Enemy Name>\n  • Starts a fight with someone!\n  • **Command Tags:** ⚔");
+       message.author.sendMessage(cmds_mg);
        message.channel.sendMessage('**' + message.author.tag + '** has received a DM with the **Commands - Minigames**.')
        console.log('The Commands Minigames command has been executed. Executor: ' + message.author.tag)
    }
@@ -268,7 +288,7 @@ bot.on('message', (message) => { //Commands Minigames
 
 bot.on('message', (message) => { //Commands Other
     if(message.content == '/Commands Other'){
-       message.author.sendMessage("**__Commands - Other__**\nBot's prefix: **/**\n\n ● **ServerInfo**\n  • Displays some info about the server!\n\n ● **BotInfo**\n  • Displays some info about the bot!\n\n ● **Wikipedia** <Search_request>\n  • Searches the Wikipedia for you!\n\n ● **Suggestion** <Suggestion>\n  • Sends your suggestion to the Support Server!\n\n ● **StartPoll** <Poll Topic>\n  • Starts a poll for you.\n\n ● **StartCountdown** <0001 - 9999> <Countdown Name>\n  • Starts a countdown in seconds.");
+       message.author.sendMessage(cmds_other);
        message.channel.sendMessage('**' + message.author.tag + '** has received a DM with the **Commands - Other**.')
        console.log('The Commands Other command has been executed. Executor: ' + message.author.tag)
    }
