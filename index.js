@@ -228,7 +228,7 @@ bot.on('message', (message) => { //Commands
 
 bot.on('message', (message) => { //Commands Start
     if(message.content == '/Commands Start'){
-       message.author.sendMessage("**__Commands - Start**\nBot's prefix: **/**\n\n ● **About**\n  • Introduces you to the bot and gives you few helpful commands!\n\n ● **Commands**\n  • Shows the available command categories!\n\n ● **Bonuses**\n  • Sends you the bonuses that Peeky can do!\n\n ● **Tags**\n  • Explains the tags!\n\n ● **Help**\n  • Send you some links to help out you or the bot!");
+       message.author.sendMessage("**__Commands - Start__**\nBot's prefix: **/**\n\n ● **About**\n  • Introduces you to the bot and gives you few helpful commands!\n\n ● **Commands**\n  • Shows the available command categories!\n\n ● **Bonuses**\n  • Sends you the bonuses that Peeky can do!\n\n ● **Tags**\n  • Explains the tags!\n\n ● **Help**\n  • Send you some links to help out you or the bot!");
        message.channel.sendMessage('**' + message.author.tag + '** has received a DM with the **Commands Info**.')
        console.log('The Commands Start command has been executed. Executor: ' + message.author.tag)
    }
