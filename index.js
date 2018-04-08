@@ -213,17 +213,17 @@ var fishing_fish = [
 
 var globalMessage = 'No Global message has been set yet!\nType **/Commands** to see how to set one!'
 var fishing_amount = 0
-var VersionNumber = '2.2'
+var VersionNumber = '2.3'
 
 bot.on('ready', () => { bot.user.setActivity(VersionNumber + ' | /About') })
 bot.on('ready', () => { bot.user.setStatus('idle')} )
 console.log('The bot is now running')
 
-cmds_start = "**__Commands - Start__**\nBot's prefix: **/**\n\n ● **About**\n  • Introduces you to the bot and gives you few helpful commands!\n\n ● **Commands**\n  • Shows the available command categories!\n\n ● **Bonuses**\n  • Sends you the bonuses that Peeky can do!\n\n ● **Tags**\n  • Explains the tags!\n\n ● **Help**\n  • Send you some links to help out you or the bot!"
-cmds_mod = "**__Commands - Moderation__**\nBot's prefix: **/**\n\n ● **ServerName** <Server Name>\n  • Sets the name of your server!\n  • **Command Tags:** 🔧\n\n ● **Censor** <Mention a User>\n  • Censors the name of the mentioned user!\n  • **Command Tags:** 📝\n\n ● **Uncensor** <Mention a User>\n  • Uncensors the name of the mentioned user!\n  • **Command Tags:** 📝\n\n ● **Ban** <Mention a User>\n  • Bans the first mentioned user!\n  • **Command Tags:** 🔨"
+cmds_start = "**__Commands - Start__**\nBot's prefix: **/**\n\n ● **About**\n  • Introduces you to the bot and gives you few helpful commands!\n\n ● **Commands**\n  • Shows the available command categories!\n\n ● **Bonuses**\n  • Sends you the bonuses that Peeky can do!\n\n ● **Help**\n  • Send you some links to help out you or the bot!"
+cmds_mod = "**__Commands - Moderation__**\nBot's prefix: **/**\n\n ● **ServerName** <Server Name>\n  • Sets the name of your server!\n  • **Permissions Needed:** Administrator\n\n ● **Censor** <Mention a User>\n  • Censors the nickname of the mentioned user!\n  • **Permissions Needed:** Manage Nicknames\n\n ● **Uncensor** <Mention a User>\n  • Uncensors the name of the mentioned user!\n  • **Permissions Needed:** Manage Nicknames\n\n ● **Ban** <Mention a User>\n  • Bans the first mentioned user!\n  • **Permissions Needed:** Ban Members"
 cmds_dev = "**__Commands - Dev__**\nBot's prefix: **/**\n\n ● **GetEmoji** <Emojis>\n  • Shows you the id for your custom emojis!"
 cmds_fun = "**__Commands - Fun__**\nBot's prefix: **/**\n\n ● **DadJoke**\n  • Tells *hilarious* dad joke.\n\n ● **Fml**\n  • Wanna hear an FML story?\n\n ● **Roll**\n  • Rolls a number between 1 and 6.\n\n ● **Ask** <Question>\n  • Ask me anything! Don't be shy!\n\n ● **Say** <Your Text>\n  • Peeky will repeat what you said!\n\n ● **GlobalSet** <Message>\n  • Sets a global message that can be seen on all the servers with me in!\n\n ● **GlobalShow**\n  • Shows the global message.\n\n ● **Comics**\n  • Creates a comics that's perfect for sitcom laugh track!"
-cmds_mg = "**__Commands - Minigames__**\nBot's prefix: **/**\n\n ● **GoFishing**\n  • Catches a random fish and redirects you to it's Wikipedia page.\n  • **Command Tags:** 🐟\n\n ● **FishesCaught**\n  • Shows how many fishes have been caught in total.\n  • **Command Tags:** 🐟\n\n ● **Fight** <Enemy Name>\n  • Starts a fight with someone!\n  • **Command Tags:** ⚔"
+cmds_mg = "**__Commands - Minigames__**\nBot's prefix: **/**\n\n ● **GoFishing**\n  • Catches a random fish and redirects you to it's Wikipedia page.\n  • **Dedicated Channel:** #fishing\n\n ● **FishesCaught**\n  • Shows how many fishes have been caught in total.\n  • **Dedicated Channel:** #fishing\n\n ● **Fight** <Enemy Name>\n  • Starts a fight with someone!\n  • **Dedicated Channel:** #arena"
 cmds_other = "**__Commands - Other__**\nBot's prefix: **/**\n\n ● **ServerInfo**\n  • Displays some info about the server!\n\n ● **BotInfo**\n  • Displays some info about the bot!\n\n ● **Wikipedia** <Search_request>\n  • Searches the Wikipedia for you!\n\n ● **Suggestion** <Suggestion>\n  • Sends your suggestion to the Support Server!\n\n ● **StartPoll** <Poll Topic>\n  • Starts a poll for you.\n\n ● **StartCountdown** <0001 - 9999> <Countdown Name>\n  • Starts a countdown in seconds."
 
 bot.on('message', (message) => { //Commands
@@ -422,7 +422,7 @@ bot.on('message', (message) => { //GoFishing
 bot.on('message', (message) => { //GoFishing - failed
     if(message.content == '/GoFishing'){
     if(message.channel.name !== 'fishing'){
-        message.channel.sendMessage('That command cannot be used here, type **/Tags** for more info.')
+        message.channel.sendMessage('That command cannot be used here.')
         console.log('The GoFishing command has failed. Executor: ' + message.author.tag)
    }}
 })
@@ -437,7 +437,7 @@ bot.on('message', (message) => { //FishesCaught
 bot.on('message', (message) => { //FishesCaught - failed
     if(message.content == '/FishesCaught'){
     if(message.channel.name !== 'fishing'){
-        message.channel.sendMessage('That command cannot be used here, type **/Tags** for more info.')
+        message.channel.sendMessage('That command cannot be used here.')
         console.log('The FishesCaught command has failed. Executor: ' + message.author.tag)
    }}
 })
@@ -468,7 +468,7 @@ bot.on('message', (message) => { //Fight
 bot.on('message', (message) => { //Fight - failed
 if(message.content.startsWith("/Fight ")){
     if(message.channel.name !== 'arena'){
-        message.channel.sendMessage('That command cannot be used here, type **/Tags** for more info.')
+        message.channel.sendMessage('That command cannot be used here.')
         console.log('The Fight command has failed. Executor: ' + message.author.tag)
    }}
 })
@@ -534,14 +534,6 @@ bot.on('message', (message) => { //Bonuses
        message.channel.sendMessage('**' + message.author.tag + '** has received a DM with the **Bonuses**.')
        message.author.sendMessage("**__Bonuses__**\n\n ● **Automatic Reactions**\n  • Messages in a channel called **#gallery** get automatic ❤ reactions!\n  • Messages in a channel called **#events** get automatic 🎟 reactions!")
        console.log('The Bonuses command has been executed. Executor: ' + message.author.tag)
-   }
-})
-
-bot.on('message', (message) => { //Tags
-    if(message.content == '/Tags'){
-       message.channel.sendMessage('**' + message.author.tag + '** has received a DM with the **Tags**.')
-       message.author.sendMessage("**__Tags__**\n\n🔧 - Commands with this tag can only be used by someone with the **Administrator** permission.\n\n🔨 - Commands with this tag can only be used by someone with the **Ban Members** permission.\n\n📝 - Commands with this tag can only be used by someone with the **Manage Nicknames** permission.\n\n🐟 - Commands with this tag can only be used in a channel called **#fishing**.\n\n⚔ - Commands with this tag can only be used in a channel called **#arena**.")
-       console.log('The Tags command has been executed. Executor: ' + message.author.tag)
    }
 })
 
