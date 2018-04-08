@@ -485,7 +485,7 @@ bot.on('message', (message) => { //Suggestion
 bot.on('message', (message) => { //Help
     if(message.content == '/Help'){
        message.channel.sendMessage('**' + message.author.tag + '** has received a DM with the **Help**.')
-       message.author.sendMessage("**__Help__**\n\n<:bot_patreon:429246678542057473> **Patreon Page:** *https://www.patreon.com/vojtasonic*\n<:peeky:398855238725009418> **Bot's Page:** *https://discordbots.org/bot/415259002310623232*\n<:bot_twitter:429185436141748225> **Twitter:** *https://twitter.com/vojtasonic*\n<:bot_discord:429185737406152704> **Discord Support Server:** https://discord.gg/j4kArRh")
+       message.author.sendMessage("**__Help__**\n\n<:bot_patreon:429246678542057473> **Patreon Page:** *https://www.patreon.com/vojtasonic*\n<:peeky:398855238725009418> **Bot's Page:** <https://discordbots.org/bot/415259002310623232>\n<:bot_twitter:429185436141748225> **Twitter:** <https://twitter.com/vojtasonic>\n<:bot_discord:429185737406152704> **Discord Support Server:** <https://discord.io/vojtasonic>")
        console.log('The Help command has been executed. Executor: ' + message.author.tag)
    }
 })
