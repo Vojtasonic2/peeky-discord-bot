@@ -221,16 +221,16 @@ console.log('The bot is now running')
 
 bot.on('message', (message) => { //Commands
     if(message.content == '/Commands'){
-       message.channel.sendMessage('Available Command pages:\n\n**/Commands Info**, **/Commands Moderation**, **/Commands Developer**, **/Commands Fun**, **/Commands Minigames**')
+       message.channel.sendMessage('Available Command pages:\n\n**/Commands Start**, **/Commands Moderation**, **/Commands Developer**, **/Commands Fun**, **/Commands Minigames**')
        console.log('The Commands command has been executed. Executor: ' + message.author.tag)
    }
 })
 
-bot.on('message', (message) => { //Commands Info
-    if(message.content == '/Commands Info'){
-       message.author.sendMessage("**__Commands - Info__\nBot's prefix: **/**\n\n ● **About**\n  • Introduces you to the bot and gives you few helpful commands!\n\n ● **Commands**\n  • Shows the available command pages!\n\n ● **Bonuses**\n  • Sends you the bonuses that Peeky can do!\n\n ● **Tags**\n  • Explains the tags!\n\n ● **Help**\n  • Send you some links to help out you or the bot!\n\n ● **Suggestion** <Suggestion>\n  • Sends your suggestion to the Support Server!");
+bot.on('message', (message) => { //Commands Start
+    if(message.content == '/Commands Start'){
+       message.author.sendMessage("**__Commands - Start**\nBot's prefix: **/**\n\n ● **About**\n  • Introduces you to the bot and gives you few helpful commands!\n\n ● **Commands**\n  • Shows the available command categories!\n\n ● **Bonuses**\n  • Sends you the bonuses that Peeky can do!\n\n ● **Tags**\n  • Explains the tags!\n\n ● **Help**\n  • Send you some links to help out you or the bot!");
        message.channel.sendMessage('**' + message.author.tag + '** has received a DM with the **Commands Info**.')
-       console.log('The Commands Info command has been executed. Executor: ' + message.author.tag)
+       console.log('The Commands Start command has been executed. Executor: ' + message.author.tag)
    }
 })
 
@@ -242,17 +242,17 @@ bot.on('message', (message) => { //Commands Moderation
    }
 })
 
-bot.on('message', (message) => { //Commands Developer
-    if(message.content == '/Commands Developer'){
-       message.author.sendMessage("**__Commands - Developer__**\nBot's prefix: **/**\n\n ● **GetEmoji** <Emojis>\n  • Shows you the id for your custom emojis!");
-       message.channel.sendMessage('**' + message.author.tag + '** has received a DM with the **Commands - Developer**.')
-       console.log('The Commands Developer command has been executed. Executor: ' + message.author.tag)
+bot.on('message', (message) => { //Commands Dev
+    if(message.content == '/Commands Dev'){
+       message.author.sendMessage("**__Commands - Dev__**\nBot's prefix: **/**\n\n ● **GetEmoji** <Emojis>\n  • Shows you the id for your custom emojis!");
+       message.channel.sendMessage('**' + message.author.tag + '** has received a DM with the **Commands - Dev**.')
+       console.log('The Commands Dev command has been executed. Executor: ' + message.author.tag)
    }
 })
 
 bot.on('message', (message) => { //Commands Fun
     if(message.content == '/Commands Fun'){
-       message.author.sendMessage("**__Commands - Fun__**\nBot's prefix: **/**\n\n ● **StartPoll** <Poll Topic>\n  • Starts a poll for you.\n\n ● **StartCountdown** <0001 - 9999> <Countdown Name>\n  • Starts a countdown in seconds.\n\n ● **DadJoke**\n  • Tells *hilarious* dad joke.\n\n ● **Fml**\n  • Wanna hear an FML story?\n\n ● **Roll**\n  • Rolls a number between 1 and 6.\n\n ● **Ask** <Question>\n  • Ask me anything! Don't be shy!\n\n ● **Say** <Your Text>\n  • Peeky will repeat what you said!\n\n ● **GlobalSet** <Message>\n  • Sets a global message that can be seen on all the servers with me in!\n\n ● **GlobalShow**\n  • Shows the global message.\n\n ● **Comics**\n  • Creates a comics that's perfect for sitcom laugh track!");
+       message.author.sendMessage("**__Commands - Fun__**\nBot's prefix: **/**\n\n ● **DadJoke**\n  • Tells *hilarious* dad joke.\n\n ● **Fml**\n  • Wanna hear an FML story?\n\n ● **Roll**\n  • Rolls a number between 1 and 6.\n\n ● **Ask** <Question>\n  • Ask me anything! Don't be shy!\n\n ● **Say** <Your Text>\n  • Peeky will repeat what you said!\n\n ● **GlobalSet** <Message>\n  • Sets a global message that can be seen on all the servers with me in!\n\n ● **GlobalShow**\n  • Shows the global message.\n\n ● **Comics**\n  • Creates a comics that's perfect for sitcom laugh track!");
        message.channel.sendMessage('**' + message.author.tag + '** has received a DM with the **Commands - Fun**.')
        console.log('The Commands Fun command has been executed. Executor: ' + message.author.tag)
    }
@@ -267,8 +267,8 @@ bot.on('message', (message) => { //Commands Minigames
 })
 
 bot.on('message', (message) => { //Commands Other
-    if(message.content == '/Commands Fun'){
-       message.author.sendMessage("**__Commands - Other__**\nBot's prefix: **/**\n\n ● **ServerInfo**\n  • Displays some info about the server!\n\n ● **BotInfo**\n  • Displays some info about the bot!\n\n ● **Wikipedia** <Search_request>\n  • Searches the Wikipedia for you!");
+    if(message.content == '/Commands Other'){
+       message.author.sendMessage("**__Commands - Other__**\nBot's prefix: **/**\n\n ● **ServerInfo**\n  • Displays some info about the server!\n\n ● **BotInfo**\n  • Displays some info about the bot!\n\n ● **Wikipedia** <Search_request>\n  • Searches the Wikipedia for you!\n\n ● **Suggestion** <Suggestion>\n  • Sends your suggestion to the Support Server!\n\n ● **StartPoll** <Poll Topic>\n  • Starts a poll for you.\n\n ● **StartCountdown** <0001 - 9999> <Countdown Name>\n  • Starts a countdown in seconds.");
        message.channel.sendMessage('**' + message.author.tag + '** has received a DM with the **Commands - Other**.')
        console.log('The Commands Other command has been executed. Executor: ' + message.author.tag)
    }
@@ -276,7 +276,7 @@ bot.on('message', (message) => { //Commands Other
 
 bot.on('message', (message) => { //About
     if(message.content == '/About'){
-       message.channel.sendMessage("Hello, **" + message.author.tag + "**!\n\nTo get started with the bot, type **/Commands**!\n\n**Summary of the Bot**\n ● Moderation Commands\n ● Fun Commands\n ● Developer Commands\n ● Automatic Reactions in specific channels\n ● Minigames")
+       message.channel.sendMessage("Hello, **" + message.author.tag + "**!\n\nTo get started with the bot, type **/Commands Start** or **/Commands**!\n\n ● Moderation Commands\n ● Fun Commands\n ● Developer Commands\n ● Automatic Reactions in specific channels\n ● Minigames")
        console.log('The About command has been executed. Executor: ' + message.author.tag)
     }
 })
