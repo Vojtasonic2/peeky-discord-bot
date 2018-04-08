@@ -236,7 +236,7 @@ bot.on('message', (message) => { //Commands 1
 
 bot.on('message', (message) => { //Commands 2
     if(message.content == '/Commands 2'){
-       message.author.sendMessage("**__Commands 2__**\nBot's prefix: **/**\n\n ● **Refresh**\n  • Refreshes Peeky's status!\n  • **Command Tags:** 👑\n\n ● **DadJoke**\n  • Tells *hilarious* dad joke.\n\n ● **Fml**\n  • Wanna hear an FML story?\n\n ● **Roll**\n  • Rolls a number between 1 and 6.\n\n ● **ServerInfo**\n  • Displays some info about the server!\n\n ● **Ask** <Question>\n  • Ask me anything! Don't be shy!\n\n ● **Say** <Your Text>\n  • Peeky will repeat what you said!\n\n ● **GetEmoji** <Emojis>\n  • Shows you the id for your custom emojis!\n\n ● **GlobalSet** <Message>\n  • Sets a global message that can be seen on all the servers with me in!\n\n ● **GlobalShow**\n  • Shows the global message.\n\n ● **BotInfo**\n  • Displays some info about the bot!")
+       message.author.sendMessage("**__Commands 2__**\nBot's prefix: **/**\n\n ● **DadJoke**\n  • Tells *hilarious* dad joke.\n\n ● **Fml**\n  • Wanna hear an FML story?\n\n ● **Roll**\n  • Rolls a number between 1 and 6.\n\n ● **ServerInfo**\n  • Displays some info about the server!\n\n ● **Ask** <Question>\n  • Ask me anything! Don't be shy!\n\n ● **Say** <Your Text>\n  • Peeky will repeat what you said!\n\n ● **GetEmoji** <Emojis>\n  • Shows you the id for your custom emojis!\n\n ● **GlobalSet** <Message>\n  • Sets a global message that can be seen on all the servers with me in!\n\n ● **GlobalShow**\n  • Shows the global message.\n\n ● **BotInfo**\n  • Displays some info about the bot!")
        message.channel.sendMessage('**' + message.author.tag + '** has received a DM with the **Commands 2**.')
        console.log('The Commands 2 command has been executed. Executor: ' + message.author.tag)
    }
@@ -296,7 +296,7 @@ bot.on('message', (message) => { //Censor
         var userToCensor = message.mentions.users.first()
         message.mentions.users.first().sendMessage('Your nickname in **' + message.guild.name + '** has been censored by **' + message.author.tag + '**.')
         message.channel.sendMessage('The user **' + userToCensor + '** has been censored.')
-        message.guild.member(userToCensor).setNickname('Censored')
+        message.guild.member(userToCensor).setNickname('[nickname censored]')
         console.log('The Censor command has been executed. Executor: ' + message.author.tag)
   }}
 })
@@ -478,22 +478,6 @@ bot.on('message', (message) => { //Suggestion
           console.log('The Suggestion command has been executed. Executor: ' + message.author.tag)
    }
 });
-
-bot.on('message', (message) => { //Refresh
-    if(message.content == '/Refresh'){
-    if(message.author.id == '108899856889737216'){
-        bot.user.setActivity(VersionNumber + ' | /About')  
-        message.channel.sendMessage("**" + message.author.tag + "** has refreshed Peeky's status.")
-       console.log('The Refresh command has been executed. Executor: ' + message.author.tag)
-    }}
-})
-bot.on('message', (message) => { //Refresh - failed
-    if(message.content == '/Refresh'){
-    if(message.author.id !== '108899856889737216'){
-        message.channel.sendMessage('That command cannot be used by you, type **/Tags** for more info.')
-        console.log('The Refresh command has failed. Executor: ' + message.author.tag)
-   }}
-})
 
 bot.on('message', (message) => { //Help
     if(message.content == '/Help'){
