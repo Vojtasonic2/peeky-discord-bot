@@ -228,13 +228,13 @@ cmds_other = "**__Commands - Other__**\nBot's prefix: **/**\n\n ● **ServerInfo
 
 bot.on('message', (message) => { //Commands
     if(message.content == '/Commands'){
-       message.channel.sendMessage('Available Command pages:\n\n**/Commands Start**, **/Commands Moderation**, **/Commands Developer**, **/Commands Fun**, **/Commands Minigames**')
+       message.channel.sendMessage('Available Command pages:\n\n**/Commands Start**, **/Commands Moderation**, **/Commands Developer**, **/Commands Fun**, **/Commands Minigames**\nAll Command Pages:\n\n**/Commands All')
        console.log('The Commands command has been executed. Executor: ' + message.author.tag)
    }
 })
 
 bot.on('message', (message) => { //Commands All
-    if(message.content == '/Commands Start'){
+    if(message.content == '/Commands All'){
        message.author.sendMessage(cmds_start);
        message.author.sendMessage(cmds_mod);
        message.author.sendMessage(cmds_dev);
@@ -242,7 +242,7 @@ bot.on('message', (message) => { //Commands All
        message.author.sendMessage(cmds_mg);
        message.author.sendMessage(cmds_other);
        message.channel.sendMessage('**' + message.author.tag + '** has received a DM with the **Commands - All**.')
-       console.log('The Commands Start command has been executed. Executor: ' + message.author.tag)
+       console.log('The Commands All command has been executed. Executor: ' + message.author.tag)
    }
 })
 
