@@ -282,22 +282,24 @@ bot.on('message', (message) => { //ServerName
 bot.on('message', (message) => { //Ban
     if(message.content.startsWith('/Ban ')){
     if(message.member.hasPermission("BAN_MEMBERS")){
-        var userToBan = message.mentions.users.first()
-        message.mentions.users.first().sendMessage('You have been banned from **' + message.guild.name + '** by **' + message.author.tag + '**.')
-        message.guild.ban(userToBan)
+        var userToBan = message.mentions.members.first()
+    if(userToBan !== undefined){
+        userToBan.sendMessage('You have been banned from **' + message.guild.name + '** by **' + message.author.tag + '**.')
         message.channel.sendMessage('The user **' + userToBan + '** has been banned.')
+        message.guild.ban(userToBan)
         console.log('The Ban command has been executed. Executor: ' + message.author.tag)
-  }}
+  }}}
 })
 
 bot.on('message', (message) => { //Censor
     if(message.content.startsWith('/Censor ')){
     if(message.member.hasPermission("MANAGE_NICKNAMES")){
         var userToCensor = message.mentions.users.first()
+    if(userToCensor !== undefined){
         message.mentions.users.first().sendMessage('Your nickname in **' + message.guild.name + '** has been censored by **' + message.author.tag + '**.')
         message.channel.sendMessage('The user **' + userToCensor + '** has been censored.')
         message.guild.member(userToCensor).setNickname('[nickname censored]')
-        console.log('The Censor command has been executed. Executor: ' + message.author.tag)
+        console.log('The Censor command has been executed. Executor: ' + message.author.tag)}
   }}
 })
 
@@ -305,10 +307,11 @@ bot.on('message', (message) => { //Uncensor
     if(message.content.startsWith('/Uncensor ')){
     if(message.member.hasPermission("MANAGE_NICKNAMES")){
         var userToCensor = message.mentions.users.first()
+    if(userToCensor !== undefined){
         message.mentions.users.first().sendMessage('Your nickname in **' + message.guild.name + '** has been uncensored by **' + message.author.tag + '**.')
         message.channel.sendMessage('The user **' + userToCensor + '** has been uncensored.')
         message.guild.member(userToCensor).setNickname('')
-        console.log('The Uncensor command has been executed. Executor: ' + message.author.tag)
+        console.log('The Uncensor command has been executed. Executor: ' + message.author.tag)}
   }}
 })
 
