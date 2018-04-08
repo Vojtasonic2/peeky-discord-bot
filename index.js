@@ -236,7 +236,7 @@ bot.on('message', (message) => { //Commands
 bot.on('message', (message) => { //Commands Start
     if(message.content == '/Commands Start'){
        message.author.sendMessage(cmds_start);
-       message.channel.sendMessage('**' + message.author.tag + '** has received a DM with the **Commands - (info)**.')
+       message.channel.sendMessage('**' + message.author.tag + '** has received a DM with the **Commands - (Info)**.')
        console.log('The Commands Start command has been executed. Executor: ' + message.author.tag)
    }
 })
@@ -244,7 +244,7 @@ bot.on('message', (message) => { //Commands Start
 bot.on('message', (message) => { //Commands Moderation
     if(message.content == '/Commands Moderation'){
        message.author.sendMessage(cmds_mod);
-       message.channel.sendMessage('**' + message.author.tag + '** has received a DM with the **Commands (moderation)**.')
+       message.channel.sendMessage('**' + message.author.tag + '** has received a DM with the **Commands (Moderation)**.')
        console.log('The Commands Moderation command has been executed. Executor: ' + message.author.tag)
    }
 })
@@ -252,7 +252,7 @@ bot.on('message', (message) => { //Commands Moderation
 bot.on('message', (message) => { //Commands Dev
     if(message.content == '/Commands Dev'){
        message.author.sendMessage(cmds_dev);
-       message.channel.sendMessage('**' + message.author.tag + '** has received a DM with the **Commands (dev)**.')
+       message.channel.sendMessage('**' + message.author.tag + '** has received a DM with the **Commands (Dev)**.')
        console.log('The Commands Dev command has been executed. Executor: ' + message.author.tag)
    }
 })
@@ -260,7 +260,7 @@ bot.on('message', (message) => { //Commands Dev
 bot.on('message', (message) => { //Commands Fun
     if(message.content == '/Commands Fun'){
        message.author.sendMessage(cmds_fun);
-       message.channel.sendMessage('**' + message.author.tag + '** has received a DM with the **Commands (fun)**.')
+       message.channel.sendMessage('**' + message.author.tag + '** has received a DM with the **Commands (Fun)**.')
        console.log('The Commands Fun command has been executed. Executor: ' + message.author.tag)
    }
 })
@@ -268,7 +268,7 @@ bot.on('message', (message) => { //Commands Fun
 bot.on('message', (message) => { //Commands Minigames
     if(message.content == '/Commands Minigames'){
        message.author.sendMessage(cmds_mg);
-       message.channel.sendMessage('**' + message.author.tag + '** has received a DM with the **Commands - (minigames)**.')
+       message.channel.sendMessage('**' + message.author.tag + '** has received a DM with the **Commands (Minigames)**.')
        console.log('The Commands Minigames command has been executed. Executor: ' + message.author.tag)
    }
 })
@@ -276,14 +276,14 @@ bot.on('message', (message) => { //Commands Minigames
 bot.on('message', (message) => { //Commands Other
     if(message.content == '/Commands Other'){
        message.author.sendMessage(cmds_other);
-       message.channel.sendMessage('**' + message.author.tag + '** has received a DM with the **Commands - (other)**.')
+       message.channel.sendMessage('**' + message.author.tag + '** has received a DM with the **Commands (Other)**.')
        console.log('The Commands Other command has been executed. Executor: ' + message.author.tag)
    }
 })
 
 bot.on('message', (message) => { //About
     if(message.content == '/About'){
-       message.channel.sendMessage("Hello, **" + message.author.tag + "**!\n\nTo get started with the bot, type **/Commands Start** or **/Commands**!\n\n ● Moderation Commands\n ● Fun Commands\n ● Developer Commands\n ● Automatic Reactions in specific channels\n ● Minigames")
+       message.channel.sendMessage("Hello, **" + message.author.tag + "**!\n\nTo get started with the bot, type **/Commands**!\n\n ● Moderation Commands\n ● Fun Commands\n ● Developer Commands\n ● Automatic Reactions in specific channels\n ● Minigames")
        console.log('The About command has been executed. Executor: ' + message.author.tag)
     }
 })
