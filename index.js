@@ -220,10 +220,10 @@ bot.on('ready', () => { bot.user.setStatus('idle')} )
 console.log('The bot is now running')
 
 cmds_start = "**__Commands - Start__**\nBot's prefix: **/**\n\n ● **About**\n  • Introduces you to the bot and gives you few helpful commands!\n\n ● **Commands**\n  • Shows the available command categories!\n\n ● **Bonuses**\n  • Sends you the bonuses that Peeky can do!\n\n ● **Help**\n  • Send you some links to help out you or the bot!"
-cmds_mod = "**__Commands - Moderation__**\nBot's prefix: **/**\n\n ● **ServerName** <Server Name>\n  • Sets the name of your server!\n  • **Permissions Needed:** Administrator\n\n ● **Censor** <Mention a User>\n  • Censors the nickname of the mentioned user!\n  • **Permissions Needed:** Manage Nicknames\n\n ● **Uncensor** <Mention a User>\n  • Uncensors the name of the mentioned user!\n  • **Permissions Needed:** Manage Nicknames\n\n ● **Ban** <Mention a User>\n  • Bans the first mentioned user!\n  • **Permissions Needed:** Ban Members"
+cmds_mod = "**__Commands - Moderation__**\nBot's prefix: **/**\n\n ● **ServerName** <Server Name>\n  • Sets the name of your server!\n  • Permissions Needed: **Administrator**\n\n ● **Censor** <Mention a User>\n  • Censors the nickname of the mentioned user!\n  • Permissions Needed: **Manage Nicknames**\n\n ● **Uncensor** <Mention a User>\n  • Uncensors the name of the mentioned user!\n  • Permissions Needed: **Manage Nicknames**\n\n ● **Ban** <Mention a User>\n  • Bans the first mentioned user!\n  • Permissions Needed: **Ban Members**"
 cmds_dev = "**__Commands - Dev__**\nBot's prefix: **/**\n\n ● **GetEmoji** <Emojis>\n  • Shows you the id for your custom emojis!"
 cmds_fun = "**__Commands - Fun__**\nBot's prefix: **/**\n\n ● **DadJoke**\n  • Tells *hilarious* dad joke.\n\n ● **Fml**\n  • Wanna hear an FML story?\n\n ● **Roll**\n  • Rolls a number between 1 and 6.\n\n ● **Ask** <Question>\n  • Ask me anything! Don't be shy!\n\n ● **Say** <Your Text>\n  • Peeky will repeat what you said!\n\n ● **GlobalSet** <Message>\n  • Sets a global message that can be seen on all the servers with me in!\n\n ● **GlobalShow**\n  • Shows the global message.\n\n ● **Comics**\n  • Creates a comics that's perfect for sitcom laugh track!"
-cmds_mg = "**__Commands - Minigames__**\nBot's prefix: **/**\n\n ● **GoFishing**\n  • Catches a random fish and redirects you to it's Wikipedia page.\n  • **Dedicated Channel:** #fishing\n\n ● **FishesCaught**\n  • Shows how many fishes have been caught in total.\n  • **Dedicated Channel:** #fishing\n\n ● **Fight** <Enemy Name>\n  • Starts a fight with someone!\n  • **Dedicated Channel:** #arena"
+cmds_mg = "**__Commands - Minigames__**\nBot's prefix: **/**\n\n ● **GoFishing**\n  • Catches a random fish and redirects you to it's Wikipedia page.\n  • Dedicated Channel: **#fishing**\n\n ● **FishesCaught**\n  • Shows how many fishes have been caught in total.\n  • Dedicated Channel: **#fishing**\n\n ● **Fight** <Enemy Name>\n  • Starts a fight with someone!\n  • Dedicated Channel: **#arena**"
 cmds_other = "**__Commands - Other__**\nBot's prefix: **/**\n\n ● **ServerInfo**\n  • Displays some info about the server!\n\n ● **BotInfo**\n  • Displays some info about the bot!\n\n ● **Wikipedia** <Search_request>\n  • Searches the Wikipedia for you!\n\n ● **Suggestion** <Suggestion>\n  • Sends your suggestion to the Support Server!\n\n ● **StartPoll** <Poll Topic>\n  • Starts a poll for you.\n\n ● **StartCountdown** <0001 - 9999> <Countdown Name>\n  • Starts a countdown in seconds."
 
 bot.on('message', (message) => { //Commands
@@ -236,7 +236,7 @@ bot.on('message', (message) => { //Commands
 bot.on('message', (message) => { //Commands Start
     if(message.content == '/Commands Start'){
        message.author.sendMessage(cmds_start);
-       message.channel.sendMessage('**' + message.author.tag + '** has received a DM with the **Commands - (Info)**.')
+       message.channel.sendMessage('**' + message.author.tag + '** has received a DM with the **Commands - (Start)**.')
        console.log('The Commands Start command has been executed. Executor: ' + message.author.tag)
    }
 })
