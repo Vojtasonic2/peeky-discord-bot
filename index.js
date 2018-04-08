@@ -213,7 +213,7 @@ var fishing_fish = [
 
 var globalMessage = 'No Global message has been set yet!\nType **/Commands** to see how to set one!'
 var fishing_amount = 0
-var VersionNumber = '2.1'
+var VersionNumber = '2.2'
 
 bot.on('ready', () => { bot.user.setActivity(VersionNumber + ' | ' + bot.guilds.size + ' Servers') })
 bot.on('ready', () => { bot.user.setStatus('idle')} )
@@ -236,7 +236,7 @@ bot.on('message', (message) => { //Commands 1
 
 bot.on('message', (message) => { //Commands 2
     if(message.content == '/Commands 2'){
-       message.author.sendMessage("**__Commands 2__**\nBot's prefix: **/**\n\n ● **Refresh**\n  • Refreshes Peeky's status!\n  • **Command Tags:** 👑\n\n ● **DadJoke**\n  • Tells *hilarious* dad joke.\n\n ● **Fml**\n  • Wanna hear an FML story?\n\n ● **Roll**\n  • Rolls a number between 1 and 6.\n\n ● **ServerInfo**\n  • Displays some info about the server!\n\n ● **Ask** <Question>\n  • Ask me anything! Don't be shy!\n\n ● **Say** <Your Text>\n  • Peeky will repeat what you said!\n\n ● **GetEmoji** <Emojis>\n  • Shows you the id for your custom emojis!\n\n ● **GlobalSet** <Message>\n  • Sets a global message that can be seen on all the servers with me in!\n\n ● **GlobalShow**\n  • Shows the global message.")
+       message.author.sendMessage("**__Commands 2__**\nBot's prefix: **/**\n\n ● **Refresh**\n  • Refreshes Peeky's status!\n  • **Command Tags:** 👑\n\n ● **DadJoke**\n  • Tells *hilarious* dad joke.\n\n ● **Fml**\n  • Wanna hear an FML story?\n\n ● **Roll**\n  • Rolls a number between 1 and 6.\n\n ● **ServerInfo**\n  • Displays some info about the server!\n\n ● **Ask** <Question>\n  • Ask me anything! Don't be shy!\n\n ● **Say** <Your Text>\n  • Peeky will repeat what you said!\n\n ● **GetEmoji** <Emojis>\n  • Shows you the id for your custom emojis!\n\n ● **GlobalSet** <Message>\n  • Sets a global message that can be seen on all the servers with me in!\n\n ● **GlobalShow**\n  • Shows the global message.\n\n ● **BotInfo**\n  • Displays some info about the bot!")
        message.channel.sendMessage('**' + message.author.tag + '** has received a DM with the **Commands 2**.')
        console.log('The Commands 2 command has been executed. Executor: ' + message.author.tag)
    }
@@ -260,6 +260,13 @@ bot.on('message', (message) => { //ServerInfo
     if(message.content == '/ServerInfo'){
        message.channel.sendMessage('**Server Name:** ' + message.guild.name + '\n**Verification Level:** ' + message.guild.verificationLevel + '\n**Owner:** ' + message.guild.owner.displayName + '\n**Members:** ' + message.guild.memberCount + '\n**Role Amount:** ' + message.guild.roles.size + '\n**Custom Emojis:** ' + message.guild.emojis.size + '/100')   
        console.log('The ServerInfo command has been executed. Executor: ' + message.author.tag)
+    }
+})
+
+bot.on('message', (message) => { //BotInfo
+    if(message.content == '/BotInfo'){
+       message.channel.sendMessage('**Tag:** ' + bot.user.tag + '\n**Version:** ' + VersionNumber + '\n**Servers:** ' + bot.guilds.size + '\n**Users:** ' + bot.users.size)   
+       console.log('The BotInfo command has been executed. Executor: ' + message.author.tag)
     }
 })
 
