@@ -244,7 +244,7 @@ bot.on('message', (message) => { //Commands 2
 
 bot.on('message', (message) => { //About
     if(message.content == '/About'){
-       message.channel.sendMessage("Hello, **" + message.author.tag + "**!\n\nTo get started with the bot, type **/Commands**!\n\n**Bot's Summary**\n ● Moderation Commands\n ● Fun Commands\n ● Developer Commands\n ● Automatic Reactions in specific channels\n ● Minigames")
+       message.channel.sendMessage("Hello, **" + message.author.tag + "**!\n\nTo get started with the bot, type **/Commands**!\n\n**Summary of the Bot**\n ● Moderation Commands\n ● Fun Commands\n ● Developer Commands\n ● Automatic Reactions in specific channels\n ● Minigames")
        console.log('The About command has been executed. Executor: ' + message.author.tag)
     }
 })
