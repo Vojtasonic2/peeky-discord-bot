@@ -26,23 +26,6 @@ var dadJokes = [
     "My dad is a doctor and one of his patients has lost a left hand, so he told the patient's parents that he's all-right."
   ]
 
-var fml = [
-    'Today, I got robbed. They took my stereo and laptop, but they left my car and a note that reads "Wtf is this?" FML.',
-    'Today, I started a new job at a glass shop and my boss asked me to vacuum. I ended up tipping over and shattering the most expensive bong in the shop, which retailed at $3,000. FML.',
-    'Today, I woke up feeling ill. My mom sent me to school anyway, and grounded me for "lying" about being sick. As soon as I got to school, I began vomiting blood. FML.',
-    'Today, my boyfriend dislocated my jaw by sitting on my face while trying to fart on it. FML.',
-    'Today, my phone went missing. My 8-year-old son took it to school and sold it for $10. FML.',
-    "Today, as I was planning my impending nuptials with my fiancé, my sister jokingly told him it's not too late to call it off. He took her seriously and bailed. He won’t answer my calls. FML.",
-    "Today, I went on a beach date, so I wore flip flops. When she showed up, she took one look at me and said, “I could never date a guy who shaves his feet” and left. This from the girl wearing socks with her sandals. FML.",
-    "Today, my dad asked what I wanted for my birthday. The only thing I wanted was the complete series of Dragon Ball Z on DVD. He just sighed, shook his head, and asked me to pick something normal. FML.",
-    'Today, I told my class I was giving them 60 seconds to do a problem. A girl replied furiously "At least give us one minute!!" I teach a high school honors math class. FML.',
-    "Today, my 17-year-old son attempted to rob the bank I work at while I was off shift. FML.",
-    "Today, I’m having knee surgery. I can’t drive for the next week because of the heavy duty pain killers, so my mom told me I'll have to walk to and from school. It’s only a couple of miles. FML.",
-    "Today, my doctor told me that my lungs are as bad as a 60-year-old heavy smoker's. I'm 19 and I've never touched a cigarette in my life. FML.",
-    "Today, I found out that while my mother-in-law claimed to be babysitting my son, she was actually dropping him off at an unlicensed “day care” in a shady part of town so she could go out. How did I find out? The house was raided by police. FML.",
-    "Today, I went to the dentist to get a tooth pulled. When I woke up I found out they pulled the wrong one. FML."
-]
-
 var dice = [
     "🎲⬛⬛⬛⬛⬛ (1)",
     "🎲🎲⬛⬛⬛⬛ (2)",
@@ -222,7 +205,7 @@ console.log('The bot is now running')
 cmds_start = "**__Commands - Start__**\nBot's prefix: **/**\n\n ● **About**\n  • Introduces you to the bot and gives you few helpful commands!\n\n ● **Commands**\n  • Shows the available command categories!\n\n ● **Bonuses**\n  • Sends you the bonuses that Peeky can do!\n\n ● **Help**\n  • Send you some links to help out you or the bot!"
 cmds_mod = "**__Commands - Moderation__**\nBot's prefix: **/**\n\n ● **ServerName** <Server Name>\n  • Sets the name of your server!\n  • Permissions Needed: **Administrator**\n\n ● **Censor** <Mention a User>\n  • Censors the nickname of the mentioned user!\n  • Permissions Needed: **Manage Nicknames**\n\n ● **Uncensor** <Mention a User>\n  • Uncensors the name of the mentioned user!\n  • Permissions Needed: **Manage Nicknames**\n\n ● **Ban** <Mention a User>\n  • Bans the first mentioned user!\n  • Permissions Needed: **Ban Members**"
 cmds_dev = "**__Commands - Dev__**\nBot's prefix: **/**\n\n ● **GetEmoji** <Emojis>\n  • Shows you the id for your custom emojis!"
-cmds_fun = "**__Commands - Fun__**\nBot's prefix: **/**\n\n ● **DadJoke**\n  • Tells *hilarious* dad joke.\n\n ● **Fml**\n  • Wanna hear an FML story?\n\n ● **Roll**\n  • Rolls a number between 1 and 6.\n\n ● **Ask** <Question>\n  • Ask me anything! Don't be shy!\n\n ● **Say** <Your Text>\n  • Peeky will repeat what you said!\n\n ● **GlobalSet** <Message>\n  • Sets a global message that can be seen on all the servers with me in!\n\n ● **GlobalShow**\n  • Shows the global message.\n\n ● **Comics**\n  • Creates a comics that's perfect for sitcom laugh track!"
+cmds_fun = "**__Commands - Fun__**\nBot's prefix: **/**\n\n ● **DadJoke**\n  • Tells *hilarious* dad joke.\n\n ● **Roll**\n  • Rolls a number between 1 and 6.\n\n ● **Ask** <Question>\n  • Ask me anything! Don't be shy!\n\n ● **Say** <Your Text>\n  • Peeky will repeat what you said!\n\n ● **GlobalSet** <Message>\n  • Sets a global message that can be seen on all the servers with me in!\n\n ● **GlobalShow**\n  • Shows the global message.\n\n ● **Comics**\n  • Creates a comics that's perfect for sitcom laugh track!"
 cmds_mg = "**__Commands - Minigames__**\nBot's prefix: **/**\n\n ● **GoFishing**\n  • Catches a random fish and redirects you to it's Wikipedia page.\n  • Dedicated Channel: **#fishing**\n\n ● **FishesCaught**\n  • Shows how many fishes have been caught in total.\n  • Dedicated Channel: **#fishing**\n\n ● **Fight** <Enemy Name>\n  • Starts a fight with someone!\n  • Dedicated Channel: **#arena**"
 cmds_other = "**__Commands - Other__**\nBot's prefix: **/**\n\n ● **ServerInfo**\n  • Displays some info about the server!\n\n ● **BotInfo**\n  • Displays some info about the bot!\n\n ● **Wikipedia** <Search_request>\n  • Searches the Wikipedia for you!\n\n ● **Suggestion** <Suggestion>\n  • Sends your suggestion to the Support Server!\n\n ● **StartPoll** <Poll Topic>\n  • Starts a poll for you.\n\n ● **StartCountdown** <0001 - 9999> <Countdown Name>\n  • Starts a countdown in seconds."
 
@@ -422,7 +405,7 @@ bot.on('message', (message) => { //GoFishing
 bot.on('message', (message) => { //GoFishing - failed
     if(message.content == '/GoFishing'){
     if(message.channel.name !== 'fishing'){
-        message.channel.sendMessage('That command cannot be used here.')
+        message.channel.sendMessage('That command cannot be used in this channel.')
         console.log('The GoFishing command has failed. Executor: ' + message.author.tag)
    }}
 })
@@ -437,7 +420,7 @@ bot.on('message', (message) => { //FishesCaught
 bot.on('message', (message) => { //FishesCaught - failed
     if(message.content == '/FishesCaught'){
     if(message.channel.name !== 'fishing'){
-        message.channel.sendMessage('That command cannot be used here.')
+        message.channel.sendMessage('That command cannot be used in this channel.')
         console.log('The FishesCaught command has failed. Executor: ' + message.author.tag)
    }}
 })
@@ -468,17 +451,9 @@ bot.on('message', (message) => { //Fight
 bot.on('message', (message) => { //Fight - failed
 if(message.content.startsWith("/Fight ")){
     if(message.channel.name !== 'arena'){
-        message.channel.sendMessage('That command cannot be used here.')
+        message.channel.sendMessage('That command cannot be used in this channel.')
         console.log('The Fight command has failed. Executor: ' + message.author.tag)
    }}
-})
-
-bot.on('message', (message) => { //FML
-    if(message.content == '/Fml'){
-        var randomFml = fml[Math.floor(Math.random() * fml.length)];
-        message.channel.sendMessage(randomFml);
-        console.log('The Fml command has been executed. Executor: ' + message.author.tag)
-    }
 })
 
 bot.on('message', (message) => { //Roll
