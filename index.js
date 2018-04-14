@@ -214,7 +214,7 @@ bot.on('message', (message) => { //Commands
        message.channel.sendMessage('Available Command pages:\n\n**/Commands Start**, **/Commands Moderation**, **/Commands Dev**, **/Commands Fun**, **/Commands Minigames**')
        console.log('The Commands command has been executed. Executor: ' + message.author.tag)
    }
-})
+});
 
 bot.on('message', (message) => { //Commands Start
     if(message.content == '/Commands Start'){
@@ -222,7 +222,7 @@ bot.on('message', (message) => { //Commands Start
        message.channel.sendMessage('**' + message.author.tag + '** has received a DM with the **Commands - (Start)**.')
        console.log('The Commands Start command has been executed. Executor: ' + message.author.tag)
    }
-})
+});
 
 bot.on('message', (message) => { //Commands Moderation
     if(message.content == '/Commands Moderation'){
@@ -230,7 +230,7 @@ bot.on('message', (message) => { //Commands Moderation
        message.channel.sendMessage('**' + message.author.tag + '** has received a DM with the **Commands (Moderation)**.')
        console.log('The Commands Moderation command has been executed. Executor: ' + message.author.tag)
    }
-})
+});
 
 bot.on('message', (message) => { //Commands Dev
     if(message.content == '/Commands Dev'){
@@ -238,7 +238,7 @@ bot.on('message', (message) => { //Commands Dev
        message.channel.sendMessage('**' + message.author.tag + '** has received a DM with the **Commands (Dev)**.')
        console.log('The Commands Dev command has been executed. Executor: ' + message.author.tag)
    }
-})
+});
 
 bot.on('message', (message) => { //Commands Fun
     if(message.content == '/Commands Fun'){
@@ -246,7 +246,7 @@ bot.on('message', (message) => { //Commands Fun
        message.channel.sendMessage('**' + message.author.tag + '** has received a DM with the **Commands (Fun)**.')
        console.log('The Commands Fun command has been executed. Executor: ' + message.author.tag)
    }
-})
+});
 
 bot.on('message', (message) => { //Commands Minigames
     if(message.content == '/Commands Minigames'){
@@ -262,35 +262,35 @@ bot.on('message', (message) => { //Commands Other
        message.channel.sendMessage('**' + message.author.tag + '** has received a DM with the **Commands (Other)**.')
        console.log('The Commands Other command has been executed. Executor: ' + message.author.tag)
    }
-})
+});
 
 bot.on('message', (message) => { //About
     if(message.content == '/About'){
        message.channel.sendMessage("Hello, **" + message.author.tag + "**!\n\nTo get started with the bot, type **/Commands**!\n\n ● Moderation Commands\n ● Fun Commands\n ● Developer Commands\n ● Automatic Reactions\n ● Minigames")
        console.log('The About command has been executed. Executor: ' + message.author.tag)
     }
-})
+});
 
 bot.on('message', (message) => { //Wikipedia
     if(message.content.startsWith('/Wikipedia ')){
        message.channel.sendMessage("Here is the Wikipedia page that **" + message.author.tag + '** asked for.\nhttps://en.wikipedia.org/wiki' + message.content.replace('/Wikipedia ','/') + '\n\n(Be sure to use the **_** instead of spaces when using multiple words.)')   
        console.log('The Wikipedia command has been executed. Executor: ' + message.author.tag)
     }
-})
+});
 
 bot.on('message', (message) => { //ServerInfo
     if(message.content == '/ServerInfo'){
        message.channel.sendMessage('**Server Name:** ' + message.guild.name + '\n**Verification Level:** ' + message.guild.verificationLevel + '\n**Owner:** ' + message.guild.owner.displayName + '\n**Members:** ' + message.guild.memberCount + '\n**Role Amount:** ' + message.guild.roles.size + '\n**Custom Emojis:** ' + message.guild.emojis.size + '/100')   
        console.log('The ServerInfo command has been executed. Executor: ' + message.author.tag)
     }
-})
+});
 
 bot.on('message', (message) => { //BotInfo
     if(message.content == '/BotInfo'){
        message.channel.sendMessage('**Tag:** ' + bot.user.tag + '\n**Version:** ' + VersionNumber + '\n**Servers:** ' + bot.guilds.size + '\n**Users:** ' + bot.users.size)   
        console.log('The BotInfo command has been executed. Executor: ' + message.author.tag)
     }
-})
+});
 
 bot.on('message', (message) => { //ServerName
     if(message.content.startsWith('/ServerName ')){
@@ -299,7 +299,7 @@ bot.on('message', (message) => { //ServerName
         message.channel.sendMessage('The server name has been changed!')
         console.log('The ServerName command has been executed. Executor: ' + message.author.tag)
   }}
-})
+});
 
 bot.on('message', (message) => { //ChannelName
     if(message.content.startsWith('/ChannelName ')){
@@ -320,7 +320,7 @@ bot.on('message', (message) => { //Ban
         message.guild.ban(userToBan)
         console.log('The Ban command has been executed. Executor: ' + message.author.tag)
   }}}
-})
+});
 
 bot.on('message', (message) => { //Censor
     if(message.content.startsWith('/Censor ')){
@@ -332,7 +332,7 @@ bot.on('message', (message) => { //Censor
         message.guild.member(userToCensor).setNickname('[nickname censored]')
         console.log('The Censor command has been executed. Executor: ' + message.author.tag)}
   }}
-})
+});
 
 bot.on('message', (message) => { //Uncensor
     if(message.content.startsWith('/Uncensor ')){
@@ -344,7 +344,7 @@ bot.on('message', (message) => { //Uncensor
         message.guild.member(userToCensor).setNickname('')
         console.log('The Uncensor command has been executed. Executor: ' + message.author.tag)}
   }}
-})
+});
 
 bot.on('message', (message) => { //StartPoll
     if(message.content.startsWith("/StartPoll ")){
@@ -379,7 +379,7 @@ bot.on('message', (message) => { //Global (Show)
         message.channel.sendMessage(globalMessage)
         console.log('The GlobalShow command has been executed. Executor: ' + message.author.tag)
   } 
-})
+});
 
 bot.on('message', (message) => { //Comics
     if(message.content == '/Comics'){
@@ -392,7 +392,7 @@ bot.on('message', (message) => { //Comics
         message.channel.sendMessage('**__' + randomName1 + ' ' + randomName2 + '__**\n\n' +  randomFace + ": " + randomQuote + "\n" + randomFace2 + ": " + randomAnswer)
         console.log('The Comics command has been executed. Executor: ' + message.author.tag)
    }
-})
+});
 
 bot.on('message', (message) => { //DadJokes
     if(message.content == '/DadJoke'){
@@ -400,7 +400,7 @@ bot.on('message', (message) => { //DadJokes
         message.channel.sendMessage(randomAnswer);
         console.log('The DadJoke command has been executed. Executor: ' + message.author.tag)
     }
-})
+});
 
 bot.on('message', (message) => { //GoFishing
     if(message.content == '/GoFishing'){
@@ -410,14 +410,14 @@ bot.on('message', (message) => { //GoFishing
         fishing_amount = fishing_amount + 1
         console.log('The GoFishing command has been executed. Executor: ' + message.author.tag)
    }}
-})
+});
 bot.on('message', (message) => { //GoFishing - failed
     if(message.content == '/GoFishing'){
     if(message.channel.name !== 'fishing'){
         message.channel.sendMessage('That command cannot be used in this channel.')
         console.log('The GoFishing command has failed. Executor: ' + message.author.tag)
    }}
-})
+});
 
 bot.on('message', (message) => { //FishesCaught
     if(message.content == '/FishesCaught'){
@@ -425,14 +425,14 @@ bot.on('message', (message) => { //FishesCaught
         message.channel.sendMessage('So far, **' + fishing_amount + ' fishes** have been caught!')
         console.log('The FishesCaught command has been executed. Executor: ' + message.author.tag)
    }}
-})
+});
 bot.on('message', (message) => { //FishesCaught - failed
     if(message.content == '/FishesCaught'){
     if(message.channel.name !== 'fishing'){
         message.channel.sendMessage('That command cannot be used in this channel.')
         console.log('The FishesCaught command has failed. Executor: ' + message.author.tag)
    }}
-})
+});
 
 bot.on('message', (message) => { //Fight
     if(message.content.startsWith("/Fight ")){
@@ -463,7 +463,7 @@ if(message.content.startsWith("/Fight ")){
         message.channel.sendMessage('That command cannot be used in this channel.')
         console.log('The Fight command has failed. Executor: ' + message.author.tag)
    }}
-})
+});
 
 bot.on('message', (message) => { //Roll
     if(message.content == '/Roll'){
@@ -471,7 +471,7 @@ bot.on('message', (message) => { //Roll
         message.channel.sendMessage('**' + message.author.tag + '** has rolled:\n' + randomNumber + '!');
         console.log('The Roll command has been executed. Executor: ' + message.author.tag)
     }
-})
+});
 
 bot.on('message', (message) => { //Ask
     if(message.content.startsWith("/Ask ")){
@@ -487,7 +487,7 @@ bot.on('message', (message) => { //Say
            message.delete()
            console.log('The Say command has been executed. Executor: ' + message.author.tag)
     }
-})
+});
 
 bot.on('message', (message) => { //GetEmoji
     if(message.content.startsWith("/GetEmoji ")){
@@ -511,7 +511,7 @@ bot.on('message', (message) => { //Help
        message.author.sendMessage("**__Help__**\n\n<:bot_patreon:429246678542057473> **Patreon Page:** <https://www.patreon.com/vojtasonic>\n<:peeky:398855238725009418> **Bot's Page:** <https://discordbots.org/bot/415259002310623232>\n<:bot_twitter:429185436141748225> **Twitter:** <https://twitter.com/vojtasonic>\n<:bot_discord:429185737406152704> **Discord Support Server:** <https://discord.io/vojtasonic>")
        console.log('The Help command has been executed. Executor: ' + message.author.tag)
    }
-})
+});
 
 bot.on('message', (message) => { //Bonuses
     if(message.content == '/Bonuses'){
@@ -519,7 +519,7 @@ bot.on('message', (message) => { //Bonuses
        message.author.sendMessage("**__Bonuses__**\n\n ● **Automatic Reactions**\n  • Messages in a channel called **#gallery** get automatic ❤ reactions!\n  • Messages in a channel called **#events** get automatic 🎟 reactions!")
        console.log('The Bonuses command has been executed. Executor: ' + message.author.tag)
    }
-})
+});
 
 //BONUSES
 
