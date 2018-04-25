@@ -219,7 +219,7 @@ bot.on('message', (message) => { //Commands
 bot.on('message', (message) => { //Commands Start
     if(message.content == '/Commands Start'){
        message.author.sendMessage(cmds_start);
-       message.channel.sendMessage('**' + message.author.tag + '** has received a DM with the **Commands - (Start)**.')
+       message.channel.sendMessage('**' + message.author.tag + '** has received a DM with the **Commands (Start)**.')
        console.log('The Commands Start command has been executed. Executor: ' + message.author.tag)
    }
 });
