@@ -286,9 +286,12 @@ bot.on('message', (message) => { //ServerInfo
 });
 
 bot.on('message', (message) => { //BotInfo
-    if(message.content == '/BotInfo'){
-       message.channel.sendMessage('**Tag:** ' + bot.user.tag + '\n**Version:** ' + VersionNumber + '\n**Servers:** ' + bot.guilds.size + '\n**Users:** ' + bot.users.size)   
-       console.log('The BotInfo command has been executed. Executor: ' + message.author.tag)
+    if(message.content == ("/BotInfo")){
+        var BotUptime = bot.uptime
+        var min = BotUptime / 1000 / 60;
+        min = Math.floor(min);       
+        message.channel.sendMessage('**Name:** ' + bot.user.tag + '\n**Version:** ' + VersionNumber + '\n**Uptime:** ' + min + " Minutes" + '\n**Servers:** ' + bot.guilds.size + '\n**Users:** ' + bot.users.size)   
+        console.log('The BotInfo command has been executed. Executor: ' + message.author.tag)
     }
 });
 
