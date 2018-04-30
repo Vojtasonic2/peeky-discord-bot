@@ -519,7 +519,7 @@ bot.on('message', (message) => { //Help
 bot.on('message', (message) => { //Bonuses
     if(message.content == '/Bonuses'){
        message.channel.sendMessage('**' + message.author.tag + '** has received a DM with the **Bonuses**.')
-       message.author.sendMessage("**__Bonuses__**\n\n ● **Automatic Reactions**\n  • Messages in a channel called **#gallery** get automatic ❤ reactions!\n  • Messages in a channel called **#events** get automatic 🎟 reactions!")
+       message.author.sendMessage("**__Bonuses__**\n\n ● **Automatic Reactions**\n  • Messages in a channel called **#gallery** get automatic ❤ reactions!\n  • Messages in a channel called **#events** get automatic 🎟 reactions!\n\n ● **Word Filtering**\n  • Messages in a channel that has **Word Filtering: Yes** in the topic will be filtered!")
        console.log('The Bonuses command has been executed. Executor: ' + message.author.tag)
    }
 });
@@ -537,5 +537,36 @@ bot.on('message', (message) => { //Automatic Reaction #events
         message.react('🎟')
        console.log('The Automatic Reactions (#events) bonus has been executed. Executor: ' + message.author.tag)};
 });
+
+bot.on('message', (message) => { //Word Filtering
+    
+    var MessageDeletedVularity = "A message by **" + message.author.tag + "** just got deleted because it contained a vulgar word."
+
+    if(message.channel.topic === "Word Filtering: Yes"){
+    if(message.content.includes("fuck")){
+        message.delete()
+        message.channel.sendMessage(MessageDeletedVularity)
+    }
+    if(message.content.includes("bitch")){
+        message.delete()
+        message.channel.sendMessage(MessageDeletedVularity)
+    }
+    if(message.content.includes("whore")){
+        message.delete()
+        message.channel.sendMessage(MessageDeletedVularity)
+    }
+    if(message.content.includes("faggot")){
+        message.delete()
+        message.channel.sendMessage(MessageDeletedVularity)
+    }
+    if(message.content.includes("nigger")){
+        message.delete()
+        message.channel.sendMessage(MessageDeletedVularity)
+    }
+    if(message.content.includes("kys")){
+        message.delete()
+        message.channel.sendMessage(MessageDeletedVularity)
+    }
+}});
 
 bot.login(process.env.BOT_TOKEN);
