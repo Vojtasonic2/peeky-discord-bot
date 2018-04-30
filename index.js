@@ -540,9 +540,9 @@ bot.on('message', (message) => { //Automatic Reaction #events
 
 bot.on('message', (message) => { //Word Filtering
     
-    var MessageDeletedVularity = "A message by **" + message.author.tag + "** just got deleted because it contained a vulgar word."
+    var MessageDeletedVularity = "A message by **" + message.author.tag + "** was deleted, because it contained a vulgar word."
 
-    if(message.channel.topic === "Word Filtering: Yes"){
+    if(message.channel.topic.includes("Word Filtering: Yes")){
     if(message.content.includes("fuck")){
         message.delete()
         message.channel.sendMessage(MessageDeletedVularity)
