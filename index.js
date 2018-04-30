@@ -543,88 +543,88 @@ bot.on('message', (message) => { //Automatic Reaction #events
 bot.on('message', (message) => { //Word Filtering
     if(message.content.includes("fuck")){
         if(message.channel.topic.includes(WFTopic)){
-            message.delete().catch()
-            message.channel.sendMessage(WordFilterMessage).catch()
+            message.delete()
+            message.channel.sendMessage(WordFilterMessage)
     }};
     if(message.content.includes("bitch")){
         if(message.channel.topic.includes(WFTopic)){
-            message.delete().catch()
-            message.channel.sendMessage(WordFilterMessage).catch()
+            message.delete()
+            message.channel.sendMessage(WordFilterMessage)
     }};
     if(message.content.includes("faggot")){
         if(message.channel.topic.includes(WFTopic)){
-            message.delete().catch()
-            message.channel.sendMessage(WordFilterMessage).catch()
+            message.delete()
+            message.channel.sendMessage(WordFilterMessage)
     }};
     if(message.content.includes("gay")){
         if(message.channel.topic.includes(WFTopic)){
-            message.delete().catch()
-            message.channel.sendMessage(WordFilterMessage).catch()
+            message.delete()
+            message.channel.sendMessage(WordFilterMessage)
     }};
     if(message.content.includes("lesbian")){
         if(message.channel.topic.includes(WFTopic)){
-            message.delete().catch()
-            message.channel.sendMessage(WordFilterMessage).catch()
+            message.delete()
+            message.channel.sendMessage(WordFilterMessage)
     }};
     if(message.content.includes("shit")){
         if(message.channel.topic.includes(WFTopic)){
-            message.delete().catch()
-            message.channel.sendMessage(WordFilterMessage).catch()
+            message.delete()
+            message.channel.sendMessage(WordFilterMessage)
     }};
     if(message.content.includes("sex")){
         if(message.channel.topic.includes(WFTopic)){
-            message.delete().catch()
-            message.channel.sendMessage(WordFilterMessage).catch()
+            message.delete()
+            message.channel.sendMessage(WordFilterMessage)
     }};
     if(message.content.includes("pussy")){
         if(message.channel.topic.includes(WFTopic)){
-            message.delete().catch()
-            message.channel.sendMessage(WordFilterMessage).catch()
+            message.delete()
+            message.channel.sendMessage(WordFilterMessage)
     }};
     if(message.content.includes("dick")){
         if(message.channel.topic.includes(WFTopic)){
-            message.delete().catch()
-            message.channel.sendMessage(WordFilterMessage).catch()
+            message.delete()
+            message.channel.sendMessage(WordFilterMessage)
     }};
     if(message.content.includes("clit")){
         if(message.channel.topic.includes(WFTopic)){
-            message.delete().catch()
-            message.channel.sendMessage(WordFilterMessage).catch()
+            message.delete()
+            message.channel.sendMessage(WordFilterMessage)
     }};
     if(message.content.includes("kys")){
         if(message.channel.topic.includes(WFTopic)){
-            message.delete().catch()
-            message.channel.sendMessage(WordFilterMessage).catch()
+            message.delete()
+            message.channel.sendMessage(WordFilterMessage)
     }};
     if(message.content.includes("ass")){
         if(message.channel.topic.includes(WFTopic)){
-            message.delete().catch()
-            message.channel.sendMessage(WordFilterMessage).catch()
+            message.delete()
+            message.channel.sendMessage(WordFilterMessage)
     }};
     if(message.content.includes("tit")){
         if(message.channel.topic.includes(WFTopic)){
-            message.delete().catch()
-            message.channel.sendMessage(WordFilterMessage).catch()
+            message.delete()
+            message.channel.sendMessage(WordFilterMessage)
     }};
     if(message.content.includes("nigger")){
         if(message.channel.topic.includes(WFTopic)){
-            message.delete().catch()
-            message.channel.sendMessage(WordFilterMessage).catch()
+            message.delete()
+            message.channel.sendMessage(WordFilterMessage)
     }};
         if(message.content.includes("nigga")){
         if(message.channel.topic.includes(WFTopic)){
-            message.delete().catch()
-            message.channel.sendMessage(WordFilterMessage).catch()
+            message.delete()
+            message.channel.sendMessage(WordFilterMessage)
     }};
     if(message.content.includes("piss")){
         if(message.channel.topic.includes(WFTopic)){
-            message.delete().catch()
-            message.channel.sendMessage(WordFilterMessage).catch()
+            message.delete()
+            message.channel.sendMessage(WordFilterMessage)
     }};
     if(message.content.includes("cock")){
         if(message.channel.topic.includes(WFTopic)){
-            message.delete().catch()
-            message.channel.sendMessage(WordFilterMessage).catch()
+            message.delete()
+            message.channel.sendMessage(WordFilterMessage)
     }};
 });
 
