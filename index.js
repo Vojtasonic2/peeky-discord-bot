@@ -195,8 +195,10 @@ var fishing_fish = [
 ]
 
 var globalMessage = 'No Global message has been set yet!\nType **/Commands** to see how to set one!'
+const WordFilterMessage = "A message was deleted, because it contained a vulgar word."
+const WFTopic = "Word Filtering: Yes"
 var fishing_amount = 0
-var VersionNumber = '2.4'
+const VersionNumber = '2.4'
 
 bot.on('ready', () => { bot.user.setActivity(VersionNumber + ' | /About') })
 bot.on('ready', () => { bot.user.setStatus('idle')} )
@@ -539,54 +541,61 @@ bot.on('message', (message) => { //Automatic Reaction #events
 });
 
 bot.on('message', (message) => { //Word Filtering
-    
-    var WordFilterMessage = "A message by **" + message.author.tag + "** was deleted, because it contained a vulgar word."
-
-    if(message.channel.topic.includes("Word Filtering: Yes")){
     if(message.content.includes("fuck")){
+    if(message.channel.topic.includes(WFTopic))
         message.delete()
         message.channel.sendMessage(WordFilterMessage)
     }
     if(message.content.includes("shit")){
+        if(message.channel.topic.includes(WFTopic))
         message.delete()
         message.channel.sendMessage(WordFilterMessage)
     }
     if(message.content.includes("cunt")){
+        if(message.channel.topic.includes(WFTopic))
         message.delete()
         message.channel.sendMessage(WordFilterMessage)
     }
     if(message.content.includes("dick")){
+        if(message.channel.topic.includes(WFTopic))
         message.delete()
         message.channel.sendMessage(WordFilterMessage)
     }
     if(message.content.includes("pussy")){
+        if(message.channel.topic.includes(WFTopic))
         message.delete()
         message.channel.sendMessage(WordFilterMessage)
     }
     if(message.content.includes("clit")){
+        if(message.channel.topic.includes(WFTopic))
         message.delete()
         message.channel.sendMessage(WordFilterMessage)
     }
     if(message.content.includes("bitch")){
+    if(message.channel.topic.includes(WFTopic))
         message.delete()
         message.channel.sendMessage(WordFilterMessage)
     }
     if(message.content.includes("whore")){
+    if(message.channel.topic.includes(WFTopic))
         message.delete()
         message.channel.sendMessage(WordFilterMessage)
     }
     if(message.content.includes("faggot")){
+    if(message.channel.topic.includes(WFTopic))
         message.delete()
         message.channel.sendMessage(WordFilterMessage)
     }
     if(message.content.includes("nigger")){
+    if(message.channel.topic.includes(WFTopic))
         message.delete()
         message.channel.sendMessage(WordFilterMessage)
     }
     if(message.content.includes("kys")){
+    if(message.channel.topic.includes(WFTopic))
         message.delete()
         message.channel.sendMessage(WordFilterMessage)
     }
-}});
+});
 
 bot.login(process.env.BOT_TOKEN);
