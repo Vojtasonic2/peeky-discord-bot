@@ -195,7 +195,7 @@ var fishing_fish = [
 ]
 
 var globalMessage = 'No Global message has been set yet!\nType **/Commands** to see how to set one!'
-const WordFilterMessage = "A message was deleted, because it contained a vulgar word."
+const WordFilterMessage = "I deleted someone's message, because there were some vulgar words."
 const WFTopic = "Word Filtering: Yes"
 var fishing_amount = 0
 const VersionNumber = '2.4'
