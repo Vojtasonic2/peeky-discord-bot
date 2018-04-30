@@ -547,6 +547,22 @@ bot.on('message', (message) => { //Word Filtering
         message.delete()
         message.channel.sendMessage(MessageDeletedVularity)
     }
+    if(message.content.includes("shit")){
+        message.delete()
+        message.channel.sendMessage(MessageDeletedVularity)
+    }
+    if(message.content.includes("cunt")){
+        message.delete()
+        message.channel.sendMessage(MessageDeletedVularity)
+    }
+    if(message.content.includes("dick")){
+        message.delete()
+        message.channel.sendMessage(MessageDeletedVularity)
+    }
+    if(message.content.includes("pussy")){
+        message.delete()
+        message.channel.sendMessage(MessageDeletedVularity)
+    }
     if(message.content.includes("bitch")){
         message.delete()
         message.channel.sendMessage(MessageDeletedVularity)
