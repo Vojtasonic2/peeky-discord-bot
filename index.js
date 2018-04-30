@@ -591,6 +591,36 @@ bot.on('message', (message) => { //Word Filtering
             message.delete()
             message.channel.sendMessage(WordFilterMessage)
     }};
+    if(message.content.includes("ass")){
+        if(message.channel.topic.includes(WFTopic)){
+            message.delete()
+            message.channel.sendMessage(WordFilterMessage)
+    }};
+    if(message.content.includes("tit")){
+        if(message.channel.topic.includes(WFTopic)){
+            message.delete()
+            message.channel.sendMessage(WordFilterMessage)
+    }};
+    if(message.content.includes("nigger")){
+        if(message.channel.topic.includes(WFTopic)){
+            message.delete()
+            message.channel.sendMessage(WordFilterMessage)
+    }};
+        if(message.content.includes("nigga")){
+        if(message.channel.topic.includes(WFTopic)){
+            message.delete()
+            message.channel.sendMessage(WordFilterMessage)
+    }};
+    if(message.content.includes("piss")){
+        if(message.channel.topic.includes(WFTopic)){
+            message.delete()
+            message.channel.sendMessage(WordFilterMessage)
+    }};
+    if(message.content.includes("cock")){
+        if(message.channel.topic.includes(WFTopic)){
+            message.delete()
+            message.channel.sendMessage(WordFilterMessage)
+    }};
 });
 
 bot.login(process.env.BOT_TOKEN);
