@@ -546,6 +546,11 @@ bot.on('message', (message) => { //Word Filtering
             message.delete()
             message.channel.sendMessage(WordFilterMessage)
     }};
+    if(message.content.includes("bitch")){
+        if(message.channel.topic.includes(WFTopic)){
+            message.delete()
+            message.channel.sendMessage(WordFilterMessage)
+    }};
     if(message.content.includes("faggot")){
         if(message.channel.topic.includes(WFTopic)){
             message.delete()
