@@ -196,7 +196,7 @@ var fishing_fish = [
 
 var globalMessage = 'No Global message has been set yet!\nType **/Commands** to see how to set one!'
 var fishing_amount = 0
-var VersionNumber = '2.3'
+var VersionNumber = '2.4'
 
 bot.on('ready', () => { bot.user.setActivity(VersionNumber + ' | /About') })
 bot.on('ready', () => { bot.user.setStatus('idle')} )
