@@ -563,6 +563,10 @@ bot.on('message', (message) => { //Word Filtering
         message.delete()
         message.channel.sendMessage(MessageDeletedVularity)
     }
+    if(message.content.includes("clit")){
+        message.delete()
+        message.channel.sendMessage(MessageDeletedVularity)
+    }
     if(message.content.includes("bitch")){
         message.delete()
         message.channel.sendMessage(MessageDeletedVularity)
