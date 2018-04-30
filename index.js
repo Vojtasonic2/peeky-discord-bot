@@ -199,7 +199,7 @@ const WordFilterMessage = "I deleted someone's message, because there were some 
 const WFTopic = "Word Filtering: Yes"
 var fishing_amount = 0
 var WFReports = 0
-const VersionNumber = '2.4'
+const VersionNumber = '2.5'
 
 bot.on('ready', () => { bot.user.setActivity(VersionNumber + ' | /About') })
 bot.on('ready', () => { bot.user.setStatus('idle')} )
