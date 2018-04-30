@@ -606,6 +606,11 @@ bot.on('message', (message) => { //Word Filtering
         message.delete()
         message.channel.sendMessage(WordFilterMessage)
     }
+    if(message.content.includes("sex")){
+    if(message.channel.topic.includes(WFTopic))
+        message.delete()
+        message.channel.sendMessage(WordFilterMessage)
+    }
 });
 
 bot.login(process.env.BOT_TOKEN);
