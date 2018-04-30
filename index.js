@@ -596,6 +596,16 @@ bot.on('message', (message) => { //Word Filtering
         message.delete()
         message.channel.sendMessage(WordFilterMessage)
     }
+    if(message.content.includes("stfu")){
+    if(message.channel.topic.includes(WFTopic))
+        message.delete()
+        message.channel.sendMessage(WordFilterMessage)
+    }
+    if(message.content.includes("gay")){
+    if(message.channel.topic.includes(WFTopic))
+        message.delete()
+        message.channel.sendMessage(WordFilterMessage)
+    }
 });
 
 bot.login(process.env.BOT_TOKEN);
