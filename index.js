@@ -584,8 +584,8 @@ bot.on('message' , (message) => { //Word Filtering
     const WTMessage = "I deleted **" + message.author.tag + "**'s message, since there was a vulgar word."
 
     function WFAction() {
-    if(message.channel.topic.includes("Word Filtering: Yes")){
     if(WFReports == 0){
+    if(message.channel.topic.includes("Word Filtering: Yes")){
         WFReports = WFReports + 1
         message.channel.sendMessage(WTMessage)
         message.author.lastMessage.delete()
