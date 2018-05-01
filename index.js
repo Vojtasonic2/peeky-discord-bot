@@ -196,7 +196,7 @@ var fishing_fish = [
 
 var globalMessage = 'No Global message has been set yet!\nType **/Commands** to see how to set one!'
 const WordFilterMessage = "I deleted someone's message, because there were some vulgar words."
-const ErrorMsg1 = "<:bot_deny:416366135223517186> | This command cannott be used in this channel."
+const ErrorMsg1 = "<:bot_deny:440824010805084171> | This command cannott be used in this channel."
 const WFTopic = "Word Filtering: Yes"
 var fishing_amount = 0
 var WFReports = 0
@@ -355,7 +355,7 @@ bot.on('message', (message) => { //Uncensor
 
 bot.on('message', (message) => { //StartPoll
     if(message.content.startsWith("/StartPoll ")){
-       message.channel.sendMessage('This is a poll that **' + message.author.tag + '** has started!\n\n**' + message.content.replace("/StartPoll ","") + '**').then(sentMessage => sentMessage.react("<:bot_approve:416366096053174273") + (sentMessage.react("<:bot_deny:416366135223517186")));
+       message.channel.sendMessage('This is a poll that **' + message.author.tag + '** has started!\n\n**' + message.content.replace("/StartPoll ","") + '**').then(sentMessage => sentMessage.react("<:bot_approve:440824011199348736") + (sentMessage.react("<:bot_deny:440824010805084171")));
        console.log('The StartPoll command has been executed. Executor: ' + message.author.tag)
     }
 });
