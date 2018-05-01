@@ -196,7 +196,8 @@ var fishing_fish = [
 
 var globalMessage = 'No Global message has been set yet!\nType **/Commands** to see how to set one!'
 const WordFilterMessage = "I deleted someone's message, because there were some vulgar words."
-const ErrorMsg1 = "<:bot_deny:440824010805084171> | This command cannott be used in this channel."
+const ErrorMsg1 = "<:bot_deny:440824010805084171> This command cannot be used in this channel."
+const ErrorMsg2 = "<:bot_deny:440824010805084171> You lack the needed permissions to use this command."
 const WFTopic = "Word Filtering: Yes"
 var fishing_amount = 0
 var WFReports = 0
@@ -307,6 +308,13 @@ bot.on('message', (message) => { //ServerName
         console.log('The ServerName command has been executed. Executor: ' + message.author.tag)
   }}
 });
+bot.on('message', (message) => { //ServerName
+    if(message.content.startsWith('/ServerName ')){
+    if(!message.member.hasPermission("ADMINISTRATOR")){
+        message.channel.sendMessage(ErrorMsg2)
+        console.log('The Censor command has failed. Executor: ' + message.author.tag)
+  }}
+});
 
 bot.on('message', (message) => { //ChannelName
     if(message.content.startsWith('/ChannelName ')){
@@ -316,6 +324,13 @@ bot.on('message', (message) => { //ChannelName
         console.log('The ChannelName command has been executed. Executor: ' + message.author.tag)
   }}
 })
+bot.on('message', (message) => { //ChannelName
+    if(message.content.startsWith('/ChannelName ')){
+    if(!message.member.hasPermission("ADMINISTRATOR")){
+        message.channel.sendMessage(ErrorMsg2)
+        console.log('The Censor command has failed. Executor: ' + message.author.tag)
+  }}
+});
 
 bot.on('message', (message) => { //Ban
     if(message.content.startsWith('/Ban ')){
@@ -327,6 +342,13 @@ bot.on('message', (message) => { //Ban
         message.guild.ban(userToBan)
         console.log('The Ban command has been executed. Executor: ' + message.author.tag)
   }}}
+});
+bot.on('message', (message) => { //Ban
+    if(message.content.startsWith('/Ban ')){
+    if(!message.member.hasPermission("BAN_MEMBERS")){
+        message.channel.sendMessage(ErrorMsg2)
+        console.log('The Censor command has failed. Executor: ' + message.author.tag)
+  }}
 });
 
 bot.on('message', (message) => { //Censor
@@ -340,6 +362,13 @@ bot.on('message', (message) => { //Censor
         console.log('The Censor command has been executed. Executor: ' + message.author.tag)}
   }}
 });
+bot.on('message', (message) => { //Censor
+    if(message.content.startsWith('/Censor ')){
+    if(!message.member.hasPermission("MANAGE_NICKNAMES")){
+        message.channel.sendMessage(ErrorMsg2)
+        console.log('The Censor command has failed. Executor: ' + message.author.tag)
+  }}
+});
 
 bot.on('message', (message) => { //Uncensor
     if(message.content.startsWith('/Uncensor ')){
@@ -350,6 +379,13 @@ bot.on('message', (message) => { //Uncensor
         message.channel.sendMessage('The user **' + userToCensor + '** has been uncensored.')
         message.guild.member(userToCensor).setNickname('')
         console.log('The Uncensor command has been executed. Executor: ' + message.author.tag)}
+  }}
+});
+bot.on('message', (message) => { //Uncensor
+    if(message.content.startsWith('/Uncensor ')){
+    if(!message.member.hasPermission("MANAGE_NICKNAMES")){
+        message.channel.sendMessage(ErrorMsg2)
+        console.log('The Uncensor command has failed. Executor: ' + message.author.tag)
   }}
 });
 
