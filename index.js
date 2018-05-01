@@ -196,6 +196,7 @@ var fishing_fish = [
 
 var globalMessage = 'No Global message has been set yet!\nType **/Commands** to see how to set one!'
 const WordFilterMessage = "I deleted someone's message, because there were some vulgar words."
+const ErrorMsg1 = "<:bot_deny:416366135223517186> | This command cannott be used in this channel."
 const WFTopic = "Word Filtering: Yes"
 var fishing_amount = 0
 var WFReports = 0
@@ -420,7 +421,7 @@ bot.on('message', (message) => { //GoFishing
 bot.on('message', (message) => { //GoFishing - failed
     if(message.content == '/GoFishing'){
     if(message.channel.name !== 'fishing'){
-        message.channel.sendMessage('That command cannot be used in this channel.')
+        message.channel.sendMessage(ErrorMsg1)
         console.log('The GoFishing command has failed. Executor: ' + message.author.tag)
    }}
 });
@@ -435,7 +436,7 @@ bot.on('message', (message) => { //FishesCaught
 bot.on('message', (message) => { //FishesCaught - failed
     if(message.content == '/FishesCaught'){
     if(message.channel.name !== 'fishing'){
-        message.channel.sendMessage('That command cannot be used in this channel.')
+        message.channel.sendMessage(ErrorMsg1)
         console.log('The FishesCaught command has failed. Executor: ' + message.author.tag)
    }}
 });
@@ -466,7 +467,7 @@ bot.on('message', (message) => { //Fight
 bot.on('message', (message) => { //Fight - failed
 if(message.content.startsWith("/Fight ")){
     if(message.channel.name !== 'arena'){
-        message.channel.sendMessage('That command cannot be used in this channel.')
+        message.channel.sendMessage(ErrorMsg1)
         console.log('The Fight command has failed. Executor: ' + message.author.tag)
    }}
 });
