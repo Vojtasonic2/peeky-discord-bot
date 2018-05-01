@@ -550,7 +550,6 @@ bot.on('message' , (message) => { //Word Filtering
         WFReports = WFReports + 1
         message.author.lastMessage.delete()
         message.channel.sendMessage(WTMessage)
-        message.author.sendMessage("I deleted your message, because you used a vulgar word in a filtered chat room. this is the message you posted:\n\n**" + message.content + "**")
     }};
 
     const WTMessage = "I deleted **" + message.author.tag + "**'s message, since there was a vulgar word."
