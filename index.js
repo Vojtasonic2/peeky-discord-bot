@@ -607,6 +607,9 @@ bot.on('message' , (message) => { //Word Filtering
         if(message.content.includes("pussy")){
         WFAction()
         }
+        if(message.content.includes("dick")){
+        WFAction()
+        }
 });
 
 bot.login(process.env.BOT_TOKEN);
