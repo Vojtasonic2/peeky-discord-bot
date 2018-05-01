@@ -27,11 +27,11 @@ var dadJokes = [
   ]
 
 var dice = [
-    "🎲<:black_dice:440876187808432168><:black_dice:440876187808432168><:black_dice:440876187808432168><:black_dice:440876187808432168><:black_dice:440876187808432168> (1)",
-    "🎲🎲<:black_dice:440876187808432168><:black_dice:440876187808432168><:black_dice:440876187808432168><:black_dice:440876187808432168> (2)",
-    "🎲🎲🎲<:black_dice:440876187808432168><:black_dice:440876187808432168><:black_dice:440876187808432168> (3)",
-    "🎲🎲🎲🎲<:black_dice:440876187808432168><:black_dice:440876187808432168> (4)",
-    "🎲🎲🎲🎲🎲<:black_dice:440876187808432168> (5)", 
+    "🎲<:black_dice:440876187808432168><:black_dice:440876187808432168><:black_dice:440876187808432168><:black_dice:440876187808432168><:black_dice:440876187808432168>",
+    "🎲🎲<:black_dice:440876187808432168><:black_dice:440876187808432168><:black_dice:440876187808432168><:black_dice:440876187808432168>",
+    "🎲🎲🎲<:black_dice:440876187808432168><:black_dice:440876187808432168><:black_dice:440876187808432168>",
+    "🎲🎲🎲🎲<:black_dice:440876187808432168><:black_dice:440876187808432168>",
+    "🎲🎲🎲🎲🎲<:black_dice:440876187808432168>", 
     "🎲🎲🎲🎲🎲🎲 (6)" 
   ]
 
@@ -511,7 +511,7 @@ if(message.content.startsWith("/Fight ")){
 bot.on('message', (message) => { //Roll
     if(message.content == '/Roll'){
         var randomNumber = dice[Math.floor(Math.random() * dice.length)];
-        message.channel.sendMessage('**' + message.author.tag + '** has rolled:\n' + randomNumber + '!');
+        message.channel.sendMessage('**' + message.author.tag + '** has rolled a dice!\n' + randomNumber);
         console.log('The Roll command has been executed. Executor: ' + message.author.tag)
     }
 });
