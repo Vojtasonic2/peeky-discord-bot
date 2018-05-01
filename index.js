@@ -544,85 +544,69 @@ bot.on('message', (message) => { //Automatic Reaction #events
 bot.on('message' , (message) => { //Word Filtering
 
     WFReports = 0
-
-    function WFAction() {
-        if(WFReports == 0){
-        WFReports = WFReports + 1
-        message.author.lastMessage.delete()
-        message.channel.sendMessage(WTMessage)
-    }};
-
     const WTMessage = "I deleted **" + message.author.tag + "**'s message, since there was a vulgar word."
 
-    if(message.channel.topic.includes(WFTopic)){
+    function WFAction() {
+    if(message.channel.topic.includes("Word Filtering: Yes")){
+    if(WFReports == 0){
+        WFReports = WFReports + 1
+        message.channel.sendMessage(WTMessage)
+        message.author.lastMessage.delete()
+        console.log("Peeky's word filter removed a message by " + message.author.tag + ".")}
+}};
+        
         if(message.content.includes("fuck")){
         WFAction()
-    }}
-    if(message.channel.topic.includes(WFTopic)){
+        }
         if(message.content.includes("shit")){
         WFAction()
-    }}
-    if(message.channel.topic.includes(WFTopic)){
+        }
         if(message.content.includes("bitch")){
         WFAction()
-    }}
-    if(message.channel.topic.includes(WFTopic)){
+        }
         if(message.content.includes("whore")){
         WFAction()
-    }}
-    if(message.channel.topic.includes(WFTopic)){
+        }
         if(message.content.includes("ass")){
         WFAction()
-    }}
-    if(message.channel.topic.includes(WFTopic)){
+        }
         if(message.content.includes("piss")){
         WFAction()
-    }}
-    if(message.channel.topic.includes(WFTopic)){
+        }
         if(message.content.includes("jizz")){
         WFAction()
-    }}
-    if(message.channel.topic.includes(WFTopic)){
+        }
         if(message.content.includes("cum")){
         WFAction()
-    }}
-    if(message.channel.topic.includes(WFTopic)){
+        }
         if(message.content.includes("tit")){
         WFAction()
-    }}
-    if(message.channel.topic.includes(WFTopic)){
+        }
         if(message.content.includes("sex")){
         WFAction()
-    }}
-    if(message.channel.topic.includes(WFTopic)){
+        }
         if(message.content.includes("kys")){
         WFAction()
-    }}
-    if(message.channel.topic.includes(WFTopic)){
+        }
         if(message.content.includes("nigger")){
         WFAction()
-    }}
-    if(message.channel.topic.includes(WFTopic)){
+        }
         if(message.content.includes("nigga")){
         WFAction()
-    }}
-    if(message.channel.topic.includes(WFTopic)){
+        }
         if(message.content.includes("scum")){
         WFAction()
-    }}
-    if(message.channel.topic.includes(WFTopic)){
+        }
         if(message.content.includes("bitch")){
         WFAction()
-    }}
-    
-    if(message.channel.topic.includes(WFTopic)){
+        }
+
         if(message.content.includes("clit")){
         WFAction()
-    }}
-    if(message.channel.topic.includes(WFTopic)){
+        }
         if(message.content.includes("pussy")){
         WFAction()
-    }}
+        }
 });
 
 bot.login(process.env.BOT_TOKEN);
