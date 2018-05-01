@@ -546,9 +546,9 @@ bot.on('message' , (message) => { //Word Filtering
     WFReports = 0
 
     function WFAction() {
-        message.author.lastMessage.delete()
         if(WFReports == 0){
         WFReports = WFReports + 1
+        message.author.lastMessage.delete()
         message.channel.sendMessage(WTMessage)
     }};
 
