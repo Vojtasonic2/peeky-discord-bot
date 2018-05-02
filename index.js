@@ -32,7 +32,7 @@ var dice = [
     "🎲🎲🎲<:black_dice:440876187808432168><:black_dice:440876187808432168><:black_dice:440876187808432168>",
     "🎲🎲🎲🎲<:black_dice:440876187808432168><:black_dice:440876187808432168>",
     "🎲🎲🎲🎲🎲<:black_dice:440876187808432168>", 
-    "🎲🎲🎲🎲🎲🎲 (6)" 
+    "🎲🎲🎲🎲🎲🎲" 
   ]
 
 var reply = [
@@ -198,7 +198,7 @@ var globalMessage = 'No Global message has been set yet!\nType **/Commands** to 
 const WordFilterMessage = "I deleted someone's message, because there were some vulgar words."
 const ErrorMsg1 = "<:bot_deny:440824010805084171> This command cannot be used in this channel."
 const ErrorMsg2 = "<:bot_deny:440824010805084171> You lack the needed permissions to use this command."
-const WFTopic = "Word Filtering: Yes"
+const WFTopic = "Word Filtering: Enabled"
 var fishing_amount = 0
 var WFReports = 0
 const VersionNumber = '2.5'
@@ -559,7 +559,7 @@ bot.on('message', (message) => { //Help
 bot.on('message', (message) => { //Bonuses
     if(message.content == '/Bonuses'){
        message.channel.sendMessage('**' + message.author.tag + '** has received a DM with the **Bonuses**.')
-       message.author.sendMessage("**__Bonuses__**\n\n ● **Automatic Reactions**\n  • Messages in a channel called **#gallery** get automatic ❤ reactions!\n  • Messages in a channel called **#events** get automatic 🎟 reactions!\n\n ● **Word Filtering**\n  • Messages in a channel that has **Word Filtering: Yes** in the topic will be filtered!")
+       message.author.sendMessage("**__Bonuses__**\n\n ● **Automatic Reactions**\n  • Messages in a channel called **#gallery** get automatic ❤ reactions!\n  • Messages in a channel called **#events** get automatic 🎟 reactions!\n\n ● **Word Filtering**\n  • Messages in a channel that has **" + WFTopic + "** in the topic will be filtered!")
        console.log('The Bonuses command has been executed. Executor: ' + message.author.tag)
    }
 });
