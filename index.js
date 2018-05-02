@@ -201,7 +201,7 @@ const ErrorMsg2 = "<:bot_deny:440824010805084171> You lack the needed permission
 const WFTopic = "Word Filtering: Enabled"
 var fishing_amount = 0
 var WFReports = 0
-const VersionNumber = '2.5'
+const VersionNumber = '2.6'
 
 bot.on('ready', () => { bot.user.setActivity(VersionNumber + ' | /About') })
 bot.on('ready', () => { bot.user.setStatus('idle')} )
