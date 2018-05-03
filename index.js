@@ -198,7 +198,6 @@ var globalMessage = 'No Global message has been set yet!\nType **/Commands** to 
 const WordFilterMessage = "I deleted someone's message, because there were some vulgar words."
 const ErrorMsg1 = "<:bot_deny:440824010805084171> This command cannot be used in this channel."
 const ErrorMsg2 = "<:bot_deny:440824010805084171> You lack the needed permissions to use this command."
-const WFTopic = "Word Filtering: Enabled"
 var fishing_amount = 0
 var WFReports = 0
 const VersionNumber = '2.6'
@@ -585,7 +584,7 @@ bot.on('message' , (message) => { //Word Filtering
 
     function WFAction() {
     if(WFReports == 0){
-    if(message.channel.topic.includes("Word Filtering: Yes")){
+    if(message.channel.topic.includes("Word Filtering: Enabled")){
         WFReports = WFReports + 1
         message.channel.sendMessage(WTMessage)
         message.author.lastMessage.delete()
