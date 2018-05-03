@@ -591,59 +591,58 @@ bot.on('message' , (message) => { //Word Filtering
         console.log("Peeky's word filter removed a message by " + message.author.tag + ".")}
 }};
         
-        if(message.content.includes("fuck")){
+        if(message.content.includes("fuck || Fuck")){
         WFAction()
         }
-        if(message.content.includes("shit")){
+        if(message.content.includes("shit || Shit")){
         WFAction()
         }
-        if(message.content.includes("bitch")){
+        if(message.content.includes("bitch || ")){
         WFAction()
         }
-        if(message.content.includes("whore")){
+        if(message.content.includes("whore || Whore")){
         WFAction()
         }
-        if(message.content.includes("ass")){
+        if(message.content.includes("ass || Ass")){
         WFAction()
         }
-        if(message.content.includes("piss")){
+        if(message.content.includes("piss || Piss")){
         WFAction()
         }
-        if(message.content.includes("jizz")){
+        if(message.content.includes("jizz || Jizz")){
         WFAction()
         }
-        if(message.content.includes("cum")){
+        if(message.content.includes("cum || Cum")){
         WFAction()
         }
-        if(message.content.includes("tit")){
+        if(message.content.includes("tit || Tits")){
         WFAction()
         }
-        if(message.content.includes("sex")){
+        if(message.content.includes("sex || Sex")){
         WFAction()
         }
-        if(message.content.includes("kys")){
+        if(message.content.includes("kys || Kys")){
         WFAction()
         }
-        if(message.content.includes("nigger")){
+        if(message.content.includes("nigger || Nigger")){
         WFAction()
         }
-        if(message.content.includes("nigga")){
+        if(message.content.includes("nigga || Nigga")){
         WFAction()
         }
-        if(message.content.includes("scum")){
+        if(message.content.includes("scum || Scum")){
         WFAction()
         }
-        if(message.content.includes("bitch")){
+        if(message.content.includes("bitch || Bitch")){
         WFAction()
         }
-
-        if(message.content.includes("clit")){
+        if(message.content.includes("clit || Clit")){
         WFAction()
         }
-        if(message.content.includes("pussy")){
+        if(message.content.includes("pussy || Pussy")){
         WFAction()
         }
-        if(message.content.includes("dick")){
+        if(message.content.includes("dick || Dick")){
         WFAction()
         }
 });
