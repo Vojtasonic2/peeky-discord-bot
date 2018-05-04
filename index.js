@@ -625,10 +625,7 @@ bot.on('message' , (message) => { //Word Filtering
         if(message.content.includes("kys")){
         WFAction()
         }
-        if(message.content.includes("nigger")){
-        WFAction()
-        }
-        if(message.content.includes("nigga")){
+        if(message.content.includes("nigg")){
         WFAction()
         }
         if(message.content.includes("scum")){
@@ -644,6 +641,15 @@ bot.on('message' , (message) => { //Word Filtering
         WFAction()
         }
         if(message.content.includes("dick")){
+        WFAction()
+        }
+        if(message.content.includes("wtf")){
+        WFAction()
+        }
+        if(message.content.includes("omfg")){
+        WFAction()
+        }
+        if(message.content.includes("kill your self")){
         WFAction()
         }
 });
