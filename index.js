@@ -525,7 +525,7 @@ bot.on('message', (message) => { //Ask
 
 bot.on('message', (message) => { //Say
     if(message.content.startsWith("/Say ")){
-           message.channel.sendMessage(message.content.replace('/Say ',''))
+           message.channel.sendMessage(message.content.replace('/Say ','­'))
            message.delete()
            console.log('The Say command has been executed. Executor: ' + message.author.tag)
     }
