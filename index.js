@@ -307,7 +307,7 @@ bot.on('message', (message) => { //ServerName
         console.log('The ServerName command has been executed. Executor: ' + message.author.tag)
   }}
 });
-bot.on('message', (message) => { //ServerName
+bot.on('message', (message) => { //ServerName - failed
     if(message.content.startsWith('/ServerName ')){
     if(!message.member.hasPermission("ADMINISTRATOR")){
         message.channel.sendMessage(ErrorMsg2)
@@ -323,7 +323,7 @@ bot.on('message', (message) => { //ChannelName
         console.log('The ChannelName command has been executed. Executor: ' + message.author.tag)
   }}
 })
-bot.on('message', (message) => { //ChannelName
+bot.on('message', (message) => { //ChannelName - failed
     if(message.content.startsWith('/ChannelName ')){
     if(!message.member.hasPermission("ADMINISTRATOR")){
         message.channel.sendMessage(ErrorMsg2)
@@ -342,7 +342,7 @@ bot.on('message', (message) => { //Ban
         console.log('The Ban command has been executed. Executor: ' + message.author.tag)
   }}}
 });
-bot.on('message', (message) => { //Ban
+bot.on('message', (message) => { //Ban - failed
     if(message.content.startsWith('/Ban ')){
     if(!message.member.hasPermission("BAN_MEMBERS")){
         message.channel.sendMessage(ErrorMsg2)
@@ -361,7 +361,7 @@ bot.on('message', (message) => { //Censor
         console.log('The Censor command has been executed. Executor: ' + message.author.tag)}
   }}
 });
-bot.on('message', (message) => { //Censor
+bot.on('message', (message) => { //Censor - failed
     if(message.content.startsWith('/Censor ')){
     if(!message.member.hasPermission("MANAGE_NICKNAMES")){
         message.channel.sendMessage(ErrorMsg2)
@@ -380,7 +380,7 @@ bot.on('message', (message) => { //Uncensor
         console.log('The Uncensor command has been executed. Executor: ' + message.author.tag)}
   }}
 });
-bot.on('message', (message) => { //Uncensor
+bot.on('message', (message) => { //Uncensor - failed
     if(message.content.startsWith('/Uncensor ')){
     if(!message.member.hasPermission("MANAGE_NICKNAMES")){
         message.channel.sendMessage(ErrorMsg2)
@@ -390,7 +390,7 @@ bot.on('message', (message) => { //Uncensor
 
 bot.on('message', (message) => { //StartPoll
     if(message.content.startsWith("/StartPoll ")){
-       message.channel.sendMessage('This is a poll that **' + message.author.tag + '** has started!\n\n**' + message.content.replace("/StartPoll ","") + '**').then(sentMessage => sentMessage.react("<:bot_approve:440824011199348736") + (sentMessage.react("<:bot_deny:440824010805084171")));
+       message.channel.sendMessage('This is a poll that **' + message.author.tag + '** has started!\n\n' + message.content.replace("/StartPoll ","")).then(sentMessage => sentMessage.react("<:bot_approve:440824011199348736") + (sentMessage.react("<:bot_deny:440824010805084171")));
        console.log('The StartPoll command has been executed. Executor: ' + message.author.tag)
     }
 });
@@ -410,7 +410,7 @@ bot.on('message', (message) => { //StartCountdown
 
 bot.on('message', (message) => { //Global (Set)
     if(message.content.startsWith("/GlobalSet ")){
-          globalMessage = 'This Global Message has been set by **' + message.author.tag + '** in a server called **' + message.guild.name + '**.\n\n**' + message.content.replace('/GlobalSet ','') + '**'
+          globalMessage = 'This Global Message has been set by **' + message.author.tag + '** in a server called **' + message.guild.name + '**.\n\n' + message.content.replace('/GlobalSet ','')
           message.channel.sendMessage('**' +  message.author.tag + '** has set the global message!')
           console.log('The GlobalSet command has been executed. Executor: ' + message.author.tag)
     }
@@ -540,7 +540,7 @@ bot.on('message', (message) => { //GetEmoji
 
 bot.on('message', (message) => { //Suggestion
     if(message.content.startsWith("/Suggestion ")){
-          bot.channels.get('429227074587197441').sendMessage("This is a suggestion from **" + message.author.tag + "**.\n\n**" + message.content.replace(('/Suggestion'),('')) + '**.')
+          bot.channels.get('429227074587197441').sendMessage("This is a suggestion from **" + message.author.tag + "**.\n\n" + message.content.replace('/Suggestion',''))
           .then(sentMessage => sentMessage.react('<:bot_neutral:441968156781707264'));
           message.channel.sendMessage('**' + message.author.tag + '** has send a suggestion!')
           console.log('The Suggestion command has been executed. Executor: ' + message.author.tag)
