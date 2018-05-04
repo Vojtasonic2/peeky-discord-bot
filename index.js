@@ -390,7 +390,7 @@ bot.on('message', (message) => { //Uncensor - failed
 
 bot.on('message', (message) => { //StartPoll
     if(message.content.startsWith("/StartPoll ")){
-       message.channel.sendMessage('This is a poll that **' + message.author.tag + '** has started!\n\n' + message.content.replace("/StartPoll ","")).then(sentMessage => sentMessage.react("<:bot_approve:440824011199348736") + (sentMessage.react("<:bot_deny:440824010805084171")));
+       message.channel.sendMessage('This is a poll that **' + message.author.tag + '** has started!\n' + message.content.replace("/StartPoll ","")).then(sentMessage => sentMessage.react("<:bot_approve:440824011199348736") + (sentMessage.react("<:bot_deny:440824010805084171")));
        console.log('The StartPoll command has been executed. Executor: ' + message.author.tag)
     }
 });
@@ -410,7 +410,7 @@ bot.on('message', (message) => { //StartCountdown
 
 bot.on('message', (message) => { //Global (Set)
     if(message.content.startsWith("/GlobalSet ")){
-          globalMessage = 'This Global Message has been set by **' + message.author.tag + '** in a server called **' + message.guild.name + '**.\n\n' + message.content.replace('/GlobalSet ','')
+          globalMessage = 'This Global Message has been set by **' + message.author.tag + '** in a server called **' + message.guild.name + '**.\n' + message.content.replace('/GlobalSet ','')
           message.channel.sendMessage('**' +  message.author.tag + '** has set the global message!')
           console.log('The GlobalSet command has been executed. Executor: ' + message.author.tag)
     }
@@ -540,7 +540,7 @@ bot.on('message', (message) => { //GetEmoji
 
 bot.on('message', (message) => { //Suggestion
     if(message.content.startsWith("/Suggestion ")){
-          bot.channels.get('429227074587197441').sendMessage("This is a suggestion from **" + message.author.tag + "**.\n\n" + message.content.replace('/Suggestion',''))
+          bot.channels.get('429227074587197441').sendMessage("This is a suggestion from **" + message.author.tag + "**.\n" + message.content.replace('/Suggestion',''))
           .then(sentMessage => sentMessage.react('<:bot_neutral:441968156781707264'));
           message.channel.sendMessage('**' + message.author.tag + '** has send a suggestion!')
           console.log('The Suggestion command has been executed. Executor: ' + message.author.tag)
