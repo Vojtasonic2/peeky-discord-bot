@@ -541,7 +541,7 @@ bot.on('message', (message) => { //GetEmoji
 bot.on('message', (message) => { //Suggestion
     if(message.content.startsWith("/Suggestion ")){
           bot.channels.get('429227074587197441').sendMessage("This is a suggestion from **" + message.author.tag + "**.\n\n**" + message.content.replace(('/Suggestion'),('')) + '**.')
-          .then(sentMessage => sentMessage.react("❔"));
+          .then(sentMessage => sentMessage.react('<:bot_neutral:441968156781707264'));
           message.channel.sendMessage('**' + message.author.tag + '** has send a suggestion!')
           console.log('The Suggestion command has been executed. Executor: ' + message.author.tag)
    }
@@ -567,7 +567,8 @@ bot.on('message', (message) => { //Bonuses
 
 bot.on('message', (message) => { //Automatic Reaction #gallery
     if(message.channel.name == 'gallery'){
-        message.react('❤')
+        message.react('<:bot_approve:440824011199348736')
+        message.react('<:bot_deny:440824010805084171')
        console.log('The Automatic Reactions (#gallery) bonus has been executed. Executor: ' + message.author.tag)};
 });
 
