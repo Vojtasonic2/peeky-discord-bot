@@ -558,7 +558,7 @@ bot.on('message', (message) => { //Help
 bot.on('message', (message) => { //Bonuses
     if(message.content == '/Bonuses'){
        message.channel.sendMessage('**' + message.author.tag + '** has received a DM with the **Bonuses**.')
-       message.author.sendMessage("**__Bonuses__**\n\n ● **Automatic Reactions**\n  • Messages in a channel called **#gallery** get the automatic <:bot_approve:440824011199348736> and <:bot_deny:440824010805084171> reactions!\n  • Messages in a channel called **#events** get automatic 🎟 reactions!\n\n ● **Word Filtering**\n  • Messages in a channel that has **" + WFTopic + "** in the topic will be filtered!")
+       message.author.sendMessage("**__Bonuses__**\n\n ● **Automatic Reactions**\n  • Messages in a channel called **#gallery** get automatic rating reactions!\n  • Messages in a channel called **#events** get automatic 🎟 reactions!\n\n ● **Word Filtering**\n  • Messages in a channel that has **" + WFTopic + "** in the topic will be filtered!")
        console.log('The Bonuses command has been executed. Executor: ' + message.author.tag)
    }
 });
