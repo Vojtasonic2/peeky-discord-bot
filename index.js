@@ -198,6 +198,7 @@ var globalMessage = 'No Global message has been set yet!\nType **/Commands** to 
 const WordFilterMessage = "I deleted someone's message, because there were some vulgar words."
 const ErrorMsg1 = "<:bot_deny:440824010805084171> This command cannot be used in this channel."
 const ErrorMsg2 = "<:bot_deny:440824010805084171> You lack the needed permissions to use this command."
+const ErrorMsg2 = "<:bot_deny:440824010805084171> Invalid mention, be sure to mention a user."
 var fishing_amount = 0
 var WFReports = 0
 const VersionNumber = '2.6'
@@ -349,6 +350,15 @@ bot.on('message', (message) => { //Ban - failed
         console.log('The Censor command has failed. Executor: ' + message.author.tag)
   }}
 });
+bot.on('message', (message) => { //Ban - failed 2
+    if(message.content.startsWith('/Ban ')){
+    if(message.member.hasPermission("BAN_MEMBERS")){
+        var userToBan = message.mentions.members.first()
+    if(userToBan == undefined){
+        message.channel.sendMessage(ErrorMsg3)
+        console.log('The Ban command has failed. Executor: ' + message.author.tag)
+  }}}
+});
 
 bot.on('message', (message) => { //Censor
     if(message.content.startsWith('/Censor ')){
@@ -367,6 +377,15 @@ bot.on('message', (message) => { //Censor - failed
         message.channel.sendMessage(ErrorMsg2)
         console.log('The Censor command has failed. Executor: ' + message.author.tag)
   }}
+});
+bot.on('message', (message) => { //Censor - failed 2
+    if(message.content.startsWith('/Censor ')){
+    if(!message.member.hasPermission("MANAGE_NICKNAMES")){
+        var userToCensor = message.mentions.members.first()
+    if(userToCensor == undefined){
+        message.channel.sendMessage(ErrorMsg3)
+        console.log('The Censor command has failed. Executor: ' + message.author.tag)
+  }}}
 });
 
 bot.on('message', (message) => { //Uncensor
@@ -387,6 +406,16 @@ bot.on('message', (message) => { //Uncensor - failed
         console.log('The Uncensor command has failed. Executor: ' + message.author.tag)
   }}
 });
+bot.on('message', (message) => { //Uncensor - failed 2
+    if(message.content.startsWith('/Uncensor ')){
+    if(!message.member.hasPermission("MANAGE_NICKNAMES")){
+        var userToCensor = message.mentions.members.first()
+    if(userToCensor == undefined){
+        message.channel.sendMessage(ErrorMsg3)
+        console.log('The Uncensor command has failed. Executor: ' + message.author.tag)
+  }}}
+});
+
 
 bot.on('message', (message) => { //StartPoll
     if(message.content.startsWith("/StartPoll ")){
