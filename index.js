@@ -614,7 +614,7 @@ bot.on('message' , (message) => { //Word Filtering
 
     function WFAction() {
     if(WFReports == 0){
-    if(message.channel.topic == "World Filtering: Enabled"){
+    if(message.channel.topic == "Word Filtering: Enabled"){
         WFReports = WFReports + 1
         message.channel.sendMessage(WTMessage)
         message.author.lastMessage.delete()
