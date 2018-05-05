@@ -201,7 +201,7 @@ const ErrorMsg2 = "<:bot_deny:440824010805084171> You lack the needed permission
 const ErrorMsg3 = "<:bot_deny:440824010805084171> Invalid mention, be sure to mention a user."
 var fishing_amount = 0
 var WFReports = 0
-const VersionNumber = '2.6'
+const VersionNumber = '2.7'
 
 bot.on('ready', () => { bot.user.setActivity(VersionNumber + ' | /About') })
 bot.on('ready', () => { bot.user.setStatus('idle')} )
