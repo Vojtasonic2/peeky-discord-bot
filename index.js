@@ -587,7 +587,7 @@ bot.on('message', (message) => { //Help
 bot.on('message', (message) => { //Bonuses
     if(message.content == '/Bonuses'){
        message.channel.sendMessage('**' + message.author.tag + '** has received a DM with the **Bonuses**.')
-       message.author.sendMessage("**__Bonuses__**\n\n ● **Automatic Reactions**\n  • Messages in a channel called **#gallery** get automatic rating reactions!\n  • Messages in a channel called **#events** get automatic 🎟 reactions!\n\n ● **Word Filtering**\n  • Messages in a channel that has **Word Filtering: Enabled** in the topic will be filtered!")
+       message.author.sendMessage("**__Bonuses__**\n\n ● **Automatic Reactions**\n  • Messages in a channel called **#gallery** get automatic rating reactions!\n  • Messages in a channel called **#events** get automatic 🎟 reactions!\n\n ● **Word Filtering**\n  • Messages in a channel that has **Word Filtering: Enabled** (and nothing else) in the topic will get filtered!")
        console.log('The Bonuses command has been executed. Executor: ' + message.author.tag)
    }
 });
@@ -605,6 +605,82 @@ bot.on('message', (message) => { //Automatic Reaction #events
     if(message.channel.name == 'events'){
         message.react('<:bot_approve:440824011199348736')
        console.log('The Automatic Reactions (#events) bonus has been executed. Executor: ' + message.author.tag)};
+});
+
+bot.on('message' , (message) => { //Word Filtering
+
+    WFReports = 0
+    const WTMessage = "I deleted **" + message.author.tag + "**'s message, since there was a vulgar word."
+
+    function WFAction() {
+    if(WFReports == 0){
+    if(message.channel.topic == "World Filtering: Enabled"){
+        WFReports = WFReports + 1
+        message.channel.sendMessage(WTMessage)
+        message.author.lastMessage.delete()
+        console.log("Peeky's word filter removed a message by " + message.author.tag + ".")}
+}};
+        
+        if(message.content.includes("fuck")){
+        WFAction()
+        }
+        if(message.content.includes("shit")){
+        WFAction()
+        }
+        if(message.content.includes("bitch")){
+        WFAction()
+        }
+        if(message.content.includes("whore")){
+        WFAction()
+        }
+        if(message.content.includes("ass")){
+        WFAction()
+        }
+        if(message.content.includes("piss")){
+        WFAction()
+        }
+        if(message.content.includes("jizz")){
+        WFAction()
+        }
+        if(message.content.includes("cum")){
+        WFAction()
+        }
+        if(message.content.includes("tit")){
+        WFAction()
+        }
+        if(message.content.includes("sex")){
+        WFAction()
+        }
+        if(message.content.includes("kys")){
+        WFAction()
+        }
+        if(message.content.includes("nigg")){
+        WFAction()
+        }
+        if(message.content.includes("scum")){
+        WFAction()
+        }
+        if(message.content.includes("bitch")){
+        WFAction()
+        }
+        if(message.content.includes("clit")){
+        WFAction()
+        }
+        if(message.content.includes("pussy")){
+        WFAction()
+        }
+        if(message.content.includes("dick")){
+        WFAction()
+        }
+        if(message.content.includes("wtf")){
+        WFAction()
+        }
+        if(message.content.includes("omfg")){
+        WFAction()
+        }
+        if(message.content.includes("kill your self")){
+        WFAction()
+        }
 });
 
 bot.login(process.env.BOT_TOKEN);
