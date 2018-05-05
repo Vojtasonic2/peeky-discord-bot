@@ -380,7 +380,7 @@ bot.on('message', (message) => { //Censor - failed
 });
 bot.on('message', (message) => { //Censor - failed 2
     if(message.content.startsWith('/Censor ')){
-    if(!message.member.hasPermission("MANAGE_NICKNAMES")){
+    if(message.member.hasPermission("MANAGE_NICKNAMES")){
         var userToCensor = message.mentions.members.first()
     if(userToCensor == undefined){
         message.channel.sendMessage(ErrorMsg3)
@@ -401,7 +401,7 @@ bot.on('message', (message) => { //Uncensor
 });
 bot.on('message', (message) => { //Uncensor - failed
     if(message.content.startsWith('/Uncensor ')){
-    if(!message.member.hasPermission("MANAGE_NICKNAMES")){
+    if(message.member.hasPermission("MANAGE_NICKNAMES")){
         message.channel.sendMessage(ErrorMsg2)
         console.log('The Uncensor command has failed. Executor: ' + message.author.tag)
   }}
