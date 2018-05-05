@@ -574,7 +574,7 @@ bot.on('message', (message) => { //Automatic Reaction #gallery
 
 bot.on('message', (message) => { //Automatic Reaction #events
     if(message.channel.name == 'events'){
-        message.react('🎟')
+        message.react('<:bot_approve:440824011199348736')
        console.log('The Automatic Reactions (#events) bonus has been executed. Executor: ' + message.author.tag)};
 });
 
