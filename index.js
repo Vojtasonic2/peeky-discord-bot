@@ -681,6 +681,9 @@ bot.on('message' , (message) => { //Word Filtering
         if(message.content.includes("kill your self")){
         WFAction()
         }
+        if(message.content.includes("stfu")){
+        WFAction()
+        }
 });
 
 bot.login(process.env.BOT_TOKEN);
