@@ -195,7 +195,7 @@ var fishing_fish = [
     ' caught a **Brachyplatystoma** (Ranked #27)!\n\n*No description given yet.*\n\n**Wikipedia:** https://en.wikipedia.org/wiki/Brachyplatystoma',
     ' caught a **Halibut** (Ranked #28)!\n\n*No description given yet.*\n\n**Wikipedia:** https://en.wikipedia.org/wiki/Halibut',
     ' caught a **Sturgeon** (Ranked #29)!\n\nThe evolution of this fish dates back to the Triassic some 245 to 208 million years ago\n\n**Wikipedia:** https://en.wikipedia.org/wiki/Sturgeon',
-    ' caught a **Perch** (Ranked #30)!\n\n*No description given yet.*\n\n**Wikipedia:** https://en.wikipedia.org/wiki/Perch'
+    ' caught a **Perch** (Ranked #30)!\n\n*No description given yet.*\n\n**Wikipedia:** https://en.wikipedia.org/wiki/Perch',
     ' caught a **Megamouth** (Ranked #31)!\n\nSince its discovery in 1976, few megamouth sharks have been seen, with less than 100 specimens being observed or caught.\n\n**Wikipedia:** https://en.wikipedia.org/wiki/Megamouth_shark'
 ]
 
