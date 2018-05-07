@@ -129,7 +129,8 @@ var cmcs_2 = [
     '...',
     'Not interested.',
     'Delet this',
-    '*smiles*'
+    '*smiles*',
+    '<a:clapping:428967916579586079>'
 ]
 
 var fight_damage = [
