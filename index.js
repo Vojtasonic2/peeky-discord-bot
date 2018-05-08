@@ -221,7 +221,7 @@ cmds_other = "**__Commands - Other__**\nBot's prefix: **/**\n\n ● **ServerInfo
 
 bot.on('message', (message) => { //Commands
     if(message.content == '/Commands'){
-       message.channel.sendMessage('Available Command pages:\n\n**/Commands Start**, **/Commands Moderation**, **/Commands Dev**, **/Commands Fun**, **/Commands Minigames**, **/Commands Other**')
+       message.channel.sendMessage('These are all the command categories:\n\n**/Commands Start**, **/Commands Moderation**, **/Commands Dev**, **/Commands Fun**, **/Commands Minigames**, **/Commands Other**.')
        console.log('The Commands command has been executed. Executor: ' + message.author.tag)
    }
 });
