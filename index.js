@@ -222,7 +222,7 @@ const cmds_start = "**__Commands - Start__**\nBot's prefix: **/**\n\n ● **Abou
 const cmds_mod = "**__Commands - Moderation__**\nBot's prefix: **/**\n\n ● **ServerName** <Server Name>\n  • Sets the name of your server!\n  • Permissions Needed: **Administrator**\n\n ● **ChannelName** <Channel Name>\n  • Sets the name of your channel!\n  • Permissions Needed: **Administrator**\n\n ● **Censor** <Mention a User>\n  • Censors the nickname of the mentioned user!\n  • Permissions Needed: **Manage Nicknames**\n\n ● **Uncensor** <Mention a User>\n  • Uncensors the name of the mentioned user!\n  • Permissions Needed: **Manage Nicknames**\n\n ● **Ban** <Mention a User>\n  • Bans the first mentioned user!\n  • Permissions Needed: **Ban Members**"
 const cmds_dev = "**__Commands - Dev__**\nBot's prefix: **/**\n\n ● **GetEmoji** <Emojis>\n  • Shows you the ID of your emojis!"
 const cmds_fun = "**__Commands - Fun__**\nBot's prefix: **/**\n\n ● **DadJoke**\n  • Tells *hilarious* dad joke.\n\n ● **Roll**\n  • Rolls a number between 1 and 6.\n\n ● **Ask** <Question>\n  • Ask me anything! Don't be shy!\n\n ● **Say** <Your Text>\n  • Peeky will repeat what you said!\n\n ● **GlobalSet** <Message>\n  • Sets a global message that can be seen on all the servers with me in!\n\n ● **GlobalShow**\n  • Shows the global message.\n\n ● **Comics**\n  • Creates a comics that's perfect for sitcom laugh track!"
-const cmds_mg = "**__Commands - Minigames__**\nBot's prefix: **/**\n\n ● **GoFishing**\n  • Catches a random fish and redirects you to it's Wikipedia page.\n  • Dedicated Channel: **#fishing**\n\n ● **FishesCaught**\n  • Shows how many fishes have been caught in total.\n  • Dedicated Channel: **#fishing**\n\n ● **SellFishes**\n  • Sells all the fishes for Peeky Coins.\n  • Dedicated Channel: **#fishing**\n\n ● **Coins**\n  • Shows the total amount of Peeky Coins that have been earned.\n  • Dedicated Channel: **#fishing**\n\n ● **Fight** <Enemy Name>\n  • Starts a fight with someone!\n  • Dedicated Channel: **#arena**"
+const cmds_mg = "**__Commands - Minigames__**\nBot's prefix: **/**\n\n ● **GoFishing**\n  • Catches a random fish and redirects you to it's Wikipedia page.\n  • Dedicated Channel: **#fishing**\n\n ● **FishingStats**\n  • Shows all the stats about the fishing mingame.\n  • Dedicated Channel: **#fishing**\n\n ● **SellFishes**\n  • Sells all the fishes for Peeky Coins.\n  • Dedicated Channel: **#fishing**\n\n ● **Fight** <Enemy Name>\n  • Starts a fight with someone!\n  • Dedicated Channel: **#arena**"
 const cmds_other = "**__Commands - Other__**\nBot's prefix: **/**\n\n ● **ServerInfo**\n  • Displays some info about the server!\n\n ● **BotInfo**\n  • Displays some info about the bot!\n\n ● **Wikipedia** <Search>\n  • Searches the Wikipedia for you!\n\n ● **Suggestion** <Suggestion>\n  • Sends your suggestion to the Support Server!\n\n ● **StartPoll** <Poll Topic>\n  • Starts a poll for you.\n\n ● **StartCountdown** <0001 - 9999> <Countdown Name>\n  • Starts a countdown in seconds."
 
 bot.on('message', (message) => { //Commands
@@ -501,21 +501,6 @@ bot.on('message', (message) => { //GoFishing - failed
    }}
 });
 
-bot.on('message', (message) => { //FishesCaught
-    if(message.content == '/FishesCaught'){
-    if(message.channel.name == 'fishing'){
-        message.channel.sendMessage('So far, **' + fishing_amount + ' fishes** have been caught!')
-        console.log('The FishesCaught command has been executed. Executor: ' + message.author.tag)
-   }}
-});
-bot.on('message', (message) => { //FishesCaught - failed
-    if(message.content == '/FishesCaught'){
-    if(message.channel.name !== 'fishing'){
-        message.channel.sendMessage(ErrorMsg1)
-        console.log('The FishesCaught command has failed. Executor: ' + message.author.tag)
-   }}
-});
-
 bot.on('message', (message) => { //SellFishes
     if(message.content == '/SellFishes'){
     if(message.channel.name == 'fishing'){
@@ -533,18 +518,18 @@ bot.on('message', (message) => { //SellFishes - failed
    }}
 });
 
-bot.on('message', (message) => { //Coins
-    if(message.content == '/Coins'){
+bot.on('message', (message) => { //FishingStats
+    if(message.content == '/FishingStats'){
     if(message.channel.name == 'fishing'){
-        message.channel.sendMessage("So far, **" + PeekyCoins + " Peeky Coins** have been earned!\nYou can earn coins by playing selling fishes.")
-        console.log('The Coins command has been executed. Executor: ' + message.author.tag)
+        message.channel.sendMessage("**Peeky Coins:** " + PeekyCoins + "\n**Fishes:**" + fishing_amount)
+        console.log('The FishingStats command has been executed. Executor: ' + message.author.tag)
    }}
 });
-bot.on('message', (message) => { //Coins - failed
-    if(message.content == '/Coins'){
+bot.on('message', (message) => { //FishingStats - failed
+    if(message.content == '/FishingStats'){
     if(message.channel.name !== 'fishing'){
         message.channel.sendMessage(ErrorMsg1)
-        console.log('The Coins command has failed. Executor: ' + message.author.tag)
+        console.log('The FishingStats command has failed. Executor: ' + message.author.tag)
    }}
 });
 
