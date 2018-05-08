@@ -603,7 +603,7 @@ bot.on('message', (message) => { //Bonuses
 
 bot.on('message', (message) => { //CoinsEarned
     if(message.content == '/Coins'){
-        message.channel.sendMessage("So far, **" + PeekyCoins + " Peeky Coins** have been earned!\nYou can earn coins by playing Peeky's minigames")
+        message.channel.sendMessage("So far, **" + PeekyCoins + " Peeky Coins** have been earned!\nYou can earn coins by playing Peeky's minigames.")
         console.log('The CoinsEarned command has been executed. Executor: ' + message.author.tag)
    }
 });
