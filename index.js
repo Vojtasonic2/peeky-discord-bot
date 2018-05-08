@@ -213,8 +213,6 @@ bot.on('ready', () => { bot.user.setActivity(VersionNumber + ' | /About') })
 bot.on('ready', () => { bot.user.setStatus('idle')} )
 console.log('The bot is now running')
 
-bot.on('message', (message) => { PeekyCoins = PeekyCoins + 1 });
-
 cmds_start = "**__Commands - Start__**\nBot's prefix: **/**\n\n ● **About**\n  • Introduces you to the bot and gives you few helpful commands!\n\n ● **Commands**\n  • Shows the available command categories!\n\n ● **Bonuses**\n  • Sends you the bonuses that Peeky can do!\n\n ● **Help**\n  • Send you some links to help out you or the bot!"
 cmds_mod = "**__Commands - Moderation__**\nBot's prefix: **/**\n\n ● **ServerName** <Server Name>\n  • Sets the name of your server!\n  • Permissions Needed: **Administrator**\n\n ● **ChannelName** <Channel Name>\n  • Sets the name of your channel!\n  • Permissions Needed: **Administrator**\n\n ● **Censor** <Mention a User>\n  • Censors the nickname of the mentioned user!\n  • Permissions Needed: **Manage Nicknames**\n\n ● **Uncensor** <Mention a User>\n  • Uncensors the name of the mentioned user!\n  • Permissions Needed: **Manage Nicknames**\n\n ● **Ban** <Mention a User>\n  • Bans the first mentioned user!\n  • Permissions Needed: **Ban Members**"
 cmds_dev = "**__Commands - Dev__**\nBot's prefix: **/**\n\n ● **GetEmoji** <Emojis>\n  • Shows you the ID of your emojis!"
