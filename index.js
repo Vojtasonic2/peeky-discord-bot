@@ -283,7 +283,7 @@ bot.on('message', (message) => { //Commands Other
 
 bot.on('message', (message) => { //About
     if(message.content == '/About'){
-       message.channel.sendMessage("Hello, **" + message.author.tag + "**!\n\nTo get started with the bot, type **/Commands**!\n\n ● Moderation Commands\n ● Fun Commands\n ● Developer Commands\n ● Automatic Reactions\n ● Word Filtering\n ● Minigames")
+       message.channel.sendMessage("Hello, **" + message.author.tag + "**!\n\nTo get started with the bot, type **/Commands**!\n\n ● Moderation Commands\n ● Fun Commands\n ● Developer Commands\n ● Automatic Reactions\n ● Word Filtering\n ● Minigames\n ● Peeky Coins")
        console.log('The About command has been executed. Executor: ' + message.author.tag)
     }
 });
@@ -584,7 +584,7 @@ bot.on('message', (message) => { //Help
 bot.on('message', (message) => { //Bonuses
     if(message.content == '/Bonuses'){
        message.channel.sendMessage('**' + message.author.tag + '** has received a DM with the **Bonuses**.')
-       message.author.sendMessage("**__Bonuses__**\n\n ● **Automatic Reactions**\n  • Messages in a channel called **#gallery** get automatic reactions!\n  • Messages in a channel called **#events** get automatic reactions!\n\n ● **Word Filtering**\n  • Messages in a channel that has **Word Filtering: Enabled** (and nothing else) in the topic will get filtered!n\n ● **Peeky Coins**\n  • Users can earn Peeky Coins by chatting in your server!")
+       message.author.sendMessage("**__Bonuses__**\n\n ● **Automatic Reactions**\n  • Messages in a channel called **#gallery** get automatic reactions!\n  • Messages in a channel called **#events** get automatic reactions!\n\n ● **Word Filtering**\n  • Messages in a channel that has **Word Filtering: Enabled** (and nothing else) in the topic will get filtered!\n\n ● **Peeky Coins**\n  • Users can earn Peeky Coins by chatting in your server!")
        console.log('The Bonuses command has been executed. Executor: ' + message.author.tag)
    }
 });
