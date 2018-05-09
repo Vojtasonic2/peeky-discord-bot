@@ -211,6 +211,8 @@ const ErrorMsg2 = "<:bot_deny:440824010805084171> You lack the needed permission
 const ErrorMsg3 = "<:bot_deny:440824010805084171> Invalid mention, be sure to mention a user."
 var WFReports = 0
 const VersionNumber = '2.7'
+var fs = require('fs');
+var userData = JSON.parse(fs.readFileSync('./coins.json', 'utf8'))
 
 bot.on('ready', () => { bot.user.setActivity(VersionNumber + ' | /About') })
 bot.on('ready', () => { bot.user.setStatus('idle')} )
@@ -221,7 +223,7 @@ const cmds_mod = "**__Commands - Moderation__**\nBot's prefix: **/**\n\n ● **S
 const cmds_dev = "**__Commands - Dev__**\nBot's prefix: **/**\n\n ● **GetEmoji** <Emojis>\n  • Shows you the ID of your emojis!"
 const cmds_fun = "**__Commands - Fun__**\nBot's prefix: **/**\n\n ● **DadJoke**\n  • Tells *hilarious* dad joke.\n\n ● **Roll**\n  • Rolls a number between 1 and 6.\n\n ● **Ask** <Question>\n  • Ask me anything! Don't be shy!\n\n ● **Say** <Your Text>\n  • Peeky will repeat what you said!\n\n ● **GlobalSet** <Message>\n  • Sets a global message that can be seen on all the servers with me in!\n\n ● **GlobalShow**\n  • Shows the global message.\n\n ● **Comics**\n  • Creates a comics that's perfect for sitcom laugh track!"
 const cmds_mg = "**__Commands - Minigames__**\nBot's prefix: **/**\n\n ● **GoFishing**\n  • Catches a random fish and redirects you to it's Wikipedia page.\n  • Dedicated Channel: **#fishing**\n\n ● **Fight** <Enemy Name>\n  • Starts a fight with someone!\n  • Dedicated Channel: **#arena**"
-const cmds_other = "**__Commands - Other__**\nBot's prefix: **/**\n\n ● **ServerInfo**\n  • Displays some info about the server!\n\n ● **BotInfo**\n  • Displays some info about the bot!\n\n ● **Wikipedia** <Search>\n  • Searches the Wikipedia for you!\n\n ● **Suggestion** <Suggestion>\n  • Sends your suggestion to the Support Server!\n\n ● **StartPoll** <Poll Topic>\n  • Starts a poll for you.\n\n ● **StartCountdown** <0001 - 9999> <Countdown Name>\n  • Starts a countdown in seconds."
+const cmds_other = "**__Commands - Other__**\nBot's prefix: **/**\n\n ● **ServerInfo**\n  • Displays some info about the server!\n\n ● **BotInfo**\n  • Displays some info about the bot!\n\n ● **Wikipedia** <Search>\n  • Searches the Wikipedia for you!\n\n ● **Suggestion** <Suggestion>\n  • Sends your suggestion to the Support Server!\n\n ● **StartPoll** <Poll Topic>\n  • Starts a poll for you.\n\n ● **StartCountdown** <0001 - 9999> <Countdown Name>\n  • Starts a countdown in seconds.\n\n ● **Balance**\n  • Shows how much Peeky Coins you have."
 
 bot.on('message', (message) => { //Commands
     if(message.content == '/Commands'){
@@ -581,7 +583,7 @@ bot.on('message', (message) => { //Help
 bot.on('message', (message) => { //Bonuses
     if(message.content == '/Bonuses'){
        message.channel.sendMessage('**' + message.author.tag + '** has received a DM with the **Bonuses**.')
-       message.author.sendMessage("**__Bonuses__**\n\n ● **Automatic Reactions**\n  • Messages in a channel called **#gallery** get automatic reactions!\n  • Messages in a channel called **#events** get automatic reactions!\n\n ● **Word Filtering**\n  • Messages in a channel that has **Word Filtering: Enabled** (and nothing else) in the topic will get filtered!")
+       message.author.sendMessage("**__Bonuses__**\n\n ● **Automatic Reactions**\n  • Messages in a channel called **#gallery** get automatic reactions!\n  • Messages in a channel called **#events** get automatic reactions!\n\n ● **Word Filtering**\n  • Messages in a channel that has **Word Filtering: Enabled** (and nothing else) in the topic will get filtered!n\n ● **Peeky Coins**\n  • Users can earn Peeky Coins by chatting in your server!")
        console.log('The Bonuses command has been executed. Executor: ' + message.author.tag)
    }
 });
@@ -678,6 +680,25 @@ bot.on('message' , (message) => { //Word Filtering
         if(message.content.includes("stfu")){
         WFAction()
         }
+});
+
+bot.on('message', (message) => { //Peeky Coins
+    if(message.author.bot) return;
+
+    if(!userData[message.author.id]) userData[message.author.id] = {
+        messagesSent: 0
+    };
+
+    userData[message.author.id].messagesSent++;
+
+    fs.writeFile('./coins.json', JSON.stringify(userData), (err) => {
+        if (err) console.error(err);
+    });
+
+    if(message.content == ("/Balance")){
+        message.channel.sendMessage("You have **" + userData[message.author.id].messagesSent + " Peeky Coins**!")
+        console.log('The Balance command has been executed. Executor: ' + message.author.tag)
+    }
 });
 
 bot.login(process.env.BOT_TOKEN);
