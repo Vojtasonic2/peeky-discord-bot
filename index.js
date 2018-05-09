@@ -210,7 +210,7 @@ const ErrorMsg1 = "<:bot_deny:440824010805084171> This command cannot be used in
 const ErrorMsg2 = "<:bot_deny:440824010805084171> You lack the needed permissions to use this command."
 const ErrorMsg3 = "<:bot_deny:440824010805084171> Invalid mention, be sure to mention a user."
 var WFReports = 0
-const VersionNumber = '2.7'
+const VersionNumber = '2.8'
 let coins = require("./coins.json");
 var fs = require('fs');
 var userData = JSON.parse(fs.readFileSync('./coins.json', 'utf8'))
@@ -584,7 +584,7 @@ bot.on('message', (message) => { //Help
 bot.on('message', (message) => { //Bonuses
     if(message.content == '/Bonuses'){
        message.channel.sendMessage('**' + message.author.tag + '** has received a DM with the **Bonuses**.')
-       message.author.sendMessage("**__Bonuses__**\n\n ● **Automatic Reactions**\n  • Messages in a channel called **#gallery** get automatic reactions!\n  • Messages in a channel called **#events** get automatic reactions!\n\n ● **Word Filtering**\n  • Messages in a channel that has **Word Filtering: Enabled** (and nothing else) in the topic will get filtered!\n\n ● **Peeky Coins**\n  • Users can earn Peeky Coins by chatting in your server!")
+       message.author.sendMessage("**__Bonuses__**\n\n ● **Automatic Reactions**\n  • Messages in a channel called **#gallery** get automatic reactions!\n  • Messages in a channel called **#events** get automatic reactions!\n\n ● **Word Filtering**\n  • Messages in a channel that has **Word Filtering: Enabled** (and nothing else) in the topic will get filtered!\n\n ● **Peeky Coins**\n  • Encourage users into talking in your server by rewarding them with Peeky Coins!")
        console.log('The Bonuses command has been executed. Executor: ' + message.author.tag)
    }
 });
