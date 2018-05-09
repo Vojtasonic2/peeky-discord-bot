@@ -697,7 +697,7 @@ bot.on('message', (message) => { //Peeky Coins
     });
 
     if(message.content == ("/Balance")){
-        message.channel.sendMessage("You have **" + userData[message.author.id].messagesSent + " Peeky Coins**!")
+        message.channel.sendMessage("You have earned **" + userData[message.author.id].messagesSent + " Peeky Coins** so far!")
         console.log('The Balance command has been executed. Executor: ' + message.author.tag)
     }
 });
