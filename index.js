@@ -211,6 +211,7 @@ const ErrorMsg2 = "<:bot_deny:440824010805084171> You lack the needed permission
 const ErrorMsg3 = "<:bot_deny:440824010805084171> Invalid mention, be sure to mention a user."
 var WFReports = 0
 const VersionNumber = '2.7'
+let coins = require("./coins.json");
 var fs = require('fs');
 var userData = JSON.parse(fs.readFileSync('./coins.json', 'utf8'))
 
