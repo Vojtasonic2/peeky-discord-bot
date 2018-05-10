@@ -209,7 +209,7 @@ const WordFilterMessage = "I deleted someone's message, because there were some 
 const ErrorMsg1 = "<:bot_deny:440824010805084171> This command cannot be used in this channel."
 const ErrorMsg2 = "<:bot_deny:440824010805084171> You lack the needed permissions to use this command."
 const ErrorMsg3 = "<:bot_deny:440824010805084171> Invalid mention, be sure to mention a user."
-const ErrorMsg4 = "<:bot_deny:440824010805084171> You need **50 Peeky Coins** to be able to bet."
+const ErrorMsg4 = "<:bot_deny:440824010805084171> You need more **Peeky Coins** to do that."
 var WFReports = 0
 const VersionNumber = '2.8'
 let coins = require("./coins.json");
@@ -549,20 +549,20 @@ bot.on('message', (message) => { //Bet
             message.channel.sendMessage("<:bot_deny:440824010805084171> You've lost **50 Peeky Coins**.")
     }
     }}}
-});
 bot.on('message', (message) => { //Bet - failed
+    if(message.content == "/Bet"){
+    if(message.channel.name == "casino"){
+    if(userData[message.author.id].messagesSent <= 49){
+        message.channel.sendMessage(ErrorMsg4)     
+}}}});
+});
+bot.on('message', (message) => { //Bet - failed 2
     if(message.content == "/Bet"){
     if(message.channel.name !== 'casino'){
         message.channel.sendMessage(ErrorMsg1)
         console.log('The Bet command has failed. Executor: ' + message.author.tag)
    }}
 });
-bot.on('message', (message) => { //Bet - failed 2
-    if(message.content == "/Bet"){
-    if(message.channel.name == "casino"){
-    if(userData[message.author.id].messagesSent <= 49){
-        message.channel.sendMessage(ErrorMsg4)     
-}}}});
 
 bot.on('message', (message) => { //Roll
     if(message.content == '/Roll'){
