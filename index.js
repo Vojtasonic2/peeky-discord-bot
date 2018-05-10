@@ -553,7 +553,7 @@ bot.on('message', (message) => { //Bet - failed
     if(message.channel.name !== 'casino'){
         message.channel.sendMessage(ErrorMsg1)
         console.log('The Bet command has failed. Executor: ' + message.author.tag)
-   }}
+   }
 });
 bot.on('message', (message) => { //Bet - failed 2
     if(message.content == "/Bet"){
