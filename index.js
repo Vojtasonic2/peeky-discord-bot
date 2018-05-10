@@ -549,19 +549,20 @@ bot.on('message', (message) => { //Bet
             message.channel.sendMessage("<:bot_deny:440824010805084171> You've lost **50 Peeky Coins**.")
     }
     }}}
-bot.on('message', (message) => { //Bet - failed
-    if(message.content == "/Bet"){
-    if(message.channel.name == "casino"){
-    if(userData[message.author.id].messagesSent <= 49){
-        message.channel.sendMessage(ErrorMsg4)     
-}}}});
 });
-bot.on('message', (message) => { //Bet - failed 2
+bot.on('message', (message) => { //Bet - failed
     if(message.content == "/Bet"){
     if(message.channel.name !== 'casino'){
         message.channel.sendMessage(ErrorMsg1)
         console.log('The Bet command has failed. Executor: ' + message.author.tag)
    }}
+});
+bot.on('message', (message) => { //Bet - failed 2
+    if(message.content == "/Bet"){
+    if(message.channel.name == "casino"){
+    if(userData[message.author.id].messagesSent <= 49){
+        message.channel.sendMessage(ErrorMsg4)     
+    }}}
 });
 
 bot.on('message', (message) => { //Roll
