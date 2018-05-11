@@ -495,7 +495,7 @@ bot.on('message', (message) => { //GoFishing
         console.log('The GoFishing command has been executed. Executor: ' + message.author.tag)
     var FishResults = Math.floor(Math.random() * 5) + 1;
     if(FishResults == 1){
-        message.channel.sendMessage("<:bot_approve:440824011199348736> You've found **1** <:bot_pc:444512719945859082>!")
+        message.channel.sendMessage("**" + message.author.tag + "** has found **1** <:bot_pc:444512719945859082>!")
         userData[message.author.id].messagesSent = userData[message.author.id].messagesSent + 1
     }
    }}
@@ -530,7 +530,7 @@ bot.on('message', (message) => { //Fight
         message.channel.sendMessage('**' + attacker_user + '** vs **' + target_user + '**\n\n**' + attacker_user + '** has attacked **' + target_user + '** with a **' + weapon_used + '** and dealt **' + damage_dealt_1 + ' damage**!\n**' + target_user + '** has attacked **' + attacker_user + '** back with a **' + weapon_used_2 + '** and dealt **' + damage_dealt_2 + ' damage**!\n\n**' + attacker_user + '** has **' + health_1 + ' Health** left. \n**' + target_user + '** has **' + health_2 + ' Health** left.')
         console.log('The Fight command has been executed. Executor: ' + message.author.tag)
         if(health_1 > health_2){
-            message.channel.sendMessage("<:bot_approve:440824011199348736> You've won **1** <:bot_pc:444512719945859082>!")
+            message.channel.sendMessage("**" + message.author.tag + "** has won **1** <:bot_pc:444512719945859082>!")
             userData[message.author.id].messagesSent = userData[message.author.id].messagesSent + 1
         }
    }}
@@ -738,7 +738,7 @@ bot.on('message', (message) => { //Peeky Coins
     });
 
     if(message.content == ("/Stats")){
-        message.channel.sendMessage("**" + message.author.tag + "**'s Stats:\n<:bot_pc:444512719945859082>: **" + userData[message.author.id].messagesSent + "**")
+        message.channel.sendMessage("**" + message.author.tag + "**'s Stats:\n<:bot_pc:444512719945859082>**:** " + userData[message.author.id].messagesSent)
         console.log('The Stats command has been executed. Executor: ' + message.author.tag)
     }
 });
