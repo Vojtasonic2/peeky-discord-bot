@@ -228,6 +228,121 @@ const cmds_fun = "**__Commands - Fun__**\nBot's prefix: **/**\n\n ● **DadJoke*
 const cmds_mg = "**__Commands - Minigames__**\nBot's prefix: **/**\n\n ● **GoFishing**\n  • Catches a random fish and redirects you to it's Wikipedia page.\n  • Dedicated Channel: **#fishing**\n\n ● **Fight** <Enemy Name>\n  • Starts a fight with someone!\n  • Dedicated Channel: **#arena**\n\n ● **Bet**\n  • Bets 25 Peeky Coins**"
 const cmds_other = "**__Commands - Other__**\nBot's prefix: **/**\n\n ● **ServerInfo**\n  • Displays some info about the server!\n\n ● **BotInfo**\n  • Displays some info about the bot!\n\n ● **Wikipedia** <Search>\n  • Searches the Wikipedia for you!\n\n ● **Suggestion** <Suggestion>\n  • Sends your suggestion to the Support Server!\n\n ● **StartPoll** <Poll Topic>\n  • Starts a poll for you.\n\n ● **StartCountdown** <0001 - 9999> <Countdown Name>\n  • Starts a countdown in seconds.\n\n ● **Stats**\n  • Shows your stats."
 
+//BONUSES
+
+bot.on('message', (message) => { //Automatic Reaction #gallery
+    if(message.channel.name == 'gallery'){
+        message.react('<:bot_approve:440824011199348736')
+        message.react('<:bot_deny:440824010805084171')
+       console.log('The Automatic Reactions (#gallery) bonus has been executed. Executor: ' + message.author.tag)};
+});
+
+bot.on('message', (message) => { //Automatic Reaction #events
+    if(message.channel.name == 'events'){
+        message.react('<:bot_approve:440824011199348736')
+       console.log('The Automatic Reactions (#events) bonus has been executed. Executor: ' + message.author.tag)};
+});
+
+bot.on('message' , (message) => { //Word Filtering
+
+    WFReports = 0
+    const WTMessage = "I deleted **" + message.author.tag + "**'s message, since there was a vulgar word."
+
+    function WFAction() {
+    if(WFReports == 0){
+    if(message.channel.topic == "Word Filtering: Enabled"){
+        WFReports = WFReports + 1
+        message.channel.sendMessage(WTMessage).then(msg => {msg.delete(5000)})
+        message.author.lastMessage.delete()
+        console.log("Peeky's word filter removed a message by " + message.author.tag + ".")}
+}};
+        
+        if(message.content.includes("fuck")){
+        WFAction()
+        }
+        if(message.content.includes("shit")){
+        WFAction()
+        }
+        if(message.content.includes("bitch")){
+        WFAction()
+        }
+        if(message.content.includes("whore")){
+        WFAction()
+        }
+        if(message.content.includes("ass")){
+        WFAction()
+        }
+        if(message.content.includes("piss")){
+        WFAction()
+        }
+        if(message.content.includes("jizz")){
+        WFAction()
+        }
+        if(message.content.includes("cum")){
+        WFAction()
+        }
+        if(message.content.includes("tit")){
+        WFAction()
+        }
+        if(message.content.includes("sex")){
+        WFAction()
+        }
+        if(message.content.includes("kys")){
+        WFAction()
+        }
+        if(message.content.includes("nigg")){
+        WFAction()
+        }
+        if(message.content.includes("scum")){
+        WFAction()
+        }
+        if(message.content.includes("bitch")){
+        WFAction()
+        }
+        if(message.content.includes("clit")){
+        WFAction()
+        }
+        if(message.content.includes("pussy")){
+        WFAction()
+        }
+        if(message.content.includes("dick")){
+        WFAction()
+        }
+        if(message.content.includes("wtf")){
+        WFAction()
+        }
+        if(message.content.includes("omfg")){
+        WFAction()
+        }
+        if(message.content.includes("kill your self")){
+        WFAction()
+        }
+        if(message.content.includes("stfu")){
+        WFAction()
+        }
+});
+
+bot.on('message', (message) => { //Peeky Coins
+    if(message.author.bot) return;
+
+    if(!userData[message.author.id]) userData[message.author.id] = {
+        messagesSent: 0
+    };
+
+    userData[message.author.id].messagesSent++;
+
+    fs.writeFile('./coins.json', JSON.stringify(userData), (err) => {
+        if (err) console.error(err);
+    });
+
+    if(message.content == ("/Stats")){
+        message.channel.sendMessage("**" + message.author.tag + "**'s Stats:\n**Peeky Coins:** " + userData[message.author.id].messagesSent)
+        console.log('The Stats command has been executed. Executor: ' + message.author.tag)
+    }
+});
+
+//COMMANDS
+
 bot.on('message', (message) => { //Commands
     if(message.content == '/Commands'){
        message.channel.sendMessage('These are all the command categories:\n\n**/Commands Start**, **/Commands Moderation**, **/Commands Dev**, **/Commands Fun**, **/Commands Minigames**, **/Commands Other**.')
@@ -598,121 +713,6 @@ bot.on('message', (message) => { //Bonuses
        console.log('The Bonuses command has been executed. Executor: ' + message.author.tag)
    }
 });
-
-//BONUSES
-
-bot.on('message', (message) => { //Automatic Reaction #gallery
-    if(message.channel.name == 'gallery'){
-        message.react('<:bot_approve:440824011199348736')
-        message.react('<:bot_deny:440824010805084171')
-       console.log('The Automatic Reactions (#gallery) bonus has been executed. Executor: ' + message.author.tag)};
-});
-
-bot.on('message', (message) => { //Automatic Reaction #events
-    if(message.channel.name == 'events'){
-        message.react('<:bot_approve:440824011199348736')
-       console.log('The Automatic Reactions (#events) bonus has been executed. Executor: ' + message.author.tag)};
-});
-
-bot.on('message' , (message) => { //Word Filtering
-
-    WFReports = 0
-    const WTMessage = "I deleted **" + message.author.tag + "**'s message, since there was a vulgar word."
-
-    function WFAction() {
-    if(WFReports == 0){
-    if(message.channel.topic == "Word Filtering: Enabled"){
-        WFReports = WFReports + 1
-        message.channel.sendMessage(WTMessage).then(msg => {msg.delete(5000)})
-        message.author.lastMessage.delete()
-        console.log("Peeky's word filter removed a message by " + message.author.tag + ".")}
-}};
-        
-        if(message.content.includes("fuck")){
-        WFAction()
-        }
-        if(message.content.includes("shit")){
-        WFAction()
-        }
-        if(message.content.includes("bitch")){
-        WFAction()
-        }
-        if(message.content.includes("whore")){
-        WFAction()
-        }
-        if(message.content.includes("ass")){
-        WFAction()
-        }
-        if(message.content.includes("piss")){
-        WFAction()
-        }
-        if(message.content.includes("jizz")){
-        WFAction()
-        }
-        if(message.content.includes("cum")){
-        WFAction()
-        }
-        if(message.content.includes("tit")){
-        WFAction()
-        }
-        if(message.content.includes("sex")){
-        WFAction()
-        }
-        if(message.content.includes("kys")){
-        WFAction()
-        }
-        if(message.content.includes("nigg")){
-        WFAction()
-        }
-        if(message.content.includes("scum")){
-        WFAction()
-        }
-        if(message.content.includes("bitch")){
-        WFAction()
-        }
-        if(message.content.includes("clit")){
-        WFAction()
-        }
-        if(message.content.includes("pussy")){
-        WFAction()
-        }
-        if(message.content.includes("dick")){
-        WFAction()
-        }
-        if(message.content.includes("wtf")){
-        WFAction()
-        }
-        if(message.content.includes("omfg")){
-        WFAction()
-        }
-        if(message.content.includes("kill your self")){
-        WFAction()
-        }
-        if(message.content.includes("stfu")){
-        WFAction()
-        }
-});
-
-bot.on('message', (message) => { //Peeky Coins
-    if(message.author.bot) return;
-
-    if(!userData[message.author.id]) userData[message.author.id] = {
-        messagesSent: 0
-    };
-
-    userData[message.author.id].messagesSent++;
-
-    fs.writeFile('./coins.json', JSON.stringify(userData), (err) => {
-        if (err) console.error(err);
-    });
-
-    if(message.content == ("/Stats")){
-        message.channel.sendMessage("**" + message.author.tag + "**'s Stats:\n**Peeky Coins:** " + userData[message.author.id].messagesSent)
-        console.log('The Stats command has been executed. Executor: ' + message.author.tag)
-    }
-});
-
-//COMMANDS THAT NEED TO BE AFTER THE COINS SCRIPT
 
 bot.on('message', (message) => { //Bet
     if(message.content == "/Bet"){
