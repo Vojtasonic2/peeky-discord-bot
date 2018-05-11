@@ -225,7 +225,7 @@ const cmds_start = "**__Commands - Start__**\nBot's prefix: **/**\n\n ● **Abou
 const cmds_mod = "**__Commands - Moderation__**\nBot's prefix: **/**\n\n ● **ServerName** <Server Name>\n  • Sets the name of your server!\n  • Permissions Needed: **Administrator**\n\n ● **ChannelName** <Channel Name>\n  • Sets the name of your channel!\n  • Permissions Needed: **Administrator**\n\n ● **Censor** <Mention a User>\n  • Censors the nickname of the mentioned user!\n  • Permissions Needed: **Manage Nicknames**\n\n ● **Uncensor** <Mention a User>\n  • Uncensors the name of the mentioned user!\n  • Permissions Needed: **Manage Nicknames**\n\n ● **Ban** <Mention a User>\n  • Bans the first mentioned user!\n  • Permissions Needed: **Ban Members**"
 const cmds_dev = "**__Commands - Dev__**\nBot's prefix: **/**\n\n ● **GetEmoji** <Emojis>\n  • Shows you the ID of your emojis!"
 const cmds_fun = "**__Commands - Fun__**\nBot's prefix: **/**\n\n ● **DadJoke**\n  • Tells *hilarious* dad joke.\n\n ● **Roll**\n  • Rolls a number between 1 and 6.\n\n ● **Ask** <Question>\n  • Ask me anything! Don't be shy!\n\n ● **Say** <Your Text>\n  • Peeky will repeat what you said!\n\n ● **GlobalSet** <Message>\n  • Sets a global message that can be seen on all the servers with me in!\n\n ● **GlobalShow**\n  • Shows the global message.\n\n ● **Comics**\n  • Creates a comics that's perfect for sitcom laugh track!"
-const cmds_mg = "**__Commands - Minigames__**\nBot's prefix: **/**\n\n ● **GoFishing**\n  • Catches a random fish and redirects you to it's Wikipedia page.\n  • Dedicated Channel: **#fishing**\n\n ● **Fight** <Enemy Name>\n  • Starts a fight with someone!\n  • Dedicated Channel: **#arena**\n\n ● **Bet**\n  • Bets 50 Peeky Coins!\n  • Dedicated Channel: **#casino**"
+const cmds_mg = "**__Commands - Minigames__**\nBot's prefix: **/**\n\n ● **GoFishing**\n  • Catches a random fish and redirects you to it's Wikipedia page.\n  • Dedicated Channel: **#fishing**\n\n ● **Fight** <Enemy Name>\n  • Starts a fight with someone!\n  • Dedicated Channel: **#arena**\n\n ● **Bet**\n  • Bets 25 Peeky Coins!\n  • Dedicated Channel: **#casino**"
 const cmds_other = "**__Commands - Other__**\nBot's prefix: **/**\n\n ● **ServerInfo**\n  • Displays some info about the server!\n\n ● **BotInfo**\n  • Displays some info about the bot!\n\n ● **Wikipedia** <Search>\n  • Searches the Wikipedia for you!\n\n ● **Suggestion** <Suggestion>\n  • Sends your suggestion to the Support Server!\n\n ● **StartPoll** <Poll Topic>\n  • Starts a poll for you.\n\n ● **StartCountdown** <0001 - 9999> <Countdown Name>\n  • Starts a countdown in seconds.\n\n ● **Balance**\n  • Shows how much Peeky Coins you have."
 
 bot.on('message', (message) => { //Commands
@@ -493,6 +493,11 @@ bot.on('message', (message) => { //GoFishing
         var fishing_caught = fishing_fish[Math.floor(Math.random() * fishing_fish.length)];
         message.channel.sendMessage('**' + message.author.tag + '**' + fishing_caught)
         console.log('The GoFishing command has been executed. Executor: ' + message.author.tag)
+    var FishResults = Math.floor(Math.random() * 5) + 1;
+    if(FishResults == 1){
+        message.channel.sendMessage("<:bot_approve:440824011199348736> You've found **5 Peeky Coins**!")
+        userData[message.author.id].messagesSent = userData[message.author.id].messagesSent + 5
+    }
    }}
 });
 bot.on('message', (message) => { //GoFishing - failed
@@ -524,6 +529,10 @@ bot.on('message', (message) => { //Fight
                 damage_dealt_1 = 0}
         message.channel.sendMessage('**' + attacker_user + '** vs **' + target_user + '**\n\n**' + attacker_user + '** has attacked **' + target_user + '** with a **' + weapon_used + '** and dealt **' + damage_dealt_1 + ' damage**!\n**' + target_user + '** has attacked **' + attacker_user + '** back with a **' + weapon_used_2 + '** and dealt **' + damage_dealt_2 + ' damage**!\n\n**' + attacker_user + '** has **' + health_1 + ' Health** left. \n**' + target_user + '** has **' + health_2 + ' Health** left.')
         console.log('The Fight command has been executed. Executor: ' + message.author.tag)
+        if(health_1 > health_2){
+            message.channel.sendMessage("<:bot_approve:440824011199348736> You've won **5 Peeky Coins**!")
+            userData[message.author.id].messagesSent = userData[message.author.id].messagesSent + 5
+        }
    }}
 });
 bot.on('message', (message) => { //Fight - failed
@@ -537,16 +546,16 @@ if(message.content.startsWith("/Fight ")){
 bot.on('message', (message) => { //Bet
     if(message.content == "/Bet"){
     if(message.channel.name == "casino"){
-    if(userData[message.author.id].messagesSent >= 50){
-        userData[message.author.id].messagesSent =  userData[message.author.id].messagesSent - 50
+    if(userData[message.author.id].messagesSent >= 25){
+        userData[message.author.id].messagesSent =  userData[message.author.id].messagesSent - 25
         console.log('The Bet command has been executed. Executor: ' + message.author.tag)
-    var BetResults = Math.floor(Math.random() * 2) + 1;
+    var BetResults = Math.floor(Math.random() * 4) + 1;
         if(BetResults == 1){
-            message.channel.sendMessage("<:bot_approve:440824011199348736> You've won **50 Peeky Coins**!")
-            userData[message.author.id].messagesSent = userData[message.author.id].messagesSent + 100
+            message.channel.sendMessage("<:bot_approve:440824011199348736> You've won **25 Peeky Coins**!")
+            userData[message.author.id].messagesSent = userData[message.author.id].messagesSent + 50
     }
-        if(BetResults == 2){
-            message.channel.sendMessage("<:bot_deny:440824010805084171> You've lost **50 Peeky Coins**.")
+        if(BetResults >= 2){
+            message.channel.sendMessage("<:bot_deny:440824010805084171> You've lost **25 Peeky Coins**.")
     }
     }}}
 });
@@ -560,7 +569,7 @@ bot.on('message', (message) => { //Bet - failed
 bot.on('message', (message) => { //Bet - failed 2
     if(message.content == "/Bet"){
     if(message.channel.name == "casino"){
-    if(userData[message.author.id].messagesSent <= 49){
+    if(userData[message.author.id].messagesSent <= 24){
         message.channel.sendMessage(ErrorMsg4)     
     }}}
 });
@@ -729,7 +738,7 @@ bot.on('message', (message) => { //Peeky Coins
     });
 
     if(message.content == ("/Balance")){
-        message.channel.sendMessage("You have earned **" + userData[message.author.id].messagesSent + " Peeky Coins** so far!")
+        message.channel.sendMessage("You have earned **" + userData[message.author.id].messagesSent + " Peeky Coins** so far!\nEarn more coins by playing Peeky's minigames"")
         console.log('The Balance command has been executed. Executor: ' + message.author.tag)
     }
 });
