@@ -209,7 +209,7 @@ const WordFilterMessage = "I deleted someone's message, because there were some 
 const ErrorMsg1 = "<:bot_deny:440824010805084171> This command cannot be used in this channel."
 const ErrorMsg2 = "<:bot_deny:440824010805084171> You lack the needed permissions to use this command."
 const ErrorMsg3 = "<:bot_deny:440824010805084171> Invalid mention, be sure to mention a user."
-const ErrorMsg4 = "<:bot_deny:440824010805084171> You need more **Peeky Coins** to do that."
+const ErrorMsg4 = "<:bot_deny:440824010805084171> You need more <:bot_pc:444512719945859082> to do that."
 var WFReports = 0
 const VersionNumber = '2.8'
 let coins = require("./coins.json");
@@ -218,7 +218,7 @@ var userData = JSON.parse(fs.readFileSync('./coins.json', 'utf8'))
 
 bot.on('ready', () => { bot.user.setActivity(VersionNumber + ' | /About') })
 bot.on('ready', () => { bot.user.setStatus('idle')} )
-bot.on('ready', (message) => { bot.channels.get("319891596772638744").sendMessage("**__Peeky has restarted!__**\nAll the Peeky Coins have been reset.") });
+bot.on('ready', (message) => { bot.channels.get("319891596772638744").sendMessage("**__Peeky has restarted!__**\nAll the stats have been reset.") });
 console.log('The bot is now running')
 
 const cmds_start = "**__Commands - Start__**\nBot's prefix: **/**\n\n ● **About**\n  • Introduces you to the bot and gives you few helpful commands!\n\n ● **Commands**\n  • Shows the available command categories!\n\n ● **Bonuses**\n  • Sends you the bonuses that Peeky can do!\n\n ● **Help**\n  • Send you some links to help out you or the bot!"
