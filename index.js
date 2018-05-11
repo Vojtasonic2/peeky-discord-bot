@@ -645,7 +645,7 @@ bot.on('message' , (message) => { //Word Filtering
     if(WFReports == 0){
     if(message.channel.topic == "Word Filtering: Enabled"){
         WFReports = WFReports + 1
-        message.channel.sendMessage(WTMessage)
+        message.channel.sendMessage(WTMessage).then(msg => {msg.delete(5000)})
         message.author.lastMessage.delete()
         console.log("Peeky's word filter removed a message by " + message.author.tag + ".")}
 }};
