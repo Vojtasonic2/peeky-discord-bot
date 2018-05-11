@@ -546,6 +546,7 @@ if(message.content.startsWith("/Fight ")){
 bot.on('message', (message) => { //Bet
     if(message.content == "/Bet"){
     if(message.channel.name == "casino"){
+    if(userData[message.author.id]){
     if(userData[message.author.id].messagesSent >= 25){
         userData[message.author.id].messagesSent =  userData[message.author.id].messagesSent - 25
         console.log('The Bet command has been executed. Executor: ' + message.author.tag)
@@ -557,7 +558,7 @@ bot.on('message', (message) => { //Bet
         if(BetResults >= 2){
             message.channel.sendMessage("<:bot_deny:440824010805084171> You've lost **25** <:bot_pc:444512719945859082>.")
     }
-    }}}
+    }}}}
 });
 bot.on('message', (message) => { //Bet - failed
     if(message.content == "/Bet"){
