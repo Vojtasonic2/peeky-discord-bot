@@ -657,6 +657,37 @@ if(message.content.startsWith("/Fight ")){
         console.log('The Fight command has failed. Executor: ' + message.author.tag)
    }}
 });
+bot.on('message', (message) => { //Bet
+    if(message.content == "/Bet"){
+    if(message.channel.name == "casino"){
+    if(userData[message.author.id]){
+    if(userData[message.author.id].messagesSent >= 25){
+        userData[message.author.id].messagesSent =  userData[message.author.id].messagesSent - 25
+        console.log('The Bet command has been executed. Executor: ' + message.author.tag)
+    var BetResults = Math.floor(Math.random() * 5) + 1;
+        if(BetResults == 1){
+            message.channel.sendMessage("<:bot_approve:440824011199348736> You've won **25 Peeky Coins**!")
+            userData[message.author.id].messagesSent = userData[message.author.id].messagesSent + 50
+    }
+        if(BetResults >= 2){
+            message.channel.sendMessage("<:bot_deny:440824010805084171> You've lost **25 Peeky Coins**.")
+    }
+    }}}}
+});
+bot.on('message', (message) => { //Bet - failed
+    if(message.content == "/Bet"){
+    if(message.channel.name !== 'casino'){
+        message.channel.sendMessage(ErrorMsg1)
+        console.log('The Bet command has failed. Executor: ' + message.author.tag)
+   }}
+});
+bot.on('message', (message) => { //Bet - failed 2
+    if(message.content == "/Bet"){
+    if(message.channel.name == "casino"){
+    if(userData[message.author.id].messagesSent <= 24){
+        message.channel.sendMessage(ErrorMsg4)     
+    }}}
+});
 
 bot.on('message', (message) => { //Roll
     if(message.content == '/Roll'){
@@ -712,38 +743,6 @@ bot.on('message', (message) => { //Bonuses
        message.author.sendMessage("**__Bonuses__**\n\n ● **Automatic Reactions**\n  • Messages in a channel called **#gallery** get automatic reactions!\n  • Messages in a channel called **#events** get automatic reactions!\n\n ● **Word Filtering**\n  • Messages in a channel that has **Word Filtering: Enabled** (and nothing else) in the topic will get filtered!\n\n ● **Peeky Coins**\n  • Encourage users into talking in your server by rewarding them with Peeky Coins!")
        console.log('The Bonuses command has been executed. Executor: ' + message.author.tag)
    }
-});
-
-bot.on('message', (message) => { //Bet
-    if(message.content == "/Bet"){
-    if(message.channel.name == "casino"){
-    if(userData[message.author.id]){
-    if(userData[message.author.id].messagesSent >= 25){
-        userData[message.author.id].messagesSent =  userData[message.author.id].messagesSent - 25
-        console.log('The Bet command has been executed. Executor: ' + message.author.tag)
-    var BetResults = Math.floor(Math.random() * 5) + 1;
-        if(BetResults == 1){
-            message.channel.sendMessage(":bot_approve: You've won **25 Peeky Coins**!")
-            userData[message.author.id].messagesSent = userData[message.author.id].messagesSent + 50
-    }
-        if(BetResults >= 2){
-            message.channel.sendMessage(":bot_deny: You've lost **25 Peeky Coins**.")
-    }
-    }}}}
-});
-bot.on('message', (message) => { //Bet - failed
-    if(message.content == "/Bet"){
-    if(message.channel.name !== 'casino'){
-        message.channel.sendMessage(ErrorMsg1)
-        console.log('The Bet command has failed. Executor: ' + message.author.tag)
-   }}
-});
-bot.on('message', (message) => { //Bet - failed 2
-    if(message.content == "/Bet"){
-    if(message.channel.name == "casino"){
-    if(userData[message.author.id].messagesSent <= 24){
-        message.channel.sendMessage(ErrorMsg4)     
-    }}}
 });
 
 bot.login(process.env.BOT_TOKEN);
