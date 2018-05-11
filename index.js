@@ -285,7 +285,7 @@ bot.on('message', (message) => { //Commands Other
 
 bot.on('message', (message) => { //About
     if(message.content == '/About'){
-       message.channel.sendMessage("Hello, **" + message.author.tag + "**!\n\nTo get started with the bot, type **/Commands**!\n\n ● Moderation Commands\n ● Fun Commands\n ● Developer Commands\n ● Automatic Reactions\n ● Word Filtering\n ● Minigames\n ● Peeky Coins")
+       message.channel.sendMessage("Hello, **" + message.author.tag + "**!\n\nTo get started with the bot, type **/Commands**!\n\n ● Moderation Commands\n ● Fun Commands\n ● Developer Commands\n ● Automatic Reactions\n ● Word Filtering\n ● Minigames")
        console.log('The About command has been executed. Executor: ' + message.author.tag)
     }
 });
@@ -738,7 +738,7 @@ bot.on('message', (message) => { //Peeky Coins
     });
 
     if(message.content == ("/Stats")){
-        message.channel.sendMessage("**" + message.author.tag + "**'s Stats:\n" + userData[message.author.id].messagesSent + " <:bot_pc:444512719945859082>")
+        message.channel.sendMessage("**" + message.author.tag + "**'s Stats:\n<:bot_pc:444512719945859082>: **" + userData[message.author.id].messagesSent + "**")
         console.log('The Stats command has been executed. Executor: ' + message.author.tag)
     }
 });
