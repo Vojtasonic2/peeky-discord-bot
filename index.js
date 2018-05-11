@@ -738,7 +738,7 @@ bot.on('message', (message) => { //Peeky Coins
     });
 
     if(message.content == ("/Balance")){
-        message.channel.sendMessage("You have earned **" + userData[message.author.id].messagesSent + " Peeky Coins** so far!\nYou can earn more coins by:\n● Playing Peeky's minigames\n● Talking in any server"")
+        message.channel.sendMessage("You have earned **" + userData[message.author.id].messagesSent + " Peeky Coins** so far!\nYou can earn more coins by:\n● Playing Peeky's minigames\n● Talking in any server")
         console.log('The Balance command has been executed. Executor: ' + message.author.tag)
     }
 });
