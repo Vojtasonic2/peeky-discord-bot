@@ -210,6 +210,7 @@ const ErrorMsg1 = "<:bot_deny:440824010805084171> This command cannot be used in
 const ErrorMsg2 = "<:bot_deny:440824010805084171> You lack the needed permissions to use this command."
 const ErrorMsg3 = "<:bot_deny:440824010805084171> Invalid mention, be sure to mention a user."
 const ErrorMsg4 = "<:bot_deny:440824010805084171> You need more Peeky Coins to do that."
+const SuccessMsg1 = "<:bot_approve:440824011199348736> You have bought a background!"
 var WFReports = 0
 const VersionNumber = '2.9'
 let coins = require("./coins.json");
@@ -227,7 +228,7 @@ const cmds_dev = "**__Commands - Dev__**\nBot's prefix: **/**\n\n ● **GetEmoji
 const cmds_fun = "**__Commands - Fun__**\nBot's prefix: **/**\n\n ● **DadJoke**\n  • Tells *hilarious* dad joke.\n\n ● **Roll**\n  • Rolls a number between 1 and 6.\n\n ● **Ask** <Question>\n  • Ask me anything! Don't be shy!\n\n ● **Say** <Your Text>\n  • Peeky will repeat what you said!\n\n ● **GlobalSet** <Message>\n  • Sets a global message that can be seen on all the servers with me in!\n\n ● **GlobalShow**\n  • Shows the global message.\n\n ● **Comics**\n  • Creates a comics that's perfect for sitcom laugh track!"
 const cmds_mg = "**__Commands - Minigames__**\nBot's prefix: **/**\n\n ● **GoFishing**\n  • Catches a random fish and redirects you to it's Wikipedia page.\n  • Dedicated Channel: **#fishing**\n\n ● **Fight** <Enemy Name>\n  • Starts a fight with someone!\n  • Dedicated Channel: **#arena**\n\n ● **Bet**\n  • **Bets 25 Peeky Coins**\n  • Dedicated Channel: **#casino**"
 const cmds_other = "**__Commands - Other__**\nBot's prefix: **/**\n\n ● **ServerInfo**\n  • Displays some info about the server!\n\n ● **Profile**\n  • Shows your profile.\n\n ● **BotInfo**\n  • Displays some info about the bot!\n\n ● **Wikipedia** <Search>\n  • Searches the Wikipedia for you!\n\n ● **Suggestion** <Suggestion>\n  • Sends your suggestion to the Support Server!\n\n ● **StartPoll** <Poll Topic>\n  • Starts a poll for you.\n\n ● **StartCountdown** <0001 - 9999> <Countdown Name>\n  • Starts a countdown in seconds."
-const cmds_shop = "**__Commands - Shop**\nBot's prefix: **/**\n\n ● **Buy 1**\n  • Buys the **Default** background.\n  • Price: **0 Peeky Coins*\n\n ● **Buy 2**\n  • Buys the  **Red dinosaur plushie** background.\n  • Price: **50 Peeky Coins*"
+const cmds_shop = "**__Commands - Shop__**\nBot's prefix: **/**\n\n ● **Buy 1**\n  • Buys the **Default** background.\n  • Price: **0 Peeky Coins**\n\n ● **Buy 2**\n  • Buys the  **Red dinosaur plushie** background.\n  • Price: **50 Peeky Coins**"
 
 //BONUSES
 
@@ -418,7 +419,7 @@ bot.on('message', (message) => { //Commands Shop
 
 bot.on('message', (message) => { //About
     if(message.content == '/About'){
-       message.channel.sendMessage("Hello, **" + message.author.tag + "**!\n\nTo get started with the bot, type **/Commands**!\n\n ● Moderation Commands\n ● Fun Commands\n ● Developer Commands\n ● Automatic Reactions\n ● Word Filtering\n ● Minigames")
+       message.channel.sendMessage("Hello, **" + message.author.tag + "**!\n\nTo get started with the bot, type **/Commands**!\n\n ● Moderation Commands\n ● Fun Commands\n ● Developer Commands\n ● Automatic Reactions\n ● Word Filtering\n ● Minigames\n ● User Profile")
        console.log('The About command has been executed. Executor: ' + message.author.tag)
     }
 });
@@ -709,7 +710,7 @@ bot.on('message', (message) => { //Bet - failed 2
 bot.on('message', (message) => { //Buy 1
     if(message.content == "/Buy 1"){
         userData[message.author.id].profileBackground = 1
-        message.channel.sendMessage("You have bought a background!")
+        message.channel.sendMessage(SuccessMsg1)
         console.log('The Buy 1 command has been executed. Executor: ' + message.author.tag)
     }
 });
@@ -719,7 +720,7 @@ bot.on('message', (message) => { //Buy 2
     if(userData[message.author.id].messagesSent >= 50){
         userData[message.author.id].messagesSent = userData[message.author.id].messagesSent - 50
         userData[message.author.id].profileBackground = 2
-        message.channel.sendMessage("You have bought a background!")
+        message.channel.sendMessage(SuccessMsg1)
         console.log('The Buy 2 command has been executed. Executor: ' + message.author.tag)
     }}
 });
