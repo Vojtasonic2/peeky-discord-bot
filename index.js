@@ -227,6 +227,7 @@ const cmds_dev = "**__Commands - Dev__**\nBot's prefix: **/**\n\n ● **GetEmoji
 const cmds_fun = "**__Commands - Fun__**\nBot's prefix: **/**\n\n ● **DadJoke**\n  • Tells *hilarious* dad joke.\n\n ● **Roll**\n  • Rolls a number between 1 and 6.\n\n ● **Ask** <Question>\n  • Ask me anything! Don't be shy!\n\n ● **Say** <Your Text>\n  • Peeky will repeat what you said!\n\n ● **GlobalSet** <Message>\n  • Sets a global message that can be seen on all the servers with me in!\n\n ● **GlobalShow**\n  • Shows the global message.\n\n ● **Comics**\n  • Creates a comics that's perfect for sitcom laugh track!"
 const cmds_mg = "**__Commands - Minigames__**\nBot's prefix: **/**\n\n ● **GoFishing**\n  • Catches a random fish and redirects you to it's Wikipedia page.\n  • Dedicated Channel: **#fishing**\n\n ● **Fight** <Enemy Name>\n  • Starts a fight with someone!\n  • Dedicated Channel: **#arena**\n\n ● **Bet**\n  • **Bets 25 Peeky Coins**\n  • Dedicated Channel: **#casino**"
 const cmds_other = "**__Commands - Other__**\nBot's prefix: **/**\n\n ● **ServerInfo**\n  • Displays some info about the server!\n\n ● **Profile**\n  • Shows your profile.\n\n ● **BotInfo**\n  • Displays some info about the bot!\n\n ● **Wikipedia** <Search>\n  • Searches the Wikipedia for you!\n\n ● **Suggestion** <Suggestion>\n  • Sends your suggestion to the Support Server!\n\n ● **StartPoll** <Poll Topic>\n  • Starts a poll for you.\n\n ● **StartCountdown** <0001 - 9999> <Countdown Name>\n  • Starts a countdown in seconds."
+const cmds_shop = "**__Commands - Shop**\nBot's prefix: **/**\n\n ● **Buy 1**\n  • Buys the **Default** background.\n  • Price: **0 Peeky Coins*\n\n ● **Buy 2**\n  • Buys the  **Red dinosaur plushie** background.\n  • Price: **50 Peeky Coins*"
 
 //BONUSES
 
@@ -327,7 +328,7 @@ bot.on('message', (message) => { //Peeky Coins
 
     if(!userData[message.author.id]) userData[message.author.id] = {
         messagesSent: 0,
-        profileBackground: 0
+        profileBackground: 1
     };
 
     userData[message.author.id].messagesSent++;
@@ -338,9 +339,13 @@ bot.on('message', (message) => { //Peeky Coins
 
     if(message.content == ("/Profile")){
         var ProfileMessage = ["**Username:** " + message.author.tag + "\n**Peeky Coins:** " + userData[message.author.id].messagesSent + "\n**Backround:** "]
-    if(userData[message.author.id].profileBackground == 0){
+    if(userData[message.author.id].profileBackground == 1){
         message.channel.sendMessage(ProfileMessage)
         message.channel.sendFile("./1.png", )
+    }
+    if(userData[message.author.id].profileBackground == 2){
+        message.channel.sendMessage(ProfileMessage)
+        message.channel.sendFile("./2.png", )
     }
         console.log('The Stats command has been executed. Executor: ' + message.author.tag)
     }
@@ -350,7 +355,7 @@ bot.on('message', (message) => { //Peeky Coins
 
 bot.on('message', (message) => { //Commands
     if(message.content == '/Commands'){
-       message.channel.sendMessage('These are all the command categories:\n\n**/Commands Start**, **/Commands Moderation**, **/Commands Dev**, **/Commands Fun**, **/Commands Minigames**, **/Commands Other**.')
+       message.channel.sendMessage('These are all the command categories:\n\n**/Commands Start**, **/Commands Moderation**, **/Commands Dev**, **/Commands Fun**, **/Commands Minigames**, **/Commands Other**, **/Commands Shop**.')
        console.log('The Commands command has been executed. Executor: ' + message.author.tag)
    }
 });
@@ -399,6 +404,14 @@ bot.on('message', (message) => { //Commands Other
     if(message.content == '/Commands Other'){
        message.author.sendMessage(cmds_other);
        message.channel.sendMessage('**' + message.author.tag + '** has received a DM with the **Commands (Other)**.')
+       console.log('The Commands Other command has been executed. Executor: ' + message.author.tag)
+   }
+});
+
+bot.on('message', (message) => { //Commands Shop
+    if(message.content == '/Commands Shop'){
+       message.author.sendMessage(cmds_shop);
+       message.channel.sendMessage('**' + message.author.tag + '** has received a DM with the **Commands (Shop)**.')
        console.log('The Commands Other command has been executed. Executor: ' + message.author.tag)
    }
 });
@@ -665,9 +678,8 @@ if(message.content.startsWith("/Fight ")){
 bot.on('message', (message) => { //Bet
     if(message.content == "/Bet"){
     if(message.channel.name == "casino"){
-    if(userData[message.author.id]){
     if(userData[message.author.id].messagesSent >= 25){
-        userData[message.author.id].messagesSent =  userData[message.author.id].messagesSent - 25
+        userData[message.author.id].messagesSent = userData[message.author.id].messagesSent - 25
         console.log('The Bet command has been executed. Executor: ' + message.author.tag)
     var BetResults = Math.floor(Math.random() * 4) + 1;
         if(BetResults == 1){
@@ -692,6 +704,30 @@ bot.on('message', (message) => { //Bet - failed 2
     if(userData[message.author.id].messagesSent <= 24){
         message.channel.sendMessage(ErrorMsg4)     
     }}}
+});
+
+bot.on('message', (message) => { //Buy 1
+    if(message.content == "/Buy 1"){
+        userData[message.author.id].profileBackground = 1
+        message.channel.sendMessage("You have bought a background!")
+        console.log('The Buy 1 command has been executed. Executor: ' + message.author.tag)
+    }
+});
+
+bot.on('message', (message) => { //Buy 2
+    if(message.content == "/Buy 2"){
+    if(userData[message.author.id].messagesSent >= 50){
+        userData[message.author.id].messagesSent = userData[message.author.id].messagesSent - 50
+        userData[message.author.id].profileBackground = 2
+        message.channel.sendMessage("You have bought a background!")
+        console.log('The Buy 2 command has been executed. Executor: ' + message.author.tag)
+    }}
+});
+bot.on('message', (message) => { //Buy 2
+    if(message.content == "/Buy 2"){
+    if(userData[message.author.id].messagesSent <= 49){
+        message.channel.sendMessage(ErrorMsg4)     
+    }}
 });
 
 bot.on('message', (message) => { //Roll
