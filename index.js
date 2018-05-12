@@ -664,7 +664,7 @@ bot.on('message', (message) => { //Bet
     if(userData[message.author.id].messagesSent >= 25){
         userData[message.author.id].messagesSent =  userData[message.author.id].messagesSent - 25
         console.log('The Bet command has been executed. Executor: ' + message.author.tag)
-    var BetResults = Math.floor(Math.random() * 5) + 1;
+    var BetResults = Math.floor(Math.random() * 4) + 1;
         if(BetResults == 1){
             message.channel.sendMessage("<:bot_approve:440824011199348736> You've won **25 Peeky Coins**!")
             userData[message.author.id].messagesSent = userData[message.author.id].messagesSent + 50
