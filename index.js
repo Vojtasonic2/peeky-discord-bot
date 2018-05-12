@@ -219,7 +219,7 @@ var userData = JSON.parse(fs.readFileSync('./coins.json', 'utf8'))
 
 bot.on('ready', () => { bot.user.setActivity(VersionNumber + ' | /About') })
 bot.on('ready', () => { bot.user.setStatus('idle')} )
-bot.on('ready', (message) => { bot.channels.get("319891596772638744").sendMessage("**__Peeky has restarted!__**\nAll the stats have been reset.") });
+bot.on('ready', (message) => { bot.channels.get("319891596772638744").sendMessage("**__Peeky has restarted!__**\nAll the Peeky Coins and backgrounds have been reset.") });
 console.log('The bot is now running')
 
 const cmds_start = "**__Commands - Start__**\nBot's prefix: **/**\n\n ● **About**\n  • Introduces you to the bot and gives you few helpful commands!\n\n ● **Commands**\n  • Shows the available command categories!\n\n ● **Bonuses**\n  • Sends you the bonuses that Peeky can do!\n\n ● **Help**\n  • Send you some links to help out you or the bot!"
@@ -419,7 +419,7 @@ bot.on('message', (message) => { //Commands Shop
 
 bot.on('message', (message) => { //About
     if(message.content == '/About'){
-       message.channel.sendMessage("Hello, **" + message.author.tag + "**!\n\nTo get started with the bot, type **/Commands**!\n\n ● Moderation Commands\n ● Fun Commands\n ● Developer Commands\n ● Automatic Reactions\n ● Word Filtering\n ● Minigames\n ● User Profile")
+       message.channel.sendMessage("Hello, **" + message.author.tag + "**!\n\nTo get started with the bot, type **/Commands**!\n\n ● Moderation Commands\n ● Fun Commands\n ● Developer Commands\n ● Automatic Reactions\n ● Word Filtering\n ● Minigames\n ● Custom User Profiles")
        console.log('The About command has been executed. Executor: ' + message.author.tag)
     }
 });
