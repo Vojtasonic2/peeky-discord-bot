@@ -689,7 +689,7 @@ bot.on('message', (message) => { //Bet
         if(BetResults >= 2){
             message.channel.sendMessage("<:bot_deny:440824010805084171> You've lost **25 Peeky Coins**.")
     }
-    }}}}
+    }}}
 });
 bot.on('message', (message) => { //Bet - failed
     if(message.content == "/Bet"){
