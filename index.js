@@ -228,7 +228,7 @@ const cmds_dev = "**__Commands - Dev__**\nBot's prefix: **/**\n\n ● **GetEmoji
 const cmds_fun = "**__Commands - Fun__**\nBot's prefix: **/**\n\n ● **DadJoke**\n  • Tells *hilarious* dad joke.\n\n ● **Roll**\n  • Rolls a number between 1 and 6.\n\n ● **Ask** <Question>\n  • Ask me anything! Don't be shy!\n\n ● **Say** <Your Text>\n  • Peeky will repeat what you said!\n\n ● **GlobalSet** <Message>\n  • Sets a global message that can be seen on all the servers with me in!\n\n ● **GlobalShow**\n  • Shows the global message.\n\n ● **Comics**\n  • Creates a comics that's perfect for sitcom laugh track!"
 const cmds_mg = "**__Commands - Minigames__**\nBot's prefix: **/**\n\n ● **GoFishing**\n  • Catches a random fish and redirects you to it's Wikipedia page.\n  • Dedicated Channel: **#fishing**\n\n ● **Fight** <Enemy Name>\n  • Starts a fight with someone!\n  • Dedicated Channel: **#arena**\n\n ● **Bet**\n  • **Bets 25 Peeky Coins**\n  • Dedicated Channel: **#casino**"
 const cmds_other = "**__Commands - Other__**\nBot's prefix: **/**\n\n ● **ServerInfo**\n  • Displays some info about the server!\n\n ● **Profile**\n  • Shows your profile.\n\n ● **BotInfo**\n  • Displays some info about the bot!\n\n ● **Wikipedia** <Search>\n  • Searches the Wikipedia for you!\n\n ● **Suggestion** <Suggestion>\n  • Sends your suggestion to the Support Server!\n\n ● **StartPoll** <Poll Topic>\n  • Starts a poll for you.\n\n ● **StartCountdown** <0001 - 9999> <Countdown Name>\n  • Starts a countdown in seconds."
-const cmds_shop = "**__Commands - Shop__**\nBot's prefix: **/**\n\n ● **Buy 1**\n  • Buys the **Default** background.\n  • Price: **0 Peeky Coins**\n\n ● **Buy 2**\n  • Buys the **Red Dinosaur Plushie** background.\n  • Price: **50 Peeky Coins**\n\n ● **Buy 3**\n  • Buys the **Red Wolf** background.\n  • Price: **50 Peeky Coins**\n\n ● **Buy 4**\n  • Buys the **PAYDAY 2** background.\n  • Price: **50 Peeky Coins**"
+const cmds_shop = "**__Commands - Shop__**\nBot's prefix: **/**\n\n ● **Buy 1**\n  • Buys the **Default** background.\n  • Price: **0 Peeky Coins**\n\n ● **Buy 2**\n  • Buys the **Red Dinosaur Plushie** background.\n  • Price: **25 Peeky Coins**\n\n ● **Buy 3**\n  • Buys the **Red Wolf** background.\n  • Price: **50 Peeky Coins**\n\n ● **Buy 4**\n  • Buys the **PAYDAY 2** background.\n  • Price: **50 Peeky Coins**\n\n ● **Buy 5**\n  • Buys the **Impact** background.\n  • Price: **50 Peeky Coins**\n\n ● **Buy 4**\n  • Buys the **Rainbow Six: Siege** background.\n  • Price: **50 Peeky Coins**"
 
 //BONUSES
 
@@ -355,6 +355,14 @@ bot.on('message', (message) => { //Peeky Coins
     if(userData[message.author.id].profileBackground == 4){
         message.channel.sendMessage(ProfileMessage)
         message.channel.sendFile("./4.jpg", )
+    }
+    if(userData[message.author.id].profileBackground == 5){
+        message.channel.sendMessage(ProfileMessage)
+        message.channel.sendFile("./5.png", )
+    }
+    if(userData[message.author.id].profileBackground == 6){
+        message.channel.sendMessage(ProfileMessage)
+        message.channel.sendFile("./6.png", )
     }
         console.log('The Stats command has been executed. Executor: ' + message.author.tag)
     }
@@ -725,16 +733,16 @@ bot.on('message', (message) => { //Buy 1
 
 bot.on('message', (message) => { //Buy 2
     if(message.content == "/Buy 2"){
-    if(userData[message.author.id].messagesSent >= 50){
+    if(userData[message.author.id].messagesSent >= 25){
         userData[message.author.id].messagesSent = userData[message.author.id].messagesSent - 50
         userData[message.author.id].profileBackground = 2
         message.channel.sendMessage(SuccessMsg1)
         console.log('The Buy 2 command has been executed. Executor: ' + message.author.tag)
     }}
 });
-bot.on('message', (message) => { //Buy 2
+bot.on('message', (message) => { //Buy 2 - failed
     if(message.content == "/Buy 2"){
-    if(userData[message.author.id].messagesSent <= 49){
+    if(userData[message.author.id].messagesSent <= 24){
         message.channel.sendMessage(ErrorMsg4)     
     }}
 });
@@ -748,7 +756,7 @@ bot.on('message', (message) => { //Buy 3
         console.log('The Buy 3 command has been executed. Executor: ' + message.author.tag)
     }}
 });
-bot.on('message', (message) => { //Buy 3
+bot.on('message', (message) => { //Buy 3 - failed
     if(message.content == "/Buy 3"){
     if(userData[message.author.id].messagesSent <= 49){
         message.channel.sendMessage(ErrorMsg4)     
@@ -764,8 +772,40 @@ bot.on('message', (message) => { //Buy 4
         console.log('The Buy 4 command has been executed. Executor: ' + message.author.tag)
     }}
 });
-bot.on('message', (message) => { //Buy 4
-    if(message.content == "/uy 4"){
+bot.on('message', (message) => { //Buy 4 - failed
+    if(message.content == "/Buy 4"){
+    if(userData[message.author.id].messagesSent <= 49){
+        message.channel.sendMessage(ErrorMsg4)     
+    }}
+});
+
+bot.on('message', (message) => { //Buy 5
+    if(message.content == "/Buy 5"){
+    if(userData[message.author.id].messagesSent >= 50){
+        userData[message.author.id].messagesSent = userData[message.author.id].messagesSent - 50
+        userData[message.author.id].profileBackground = 5
+        message.channel.sendMessage(SuccessMsg1)
+        console.log('The Buy 5 command has been executed. Executor: ' + message.author.tag)
+    }}
+});
+bot.on('message', (message) => { //Buy 5 - failed
+    if(message.content == "/Buy 5"){
+    if(userData[message.author.id].messagesSent <= 49){
+        message.channel.sendMessage(ErrorMsg4)     
+    }}
+});
+
+bot.on('message', (message) => { //Buy 6
+    if(message.content == "/Buy 6"){
+    if(userData[message.author.id].messagesSent >= 50){
+        userData[message.author.id].messagesSent = userData[message.author.id].messagesSent - 50
+        userData[message.author.id].profileBackground = 6
+        message.channel.sendMessage(SuccessMsg1)
+        console.log('The Buy 6 command has been executed. Executor: ' + message.author.tag)
+    }}
+});
+bot.on('message', (message) => { //Buy 5 - failed
+    if(message.content == "/Buy 6"){
     if(userData[message.author.id].messagesSent <= 49){
         message.channel.sendMessage(ErrorMsg4)     
     }}
