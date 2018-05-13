@@ -228,7 +228,7 @@ const cmds_dev = "**__Commands - Dev__**\nBot's prefix: **/**\n\n ● **GetEmoji
 const cmds_fun = "**__Commands - Fun__**\nBot's prefix: **/**\n\n ● **DadJoke**\n  • Tells *hilarious* dad joke.\n\n ● **Roll**\n  • Rolls a number between 1 and 6.\n\n ● **Ask** <Question>\n  • Ask me anything! Don't be shy!\n\n ● **Say** <Your Text>\n  • Peeky will repeat what you said!\n\n ● **GlobalSet** <Message>\n  • Sets a global message that can be seen on all the servers with me in!\n\n ● **GlobalShow**\n  • Shows the global message.\n\n ● **Comics**\n  • Creates a comics that's perfect for sitcom laugh track!"
 const cmds_mg = "**__Commands - Minigames__**\nBot's prefix: **/**\n\n ● **GoFishing**\n  • Catches a random fish and redirects you to it's Wikipedia page.\n  • Dedicated Channel: **#fishing**\n\n ● **Fight** <Enemy Name>\n  • Starts a fight with someone!\n  • Dedicated Channel: **#arena**\n\n ● **Bet**\n  • Bets **25 Peeky Coins**\n  • Dedicated Channel: **#casino**"
 const cmds_other = "**__Commands - Other__**\nBot's prefix: **/**\n\n ● **ServerInfo**\n  • Displays some info about the server!\n\n ● **Profile**\n  • Shows your profile.\n\n ● **BotInfo**\n  • Displays some info about the bot!\n\n ● **Wikipedia** <Search>\n  • Searches the Wikipedia for you!\n\n ● **Suggestion** <Suggestion>\n  • Sends your suggestion to the Support Server!\n\n ● **StartPoll** <Poll Topic>\n  • Starts a poll for you.\n\n ● **StartCountdown** <0001 - 9999> <Countdown Name>\n  • Starts a countdown in seconds."
-const cmds_shop = "**__Commands - Shop__**\nBot's prefix: **/**\n\n ● **Description** <Description>\n  • Sets the description for your profile.\n  • Price: **10 Peeky Coins**\n\n ● **Buy 1**\n  • Buys the **Default** background.\n  • Price: **0 Peeky Coins**\n\n ● **Buy 2**\n  • Buys the **Red Dinosaur Plushie** background.\n  • Price: **25 Peeky Coins**\n\n ● **Buy 3**\n  • Buys the **Red Wolf** background.\n  • Price: **50 Peeky Coins**\n\n ● **Buy 4**\n  • Buys the **PAYDAY 2** background.\n  • Price: **50 Peeky Coins**\n\n ● **Buy 5**\n  • Buys the **Impact** background.\n  • Price: **50 Peeky Coins**\n\n ● **Buy 6**\n  • Buys the **Rainbow Six: Siege** background.\n  • Price: **50 Peeky Coins**"
+const cmds_shop = "**__Commands - Shop__**\nBot's prefix: **/**\n\n ● **BuyDescription** <Description>\n  • Sets the description for your profile.\n  • Price: **10 Peeky Coins**\n\n ● **Buy 1**\n  • Buys the **Default** background.\n  • Price: **0 Peeky Coins**\n\n ● **Buy 2**\n  • Buys the **Red Dinosaur Plushie** background.\n  • Price: **25 Peeky Coins**\n\n ● **Buy 3**\n  • Buys the **Red Wolf** background.\n  • Price: **50 Peeky Coins**\n\n ● **Buy 4**\n  • Buys the **PAYDAY 2** background.\n  • Price: **50 Peeky Coins**\n\n ● **Buy 5**\n  • Buys the **Impact** background.\n  • Price: **50 Peeky Coins**\n\n ● **Buy 6**\n  • Buys the **Rainbow Six: Siege** background.\n  • Price: **50 Peeky Coins**"
 
 //BONUSES
 
@@ -477,7 +477,6 @@ bot.on('message', (message) => { //ServerName - failed
     if(message.content.startsWith('/ServerName ')){
     if(!message.member.hasPermission("ADMINISTRATOR")){
         message.channel.sendMessage(ErrorMsg2)
-        console.log('The Censor command has failed. Executor: ' + message.author.tag)
   }}
 });
 
@@ -493,7 +492,6 @@ bot.on('message', (message) => { //ChannelName - failed
     if(message.content.startsWith('/ChannelName ')){
     if(!message.member.hasPermission("ADMINISTRATOR")){
         message.channel.sendMessage(ErrorMsg2)
-        console.log('The Censor command has failed. Executor: ' + message.author.tag)
   }}
 });
 
@@ -505,14 +503,12 @@ bot.on('message', (message) => { //Ban
         userToBan.sendMessage('You have been banned from **' + message.guild.name + '** by **' + message.author.tag + '**.')
         message.channel.sendMessage('The user **' + userToBan + '** has been banned.')
         message.guild.ban(userToBan)
-        console.log('The Ban command has been executed. Executor: ' + message.author.tag)
   }}}
 });
 bot.on('message', (message) => { //Ban - failed
     if(message.content.startsWith('/Ban ')){
     if(!message.member.hasPermission("BAN_MEMBERS")){
         message.channel.sendMessage(ErrorMsg2)
-        console.log('The Censor command has failed. Executor: ' + message.author.tag)
   }}
 });
 bot.on('message', (message) => { //Ban - failed 2
@@ -521,7 +517,6 @@ bot.on('message', (message) => { //Ban - failed 2
         var userToBan = message.mentions.members.first()
     if(userToBan == undefined){
         message.channel.sendMessage(ErrorMsg3)
-        console.log('The Ban command has failed. Executor: ' + message.author.tag)
   }}}
 });
 
@@ -540,7 +535,6 @@ bot.on('message', (message) => { //Censor - failed
     if(message.content.startsWith('/Censor ')){
     if(!message.member.hasPermission("MANAGE_NICKNAMES")){
         message.channel.sendMessage(ErrorMsg2)
-        console.log('The Censor command has failed. Executor: ' + message.author.tag)
   }}
 });
 bot.on('message', (message) => { //Censor - failed 2
@@ -549,7 +543,6 @@ bot.on('message', (message) => { //Censor - failed 2
         var userToCensor = message.mentions.members.first()
     if(userToCensor == undefined){
         message.channel.sendMessage(ErrorMsg3)
-        console.log('The Censor command has failed. Executor: ' + message.author.tag)
   }}}
 });
 
@@ -568,7 +561,6 @@ bot.on('message', (message) => { //Uncensor - failed
     if(message.content.startsWith('/Uncensor ')){
     if(!message.member.hasPermission("MANAGE_NICKNAMES")){
         message.channel.sendMessage(ErrorMsg2)
-        console.log('The Uncensor command has failed. Executor: ' + message.author.tag)
   }}
 });
 bot.on('message', (message) => { //Uncensor - failed 2
@@ -577,7 +569,6 @@ bot.on('message', (message) => { //Uncensor - failed 2
         var userToCensor = message.mentions.members.first()
     if(userToCensor == undefined){
         message.channel.sendMessage(ErrorMsg3)
-        console.log('The Uncensor command has failed. Executor: ' + message.author.tag)
   }}}
 });
 
@@ -655,7 +646,6 @@ bot.on('message', (message) => { //GoFishing - failed
     if(message.content == '/GoFishing'){
     if(message.channel.name !== 'fishing'){
         message.channel.sendMessage(ErrorMsg1)
-        console.log('The GoFishing command has failed. Executor: ' + message.author.tag)
    }}
 });
 
@@ -690,7 +680,6 @@ bot.on('message', (message) => { //Fight - failed
 if(message.content.startsWith("/Fight ")){
     if(message.channel.name !== 'arena'){
         message.channel.sendMessage(ErrorMsg1)
-        console.log('The Fight command has failed. Executor: ' + message.author.tag)
    }}
 });
 bot.on('message', (message) => { //Bet
@@ -713,7 +702,6 @@ bot.on('message', (message) => { //Bet - failed
     if(message.content == "/Bet"){
     if(message.channel.name !== 'casino'){
         message.channel.sendMessage(ErrorMsg1)
-        console.log('The Bet command has failed. Executor: ' + message.author.tag)
    }}
 });
 bot.on('message', (message) => { //Bet - failed 2
@@ -724,16 +712,17 @@ bot.on('message', (message) => { //Bet - failed 2
     }}}
 });
 
-bot.on('message', (message) => { //Description
-    if(message.content == "/Description "){
+bot.on('message', (message) => { //BuyDescription
+    if(message.content == "/BuyDescription "){
     if(userData[message.author.id].messagesSent >= 10){
-        userData[message.author.id].profileDescription = message.content.slice("12","62")
-        message.channel.sendMessage("<:bot_approve:440824011199348736> Your description was set to **" + message.content.slice("12","32") + "**!")
-        console.log('The Description command has been executed. Executor: ' + message.author.tag)
+        userData[message.author.id].profileDescription = message.content.slice("16","66")
+        userData[message.author.id].messagesSent = userData[message.author.id].messagesSent - 10
+        message.channel.sendMessage("<:bot_approve:440824011199348736> Your description was set to **" + message.content.slice("16","66") + "**!")
+        console.log('The BuyDescription command has been executed. Executor: ' + message.author.tag)
     }}
 });
-bot.on('message', (message) => { //Description - failed
-    if(message.content == "/Description "){
+bot.on('message', (message) => { //BuyDescription - failed
+    if(message.content == "/BuyDescription "){
     if(userData[message.author.id].messagesSent <= 9){
         message.channel.sendMessage(ErrorMsg4)     
     }}
