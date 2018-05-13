@@ -212,7 +212,7 @@ const ErrorMsg3 = "<:bot_deny:440824010805084171> Invalid mention, be sure to me
 const ErrorMsg4 = "<:bot_deny:440824010805084171> You need more Peeky Coins to do that."
 const SuccessMsg1 = "<:bot_approve:440824011199348736> You have bought a banner!"
 var WFReports = 0
-const VersionNumber = '2.9'
+const VersionNumber = '3.0'
 let coins = require("./coins.json");
 var fs = require('fs');
 var userData = JSON.parse(fs.readFileSync('./coins.json', 'utf8'))
@@ -235,7 +235,8 @@ const cmds_dev = "**__Commands - Dev__**\nBot's prefix: **/**\n\n ● **GetEmoji
 const cmds_fun = "**__Commands - Fun__**\nBot's prefix: **/**\n\n ● **DadJoke**\n  • Tells *hilarious* dad joke.\n\n ● **Roll**\n  • Rolls a number between 1 and 6.\n\n ● **Ask** <Question>\n  • Ask me anything! Don't be shy!\n\n ● **Say** <Your Text>\n  • Peeky will repeat what you said!\n\n ● **GlobalSet** <Message>\n  • Sets a global message that can be seen on all the servers with me in!\n\n ● **GlobalShow**\n  • Shows the global message.\n\n ● **Comics**\n  • Creates a comics that's perfect for sitcom laugh track!"
 const cmds_mg = "**__Commands - Minigames__**\nBot's prefix: **/**\n\n ● **GoFishing**\n  • Catches a random fish and redirects you to it's Wikipedia page.\n  • Dedicated Channel: **#fishing**\n\n ● **Fight** <Enemy Name>\n  • Starts a fight with someone!\n  • Dedicated Channel: **#arena**\n\n ● **Bet**\n  • Bets **25 Peeky Coins**\n  • Dedicated Channel: **#casino**"
 const cmds_other = "**__Commands - Other__**\nBot's prefix: **/**\n\n ● **ServerInfo**\n  • Displays some info about the server!\n\n ● **Profile**\n  • Shows your profile.\n\n ● **BotInfo**\n  • Displays some info about the bot!\n\n ● **Wikipedia** <Search>\n  • Searches the Wikipedia for you!\n\n ● **Suggestion** <Suggestion>\n  • Sends your suggestion to the Support Server!\n\n ● **StartPoll** <Poll Topic>\n  • Starts a poll for you.\n\n ● **StartCountdown** <0001 - 9999> <Countdown Name>\n  • Starts a countdown in seconds."
-const cmds_shop = "**__Commands - Shop__**\nBot's prefix: **/**\n\n ● **BuyDescription** <Description>\n  • Sets the description for your profile.\n  • Price: **10 Peeky Coins**\n\n ● **BuyBanner 1**\n  • Buys the **Default** banner.\n  • Price: **0 Peeky Coins**\n\n ● **BuyBanner 2**\n  • Buys the **Red Dinosaur Plushie** banner.\n  • Price: **25 Peeky Coins**\n\n ● **BuyBanner 3**\n  • Buys the **Red Wolf** banner.\n  • Price: **50 Peeky Coins**\n\n ● **BuyBanner 4**\n  • Buys the **PAYDAY 2** banner.\n  • Price: **50 Peeky Coins**\n\n ● **BuyBanner 5**\n  • Buys the **Impact** banner.\n  • Price: **50 Peeky Coins**\n\n ● **BuyBanner 6**\n  • Buys the **Rainbow Six** banner.\n  • Price: **50 Peeky Coins**\n\n ● **BuyBanner 7**\n  • Buys the **S.T.A.L.K.E.R.** banner.\n  • Price: **50 Peeky Coins**\n\n ● **BuyBanner 8**\n  • Buys the **Battlefield 1** banner.\n  • Price: **50 Peeky Coins**\n\n ● **BuyBanner 9**\n  • Buys the **Battlefield 1 (Animated)** banner.\n  • Price: **100 Peeky Coins**\n\n ● **BuyBanner 10**\n  • Buys the **S.T.A.L.K.E.R. (Animated)** banner.\n  • Price: **100 Peeky Coins**"
+const cmds_shop = "**__Commands - Shop 1/2__**\nBot's prefix: **/**\n\n ● **BuyDescription** <Description>\n  • Sets the description for your profile.\n  • Price: **10 Peeky Coins**\n\n ● **BuyBanner 1**\n  • Buys the **Default** banner.\n  • Price: **0 Peeky Coins**\n\n ● **BuyBanner 2**\n  • Buys the **Red Dinosaur Plushie** banner.\n  • Price: **25 Peeky Coins**\n\n ● **BuyBanner 3**\n  • Buys the **Red Wolf** banner.\n  • Price: **50 Peeky Coins**\n\n ● **BuyBanner 4**\n  • Buys the **PAYDAY 2** banner.\n  • Price: **50 Peeky Coins**\n\n ● **BuyBanner 5**\n  • Buys the **Impact** banner.\n  • Price: **50 Peeky Coins**\n\n ● **BuyBanner 6**\n  • Buys the **Rainbow Six** banner.\n  • Price: **50 Peeky Coins**\n\n ● **BuyBanner 7**\n  • Buys the **S.T.A.L.K.E.R.** banner.\n  • Price: **50 Peeky Coins**\n\n ● **BuyBanner 8**\n  • Buys the **Battlefield 1** banner.\n  • Price: **50 Peeky Coins**\n\n ● **BuyBanner 9**\n  • Buys the **Battlefield 1 (Animated)** banner.\n  • Price: **100 Peeky Coins**"
+const cmds_shop2 = "**__Commands - Shop 2/2__**\nBot's prefix: **/**\n\n ● **BuyBanner 10**\n  • Buys the **S.T.A.L.K.E.R. (Animated)** banner.\n  • Price: **100 Peeky Coins**\n\n ● **BuyBanner 11**\n  • Buys the **Minecraft** banner.\n  • Price: **50 Peeky Coins**"
 
 //BONUSES
 
@@ -411,6 +412,12 @@ bot.on('message', (message) => { //Peeky Coins
           "./7A.gif"
         ]})
         }
+    if(userData[message.author.id].profileBackground == 11){
+        message.channel.send(ProfileMessage, {
+        files: [
+          "./11.png"
+        ]})
+        }
         console.log('The Profile command has been executed. Executor: ' + message.author.tag)
     }
 });
@@ -420,7 +427,7 @@ bot.on('message', (message) => { //Peeky Coins
 bot.on('message', (message) => { //Commands
     if(message.channel.type == "dm") return;
     if(message.content == '/Commands'){
-       message.channel.sendMessage('These are all the command categories:\n\n**/Commands Start**, **/Commands Moderation**, **/Commands Dev**, **/Commands Fun**, **/Commands Minigames**, **/Commands Other**, **/Commands Shop**.')
+       message.channel.sendMessage('These are all the command categories:\n\n**/Commands Start**, **/Commands Moderation**, **/Commands Dev**, **/Commands Fun**, **/Commands Minigames**, **/Commands Other**, **/Commands Shop 1**, **/Commands Shop 2**.')
        console.log('The Commands command has been executed. Executor: ' + message.author.tag)
    }
 });
@@ -483,8 +490,17 @@ bot.on('message', (message) => { //Commands Shop
     if(message.channel.type == "dm") return;
     if(message.content == '/Commands Shop'){
        message.author.sendMessage(cmds_shop);
-       message.channel.sendMessage('**' + message.author.tag + '** has received a DM with the **Commands (Shop)**.')
-       console.log('The Commands Other command has been executed. Executor: ' + message.author.tag)
+       message.channel.sendMessage('**' + message.author.tag + '** has received a DM with the **Commands (Shop 1)**.')
+       console.log('The Commands Shop command has been executed. Executor: ' + message.author.tag)
+   }
+});
+
+bot.on('message', (message) => { //Commands Shop 2
+    if(message.channel.type == "dm") return;
+    if(message.content == '/Commands Shop'){
+       message.author.sendMessage(cmds_shop2);
+       message.channel.sendMessage('**' + message.author.tag + '** has received a DM with the **Commands (Shop 2)**.')
+       console.log('The Commands Shop command has been executed. Executor: ' + message.author.tag)
    }
 });
 
@@ -982,6 +998,24 @@ bot.on('message', (message) => { //BuyBanner 10 - failed
     if(message.channel.type == "dm") return;
     if(message.content == "/BuyBanner 10"){
     if(userData[message.author.id].messagesSent <= 99){
+        message.channel.sendMessage(ErrorMsg4)     
+    }}
+});
+
+bot.on('message', (message) => { //BuyBanner 11
+    if(message.channel.type == "dm") return;
+    if(message.content == "/BuyBanner 11"){
+    if(userData[message.author.id].messagesSent >= 50){
+        userData[message.author.id].messagesSent = userData[message.author.id].messagesSent - 50
+        userData[message.author.id].profileBackground = 11
+        message.channel.sendMessage(SuccessMsg1)
+        console.log('The BuyBanner 11 command has been executed. Executor: ' + message.author.tag)
+    }}
+});
+bot.on('message', (message) => { //BuyBanner 11 - failed
+    if(message.channel.type == "dm") return;
+    if(message.content == "/BuyBanner 11"){
+    if(userData[message.author.id].messagesSent <= 50){
         message.channel.sendMessage(ErrorMsg4)     
     }}
 });
