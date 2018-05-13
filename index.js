@@ -228,7 +228,7 @@ const cmds_dev = "**__Commands - Dev__**\nBot's prefix: **/**\n\n ● **GetEmoji
 const cmds_fun = "**__Commands - Fun__**\nBot's prefix: **/**\n\n ● **DadJoke**\n  • Tells *hilarious* dad joke.\n\n ● **Roll**\n  • Rolls a number between 1 and 6.\n\n ● **Ask** <Question>\n  • Ask me anything! Don't be shy!\n\n ● **Say** <Your Text>\n  • Peeky will repeat what you said!\n\n ● **GlobalSet** <Message>\n  • Sets a global message that can be seen on all the servers with me in!\n\n ● **GlobalShow**\n  • Shows the global message.\n\n ● **Comics**\n  • Creates a comics that's perfect for sitcom laugh track!"
 const cmds_mg = "**__Commands - Minigames__**\nBot's prefix: **/**\n\n ● **GoFishing**\n  • Catches a random fish and redirects you to it's Wikipedia page.\n  • Dedicated Channel: **#fishing**\n\n ● **Fight** <Enemy Name>\n  • Starts a fight with someone!\n  • Dedicated Channel: **#arena**\n\n ● **Bet**\n  • Bets **25 Peeky Coins**\n  • Dedicated Channel: **#casino**"
 const cmds_other = "**__Commands - Other__**\nBot's prefix: **/**\n\n ● **ServerInfo**\n  • Displays some info about the server!\n\n ● **Profile**\n  • Shows your profile.\n\n ● **BotInfo**\n  • Displays some info about the bot!\n\n ● **Wikipedia** <Search>\n  • Searches the Wikipedia for you!\n\n ● **Suggestion** <Suggestion>\n  • Sends your suggestion to the Support Server!\n\n ● **StartPoll** <Poll Topic>\n  • Starts a poll for you.\n\n ● **StartCountdown** <0001 - 9999> <Countdown Name>\n  • Starts a countdown in seconds."
-const cmds_shop = "**__Commands - Shop__**\nBot's prefix: **/**\n\n ● **BuyDescription** <Description>\n  • Sets the description for your profile.\n  • Price: **10 Peeky Coins**\n\n ● **BuyBanner 1**\n  • Buys the **Default** banner.\n  • Price: **0 Peeky Coins**\n\n ● **BuyBanner 2**\n  • Buys the **Red Dinosaur Plushie** banner.\n  • Price: **25 Peeky Coins**\n\n ● **BuyBanner 3**\n  • Buys the **Red Wolf** banner.\n  • Price: **50 Peeky Coins**\n\n ● **BuyBanner 4**\n  • Buys the **PAYDAY 2** banner.\n  • Price: **50 Peeky Coins**\n\n ● **BuyBanner 5**\n  • Buys the **Impact** banner.\n  • Price: **50 Peeky Coins**\n\n ● **BuyBanner 6**\n  • Buys the **Rainbow Six: Siege** banner.\n  • Price: **50 Peeky Coins**\n\n ● **BuyBanner 7**\n  • Buys the **Apocalypse** banner.\n  • Price: **75 Peeky Coins**\n\n ● **BuyBanner 8**\n  • Buys the **Battlefield 1** banner.\n  • Price: **75 Peeky Coins**"
+const cmds_shop = "**__Commands - Shop__**\nBot's prefix: **/**\n\n ● **BuyDescription** <Description>\n  • Sets the description for your profile.\n  • Price: **10 Peeky Coins**\n\n ● **BuyBanner 1**\n  • Buys the **Default** banner.\n  • Price: **0 Peeky Coins**\n\n ● **BuyBanner 2**\n  • Buys the **Red Dinosaur Plushie** banner.\n  • Price: **25 Peeky Coins**\n\n ● **BuyBanner 3**\n  • Buys the **Red Wolf** banner.\n  • Price: **50 Peeky Coins**\n\n ● **BuyBanner 4**\n  • Buys the **PAYDAY 2** banner.\n  • Price: **50 Peeky Coins**\n\n ● **BuyBanner 5**\n  • Buys the **Impact** banner.\n  • Price: **50 Peeky Coins**\n\n ● **BuyBanner 6**\n  • Buys the **Rainbow Six: Siege** banner.\n  • Price: **50 Peeky Coins**\n\n ● **BuyBanner 7**\n  • Buys the **Apocalypse** banner.\n  • Price: **50 Peeky Coins**\n\n ● **BuyBanner 8**\n  • Buys the **Battlefield 1** banner.\n  • Price: **50 Peeky Coins**\n\n ● **BuyBanner 9**\n  • Buys the **Battlefield 1 (Animated)** banner.\n  • Price: **100 Peeky Coins**"
 
 //BONUSES
 
@@ -372,6 +372,10 @@ bot.on('message', (message) => { //Peeky Coins
     if(userData[message.author.id].profileBackground == 8){
         message.channel.sendMessage(ProfileMessage)
         message.channel.sendFile("./8.png", )
+    }
+    if(userData[message.author.id].profileBackground == 9){
+        message.channel.sendMessage(ProfileMessage)
+        message.channel.sendFile("./8A.gif", )
     }
         console.log('The Profile command has been executed. Executor: ' + message.author.tag)
     }
@@ -827,8 +831,8 @@ bot.on('message', (message) => { //BuyBanner 6 - failed
 
 bot.on('message', (message) => { //BuyBanner 7
     if(message.content == "/BuyBanner 7"){
-    if(userData[message.author.id].messagesSent >= 75){
-        userData[message.author.id].messagesSent = userData[message.author.id].messagesSent - 75
+    if(userData[message.author.id].messagesSent >= 50){
+        userData[message.author.id].messagesSent = userData[message.author.id].messagesSent - 50
         userData[message.author.id].profileBackground = 7
         message.channel.sendMessage(SuccessMsg1)
         console.log('The BuyBanner 7 command has been executed. Executor: ' + message.author.tag)
@@ -836,15 +840,15 @@ bot.on('message', (message) => { //BuyBanner 7
 });
 bot.on('message', (message) => { //BuyBanner 7 - failed
     if(message.content == "/BuyBanner 7"){
-    if(userData[message.author.id].messagesSent <= 75){
+    if(userData[message.author.id].messagesSent <= 50){
         message.channel.sendMessage(ErrorMsg4)     
     }}
 });
 
 bot.on('message', (message) => { //BuyBanner 8
     if(message.content == "/BuyBanner 8"){
-    if(userData[message.author.id].messagesSent >= 75){
-        userData[message.author.id].messagesSent = userData[message.author.id].messagesSent - 75
+    if(userData[message.author.id].messagesSent >= 50){
+        userData[message.author.id].messagesSent = userData[message.author.id].messagesSent - 50
         userData[message.author.id].profileBackground = 8
         message.channel.sendMessage(SuccessMsg1)
         console.log('The BuyBanner 8 command has been executed. Executor: ' + message.author.tag)
@@ -852,7 +856,23 @@ bot.on('message', (message) => { //BuyBanner 8
 });
 bot.on('message', (message) => { //BuyBanner 8 - failed
     if(message.content == "/BuyBanner 8"){
-    if(userData[message.author.id].messagesSent <= 75){
+    if(userData[message.author.id].messagesSent <= 50){
+        message.channel.sendMessage(ErrorMsg4)     
+    }}
+});
+
+bot.on('message', (message) => { //BuyBanner 9
+    if(message.content == "/BuyBanner 9"){
+    if(userData[message.author.id].messagesSent >= 100){
+        userData[message.author.id].messagesSent = userData[message.author.id].messagesSent - 100
+        userData[message.author.id].profileBackground = 9
+        message.channel.sendMessage(SuccessMsg1)
+        console.log('The BuyBanner 9 command has been executed. Executor: ' + message.author.tag)
+    }}
+});
+bot.on('message', (message) => { //BuyBanner 8 - failed
+    if(message.content == "/BuyBanner 9"){
+    if(userData[message.author.id].messagesSent <= 99){
         message.channel.sendMessage(ErrorMsg4)     
     }}
 });
