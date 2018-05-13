@@ -611,7 +611,7 @@ bot.on('message', (message) => { //StartCountdown
 
 bot.on('message', (message) => { //Global (Set)
     if(message.content.startsWith("/GlobalSet ")){
-          globalMessage = 'This Global Message has been set by **' + message.author.tag + '** in a server called **' + message.guild.name + '**.\n\n**Message:** ' + message.content.replace('/GlobalSet ','')
+          globalMessage = 'This Global Message has been set by **' + message.author.tag + '** .\n\n**Message:** ' + message.content.replace('/GlobalSet ','')
           message.channel.sendMessage('**' +  message.author.tag + '** has set the global message!')
           console.log('The GlobalSet command has been executed. Executor: ' + message.author.tag)
     }
