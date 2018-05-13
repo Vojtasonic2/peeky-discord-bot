@@ -219,7 +219,7 @@ var userData = JSON.parse(fs.readFileSync('./coins.json', 'utf8'))
 
 bot.on('ready', () => { bot.user.setActivity(VersionNumber + ' | /About') })
 bot.on('ready', () => { bot.user.setStatus('idle')} )
-bot.on('ready', (message) => { bot.channels.get("319891596772638744").sendMessage("**__Peeky has restarted!__**\nAll the Peeky Coins and backgrounds have been reset.") });
+bot.on('ready', (message) => { bot.channels.get("319891596772638744").sendMessage("**__Peeky has restarted!__**\nAll the stats have been reset.") });
 console.log('The bot is now running')
 
 const cmds_start = "**__Commands - Start__**\nBot's prefix: **/**\n\n ● **About**\n  • Introduces you to the bot and gives you few helpful commands!\n\n ● **Commands**\n  • Shows the available command categories!\n\n ● **Bonuses**\n  • Sends you the bonuses that Peeky can do!\n\n ● **Help**\n  • Send you some links to help out you or the bot!"
@@ -228,7 +228,7 @@ const cmds_dev = "**__Commands - Dev__**\nBot's prefix: **/**\n\n ● **GetEmoji
 const cmds_fun = "**__Commands - Fun__**\nBot's prefix: **/**\n\n ● **DadJoke**\n  • Tells *hilarious* dad joke.\n\n ● **Roll**\n  • Rolls a number between 1 and 6.\n\n ● **Ask** <Question>\n  • Ask me anything! Don't be shy!\n\n ● **Say** <Your Text>\n  • Peeky will repeat what you said!\n\n ● **GlobalSet** <Message>\n  • Sets a global message that can be seen on all the servers with me in!\n\n ● **GlobalShow**\n  • Shows the global message.\n\n ● **Comics**\n  • Creates a comics that's perfect for sitcom laugh track!"
 const cmds_mg = "**__Commands - Minigames__**\nBot's prefix: **/**\n\n ● **GoFishing**\n  • Catches a random fish and redirects you to it's Wikipedia page.\n  • Dedicated Channel: **#fishing**\n\n ● **Fight** <Enemy Name>\n  • Starts a fight with someone!\n  • Dedicated Channel: **#arena**\n\n ● **Bet**\n  • Bets **25 Peeky Coins**\n  • Dedicated Channel: **#casino**"
 const cmds_other = "**__Commands - Other__**\nBot's prefix: **/**\n\n ● **ServerInfo**\n  • Displays some info about the server!\n\n ● **Profile**\n  • Shows your profile.\n\n ● **BotInfo**\n  • Displays some info about the bot!\n\n ● **Wikipedia** <Search>\n  • Searches the Wikipedia for you!\n\n ● **Suggestion** <Suggestion>\n  • Sends your suggestion to the Support Server!\n\n ● **StartPoll** <Poll Topic>\n  • Starts a poll for you.\n\n ● **StartCountdown** <0001 - 9999> <Countdown Name>\n  • Starts a countdown in seconds."
-const cmds_shop = "**__Commands - Shop__**\nBot's prefix: **/**\n\n ● **BuyDescription** <Description>\n  • Sets the description for your profile.\n  • Price: **10 Peeky Coins**\n\n ● **BuyBackground 1**\n  • Buys the **Default** background.\n  • Price: **0 Peeky Coins**\n\n ● **BuyBackground 2**\n  • Buys the **Red Dinosaur Plushie** background.\n  • Price: **25 Peeky Coins**\n\n ● **BuyBackground 3**\n  • Buys the **Red Wolf** background.\n  • Price: **50 Peeky Coins**\n\n ● **BuyBackground 4**\n  • Buys the **PAYDAY 2** background.\n  • Price: **50 Peeky Coins**\n\n ● **BuyBackground 5**\n  • Buys the **Impact** background.\n  • Price: **50 Peeky Coins**\n\n ● **BuyBackground 6**\n  • Buys the **Rainbow Six: Siege** background.\n  • Price: **50 Peeky Coins**"
+const cmds_shop = "**__Commands - Shop__**\nBot's prefix: **/**\n\n ● **BuyDescription** <Description>\n  • Sets the description for your profile.\n  • Price: **10 Peeky Coins**\n\n ● **BuyBackground 1**\n  • Buys the **Default** background.\n  • Price: **0 Peeky Coins**\n\n ● **BuyBackground 2**\n  • Buys the **Red Dinosaur Plushie** background.\n  • Price: **25 Peeky Coins**\n\n ● **BuyBackground 3**\n  • Buys the **Red Wolf** background.\n  • Price: **50 Peeky Coins**\n\n ● **BuyBackground 4**\n  • Buys the **PAYDAY 2** background.\n  • Price: **50 Peeky Coins**\n\n ● **BuyBackground 5**\n  • Buys the **Impact** background.\n  • Price: **50 Peeky Coins**\n\n ● **BuyBackground 6**\n  • Buys the **Rainbow Six: Siege** background.\n  • Price: **50 Peeky Coins**\n\n ● **BuyBackground 7**\n  • Buys the **Apocalypse** background.\n  • Price: **75 Peeky Coins**\n\n ● **BuyBackground 8**\n  • Buys the **Battlefield 1** background.\n  • Price: **75 Peeky Coins**"
 
 //BONUSES
 
@@ -364,6 +364,14 @@ bot.on('message', (message) => { //Peeky Coins
     if(userData[message.author.id].profileBackground == 6){
         message.channel.sendMessage(ProfileMessage)
         message.channel.sendFile("./6.png", )
+    }
+    if(userData[message.author.id].profileBackground == 7){
+        message.channel.sendMessage(ProfileMessage)
+        message.channel.sendFile("./7.png", )
+    }
+    if(userData[message.author.id].profileBackground == 8){
+        message.channel.sendMessage(ProfileMessage)
+        message.channel.sendFile("./8.png", )
     }
         console.log('The Profile command has been executed. Executor: ' + message.author.tag)
     }
@@ -813,6 +821,38 @@ bot.on('message', (message) => { //BuyBackground 6
 bot.on('message', (message) => { //BuyBackground 6 - failed
     if(message.content == "/BuyBackground 6"){
     if(userData[message.author.id].messagesSent <= 49){
+        message.channel.sendMessage(ErrorMsg4)     
+    }}
+});
+
+bot.on('message', (message) => { //BuyBackground 7
+    if(message.content == "/BuyBackground 7"){
+    if(userData[message.author.id].messagesSent >= 75){
+        userData[message.author.id].messagesSent = userData[message.author.id].messagesSent - 75
+        userData[message.author.id].profileBackground = 7
+        message.channel.sendMessage(SuccessMsg1)
+        console.log('The BuyBackground 7 command has been executed. Executor: ' + message.author.tag)
+    }}
+});
+bot.on('message', (message) => { //BuyBackground 7 - failed
+    if(message.content == "/BuyBackground 7"){
+    if(userData[message.author.id].messagesSent <= 75){
+        message.channel.sendMessage(ErrorMsg4)     
+    }}
+});
+
+bot.on('message', (message) => { //BuyBackground 8
+    if(message.content == "/BuyBackground 8"){
+    if(userData[message.author.id].messagesSent >= 75){
+        userData[message.author.id].messagesSent = userData[message.author.id].messagesSent - 75
+        userData[message.author.id].profileBackground = 8
+        message.channel.sendMessage(SuccessMsg1)
+        console.log('The BuyBackground 8 command has been executed. Executor: ' + message.author.tag)
+    }}
+});
+bot.on('message', (message) => { //BuyBackground 8 - failed
+    if(message.content == "/BuyBackground 8"){
+    if(userData[message.author.id].messagesSent <= 75){
         message.channel.sendMessage(ErrorMsg4)     
     }}
 });
