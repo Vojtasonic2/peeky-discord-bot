@@ -334,6 +334,7 @@ bot.on('message' , (message) => { //Word Filtering
 });
 
 bot.on('message', (message) => { //Peeky Coins
+    if(message.channel.type == "dm") return;
     if(message.author.bot) return;
 
     if(!userData[message.author.id]) userData[message.author.id] = {
