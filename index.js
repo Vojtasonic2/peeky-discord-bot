@@ -734,7 +734,7 @@ bot.on('message', (message) => { //Buy 1
 bot.on('message', (message) => { //Buy 2
     if(message.content == "/Buy 2"){
     if(userData[message.author.id].messagesSent >= 25){
-        userData[message.author.id].messagesSent = userData[message.author.id].messagesSent - 50
+        userData[message.author.id].messagesSent = userData[message.author.id].messagesSent - 25
         userData[message.author.id].profileBackground = 2
         message.channel.sendMessage(SuccessMsg1)
         console.log('The Buy 2 command has been executed. Executor: ' + message.author.tag)
