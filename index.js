@@ -330,7 +330,7 @@ bot.on('message', (message) => { //Peeky Coins
     if(!userData[message.author.id]) userData[message.author.id] = {
         messagesSent: 0,
         profileBackground: 1,
-        profileDescription: "No description."
+        profileDescription: "none"
     };
 
     userData[message.author.id].messagesSent++;
