@@ -339,7 +339,7 @@ bot.on('message', (message) => { //Peeky Coins
     });
 
     if(message.content == ("/Profile")){
-        var ProfileMessage = ["__**" + message.author.tag + "**__:\n\n**Peeky Coins:** " + userData[message.author.id].messagesSent + "\n**Backround ID:** " + userData[message.author.id].profileBackground]
+        var ProfileMessage = ["__**" + message.author.tag + "**__\n\n**Peeky Coins:** " + userData[message.author.id].messagesSent + "\n**Backround ID:** " + userData[message.author.id].profileBackground]
     if(userData[message.author.id].profileBackground == 1){
         message.channel.sendMessage(ProfileMessage)
         message.channel.sendFile("./1.png", )
@@ -862,7 +862,7 @@ bot.on('message', (message) => { //Help
 bot.on('message', (message) => { //Bonuses
     if(message.content == '/Bonuses'){
        message.channel.sendMessage('**' + message.author.tag + '** has received a DM with the **Bonuses**.')
-       message.author.sendMessage("**__Bonuses__**\n\n ● **Automatic Reactions**\n  • Messages in a channel called **#gallery** get automatic reactions!\n  • Messages in a channel called **#events** get automatic reactions!\n\n ● **Word Filtering**\n  • Messages in a channel that has **Word Filtering: Enabled** (and nothing else) in the topic will get filtered!\n\n ● **Peeky Coins**\n  • Encourage users into talking in your server by rewarding them with Peeky Coins!")
+       message.author.sendMessage("**__Bonuses__**\n\n ● **Automatic Reactions**\n  • Messages in a channel called **#gallery** get automatic reactions!\n  • Messages in a channel called **#events** get automatic reactions!\n\n ● **Word Filtering**\n  • Messages in a channel that has **Word Filtering: Enabled** (and nothing else) in the topic will get filtered!\n\n ● **Peeky Coins**\n  • Encourage users into talking in your server by rewarding them with Peeky Coins, which they can spend to customize their profiles!")
        console.log('The Bonuses command has been executed. Executor: ' + message.author.tag)
    }
 });
