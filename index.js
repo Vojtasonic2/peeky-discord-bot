@@ -356,53 +356,63 @@ bot.on('message', (message) => { //Peeky Coins
         files: [
           "./1.png"
         ]})
+        }
     if(userData[message.author.id].profileBackground == 2){
     message.channel.send(ProfileMessage, {
         files: [
           "./2.png"
         ]})
+        }
     if(userData[message.author.id].profileBackground == 3){
     message.channel.send(ProfileMessage, {
         files: [
           "./3.png"
         ]})
+        }
     if(userData[message.author.id].profileBackground == 4){
     message.channel.send(ProfileMessage, {
         files: [
           "./4.jpg"
         ]})
+        }
     if(userData[message.author.id].profileBackground == 5){
     message.channel.send(ProfileMessage, {
         files: [
           "./5.png"
         ]})
+        }
     if(userData[message.author.id].profileBackground == 6){
     message.channel.send(ProfileMessage, {
         files: [
           "./6.png"
         ]})
+        }
     if(userData[message.author.id].profileBackground == 7){
     message.channel.send(ProfileMessage, {
         files: [
           "./7.png"
         ]})
+        }
     if(userData[message.author.id].profileBackground == 8){
     message.channel.send(ProfileMessage, {
         files: [
           "./8.png"
         ]})
+        }
     if(userData[message.author.id].profileBackground == 9){
         message.channel.send(ProfileMessage, {
         files: [
           "./8A.gif"
         ]})
+        }
     if(userData[message.author.id].profileBackground == 10){
-    message.channel.send(ProfileMessage, {
+        message.channel.send(ProfileMessage, {
         files: [
           "./7A.gif"
         ]})
+        }
         console.log('The Profile command has been executed. Executor: ' + message.author.tag)
-    }}}}}}}}}}}
+    }
 });
 
 //COMMANDS
