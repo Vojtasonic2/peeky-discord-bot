@@ -427,7 +427,7 @@ bot.on('message', (message) => { //Peeky Coins
 bot.on('message', (message) => { //Commands
     if(message.channel.type == "dm") return;
     if(message.content == '/Commands'){
-       message.channel.sendMessage('These are all the command categories:\n\n**/Commands Start**, **/Commands Moderation**, **/Commands Dev**, **/Commands Fun**, **/Commands Minigames**, **/Commands Other**, **/Commands Shop 1**, **/Commands Shop 2**.')
+       message.channel.sendMessage('These are all the command categories:\n\n**/Commands Start**, **/Commands Moderation**, **/Commands Dev**, **/Commands Fun**, **/Commands Minigames**, **/Commands Other**, **/Commands Shop**.')
        console.log('The Commands command has been executed. Executor: ' + message.author.tag)
    }
 });
@@ -490,16 +490,8 @@ bot.on('message', (message) => { //Commands Shop
     if(message.channel.type == "dm") return;
     if(message.content == '/Commands Shop'){
        message.author.sendMessage(cmds_shop);
-       message.channel.sendMessage('**' + message.author.tag + '** has received a DM with the **Commands (Shop 1)**.')
-       console.log('The Commands Shop command has been executed. Executor: ' + message.author.tag)
-   }
-});
-
-bot.on('message', (message) => { //Commands Shop 2
-    if(message.channel.type == "dm") return;
-    if(message.content == '/Commands Shop'){
        message.author.sendMessage(cmds_shop2);
-       message.channel.sendMessage('**' + message.author.tag + '** has received a DM with the **Commands (Shop 2)**.')
+       message.channel.sendMessage('**' + message.author.tag + '** has received a DM with the **Commands (Shop 1)**.')
        console.log('The Commands Shop command has been executed. Executor: ' + message.author.tag)
    }
 });
