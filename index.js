@@ -365,7 +365,7 @@ bot.on('message', (message) => { //Peeky Coins
         message.channel.sendMessage(ProfileMessage)
         message.channel.sendFile("./6.png", )
     }
-        console.log('The Stats command has been executed. Executor: ' + message.author.tag)
+        console.log('The Profile command has been executed. Executor: ' + message.author.tag)
     }
 });
 
@@ -713,16 +713,17 @@ bot.on('message', (message) => { //Bet - failed 2
 });
 
 bot.on('message', (message) => { //BuyDescription
-    if(message.content == "/BuyDescription "){
+    if(message.content.startsWith("/BuyDescription ")){
     if(userData[message.author.id].messagesSent >= 10){
-        userData[message.author.id].profileDescription = message.content.slice("16","66")
+       var BoughtDescription = message.content.slice("16","66")
+        userData[message.author.id].profileDescription = BoughtDescription
         userData[message.author.id].messagesSent = userData[message.author.id].messagesSent - 10
-        message.channel.sendMessage("<:bot_approve:440824011199348736> Your description was set to **" + message.content.slice("16","66") + "**!")
+        message.channel.sendMessage("<:bot_approve:440824011199348736> Your description was set to **" + BoughtDescription + "**!")
         console.log('The BuyDescription command has been executed. Executor: ' + message.author.tag)
     }}
 });
 bot.on('message', (message) => { //BuyDescription - failed
-    if(message.content == "/BuyDescription "){
+    if(message.content.startsWith("/BuyDescription ")){
     if(userData[message.author.id].messagesSent <= 9){
         message.channel.sendMessage(ErrorMsg4)     
     }}
