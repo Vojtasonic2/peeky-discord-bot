@@ -339,7 +339,7 @@ bot.on('message', (message) => { //Peeky Coins
     });
 
     if(message.content == ("/Profile")){
-        var ProfileMessage = ["__**" + message.author.tag + "**__:\n\n**Peeky Coins:** " + userData[message.author.id].messagesSent + "\n**Backround:** "]
+        var ProfileMessage = ["__**" + message.author.tag + "**__:\n\n**Peeky Coins:** " + userData[message.author.id].messagesSent + "\n**Backround ID:** " + userData[message.author.id].profileBackground]
     if(userData[message.author.id].profileBackground == 1){
         message.channel.sendMessage(ProfileMessage)
         message.channel.sendFile("./1.png", )
