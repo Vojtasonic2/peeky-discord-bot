@@ -351,47 +351,57 @@ bot.on('message', (message) => { //Peeky Coins
     if(message.content == ("/Profile")){
         var ProfileMessage = ["__**" + message.author.tag + "**__\n\n**Description:** " + userData[message.author.id].profileDescription + "\n**Peeky Coins:** " + userData[message.author.id].messagesSent]
     if(userData[message.author.id].profileBackground == 1){
-        message.channel.sendMessage(ProfileMessage)
-        message.channel.sendFile("./1.png", )
-    }
+    message.channel.send(ProfileMessage, {
+        files: [
+          "./1.png"
+        ]})
     if(userData[message.author.id].profileBackground == 2){
-        message.channel.sendMessage(ProfileMessage)
-        message.channel.sendFile("./2.png", )
-    }
+    message.channel.send(ProfileMessage, {
+        files: [
+          "./2.png"
+        ]})
     if(userData[message.author.id].profileBackground == 3){
-        message.channel.sendMessage(ProfileMessage)
-        message.channel.sendFile("./3.png", )
-    }
+    message.channel.send(ProfileMessage, {
+        files: [
+          "./3.png"
+        ]})
     if(userData[message.author.id].profileBackground == 4){
-        message.channel.sendMessage(ProfileMessage)
-        message.channel.sendFile("./4.jpg", )
-    }
+    message.channel.send(ProfileMessage, {
+        files: [
+          "./4.jpg"
+        ]})
     if(userData[message.author.id].profileBackground == 5){
-        message.channel.sendMessage(ProfileMessage)
-        message.channel.sendFile("./5.png", )
-    }
+    message.channel.send(ProfileMessage, {
+        files: [
+          "./5.png"
+        ]})
     if(userData[message.author.id].profileBackground == 6){
-        message.channel.sendMessage(ProfileMessage)
-        message.channel.sendFile("./6.png", )
-    }
+    message.channel.send(ProfileMessage, {
+        files: [
+          "./6.png"
+        ]})
     if(userData[message.author.id].profileBackground == 7){
-        message.channel.sendMessage(ProfileMessage)
-        message.channel.sendFile("./7.png", )
-    }
+    message.channel.send(ProfileMessage, {
+        files: [
+          "./7.png"
+        ]})
     if(userData[message.author.id].profileBackground == 8){
-        message.channel.sendMessage(ProfileMessage)
-        message.channel.sendFile("./8.png", )
-    }
+    message.channel.send(ProfileMessage, {
+        files: [
+          "./8.png"
+        ]})
     if(userData[message.author.id].profileBackground == 9){
-        message.channel.sendMessage(ProfileMessage)
-        message.channel.sendFile("./8A.gif", )
-    }
+        message.channel.send(ProfileMessage, {
+        files: [
+          "./8A.gif"
+        ]})
     if(userData[message.author.id].profileBackground == 10){
-        message.channel.sendMessage(ProfileMessage)
-        message.channel.sendFile("./7A.gif", )
-    }
+    message.channel.send(ProfileMessage, {
+        files: [
+          "./7A.gif"
+        ]})
         console.log('The Profile command has been executed. Executor: ' + message.author.tag)
-    }
+    }}}}}}}}}}}
 });
 
 //COMMANDS
