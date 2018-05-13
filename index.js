@@ -221,9 +221,10 @@ bot.on('ready', () => { bot.user.setActivity(VersionNumber + ' | /About') })
 bot.on('ready', () => { bot.user.setStatus('idle')} )
 bot.on('ready', (message) => { bot.channels.get("319891596772638744").sendMessage("**__Peeky has restarted!__**\nAll the stats have been reset.") });
 console.log('The bot is now running')
+
 bot.on('message', (message) => {
     if(message.channel.type == "dm"){
-        if(message.channel.bot) return;
+        if(message.author.bot) return;
         message.channel.sendMessage(ErrorMsg1)
     }
 });
