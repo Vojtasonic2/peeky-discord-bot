@@ -217,7 +217,7 @@ let coins = require("./coins.json");
 var fs = require('fs');
 var userData = JSON.parse(fs.readFileSync('./coins.json', 'utf8'))
 
-bot.on('ready', () => { bot.user.setActivity(VersionNumber + ' | /About') })
+bot.on('ready', () => { bot.user.setActivity(VersionNumber + ' | /Help') })
 bot.on('ready', () => { bot.user.setStatus('idle')} )
 bot.on('ready', (message) => { bot.channels.get("319891596772638744").sendMessage("**__Peeky has restarted!__**\nAll the stats have been reset.") });
 console.log('The bot is now running')
@@ -229,7 +229,7 @@ bot.on('message', (message) => {
     }
 });
 
-const cmds_start = "**__Commands - Start__**\nBot's prefix: **/**\n\n ● **About**\n  • Introduces you to the bot and gives you few helpful commands!\n\n ● **Commands**\n  • Shows the available command categories!\n\n ● **Bonuses**\n  • Sends you the bonuses that Peeky can do!\n\n ● **Help**\n  • Send you some links to help out you or the bot!"
+const cmds_start = "**__Commands - Start__**\nBot's prefix: **/**\n\n ● **Help**\n  • Introduces you to the bot and gives you few helpful commands!\n\n ● **Commands**\n  • Shows the available command categories!\n\n ● **Bonuses**\n  • Sends you the bonuses that Peeky can do!\n\n ● **Links**\n  • Send you some links!"
 const cmds_mod = "**__Commands - Moderation__**\nBot's prefix: **/**\n\n ● **ServerName** <Server Name>\n  • Sets the name of your server!\n  • Permissions Needed: **Administrator**\n\n ● **ChannelName** <Channel Name>\n  • Sets the name of your channel!\n  • Permissions Needed: **Administrator**\n\n ● **Censor** <Mention a User>\n  • Censors the nickname of the mentioned user!\n  • Permissions Needed: **Manage Nicknames**\n\n ● **Uncensor** <Mention a User>\n  • Uncensors the name of the mentioned user!\n  • Permissions Needed: **Manage Nicknames**\n\n ● **Ban** <Mention a User>\n  • Bans the first mentioned user!\n  • Permissions Needed: **Ban Members**"
 const cmds_dev = "**__Commands - Dev__**\nBot's prefix: **/**\n\n ● **GetEmoji** <Emojis>\n  • Shows you the ID of your emojis!"
 const cmds_fun = "**__Commands - Fun__**\nBot's prefix: **/**\n\n ● **DadJoke**\n  • Tells *hilarious* dad joke.\n\n ● **Roll**\n  • Rolls a number between 1 and 6.\n\n ● **Ask** <Question>\n  • Ask me anything! Don't be shy!\n\n ● **Say** <Your Text>\n  • Peeky will repeat what you said!\n\n ● **GlobalSet** <Message>\n  • Sets a global message that can be seen on all the servers with me in!\n\n ● **GlobalShow**\n  • Shows the global message.\n\n ● **Comics**\n  • Creates a comics that's perfect for sitcom laugh track!"
@@ -496,11 +496,11 @@ bot.on('message', (message) => { //Commands Shop
    }
 });
 
-bot.on('message', (message) => { //About
+bot.on('message', (message) => { //Help
     if(message.channel.type == "dm") return;
-    if(message.content == '/About'){
+    if(message.content == '/Help'){
        message.channel.sendMessage("Hello, **" + message.author.tag + "**!\n\nTo get started with the bot, type **/Commands**!\n\n ● Moderation Commands\n ● Fun Commands\n ● Developer Commands\n ● Automatic Reactions\n ● Word Filtering\n ● Minigames\n ● Custom User Profiles")
-       console.log('The About command has been executed. Executor: ' + message.author.tag)
+       console.log('The Help command has been executed. Executor: ' + message.author.tag)
     }
 });
 
@@ -1058,12 +1058,12 @@ bot.on('message', (message) => { //Suggestion
    }
 });
 
-bot.on('message', (message) => { //Help
+bot.on('message', (message) => { //Links
     if(message.channel.type == "dm") return;
-    if(message.content == '/Help'){
-       message.channel.sendMessage('**' + message.author.tag + '** has received a DM with the **Help**.')
-       message.author.sendMessage("**__Help__**\n\n<:bot_discord:429185737406152704> **Discord Support Server:** <https://discord.io/vojtasonic>\n<:peeky:398855238725009418> **Bot's Page:** <https://discordbots.org/bot/415259002310623232>\n<:bot_twitter:429185436141748225> **Twitter:** <https://twitter.com/vojtasonic>")
-       console.log('The Help command has been executed. Executor: ' + message.author.tag)
+    if(message.content == '/Links'){
+       message.channel.sendMessage('**' + message.author.tag + '** has received a DM with the **Links**.')
+       message.author.sendMessage("**__Links__**\n\n<:bot_discord:429185737406152704> **Discord Support Server:** <https://discord.io/vojtasonic>\n<:peeky:398855238725009418> **Bot's Page:** <https://discordbots.org/bot/415259002310623232>\n<:bot_twitter:429185436141748225> **Twitter:** <https://twitter.com/vojtasonic>")
+       console.log('The Links command has been executed. Executor: ' + message.author.tag)
    }
 });
 
