@@ -257,6 +257,7 @@ bot.on('message', (message) => { //Automatic Reaction #events
 
 bot.on('message' , (message) => { //Word Filtering
     if(message.channel.type == "dm") return;
+    if(message.author.bot) return;
     WFReports = 0
     const WTMessage = "I deleted **" + message.author.tag + "**'s message, since there was a vulgar word."
 
@@ -426,6 +427,7 @@ bot.on('message', (message) => { //Peeky Coins
 
 bot.on('message', (message) => { //Commands
     if(message.channel.type == "dm") return;
+    if(message.author.bot) return;
     if(message.content == '/Commands'){
        message.channel.sendMessage('These are all the command categories:\n\n**/Commands Start**, **/Commands Moderation**, **/Commands Dev**, **/Commands Fun**, **/Commands Minigames**, **/Commands Other**, **/Commands Shop**.')
        console.log('The Commands command has been executed. Executor: ' + message.author.tag)
@@ -434,6 +436,7 @@ bot.on('message', (message) => { //Commands
 
 bot.on('message', (message) => { //Commands Start
     if(message.channel.type == "dm") return;
+    if(message.author.bot) return;
     if(message.content == '/Commands Start'){
        message.author.sendMessage(cmds_start);
        message.channel.sendMessage('**' + message.author.tag + '** has received a DM with the **Commands (Start)**.')
@@ -443,6 +446,7 @@ bot.on('message', (message) => { //Commands Start
 
 bot.on('message', (message) => { //Commands Moderation
     if(message.channel.type == "dm") return;
+    if(message.author.bot) return;
     if(message.content == '/Commands Moderation'){
        message.author.sendMessage(cmds_mod);
        message.channel.sendMessage('**' + message.author.tag + '** has received a DM with the **Commands (Moderation)**.')
@@ -452,6 +456,7 @@ bot.on('message', (message) => { //Commands Moderation
 
 bot.on('message', (message) => { //Commands Dev
     if(message.channel.type == "dm") return;
+    if(message.author.bot) return;
     if(message.content == '/Commands Dev'){
        message.author.sendMessage(cmds_dev);
        message.channel.sendMessage('**' + message.author.tag + '** has received a DM with the **Commands (Dev)**.')
@@ -461,6 +466,7 @@ bot.on('message', (message) => { //Commands Dev
 
 bot.on('message', (message) => { //Commands Fun
     if(message.channel.type == "dm") return;
+    if(message.author.bot) return;
     if(message.content == '/Commands Fun'){
        message.author.sendMessage(cmds_fun);
        message.channel.sendMessage('**' + message.author.tag + '** has received a DM with the **Commands (Fun)**.')
@@ -470,6 +476,7 @@ bot.on('message', (message) => { //Commands Fun
 
 bot.on('message', (message) => { //Commands Minigames
     if(message.channel.type == "dm") return;
+    if(message.author.bot) return;
     if(message.content == '/Commands Minigames'){
        message.author.sendMessage(cmds_mg);
        message.channel.sendMessage('**' + message.author.tag + '** has received a DM with the **Commands (Minigames)**.')
@@ -479,6 +486,7 @@ bot.on('message', (message) => { //Commands Minigames
 
 bot.on('message', (message) => { //Commands Other
     if(message.channel.type == "dm") return;
+    if(message.author.bot) return;
     if(message.content == '/Commands Other'){
        message.author.sendMessage(cmds_other);
        message.channel.sendMessage('**' + message.author.tag + '** has received a DM with the **Commands (Other)**.')
@@ -488,6 +496,7 @@ bot.on('message', (message) => { //Commands Other
 
 bot.on('message', (message) => { //Commands Shop
     if(message.channel.type == "dm") return;
+    if(message.author.bot) return;
     if(message.content == '/Commands Shop'){
        message.author.sendMessage(cmds_shop);
        message.author.sendMessage(cmds_shop2);
@@ -498,6 +507,7 @@ bot.on('message', (message) => { //Commands Shop
 
 bot.on('message', (message) => { //Help
     if(message.channel.type == "dm") return;
+    if(message.author.bot) return;
     if(message.content == '/Help'){
        message.channel.sendMessage("Hello, **" + message.author.tag + "**!\n\nTo get started with the bot, type **/Commands**!\n\n ● Moderation Commands\n ● Fun Commands\n ● Developer Commands\n ● Automatic Reactions\n ● Word Filtering\n ● Minigames\n ● Custom User Profiles")
        console.log('The Help command has been executed. Executor: ' + message.author.tag)
@@ -506,6 +516,7 @@ bot.on('message', (message) => { //Help
 
 bot.on('message', (message) => { //Wikipedia
     if(message.channel.type == "dm") return;
+    if(message.author.bot) return;
     if(message.content.startsWith('/Wikipedia ')){
        message.channel.sendMessage("Here is the Wikipedia page that **" + message.author.tag + '** asked for.\nhttps://en.wikipedia.org/wiki' + message.content.replace('/Wikipedia ','/') + '\n\n(Be sure to use the **_** instead of spaces when using multiple words.)')   
        console.log('The Wikipedia command has been executed. Executor: ' + message.author.tag)
@@ -514,6 +525,7 @@ bot.on('message', (message) => { //Wikipedia
 
 bot.on('message', (message) => { //ServerInfo
     if(message.channel.type == "dm") return;
+    if(message.author.bot) return;
     if(message.content == '/ServerInfo'){
        message.channel.sendMessage('**Server Name:** ' + message.guild.name + '\n**Verification Level:** ' + message.guild.verificationLevel + '\n**Owner:** ' + message.guild.owner.displayName + '\n**Members:** ' + message.guild.memberCount + '\n**Role Amount:** ' + message.guild.roles.size + '\n**Custom Emojis:** ' + message.guild.emojis.size + '/100')   
        console.log('The ServerInfo command has been executed. Executor: ' + message.author.tag)
@@ -522,6 +534,7 @@ bot.on('message', (message) => { //ServerInfo
 
 bot.on('message', (message) => { //BotInfo
     if(message.channel.type == "dm") return;
+    if(message.author.bot) return;
     if(message.content == ("/BotInfo")){
         var BotUptime = bot.uptime
         var min = BotUptime / 1000 / 60;
@@ -533,6 +546,7 @@ bot.on('message', (message) => { //BotInfo
 
 bot.on('message', (message) => { //ServerName
     if(message.channel.type == "dm") return;
+    if(message.author.bot) return;
     if(message.content.startsWith('/ServerName ')){
     if(message.member.hasPermission("ADMINISTRATOR")){
         message.guild.setName(message.content.replace('/ServerName ',''))
@@ -542,6 +556,7 @@ bot.on('message', (message) => { //ServerName
 });
 bot.on('message', (message) => { //ServerName - failed
     if(message.channel.type == "dm") return;
+    if(message.author.bot) return;
     if(message.content.startsWith('/ServerName ')){
     if(!message.member.hasPermission("ADMINISTRATOR")){
         message.channel.sendMessage(ErrorMsg2)
@@ -550,6 +565,7 @@ bot.on('message', (message) => { //ServerName - failed
 
 bot.on('message', (message) => { //ChannelName
     if(message.channel.type == "dm") return;
+    if(message.author.bot) return;
     if(message.content.startsWith('/ChannelName ')){
     if(message.member.hasPermission("ADMINISTRATOR")){
         message.channel.setName(message.content.replace('/ChannelName ',''))
@@ -559,6 +575,7 @@ bot.on('message', (message) => { //ChannelName
 })
 bot.on('message', (message) => { //ChannelName - failed
     if(message.channel.type == "dm") return;
+    if(message.author.bot) return;
     if(message.content.startsWith('/ChannelName ')){
     if(!message.member.hasPermission("ADMINISTRATOR")){
         message.channel.sendMessage(ErrorMsg2)
@@ -567,6 +584,7 @@ bot.on('message', (message) => { //ChannelName - failed
 
 bot.on('message', (message) => { //Ban
     if(message.channel.type == "dm") return;
+    if(message.author.bot) return;
     if(message.content.startsWith('/Ban ')){
     if(message.member.hasPermission("BAN_MEMBERS")){
         var userToBan = message.mentions.members.first()
@@ -578,6 +596,7 @@ bot.on('message', (message) => { //Ban
 });
 bot.on('message', (message) => { //Ban - failed
     if(message.channel.type == "dm") return;
+    if(message.author.bot) return;
     if(message.content.startsWith('/Ban ')){
     if(!message.member.hasPermission("BAN_MEMBERS")){
         message.channel.sendMessage(ErrorMsg2)
@@ -585,6 +604,7 @@ bot.on('message', (message) => { //Ban - failed
 });
 bot.on('message', (message) => { //Ban - failed 2
     if(message.channel.type == "dm") return;
+    if(message.author.bot) return;
     if(message.content.startsWith('/Ban ')){
     if(message.member.hasPermission("BAN_MEMBERS")){
         var userToBan = message.mentions.members.first()
@@ -595,6 +615,7 @@ bot.on('message', (message) => { //Ban - failed 2
 
 bot.on('message', (message) => { //Censor
     if(message.channel.type == "dm") return;
+    if(message.author.bot) return;
     if(message.content.startsWith('/Censor ')){
     if(message.member.hasPermission("MANAGE_NICKNAMES")){
         var userToCensor = message.mentions.users.first()
@@ -607,6 +628,7 @@ bot.on('message', (message) => { //Censor
 });
 bot.on('message', (message) => { //Censor - failed
     if(message.channel.type == "dm") return;
+    if(message.author.bot) return;
     if(message.content.startsWith('/Censor ')){
     if(!message.member.hasPermission("MANAGE_NICKNAMES")){
         message.channel.sendMessage(ErrorMsg2)
@@ -614,6 +636,7 @@ bot.on('message', (message) => { //Censor - failed
 });
 bot.on('message', (message) => { //Censor - failed 2
     if(message.channel.type == "dm") return;
+    if(message.author.bot) return;
     if(message.content.startsWith('/Censor ')){
     if(message.member.hasPermission("MANAGE_NICKNAMES")){
         var userToCensor = message.mentions.members.first()
@@ -624,6 +647,7 @@ bot.on('message', (message) => { //Censor - failed 2
 
 bot.on('message', (message) => { //Uncensor
     if(message.channel.type == "dm") return;
+    if(message.author.bot) return;
     if(message.content.startsWith('/Uncensor ')){
     if(message.member.hasPermission("MANAGE_NICKNAMES")){
         var userToCensor = message.mentions.users.first()
@@ -636,6 +660,7 @@ bot.on('message', (message) => { //Uncensor
 });
 bot.on('message', (message) => { //Uncensor - failed
     if(message.channel.type == "dm") return;
+    if(message.author.bot) return;
     if(message.content.startsWith('/Uncensor ')){
     if(!message.member.hasPermission("MANAGE_NICKNAMES")){
         message.channel.sendMessage(ErrorMsg2)
@@ -643,6 +668,7 @@ bot.on('message', (message) => { //Uncensor - failed
 });
 bot.on('message', (message) => { //Uncensor - failed 2
     if(message.channel.type == "dm") return;
+    if(message.author.bot) return;
     if(message.content.startsWith('/Uncensor ')){
     if(!message.member.hasPermission("MANAGE_NICKNAMES")){
         var userToCensor = message.mentions.members.first()
@@ -654,6 +680,7 @@ bot.on('message', (message) => { //Uncensor - failed 2
 
 bot.on('message', (message) => { //StartPoll
     if(message.channel.type == "dm") return;
+    if(message.author.bot) return;
     if(message.content.startsWith("/StartPoll ")){
        message.channel.sendMessage('This is a poll that **' + message.author.tag + '** has started!\n\n**Topic:** ' + message.content.replace("/StartPoll ","")).then(sentMessage => sentMessage.react("<:bot_approve:440824011199348736") + (sentMessage.react("<:bot_deny:440824010805084171")));
        console.log('The StartPoll command has been executed. Executor: ' + message.author.tag)
@@ -662,6 +689,7 @@ bot.on('message', (message) => { //StartPoll
 
 bot.on('message', (message) => { //StartCountdown
     if(message.channel.type == "dm") return;
+    if(message.author.bot) return;
     if(message.content.startsWith("/StartCountdown ")){
         var cntd_time = message.content.slice('16','20') + '000'
         var cntd_note = message.content.slice('21','70')
@@ -676,6 +704,7 @@ bot.on('message', (message) => { //StartCountdown
 
 bot.on('message', (message) => { //Global (Set)
     if(message.channel.type == "dm") return;
+    if(message.author.bot) return;
     if(message.content.startsWith("/GlobalSet ")){
           globalMessage = 'This Global Message has been set by **' + message.author.tag + '** .\n\n**Message:** ' + message.content.replace('/GlobalSet ','')
           message.channel.sendMessage('**' +  message.author.tag + '** has set the global message!')
@@ -685,6 +714,7 @@ bot.on('message', (message) => { //Global (Set)
 
 bot.on('message', (message) => { //Global (Show)
     if(message.channel.type == "dm") return;
+    if(message.author.bot) return;
     if(message.content == '/GlobalShow'){
         message.channel.sendMessage(globalMessage)
         console.log('The GlobalShow command has been executed. Executor: ' + message.author.tag)
@@ -693,6 +723,7 @@ bot.on('message', (message) => { //Global (Show)
 
 bot.on('message', (message) => { //Comics
     if(message.channel.type == "dm") return;
+    if(message.author.bot) return;
     if(message.content == '/Comics'){
         var randomFace = cmcs_face[Math.floor(Math.random() * cmcs_face.length)];
         var randomFace2 = cmcs_face[Math.floor(Math.random() * cmcs_face.length)];
@@ -707,6 +738,7 @@ bot.on('message', (message) => { //Comics
 
 bot.on('message', (message) => { //DadJokes
     if(message.channel.type == "dm") return;
+    if(message.author.bot) return;
     if(message.content == '/DadJoke'){
         var randomAnswer = dadJokes[Math.floor(Math.random() * dadJokes.length)];
         message.channel.sendMessage(randomAnswer);
@@ -716,6 +748,7 @@ bot.on('message', (message) => { //DadJokes
 
 bot.on('message', (message) => { //GoFishing
     if(message.channel.type == "dm") return;
+    if(message.author.bot) return;
     if(message.content == '/GoFishing'){
     if(message.channel.name == 'fishing'){
         var fishing_caught = fishing_fish[Math.floor(Math.random() * fishing_fish.length)];
@@ -730,6 +763,7 @@ bot.on('message', (message) => { //GoFishing
 });
 bot.on('message', (message) => { //GoFishing - failed
     if(message.channel.type == "dm") return;
+    if(message.author.bot) return;
     if(message.content == '/GoFishing'){
     if(message.channel.name !== 'fishing'){
         message.channel.sendMessage(ErrorMsg1)
@@ -738,6 +772,7 @@ bot.on('message', (message) => { //GoFishing - failed
 
 bot.on('message', (message) => { //Fight
     if(message.channel.type == "dm") return;
+    if(message.author.bot) return;
     if(message.content.startsWith("/Fight ")){
         if(message.channel.name == 'arena'){
         var weapon_used = fight_weapon[Math.floor(Math.random() * fight_weapon.length)];
@@ -766,6 +801,7 @@ bot.on('message', (message) => { //Fight
 });
 bot.on('message', (message) => { //Fight - failed
     if(message.channel.type == "dm") return;
+    if(message.author.bot) return;
     if(message.content.startsWith("/Fight ")){
     if(message.channel.name !== 'arena'){
         message.channel.sendMessage(ErrorMsg1)
@@ -773,6 +809,7 @@ bot.on('message', (message) => { //Fight - failed
 });
 bot.on('message', (message) => { //Bet
     if(message.channel.type == "dm") return;
+    if(message.author.bot) return;
     if(message.content == "/Bet"){
     if(message.channel.name == "casino"){
     if(userData[message.author.id].messagesSent >= 25){
@@ -790,6 +827,7 @@ bot.on('message', (message) => { //Bet
 });
 bot.on('message', (message) => { //Bet - failed
     if(message.channel.type == "dm") return;
+    if(message.author.bot) return;
     if(message.content == "/Bet"){
     if(message.channel.name !== 'casino'){
         message.channel.sendMessage(ErrorMsg1)
@@ -797,6 +835,7 @@ bot.on('message', (message) => { //Bet - failed
 });
 bot.on('message', (message) => { //Bet - failed 2
     if(message.channel.type == "dm") return;
+    if(message.author.bot) return;
     if(message.content == "/Bet"){
     if(message.channel.name == "casino"){
     if(userData[message.author.id].messagesSent <= 24){
@@ -806,6 +845,7 @@ bot.on('message', (message) => { //Bet - failed 2
 
 bot.on('message', (message) => { //BuyDescription
     if(message.channel.type == "dm") return;
+    if(message.author.bot) return;
     if(message.content.startsWith("/BuyDescription ")){
     if(userData[message.author.id].messagesSent >= 10){
        var BoughtDescription = message.content.slice("16","66")
@@ -817,6 +857,7 @@ bot.on('message', (message) => { //BuyDescription
 });
 bot.on('message', (message) => { //BuyDescription - failed
     if(message.channel.type == "dm") return;
+    if(message.author.bot) return;
     if(message.content.startsWith("/BuyDescription ")){
     if(userData[message.author.id].messagesSent <= 9){
         message.channel.sendMessage(ErrorMsg4)     
@@ -825,6 +866,7 @@ bot.on('message', (message) => { //BuyDescription - failed
 
 bot.on('message', (message) => { //BuyBanner 1
     if(message.channel.type == "dm") return;
+    if(message.author.bot) return;
     if(message.content == "/BuyBannerBuyBanner 1"){
         userData[message.author.id].profileBackground = 1
         message.channel.sendMessage(SuccessMsg1)
@@ -834,6 +876,7 @@ bot.on('message', (message) => { //BuyBanner 1
 
 bot.on('message', (message) => { //BuyBanner 2
     if(message.channel.type == "dm") return;
+    if(message.author.bot) return;
     if(message.content == "/BuyBanner 2"){
     if(userData[message.author.id].messagesSent >= 25){
         userData[message.author.id].messagesSent = userData[message.author.id].messagesSent - 25
@@ -844,6 +887,7 @@ bot.on('message', (message) => { //BuyBanner 2
 });
 bot.on('message', (message) => { //BuyBanner 2 - failed
     if(message.channel.type == "dm") return;
+    if(message.author.bot) return;
     if(message.content == "/BuyBanner 2"){
     if(userData[message.author.id].messagesSent <= 24){
         message.channel.sendMessage(ErrorMsg4)     
@@ -852,6 +896,7 @@ bot.on('message', (message) => { //BuyBanner 2 - failed
 
 bot.on('message', (message) => { //BuyBanner 3
     if(message.channel.type == "dm") return;
+    if(message.author.bot) return;
     if(message.content == "/BuyBanner 3"){
     if(userData[message.author.id].messagesSent >= 50){
         userData[message.author.id].messagesSent = userData[message.author.id].messagesSent - 50
@@ -862,6 +907,7 @@ bot.on('message', (message) => { //BuyBanner 3
 });
 bot.on('message', (message) => { //BuyBanner 3 - failed
     if(message.channel.type == "dm") return;
+    if(message.author.bot) return;
     if(message.content == "/BuyBanner 3"){
     if(userData[message.author.id].messagesSent <= 49){
         message.channel.sendMessage(ErrorMsg4)     
@@ -870,6 +916,7 @@ bot.on('message', (message) => { //BuyBanner 3 - failed
 
 bot.on('message', (message) => { //BuyBanner 4
     if(message.channel.type == "dm") return;
+    if(message.author.bot) return;
     if(message.content == "/BuyBanner 4"){
     if(userData[message.author.id].messagesSent >= 50){
         userData[message.author.id].messagesSent = userData[message.author.id].messagesSent - 50
@@ -880,6 +927,7 @@ bot.on('message', (message) => { //BuyBanner 4
 });
 bot.on('message', (message) => { //BuyBanner 4 - failed
     if(message.channel.type == "dm") return;
+    if(message.author.bot) return;
     if(message.content == "/BuyBanner 4"){
     if(userData[message.author.id].messagesSent <= 49){
         message.channel.sendMessage(ErrorMsg4)     
@@ -888,6 +936,7 @@ bot.on('message', (message) => { //BuyBanner 4 - failed
 
 bot.on('message', (message) => { //BuyBanner 5
     if(message.channel.type == "dm") return;
+    if(message.author.bot) return;
     if(message.content == "/BuyBanner 5"){
     if(userData[message.author.id].messagesSent >= 50){
         userData[message.author.id].messagesSent = userData[message.author.id].messagesSent - 50
@@ -898,6 +947,7 @@ bot.on('message', (message) => { //BuyBanner 5
 });
 bot.on('message', (message) => { //BuyBanner 5 - failed
     if(message.channel.type == "dm") return;
+    if(message.author.bot) return;
     if(message.content == "/BuyBanner 5"){
     if(userData[message.author.id].messagesSent <= 49){
         message.channel.sendMessage(ErrorMsg4)     
@@ -906,6 +956,7 @@ bot.on('message', (message) => { //BuyBanner 5 - failed
 
 bot.on('message', (message) => { //BuyBanner 6
     if(message.channel.type == "dm") return;
+    if(message.author.bot) return;
     if(message.content == "/BuyBanner 6"){
     if(userData[message.author.id].messagesSent >= 50){
         userData[message.author.id].messagesSent = userData[message.author.id].messagesSent - 50
@@ -916,6 +967,7 @@ bot.on('message', (message) => { //BuyBanner 6
 });
 bot.on('message', (message) => { //BuyBanner 6 - failed
     if(message.channel.type == "dm") return;
+    if(message.author.bot) return;
     if(message.content == "/BuyBanner 6"){
     if(userData[message.author.id].messagesSent <= 49){
         message.channel.sendMessage(ErrorMsg4)     
@@ -924,6 +976,7 @@ bot.on('message', (message) => { //BuyBanner 6 - failed
 
 bot.on('message', (message) => { //BuyBanner 7
     if(message.channel.type == "dm") return;
+    if(message.author.bot) return;
     if(message.content == "/BuyBanner 7"){
     if(userData[message.author.id].messagesSent >= 50){
         userData[message.author.id].messagesSent = userData[message.author.id].messagesSent - 50
@@ -934,6 +987,7 @@ bot.on('message', (message) => { //BuyBanner 7
 });
 bot.on('message', (message) => { //BuyBanner 7 - failed
     if(message.channel.type == "dm") return;
+    if(message.author.bot) return;
     if(message.content == "/BuyBanner 7"){
     if(userData[message.author.id].messagesSent <= 50){
         message.channel.sendMessage(ErrorMsg4)     
@@ -942,6 +996,7 @@ bot.on('message', (message) => { //BuyBanner 7 - failed
 
 bot.on('message', (message) => { //BuyBanner 8
     if(message.channel.type == "dm") return;
+    if(message.author.bot) return;
     if(message.content == "/BuyBanner 8"){
     if(userData[message.author.id].messagesSent >= 50){
         userData[message.author.id].messagesSent = userData[message.author.id].messagesSent - 50
@@ -952,6 +1007,7 @@ bot.on('message', (message) => { //BuyBanner 8
 });
 bot.on('message', (message) => { //BuyBanner 8 - failed
     if(message.channel.type == "dm") return;
+    if(message.author.bot) return;
     if(message.content == "/BuyBanner 8"){
     if(userData[message.author.id].messagesSent <= 50){
         message.channel.sendMessage(ErrorMsg4)     
@@ -960,6 +1016,7 @@ bot.on('message', (message) => { //BuyBanner 8 - failed
 
 bot.on('message', (message) => { //BuyBanner 9
     if(message.channel.type == "dm") return;
+    if(message.author.bot) return;
     if(message.content == "/BuyBanner 9"){
     if(userData[message.author.id].messagesSent >= 100){
         userData[message.author.id].messagesSent = userData[message.author.id].messagesSent - 100
@@ -970,6 +1027,7 @@ bot.on('message', (message) => { //BuyBanner 9
 });
 bot.on('message', (message) => { //BuyBanner 9 - failed
     if(message.channel.type == "dm") return;
+    if(message.author.bot) return;
     if(message.content == "/BuyBanner 9"){
     if(userData[message.author.id].messagesSent <= 99){
         message.channel.sendMessage(ErrorMsg4)     
@@ -978,6 +1036,7 @@ bot.on('message', (message) => { //BuyBanner 9 - failed
 
 bot.on('message', (message) => { //BuyBanner 10
     if(message.channel.type == "dm") return;
+    if(message.author.bot) return;
     if(message.content == "/BuyBanner 10"){
     if(userData[message.author.id].messagesSent >= 100){
         userData[message.author.id].messagesSent = userData[message.author.id].messagesSent - 100
@@ -988,6 +1047,7 @@ bot.on('message', (message) => { //BuyBanner 10
 });
 bot.on('message', (message) => { //BuyBanner 10 - failed
     if(message.channel.type == "dm") return;
+    if(message.author.bot) return;
     if(message.content == "/BuyBanner 10"){
     if(userData[message.author.id].messagesSent <= 99){
         message.channel.sendMessage(ErrorMsg4)     
@@ -996,6 +1056,7 @@ bot.on('message', (message) => { //BuyBanner 10 - failed
 
 bot.on('message', (message) => { //BuyBanner 11
     if(message.channel.type == "dm") return;
+    if(message.author.bot) return;
     if(message.content == "/BuyBanner 11"){
     if(userData[message.author.id].messagesSent >= 50){
         userData[message.author.id].messagesSent = userData[message.author.id].messagesSent - 50
@@ -1006,6 +1067,7 @@ bot.on('message', (message) => { //BuyBanner 11
 });
 bot.on('message', (message) => { //BuyBanner 11 - failed
     if(message.channel.type == "dm") return;
+    if(message.author.bot) return;
     if(message.content == "/BuyBanner 11"){
     if(userData[message.author.id].messagesSent <= 50){
         message.channel.sendMessage(ErrorMsg4)     
@@ -1015,6 +1077,7 @@ bot.on('message', (message) => { //BuyBanner 11 - failed
 
 bot.on('message', (message) => { //Roll
     if(message.channel.type == "dm") return;
+    if(message.author.bot) return;
     if(message.content == '/Roll'){
         var randomNumber = dice[Math.floor(Math.random() * dice.length)];
         message.channel.sendMessage('**' + message.author.tag + '** has rolled a dice!\n' + randomNumber);
@@ -1024,6 +1087,7 @@ bot.on('message', (message) => { //Roll
 
 bot.on('message', (message) => { //Ask
     if(message.channel.type == "dm") return;
+    if(message.author.bot) return;
     if(message.content.startsWith("/Ask ")){
           var randomReply = reply[Math.floor(Math.random() * reply.length)];
           message.channel.sendMessage('**' + message.author.tag + "** asked me **" + message.content.replace('/Ask ','') + "**\nTo which I'd say that **" + randomReply + '**.');
@@ -1033,8 +1097,9 @@ bot.on('message', (message) => { //Ask
 
 bot.on('message', (message) => { //Say
     if(message.channel.type == "dm") return;
+    if(message.author.bot) return;
     if(message.content.startsWith("/Say ")){
-           message.channel.sendMessage(message.content.replace('/Say ','­'))
+           message.channel.sendMessage(message.content.replace('/Say ',''))
            message.delete()
            console.log('The Say command has been executed. Executor: ' + message.author.tag)
     }
@@ -1042,6 +1107,7 @@ bot.on('message', (message) => { //Say
 
 bot.on('message', (message) => { //GetEmoji
     if(message.channel.type == "dm") return;
+    if(message.author.bot) return;
     if(message.content.startsWith("/GetEmoji ")){
        message.channel.sendMessage('Here are your Emoji IDs!\n`' + message.content.replace('/GetEmoji ','') + '`')
        console.log('The GetEmoji command has been executed. Executor: ' + message.author.tag)
@@ -1050,6 +1116,7 @@ bot.on('message', (message) => { //GetEmoji
 
 bot.on('message', (message) => { //Suggestion
     if(message.channel.type == "dm") return;
+    if(message.author.bot) return;
     if(message.content.startsWith("/Suggestion ")){
           bot.channels.get('429227074587197441').sendMessage("This is a suggestion from **" + message.author.tag + "**.\n\n**Suggestion:** " + message.content.replace('/Suggestion',''))
           .then(sentMessage => sentMessage.react('<:bot_neutral:441968156781707264'));
@@ -1060,6 +1127,7 @@ bot.on('message', (message) => { //Suggestion
 
 bot.on('message', (message) => { //Links
     if(message.channel.type == "dm") return;
+    if(message.author.bot) return;
     if(message.content == '/Links'){
        message.channel.sendMessage('**' + message.author.tag + '** has received a DM with the **Links**.')
        message.author.sendMessage("**__Links__**\n\n<:bot_discord:429185737406152704> **Discord Support Server:** <https://discord.io/vojtasonic>\n<:peeky:398855238725009418> **Bot's Page:** <https://discordbots.org/bot/415259002310623232>\n<:bot_twitter:429185436141748225> **Twitter:** <https://twitter.com/vojtasonic>")
@@ -1069,6 +1137,7 @@ bot.on('message', (message) => { //Links
 
 bot.on('message', (message) => { //Bonuses
     if(message.channel.type == "dm") return;
+    if(message.author.bot) return;
     if(message.content == '/Bonuses'){
        message.channel.sendMessage('**' + message.author.tag + '** has received a DM with the **Bonuses**.')
        message.author.sendMessage("**__Bonuses__**\n\n ● **Automatic Reactions**\n  • Messages in a channel called **#gallery** get automatic reactions!\n  • Messages in a channel called **#events** get automatic reactions!\n\n ● **Word Filtering**\n  • Messages in a channel that has **Word Filtering: Enabled** (and nothing else) in the topic will get filtered!\n\n ● **Custom User Profiles**\n  • Encourage users into talking in your server by rewarding them with Peeky Coins, which they can spend to customize their profiles!")
